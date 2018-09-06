@@ -1,17 +1,13 @@
-import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { NativeScriptCommonModule } from "nativescript-angular/common";
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
 
-import { LoginRoutingModule } from "../login/login-routing.module";
-import { LoginComponent } from "../login/login.component";
-import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { LoginRoutingModule } from "~/app/login/login-routing.module";
+import { LoginComponent } from "~/app/login/login.component.tns";
 
 @NgModule({
-  imports: [
-    NativeScriptCommonModule,
-    LoginRoutingModule,
-    NativeScriptFormsModule
-  ],
-  declarations: [LoginComponent],
-  schemas: [NO_ERRORS_SCHEMA]
+  imports: [CommonModule, LoginRoutingModule],
+  exports: [RouterModule],
+  declarations: [LoginComponent]
 })
 export class LoginModule {}

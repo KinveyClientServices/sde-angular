@@ -30,6 +30,7 @@
     "@angular/router": "~6.1.0",
     "@progress-nativechat/nativescript-nativechat": "^2.0.1",
     "core-js": "^2.5.4",
+    "kinvey-angular2-sdk": "^3.11.6",
     "kinvey-nativescript-sdk": "^3.11.6",
     "nativescript-angular": "~6.1.0",
     "nativescript-ar": "^0.4.0",

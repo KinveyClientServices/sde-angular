@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable, BehaviorSubject } from "rxjs";
-import { User, Kinvey, DataStoreType } from "kinvey-nativescript-sdk";
+import { Kinvey, CacheStore, DataStoreType, User } from "./utils";
 
 @Injectable()
 export class DataService {

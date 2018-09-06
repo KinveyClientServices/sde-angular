@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "../utils/router";
-import { DataService } from "../data.service";
+import { DataService } from "~/app/data.service";
+import { RouterExtensions } from "nativescript-angular";
 
 @Component({
   selector: "Login",
@@ -10,7 +10,10 @@ import { DataService } from "../data.service";
 export class LoginComponent implements OnInit {
   username = "ignacio";
   password = "ignacio";
-  constructor(private dataService: DataService, private router: Router) {
+  constructor(
+    private dataService: DataService,
+    private router: RouterExtensions
+  ) {
     // Use the component constructor to inject providers.
   }
 
@@ -21,7 +24,15 @@ export class LoginComponent implements OnInit {
   async login() {
     try {
       await this.dataService.login(this.username, this.password);
-      this.router.navigate([""]);
+      this.router.navigate([""], {
+        clearHistory: true,
+        animated: true,
+        transition: {
+          name: "slideTop",
+          duration: 350,
+          curve: "ease"
+        }
+      });
     } catch {
       alert("Invalid credentials");
     }
@@ -29,7 +40,15 @@ export class LoginComponent implements OnInit {
   async loginWithMIC() {
     try {
       await this.dataService.loginWithMIC();
-      this.router.navigate([""]);
+      this.router.navigate([""], {
+        clearHistory: true,
+        animated: true,
+        transition: {
+          name: "slideTop",
+          duration: 350,
+          curve: "ease"
+        }
+      });
     } catch {
       alert("Invalid credentials");
     }
