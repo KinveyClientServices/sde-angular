@@ -5,19 +5,18 @@ import {
   ActivatedRouteSnapshot,
   CanLoad,
   RouterStateSnapshot,
-  Route,
-  Router
+  Route
 } from "@angular/router";
-import { RouterExtensions } from "nativescript-angular/router";
+import { Router } from "./utils/router";
 import { DataService } from "./data.service";
 
 @Injectable()
 export class AnonAuthGuard implements CanActivate {
-  constructor(private service: DataService, private router: RouterExtensions) {}
+  constructor(private service: DataService, private router: Router) {}
 
   canActivate() {
     if (this.service.isLoggedIn.value) {
-      this.router.navigate([""], { clearHistory: true });
+      this.router.navigate([""]);
       return false;
     }
     return true;
@@ -26,12 +25,12 @@ export class AnonAuthGuard implements CanActivate {
 
 @Injectable()
 export class LoggedInAuthGuard implements CanActivate {
-  constructor(private service: DataService, private router: RouterExtensions) {}
+  constructor(private service: DataService, private router: Router) {}
 
   canActivate() {
     console.log("checking access");
     if (!this.service.isLoggedIn.value) {
-      this.router.navigate(["login"], { clearHistory: true });
+      this.router.navigate(["login"]);
       return false;
     }
     return true;
