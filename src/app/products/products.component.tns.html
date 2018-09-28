@@ -16,10 +16,20 @@
 
 <ListView class="list-group" [items]="items | async">
     <ng-template let-item="item">
-        <GridLayout class="list-group-item" rows="*" columns="auto, *">
-            <Image row="0" col="0" [src]="item.img" class="thumb img-rounded"></Image>
+        <GridLayout class="list-group-item" rows="*" columns="30,*, auto" (tap)="gotoDetails(item)">
+            <Label verticalAlignment="top" class="ion success" style="font-size:24" text="&#xf45e;"></Label>
+            <StackLayout col="1">
+                <Label textWrap="true" [text]="item.provider" style="font-weight: bold"></Label>
+                <Label textWrap="true" [text]="item.patient"></Label>
+                <Label textWrap="true" [text]="item.serviceDate | date"></Label>
+            </StackLayout>
+            <StackLayout col="2">
+                <Label textWrap="true" [class.success]="item.status==='paid'" [class.error]="item.status==='denied'"
+                    [text]="item.status" [class.warning]="item.status==='pending'" horizontalAlignment="right"></Label>
+                <Label textWrap="true" text="Amount Billed" horizontalAlignment="right"></Label>
+                <Label textWrap="true" [text]="item.amount | currency" horizontalAlignment="right"></Label>
+            </StackLayout>
 
-            <Label textWrap="true" row="0" col="1" [text]="item.title"></Label>
         </GridLayout>
     </ng-template>
 </ListView>

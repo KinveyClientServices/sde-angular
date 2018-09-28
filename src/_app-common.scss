@@ -1,6 +1,12 @@
 // Place any CSS rules you want to apply on both iOS and Android here.
 // This is where the vast majority of your CSS code goes.
 // Font icon class
+Page {
+  font-family: Avenir, "Nunito-Regular";
+  background-color: white;
+  color: black;
+}
+
 .fa {
   font-family: "FontAwesome";
 }
@@ -87,11 +93,7 @@ $sidedrawer-list-icon-size: 20;
     }
   }
 }
-Page {
-  font-family: Avenir, "Nunito-Regular";
-  background-color: #383741;
-  color: black;
-}
+
 .fancy-background {
   background-image: url("~/images/background.png");
   background-repeat: no-repeat;
@@ -106,13 +108,19 @@ Page {
   font-family: Avenir, "Nunito-Bold";
 }
 
-.action-bar {
-  padding: 5 0;
-  background-color: #383741;
-}
 .action-bar-logo {
   height: 55;
   color: white;
   horizontal-align: center;
   vertical-align: middle;
+}
+
+.success {
+  color: $success-dark;
+}
+.warning {
+  color: $warning-dark;
+}
+.error {
+  color: $error-dark;
 }

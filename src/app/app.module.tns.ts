@@ -16,6 +16,7 @@ import { LoginComponent } from "./login/login.component";
 import { AddTaskComponent } from "./tasks/add-task/add-task.component";
 import { FileDetailsComponent } from "./files/file-details/file-details.component";
 import { LayoutComponent } from "./layout/layout.component";
+import { ProductDetailsComponent } from "./products/product-details/product-details.component";
 
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular/side-drawer-directives";
 
@@ -47,7 +48,8 @@ if (platform.isIOS) {
     TasksComponent,
     AddTaskComponent,
     FileDetailsComponent,
-    LayoutComponent
+    LayoutComponent,
+    ProductDetailsComponent
   ],
   imports: [
     NativeScriptModule,

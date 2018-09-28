@@ -3,6 +3,7 @@ import { DataService } from "../data.service";
 import { DrawerHelper } from "../utils/drawer-helper";
 import { Observable } from "rxjs";
 import { Config } from "../config";
+import { Router } from "../utils";
 
 @Component({
   selector: "app-products",
@@ -12,7 +13,7 @@ import { Config } from "../config";
 export class ProductsComponent implements OnInit {
   items: Observable<any>;
   title: string;
-  constructor(private service: DataService) {}
+  constructor(private service: DataService, private router: Router) {}
 
   ngOnInit() {
     this.items = this.service.getItems();
@@ -22,5 +23,9 @@ export class ProductsComponent implements OnInit {
   }
   onDrawerButtonTap(): void {
     DrawerHelper.show();
+  }
+  gotoDetails(item) {
+    this.service.selectedProduct = item;
+    this.router.navigate(["products/product-details"]);
   }
 }

@@ -1,0 +1,26 @@
+<ActionBar title="Details" class="action-bar">
+    <NavigationButton text="Back"></NavigationButton>
+</ActionBar>
+
+<GridLayout class="list-group-item m-10" rows="*, auto" columns="30,*, auto" (tap)="gotoDetails(item)">
+    <Label verticalAlignment="top" class="ion success" style="font-size:24" text="&#xf45e;"></Label>
+    <StackLayout col="1">
+        <Label textWrap="true" [text]="'Claim: '+item._id"></Label>
+
+        <Label textWrap="true" [text]="'For: '+item.patient"></Label>
+
+        <Label textWrap="true" [text]="'Provided By: '+item.provider"></Label>
+        <Label textWrap="true" [text]="'Service Date: '+(item.serviceDate | date)"></Label>
+
+        <Label textWrap="true" [class.success]="item.status==='paid'" [class.error]="item.status==='denied'" [text]="'Status: '+item.status"
+            [class.warning]="item.status==='pending'"></Label>
+        <Label textWrap="true" [text]="'Amount: '+(item.amount | currency)"></Label>
+    </StackLayout>
+
+    <GridLayout columns="*,*" colSpan="3" row="1">
+        <Button (tap)="setStatus('denied')" col="0" class="btn btn-primary" style="background-color:#d84039" text="Deny"></Button>
+        <Button (tap)="setStatus('paid')" col="1" class="btn btn-primary" text="Process"></Button>
+
+    </GridLayout>
+
+</GridLayout>

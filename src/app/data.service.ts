@@ -18,11 +18,12 @@ export class DataService {
   public isLoggedIn: BehaviorSubject<boolean>;
   private user: BehaviorSubject<Kinvey.User>;
   public username: Observable<string>;
+  selectedProduct: any;
 
   constructor() {
     Kinvey.init({
-      appKey: "kid_rJXgUpSvm",
-      appSecret: "d4b642d14aa9466eaad256675e793af1"
+      appKey: Config.appKey,
+      appSecret: Config.appSecret
     });
     this.isLoggedIn = new BehaviorSubject<boolean>(
       Kinvey.User.getActiveUser() != null
@@ -104,13 +105,18 @@ export class DataService {
     if (Kinvey.User.getActiveUser()) {
       return Promise.resolve(Kinvey.User.getActiveUser());
     } else {
-      return Kinvey.User.loginWithMIC("http://localhost:4200").then(user => {
-        console.log("we back");
-        this.isLoggedIn.next(true);
-        //console.log(user);
-        this.user.next(user);
-        return Promise.resolve(user);
-      });
+      return Kinvey.User.loginWithMIC("http://localhost:4200")
+        .then(user => {
+          console.log("we back");
+          this.isLoggedIn.next(true);
+          //console.log(user);
+          this.user.next(user);
+          return Promise.resolve(user);
+        })
+        .catch(() => {
+          console.log("error");
+          return Promise.reject(null);
+        });
     }
   }
   logout(): Promise<void> {
@@ -118,5 +124,9 @@ export class DataService {
       this.isLoggedIn.next(false);
       this.user.next(null);
     });
+  }
+  setStatus(item: any, status: any): any {
+    item.status = status;
+    return this.myDataStore.save(item);
   }
 }

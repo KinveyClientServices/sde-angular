@@ -14,6 +14,7 @@ import { LoginComponent } from "./login/login.component";
 import { AddTaskComponent } from "./tasks/add-task/add-task.component";
 import { FileDetailsComponent } from "./files/file-details/file-details.component";
 import { LayoutComponent } from "./layout/layout.component";
+import { ProductDetailsComponent } from "./products/product-details/product-details.component";
 
 export const routes: Routes = [
   {
@@ -21,9 +22,11 @@ export const routes: Routes = [
     canActivate: [LoggedInGuard],
     component: LayoutComponent,
     children: [
-      { path: "", redirectTo: "home", pathMatch: "full" },
+      { path: "", redirectTo: "products", pathMatch: "full" },
       { path: "home", component: HomeComponent },
       { path: "products", component: ProductsComponent },
+      { path: "products/product-details", component: ProductDetailsComponent },
+
       { path: "files", component: FilesComponent },
       { path: "files/details", component: FileDetailsComponent },
       { path: "settings", component: SettingsComponent },

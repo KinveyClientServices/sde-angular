@@ -17,6 +17,7 @@ import { AddTaskComponent } from "./tasks/add-task/add-task.component";
 import { FileDetailsComponent } from "./files/file-details/file-details.component";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { LayoutComponent } from './layout/layout.component';
+import { ProductDetailsComponent } from './products/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LayoutComponent } from './layout/layout.component';
     TasksComponent,
     AddTaskComponent,
     FileDetailsComponent,
-    LayoutComponent
+    LayoutComponent,
+    ProductDetailsComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

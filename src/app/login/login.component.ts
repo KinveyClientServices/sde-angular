@@ -19,6 +19,8 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.processing = false;
+
     // Init your component properties here.
     this.logo = Config.appLogo;
     this.title = Config.appTitle;
@@ -37,7 +39,6 @@ export class LoginComponent implements OnInit {
   }
   async loginWithMIC() {
     try {
-      this.processing = true;
       await this.dataService.loginWithMIC();
       this.router.navigate([""]);
     } catch {
