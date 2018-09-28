@@ -2,7 +2,7 @@
     <NavigationButton text="Back"></NavigationButton>
 </ActionBar>
 
-<GridLayout class="list-group-item m-10" rows="*, auto" columns="30,*, auto" (tap)="gotoDetails(item)">
+<GridLayout class="list-group-item m-10" rows="*, auto" columns="30,*, auto">
     <Label verticalAlignment="top" class="ion success" style="font-size:24" text="&#xf45e;"></Label>
     <StackLayout col="1">
         <Label textWrap="true" [text]="'Claim: '+item._id"></Label>

@@ -127,6 +127,6 @@ export class DataService {
   }
   setStatus(item: any, status: any): any {
     item.status = status;
-    return this.myDataStore.save(item);
+    return this.myDataStore.update(item);
   }
 }

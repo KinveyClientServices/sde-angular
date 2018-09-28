@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
   async loginWithMIC() {
     try {
       await this.dataService.loginWithMIC();
-      this.router.navigate([""]);
+      this.router.navigate([""], <any>{ clearHistory: true });
     } catch {
       alert("Invalid credentials");
     } finally {
