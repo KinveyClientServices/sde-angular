@@ -1,7 +1,7 @@
 {
-  "name": "angular-sde",
+  "name": "sde-angular",
   "nativescript": {
-    "id": "org.nativescript.angularsde",
+    "id": "org.nativescript.sdeangular",
     "tns-ios": {
       "version": "4.2.0"
     }
