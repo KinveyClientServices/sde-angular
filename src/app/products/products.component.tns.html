@@ -11,6 +11,7 @@
     -->
     <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
     </ActionItem>
+    <ActionItem (tap)="refresh()" ios.systemIcon="13" ios.position="right"></ActionItem>
     <Label class="action-bar-title" [text]="title"></Label>
 </ActionBar>
 

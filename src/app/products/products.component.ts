@@ -28,4 +28,8 @@ export class ProductsComponent implements OnInit {
     this.service.selectedProduct = item;
     this.router.navigate(["products/product-details"]);
   }
+
+  refresh() {
+    this.items = this.service.getItems();
+  }
 }
