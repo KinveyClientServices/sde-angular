@@ -12,7 +12,7 @@ import { Router } from '../utils';
 export class AccountsComponent implements OnInit {
   items;
   title: any;
-  constructor(private service: DataService, private router:Router) {}
+  constructor(private service: DataService, private router: Router) {}
 
   async ngOnInit() {
     this.title = Config.accountsPageTitle;
@@ -22,13 +22,9 @@ export class AccountsComponent implements OnInit {
   onDrawerButtonTap(): void {
     DrawerHelper.show();
   }
-  
-  goToDetails(item){
-    //console.log(item);
-    this.router.navigate(["account-details", item._id]);
 
+  goToDetails(item) {
+    // console.log(item);
+    this.router.navigate(['account-details', item._id]);
   }
-
-
-
 }

@@ -1,11 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { DataService } from "../data.service";
-import { DrawerHelper } from "../utils/drawer-helper";
-import { Config } from "../config";
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+import { DrawerHelper } from '../utils/drawer-helper';
+import { Config } from '../config';
 @Component({
-  selector: "app-offline",
-  templateUrl: "./offline.component.html",
-  styleUrls: ["./offline.component.scss"]
+  selector: 'app-offline',
+  templateUrl: './offline.component.html',
+  styleUrls: ['./offline.component.scss']
 })
 export class OfflineComponent implements OnInit {
   items;
@@ -25,21 +25,23 @@ export class OfflineComponent implements OnInit {
     var myaccounts = [];
     for (var i = 0; i < 10; i++) {
       const thisaccount = {
-        accountname: "Account #" + i,
+        WarehouseName: 'Warehouse #' + i,
         autogen: true,
-        accountcompany: "Company #" + i
+        Address: i + ' Main Street',
+        City: 'Boston',
+        Country: 'US'
       };
       myaccounts.push(thisaccount);
     }
     await this.service.addSyncAccounts(myaccounts);
     this.items = this.service.getSyncAccounts();
-    alert("all done");
+    // alert('all done');
   }
 
   async syncMe() {
-    console.log("syncng");
+    console.log('syncng');
     await this.service.pushSyncAccountData();
     this.items = this.service.getSyncAccounts();
-    alert("all sync done");
+    // alert('all sync done');
   }
 }

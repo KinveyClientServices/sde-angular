@@ -2,11 +2,15 @@
     <Label class="action-bar-title" [text]="account.accountname"></Label>
 </ActionBar>
 
-<ListView class="list-group" [items]="account.invoice">
-    <ng-template let-item="item">
-        <GridLayout class="list-group-item" rows="auto, *" columns="*">
-            <Label row="0" [text]="item.Amount" class="list-group-item-heading"></Label>
-            <Label row="1" [text]="item.InvoiceNumber" class="list-group-item-text"></Label>
-        </GridLayout>
-    </ng-template>
-</ListView>
+<GridLayout orientation="vertical" rows="*">
+    <RadPieChart height="300" allowAnimation="true" row="0">
+        <PieSeries tkPieSeries showLabels="true" selectionMode="DataPoint" expandRadius="0.4" outerRadiusFactor="0.7"
+            [items]="piedata" valueProperty="amount" legendLabel="name">
+            <PointLabelStyle tkPieLabelStyle margin="10" fontStyle="Bold" textSize="10" textFormat="%g"></PointLabelStyle>
+
+        </PieSeries>
+
+        <RadLegendView tkPieLegend position="Right" title="Efficiencies" offsetOrigin="TopRight" width="110"
+            enableSelection="true"></RadLegendView>
+    </RadPieChart>
+</GridLayout>

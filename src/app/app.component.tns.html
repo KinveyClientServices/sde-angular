@@ -18,19 +18,19 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
         </GridLayout>
         <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/accounts')"
           (tap)="onNavItemTap('/accounts')">
-          <Label col="0" text="&#xf2bd;" class="fa"></Label>
+          <Label col="0" text="&#xf0cb;" class="fa"></Label>
           <Label col="1" [text]="accountsPageTitle" class="p-r-10"></Label>
         </GridLayout>
         <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/products')"
           (tap)="onNavItemTap('/products')">
-          <Label col="0" text="&#xf0cb;" class="fa"></Label>
+          <Label col="0" text="&#xf15c;" class="fa"></Label>
           <Label col="1" [text]="producsPageTitle" class="p-r-10"></Label>
         </GridLayout>
-        <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/files')"
+        <!-- <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/files')"
           (tap)="onNavItemTap('/files')">
           <Label col="0" text="&#xf15c;" class="fa"></Label>
           <Label col="1" [text]="filesPageTitle" class="p-r-10"></Label>
-        </GridLayout>
+        </GridLayout> -->
         <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/tasks')"
           (tap)="onNavItemTap('/tasks')">
           <Label col="0" text="&#xf0ae;" class="fa"></Label>
@@ -38,18 +38,18 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
         </GridLayout>
         <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/offline')"
           (tap)="onNavItemTap('/offline')">
-          <Label col="0" text="&#xf1e6;" class="fa"></Label>
+          <Label col="0" text="&#xf279;" class="fa"></Label>
           <Label col="1" [text]="offlinePageTitle" class="p-r-10"></Label>
         </GridLayout>
-        <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/map')" (tap)="onNavItemTap('/map')">
+        <!-- <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/map')" (tap)="onNavItemTap('/map')">
           <Label col="0" text="&#xf279;" class="fa"></Label>
           <Label col="1" [text]="mapPageTitle" class="p-r-10"></Label>
-        </GridLayout>
-        <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/chat')"
+        </GridLayout> -->
+        <!-- <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/chat')"
           (tap)="onNavItemTap('/chat')">
           <Label col="0" text="&#xf086;" class="fa"></Label>
           <Label col="1" [text]="chatPageTitle" class="p-r-10"></Label>
-        </GridLayout>
+        </GridLayout> -->
         <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/ar')" (tap)="onNavItemTap('/ar')">
           <Label col="0" text="&#xf042;" class="fa"></Label>
           <Label col="1" [text]="arPageTitle" class="p-r-10"></Label>

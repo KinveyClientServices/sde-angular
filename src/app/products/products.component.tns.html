@@ -17,9 +17,7 @@
 <ListView class="list-group" [items]="items">
     <ng-template let-item="item">
         <GridLayout class="list-group-item" rows="*" columns="auto, *">
-            <Image row="0" col="0" [src]="item.img" class="thumb img-rounded"></Image>
-
-            <Label textWrap="true" row="0" col="1" [text]="item.title"></Label>
+            <Label textWrap="true" row="0" col="1" [text]="item.kpiDate"></Label>
         </GridLayout>
     </ng-template>
 </ListView>

@@ -13,7 +13,7 @@
     </ActionItem>
     <ActionItem (tap)="addButtonTapped()" ios.systemIcon="4" ios.position="right" text="delete" android.position="popup"></ActionItem>
 
-    <Label class="action-bar-title" text="Tasks"></Label>
+    <Label class="action-bar-title" text="Alerts"></Label>
 </ActionBar>
 
 <ListView class="list-group" [items]="items | async">
@@ -21,8 +21,8 @@
         <GridLayout class="list-group-item" rows="auto, *" columns="40, *">
             <Label (tap)="markDone(item)" row="0" col="0" class="fa" [text]="item.completed ? '&#xf00c;':'&#xf1ce;'"
                 rowSpan="2"></Label>
-            <Label row="0" col="1" [text]="item.action" class="list-group-item-heading"></Label>
-            <Label row="1" col="1" [text]="item.duedate" class="list-group-item-text"></Label>
+            <Label row="0" col="1" [text]="item.eqid" class="list-group-item-heading"></Label>
+            <Label row="1" col="1" [text]="item.status" class="list-group-item-text"></Label>
         </GridLayout>
     </ng-template>
 </ListView>

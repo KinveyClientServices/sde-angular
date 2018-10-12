@@ -1,17 +1,17 @@
-import { Component, OnInit } from "@angular/core";
-import { Router } from "./utils";
-import { DataService } from "./data.service";
-import { DrawerHelper } from "./utils/drawer-helper";
-import { Config } from "./config";
+import { Component, OnInit } from '@angular/core';
+import { Router } from './utils';
+import { DataService } from './data.service';
+import { DrawerHelper } from './utils/drawer-helper';
+import { Config } from './config';
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"]
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   private _activatedUrl: string;
-  //private _sideDrawerTransition: DrawerTransitionBase;
+  // private _sideDrawerTransition: DrawerTransitionBase;
   gesturesEnabled;
   user;
   producsPageTitle: string;
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
     this.gesturesEnabled = this.service.isLoggedIn;
     this.producsPageTitle = Config.productsPageTitle;
     this.accountsPageTitle = Config.accountsPageTitle;
-    
+
     this.tasksPageTitle = Config.tasksPageTitle;
     this.filesPageTitle = Config.filesPageTitle;
     this.mapPageTitle = Config.mapPageTitle;
@@ -51,9 +51,9 @@ export class AppComponent implements OnInit {
   }
 
   goToSettings() {
-    this.router.navigate(["settings"]);
+    this.router.navigate(['settings']);
     // const sideDrawer = <RadSideDrawer>app.getRootView();
-    //sideDrawer.closeDrawer();
+    // sideDrawer.closeDrawer();
     DrawerHelper.hide();
   }
 

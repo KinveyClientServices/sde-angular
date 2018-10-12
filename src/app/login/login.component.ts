@@ -1,16 +1,16 @@
-import { Component, OnInit } from "@angular/core";
-import { DataService } from "../data.service";
-import { Router } from "../utils";
-import { Config } from "../config";
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+import { Router } from '../utils';
+import { Config } from '../config';
 
 @Component({
-  selector: "Login",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.scss"]
+  selector: 'Login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  username = "ignacio";
-  password = "ignacio";
+  username = 'garon';
+  password = '1234';
   processing: boolean;
   logo: string;
   title: string;
@@ -28,9 +28,9 @@ export class LoginComponent implements OnInit {
     try {
       this.processing = true;
       await this.dataService.login(this.username, this.password);
-      this.router.navigate([""], <any>{ clearHistory: true });
+      this.router.navigate([''], <any>{ clearHistory: true });
     } catch {
-      alert("Invalid credentials");
+      alert('Invalid credentials');
     } finally {
       this.processing = false;
     }
@@ -39,9 +39,9 @@ export class LoginComponent implements OnInit {
     try {
       this.processing = true;
       await this.dataService.loginWithMIC();
-      this.router.navigate([""]);
+      this.router.navigate(['']);
     } catch {
-      alert("Invalid credentials");
+      alert('Invalid credentials');
     } finally {
       this.processing = false;
     }

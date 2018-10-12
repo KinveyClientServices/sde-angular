@@ -14,14 +14,15 @@
     <ActionItem ios.systemIcon="4" ios.position="right" (tap)="addMe()"></ActionItem>
     <ActionItem ios.systemIcon="13" ios.position="right" (tap)="syncMe()"></ActionItem>
 
-    <Label class="action-bar-title" [text]="title"></Label>
+    <Label class="action-bar-title" [text]="Warehouses"></Label>
 </ActionBar>
 
 <ListView class="list-group" [items]="items | async">
     <ng-template let-item="item">
-        <GridLayout class="list-group-item" rows="auto, *" columns="*">
-            <Label row="0" [text]="item.accountname" class="list-group-item-heading"></Label>
-            <Label row="1" [text]="item.accountcompany" class="list-group-item-text"></Label>
+        <GridLayout class="list-group-item" rows="auto, *, *" columns="*">
+            <Label row="0" [text]="item.WarehouseName" class="list-group-item-heading"></Label>
+            <Label row="1" [text]="item.Address" class="list-group-item-text"></Label>
+            <Label row="2" [text]="item.City + ' ' + item.Country" class="list-group-item-text"></Label>
         </GridLayout>
     </ng-template>
 </ListView>
