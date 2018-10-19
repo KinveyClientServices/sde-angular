@@ -8,19 +8,6 @@ import { Config } from './config';
   providedIn: 'root'
 })
 export class DataService {
-  deleteItem(): any {
-    return this.tasksStore.remove();
-  }
-  getFilesCount(): any {
-    return Kinvey.Files.count();
-  }
-  getPendingCount(): Promise<{ count: number }> {
-    return this.accountsStore.pendingSyncCount();
-  }
-  getCount(): Observable<any> {
-    return this.accountsStore.count();
-  }
-
   private myDataStore = Kinvey.DataStore.collection(
     Config.productsCollectionName
   );
@@ -36,6 +23,19 @@ export class DataService {
   public isLoggedIn: BehaviorSubject<boolean>;
   private user: BehaviorSubject<Kinvey.User>;
   public username: Observable<string>;
+
+  deleteItem(): any {
+    return this.tasksStore.remove();
+  }
+  getFilesCount(): any {
+    return Kinvey.Files.count();
+  }
+  getPendingCount(): Promise<{ count: number }> {
+    return this.accountsStore.pendingSyncCount();
+  }
+  getCount(): Observable<any> {
+    return this.accountsStore.count();
+  }
 
   constructor() {
     Kinvey.init({
@@ -65,13 +65,15 @@ export class DataService {
     return this.tasksStore.find();
   }
   async pullAccountData() {
-    let num = await this.offlineAccountsStore.pendingSyncCount();
+    const num = await this.offlineAccountsStore.pendingSyncCount();
     console.log(num);
     if (<any>num === 0) {
-      //THIS IS A BUG IN THE d.ts
+      // THIS IS A BUG IN THE d.ts
       console.log('pulling');
       return this.offlineAccountsStore.pull();
-    } else Promise.resolve();
+    } else {
+      Promise.resolve();
+    }
   }
   getSyncAccounts(): any {
     return this.offlineAccountsStore.find();
@@ -101,7 +103,7 @@ export class DataService {
   }
 
   getFiles() {
-    var q = new Kinvey.Query();
+    const q = new Kinvey.Query();
     q.equalTo('mimeType', 'application/pdf');
     return Kinvey.Files.find(q);
   }
@@ -135,7 +137,7 @@ export class DataService {
       return Kinvey.User.loginWithMIC('http://localhost:4200').then(user => {
         console.log('we back');
         this.isLoggedIn.next(true);
-        //console.log(user);
+        // console.log(user);
         this.user.next(user);
         return Promise.resolve(user);
       });
