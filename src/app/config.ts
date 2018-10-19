@@ -13,7 +13,7 @@ export class Config {
   static arPageTitle: string = 'Augment Reality';
   static offlinePageTitle: string = 'Offline';
   static chatPageTitle: string = 'Chat';
-  static appKey: any = 'kid_B1ik-nH-z';
-  static appSecret: any = 'b418aa4a7bf34294a56751fa19a9da10';
+  static appKey: any = 'kid_ByGrJ7fjX';
+  static appSecret: any = '449eea31120b4a9da99b31855db1991d';
   static accountsPageTitle: string = 'Accounts';
 }
