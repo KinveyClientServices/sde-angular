@@ -1,11 +1,11 @@
-import { Injectable } from "@angular/core";
-import { Kinvey } from "./utils";
-import { BehaviorSubject, Observable } from "rxjs";
-import { map } from "rxjs/operators";
-import { Config } from "./config";
+import { Injectable } from '@angular/core';
+import { Kinvey } from './utils';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Config } from './config';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class DataService {
   deleteItem(): any {
@@ -55,7 +55,7 @@ export class DataService {
             return kinveyUser.username;
           }
         } else {
-          return "";
+          return '';
         }
       })
     );
@@ -69,7 +69,7 @@ export class DataService {
     console.log(num);
     if (<any>num === 0) {
       //THIS IS A BUG IN THE d.ts
-      console.log("pulling");
+      console.log('pulling');
       return this.offlineAccountsStore.pull();
     } else Promise.resolve();
   }
@@ -102,7 +102,7 @@ export class DataService {
 
   getFiles() {
     var q = new Kinvey.Query();
-    q.equalTo("mimeType", "application/pdf");
+    q.equalTo('mimeType', 'application/pdf');
     return Kinvey.Files.find(q);
   }
 
@@ -111,17 +111,18 @@ export class DataService {
   }
 
   login(name, password): Promise<Kinvey.User> {
-    console.log("loggin in");
+    console.log('loggin in');
     if (Kinvey.User.getActiveUser()) {
-      console.log("already logged in");
+      console.log('already logged in');
       return Promise.resolve(Kinvey.User.getActiveUser());
     } else {
-      console.log("not yet");
+      console.log('not yet');
       return Kinvey.User.login(name, password).then(user => {
-        console.log("we back");
+        console.log('we back');
         this.isLoggedIn.next(true);
-        //console.log(user);
+        console.log(user);
         this.user.next(user);
+        console.log('not yet now');
         return Promise.resolve(user);
       });
     }
@@ -131,8 +132,8 @@ export class DataService {
     if (Kinvey.User.getActiveUser()) {
       return Promise.resolve(Kinvey.User.getActiveUser());
     } else {
-      return Kinvey.User.loginWithMIC("http://localhost:4200").then(user => {
-        console.log("we back");
+      return Kinvey.User.loginWithMIC('http://localhost:4200').then(user => {
+        console.log('we back');
         this.isLoggedIn.next(true);
         //console.log(user);
         this.user.next(user);
