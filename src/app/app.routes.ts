@@ -16,6 +16,7 @@ import { FileDetailsComponent } from "./files/file-details/file-details.componen
 import { LayoutComponent } from "./layout/layout.component";
 import { AccountsComponent } from "./accounts/accounts.component";
 import { AccountDetailsComponent } from "./accounts/account-details/account-details.component";
+import { DonateComponent } from "./accounts/account-details/donate/donate.component";
 
 export const routes: Routes = [
   {
@@ -28,6 +29,7 @@ export const routes: Routes = [
       { path: "products", component: ProductsComponent },
       { path: "accounts", component: AccountsComponent },
       { path: "account-details/:id", component: AccountDetailsComponent },
+      { path: "donate/:id", component: DonateComponent },
       { path: "files", component: FilesComponent },
       { path: "files/details", component: FileDetailsComponent },
       { path: "settings", component: SettingsComponent },
@@ -39,5 +41,9 @@ export const routes: Routes = [
       { path: "ar", component: ArComponent }
     ]
   },
-  { path: "login", component: LoginComponent, canActivate: [AnonGuard] }
+  {
+    path: "login",
+    component: LoginComponent,
+    canActivate: [AnonGuard]
+  }
 ]; //{ path: "", redirectTo: "products", pathMatch: "full" },

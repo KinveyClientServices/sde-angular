@@ -8,6 +8,41 @@ import { Config } from "./config";
   providedIn: "root"
 })
 export class DataService {
+  getFollowers(): any {
+    var q = new Kinvey.Query();
+    q.equalTo("UserId", Kinvey.User.getActiveUser().username);
+    return this.followersStore.find(q);
+  }
+  donate(hospitalId: any, amount: any): any {
+    return this.donationsStore.save({
+      HospitalId: hospitalId,
+      Amount: amount
+    });
+  }
+  toggleFollow(item: any, newValue): any {
+    if (newValue) {
+      console.log("deletdding");
+      var q = new Kinvey.Query();
+      q.equalTo("HospitalId", item._id);
+      return this.followersStore.remove(q);
+    } else {
+      console.log("creating");
+      return this.followersStore.save({ HospitalId: item._id });
+    }
+  }
+  getPosts(id?: any): any {
+    if (id) {
+      var q = new Kinvey.Query();
+      q.equalTo("HospitalId", id);
+      return this.postsStore.find(q);
+    } else {
+      return this.postsStore.find();
+    }
+  }
+  getMyFeed(): Promise<any> {
+    return Kinvey.CustomEndpoint.execute("myfeed");
+  }
+
   deleteItem(): any {
     return this.tasksStore.remove();
   }
@@ -32,6 +67,10 @@ export class DataService {
   private accountsStore = Kinvey.DataStore.collection(
     Config.accountsCollectionName
   );
+  private postsStore = Kinvey.DataStore.collection("posts");
+  private donationsStore = Kinvey.DataStore.collection("donations");
+  private followersStore = Kinvey.DataStore.collection("followers");
+
   public selectedFile: any;
   public isLoggedIn: BehaviorSubject<boolean>;
   private user: BehaviorSubject<Kinvey.User>;
@@ -131,7 +170,10 @@ export class DataService {
     if (Kinvey.User.getActiveUser()) {
       return Promise.resolve(Kinvey.User.getActiveUser());
     } else {
-      return Kinvey.User.loginWithMIC("http://localhost:4200").then(user => {
+      return Kinvey.User.loginWithMIC(
+        "http://localhost:8100",
+        Kinvey.AuthorizationGrant.AuthorizationCodeLoginPage
+      ).then(user => {
         console.log("we back");
         this.isLoggedIn.next(true);
         //console.log(user);

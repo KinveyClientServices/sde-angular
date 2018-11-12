@@ -19,6 +19,7 @@ import { LayoutComponent } from "./layout/layout.component";
 import { ArComponent } from "./ar/ar.component";
 import { AccountsComponent } from './accounts/accounts.component';
 import { AccountDetailsComponent } from './accounts/account-details/account-details.component';
+import { DonateComponent } from './accounts/account-details/donate/donate.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { AccountDetailsComponent } from './accounts/account-details/account-deta
     LayoutComponent,
     ArComponent,
     AccountsComponent,
-    AccountDetailsComponent
+    AccountDetailsComponent,
+    DonateComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

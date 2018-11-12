@@ -13,8 +13,27 @@
     </ActionItem>
     <Label class="action-bar-title" [text]="title"></Label>
 </ActionBar>
-
 <StackLayout class="page page-content">
-    <Image [src]="logo" id="logo" width="75%" margin="20 0 0 0"></Image>
-    <Label margin="20" horizontalAlignment="center" textWrap="true" class="Tagline" [text]="heading"></Label>
+    <ScrollView>
+        <StackLayout>
+            <GridLayout *ngFor="let post of posts" columns="auto,*" rows="*" class="m-10">
+                <Image [nsRouterLink]="['/account-details', post.HospitalId]" row="0" col="0" [src]="post.hospitalPicture"
+                    class="image" verticalAlignment="top"></Image>
+                <StackLayout col="1" verticalAlignment="top" class="m-l-5">
+                    <Label [text]="post.hospitalName" class="hospitalName" fontSize="12">
+                    </Label>
+                    <Label class="itemDetailText m-y-5 m-r-30" textWrap="true" [text]="post.Body"></Label>
+
+                    <StackLayout class="m-b-10" orientation="horizontal">
+                        <Label text="&#xf112;" class="icon tweetActionButton"></Label>
+                        <Label text="&#xf079;" class="icon tweetActionButton"></Label>
+                        <Label text="&#xf004;" class="icon tweetActionButton"></Label>
+                        <Label text="&#xf0e0;" class="icon tweetActionButton"></Label>
+                    </StackLayout>
+
+                </StackLayout>
+                <StackLayout class="separator" row="0" col="0" colSpan="2" verticalAlignment="bottom"></StackLayout>
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
 </StackLayout>

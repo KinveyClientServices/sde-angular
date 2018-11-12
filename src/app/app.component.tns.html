@@ -12,7 +12,7 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
 
     <ScrollView row="1">
       <StackLayout class="sidedrawer-content">
-        <GridLayout columns="auto, *" class="sidedrawer-list-item" (tap)="onNavItemTap('/')" *ngIf="homePageVisible">
+        <GridLayout columns="auto, *" class="sidedrawer-list-item" (tap)="onNavItemTap('/home')" *ngIf="homePageVisible">
           <Label col="0" text="&#xf015;" class="fa"></Label>
           <Label col="1" [text]="homePageTitle" class="p-r-10"></Label>
         </GridLayout>

@@ -1,11 +1,11 @@
 <StackLayout class="page">
-    <Image class="logo" [src]="'~/app/'+logo"></Image>
+    <Image width="60%" class="logo" [src]="'~/app/'+logo"></Image>
     <Label class="h1" [text]="title"></Label>
     <GridLayout rows="auto, auto, auto">
         <GridLayout row="0" rows="*, *" columns="50, *" class="form-container">
             <Label row="0" rowSpan="2" col="0" class="ion" text="&#xf47d;"></Label>
             <Label row="0" col="1" class="upper-label" text="USER"></Label>
-            <TextField row="1" col="1" [(ngModel)]="username"></TextField>
+            <TextField keyboardType="email" autocapitalizationType="none" row="1" col="1" [(ngModel)]="username"></TextField>
         </GridLayout>
 
         <StackLayout row="1" class="hr"></StackLayout>

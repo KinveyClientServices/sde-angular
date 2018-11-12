@@ -1,14 +1,48 @@
 <ActionBar class="action-bar">
     <NavigationButton text="Back" android.systemIcon="ic_menu_back" (tap)="back()"></NavigationButton>
 
-    <Label class="action-bar-title" [text]="account.accountname"></Label>
+    <Label class="action-bar-title" text="Details"></Label>
 </ActionBar>
 
-<ListView class="list-group" [items]="account.invoice">
-    <ng-template let-item="item">
-        <GridLayout class="list-group-item" rows="auto, *" columns="*">
-            <Label row="0" [text]="item.Amount" class="list-group-item-heading"></Label>
-            <Label row="1" [text]="item.InvoiceNumber" class="list-group-item-text"></Label>
-        </GridLayout>
-    </ng-template>
-</ListView>
+<GridLayout rows="auto, auto, *">
+    <GridLayout class="m-10 list-group-item" rows="*" columns="*, auto" (tap)="goToDetails(item)">
+
+        <StackLayout row="0" class="m-b-10">
+            <Image [src]="item.ImageUrl" class="image m-b-10" stretch="aspectFit" horizontalAlignment="left">
+            </Image>
+            <Label row="0" [text]="item.Name" class="list-group-item-heading"></Label>
+            <Label textWrap="true" horizontalAlignment="left" width="60%" row="1" text="41 Montvale Ave #550 Stoneham MA 02180"
+                class="text-muted"></Label>
+        </StackLayout>
+        <StackLayout col="1">
+            <Button col="1" class="btn" [class.btn-primary]="!item.following" [class.btn-outline]="item.following"
+                (tap)="toggleFollow()" [text]="item.following ? 'Unfollow':'Follow'"></Button>
+            <Button (tap)="goToDonate()" col="1" class="btn btn-primary" text="Donate"></Button>
+        </StackLayout>
+    </GridLayout>
+    <StackLayout verticalAlignment="bottom" row="0" class="hr-light m-10"></StackLayout>
+
+    <Label row="1" class="h3 m-l-10" text="Posts"></Label>
+    <ScrollView class="m-t-10" row="2">
+        <StackLayout>
+            <GridLayout *ngFor="let post of posts" columns="auto,*" rows="*" style="margin:10 0 0 0">
+                <Image row="0" col="0" [src]="item.ImageUrl" class="image" stretch="aspectFit" verticalAlignment="top"></Image>
+                <StackLayout col="1" verticalAlignment="top">
+                    <Label backgrodundColor="red" [text]="item.Name" class="itemDetailText" fontSize="12">
+                    </Label>
+                    <Label backgrodundColor="green" verticalAlignment="top" style="font-size:10;margin-bottom:10;margin-right:10"
+                        textWrap="true" [text]="post.Body"></Label>
+
+                    <StackLayout class="m-b-10" orientation="horizontal">
+                        <Label text="&#xf112;" class="icon tweetActionButton"></Label>
+                        <Label text="&#xf079;" class="icon tweetActionButton"></Label>
+                        <Label text="&#xf004;" class="icon tweetActionButton"></Label>
+                        <Label text="&#xf0e0;" class="icon tweetActionButton"></Label>
+                    </StackLayout>
+
+                </StackLayout>
+                <StackLayout class="separator" row="0" col="0" colSpan="2" verticalAlignment="bottom"></StackLayout>
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
+</GridLayout>

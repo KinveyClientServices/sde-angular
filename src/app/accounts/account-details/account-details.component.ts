@@ -16,7 +16,8 @@ import { Router } from "../../utils/router";
 export class AccountDetailsComponent implements OnInit {
   sub: any;
   id: any;
-  account: any = { invoice: [] };
+  item: any = {};
+  posts: any = [{ Body: "test" }];
 
   constructor(
     private service: DataService,
@@ -28,18 +29,47 @@ export class AccountDetailsComponent implements OnInit {
     (<any>this.router).back();
   }
 
+  getData() {
+    this.service.getAccounts(this.id).subscribe(account => {
+      this.item = account;
+      this.cd.detectChanges();
+    });
+  }
+
   ngOnInit() {
-    console.log("init details");
+    console.log("init detaigls");
     this.sub = this.route.params.subscribe(params => {
       this.id = params["id"]; // (+) converts string 'id' to a number
-      console.log(this.id);
-      this.service.getAccounts(this.id).subscribe(account => {
-        console.log(account);
-        this.account = account;
+      this.getData();
+
+      this.service.getPosts(this.id).subscribe(posts => {
+        this.posts = posts;
+        //console.log(posts);
         this.cd.detectChanges();
       });
-
-      // In a real app: dispatch action to load the details here.
     });
+  }
+
+  async goToDonate() {
+    let x: any = await prompt("How much would you like to donate?");
+    if (x.result) {
+      console.log(x.text);
+      await this.service.donate(this.id, x.text);
+      alert("Thanks!!");
+    }
+  }
+
+  async toggleFollow() {
+    console.log("toggling");
+    try {
+      this.item.following = !this.item.following;
+      let response = await this.service.toggleFollow(
+        this.item,
+        !this.item.following
+      );
+      //this.getData();
+    } catch {
+      console.log("error");
+    }
   }
 }
