@@ -8,13 +8,16 @@ import { Config } from "./config";
   providedIn: "root"
 })
 export class DataService {
-
   getProfile(): Observable<any[]> {
     return this.profilesStore.find();
   }
 
   saveProfile(): Promise<any> {
-    return this.profilesStore.create({ userName: "Ignacio A Fuentes", userPic: "https://media.licdn.com/dms/image/C4E03AQHHcqvlwtquAg/profile-displayphoto-shrink_200_200/0?e=1548892800&v=beta&t=ykpVYTdaZNaUU3w-sW9i9VtpVc3BVxkz0DK51YFgt2c" });
+    return this.profilesStore.create({
+      userName: "Ignacio A Fuentes",
+      userPic:
+        "https://media.licdn.com/dms/image/C4E03AQHHcqvlwtquAg/profile-displayphoto-shrink_200_200/0?e=1548892800&v=beta&t=ykpVYTdaZNaUU3w-sW9i9VtpVc3BVxkz0DK51YFgt2c"
+    });
   }
   deleteItem(): any {
     return this.tasksStore.remove();
@@ -31,7 +34,8 @@ export class DataService {
     Config.productsCollectionName
   );
   private profilesStore = Kinvey.DataStore.collection(
-    "profiles", Kinvey.DataStoreType.Network
+    "profiles",
+    Kinvey.DataStoreType.Network
   );
   private tasksStore = Kinvey.DataStore.collection(Config.taskCollectionName);
 
@@ -44,10 +48,7 @@ export class DataService {
   public username: Observable<string>;
 
   constructor() {
-    Kinvey.init({
-      appKey: Config.appKey,
-      appSecret: Config.appSecret
-    });
+    Kinvey.init();
     this.isLoggedIn = new BehaviorSubject<boolean>(
       Kinvey.User.getActiveUser() != null
     );
@@ -98,8 +99,6 @@ export class DataService {
     return this.myDataStore.find();
   }
 
-
-
   login(name, password): Promise<Kinvey.User> {
     console.log("loggin in");
     if (Kinvey.User.getActiveUser()) {
@@ -121,8 +120,8 @@ export class DataService {
     if (Kinvey.User.getActiveUser()) {
       return Promise.resolve(Kinvey.User.getActiveUser());
     } else {
-      return Kinvey.User.loginWithMIC("http://localhost:8100").then(user => {
-        console.log("we back.");
+      return Kinvey.User.loginWithMIC().then(user => {
+        console.log("we back");
         this.isLoggedIn.next(true);
         //console.log(user);
         this.user.next(user);
