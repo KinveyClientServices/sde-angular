@@ -12,28 +12,28 @@ export class Config {
   static logo: string =
     "https://datatrans-inc.com/wp-content/uploads/2017/07/McKesson-Logo.png";
   static homePageVisible: boolean = true;
-  static homePageHeading: string = "We got your backend...";
+  static homePageHeading: string = "We got your backend....";
 
   //ACCOUNTS
   static accountsPageTitle: string = "Health Data";
-  static accountsCollectionName: string = "accounts";
+  static accountsCollectionName: string = "healthData";
   static accountsPageVisible: boolean = true;
 
   //PRODUCTS
   static productsPageTitle: string = "Hospitals";
-  static productsCollectionName = "products";
+  static productsCollectionName = "hospitals";
   static productsPageVisible: boolean = true;
   //FILES
   static filesPageTitle: string = "Files";
   static filesPageVisible: boolean = false;
 
   //TASKS
-  static tasksPageTitle: string = "Tasks";
-  static taskCollectionName: string = "tasks";
+  static tasksPageTitle: string = "Medications";
+  static taskCollectionName: string = "medications";
   static tasksPageVisible: boolean = false;
 
   //ADD TASKS
-  static addTaskPageTitle: string = "Add Task";
+  static addTaskPageTitle: string = "Add Medication";
 
   //OFFLINE
   static offlinePageTitle: string = "Offline";

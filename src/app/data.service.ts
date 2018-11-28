@@ -121,8 +121,8 @@ export class DataService {
     if (Kinvey.User.getActiveUser()) {
       return Promise.resolve(Kinvey.User.getActiveUser());
     } else {
-      return Kinvey.User.loginWithMIC("http://localhost:4200").then(user => {
-        console.log("we back");
+      return Kinvey.User.loginWithMIC("http://localhost:8100").then(user => {
+        console.log("we back.");
         this.isLoggedIn.next(true);
         //console.log(user);
         this.user.next(user);

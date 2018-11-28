@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { DrawerHelper } from "../utils/drawer-helper";
 import { Config } from "../config";
 import { DataService } from "../data.service";
+import { Router } from "../utils";
 
 @Component({
   selector: "Home",
@@ -15,7 +16,7 @@ export class HomeComponent implements OnInit {
   userPic: string;
   userName: string;
   profile: any;
-  constructor(private service: DataService) {
+  constructor(private service: DataService, private router: Router) {
     // Use the component constructor to inject providers.
   }
 
@@ -32,6 +33,9 @@ export class HomeComponent implements OnInit {
 
     this.heading = Config.homePageHeading;
     // Init your component properties here.
+  }
+  goToDetails() {
+    this.router.navigate(["tasks"]);
   }
 
   onDrawerButtonTap(): void {

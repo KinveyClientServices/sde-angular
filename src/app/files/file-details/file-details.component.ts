@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { DataService } from "../../data.service";
 import { Router } from "../../utils";
+import * as Calendar from "nativescript-calendar";
+
 
 @Component({
   selector: "app-file-details",
@@ -17,5 +19,6 @@ export class FileDetailsComponent implements OnInit {
     (<any>this.router).back();
   }
 
-  ngOnInit() {}
+
+  ngOnInit() { }
 }

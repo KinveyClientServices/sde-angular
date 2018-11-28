@@ -23,6 +23,7 @@ export class AccountsComponent implements OnInit {
     this.title = Config.accountsPageTitle;
     this.service.getAccounts().subscribe(data => {
       this.zone.run(() => {
+        console.log(data);
         this.items = data;
       });
     });

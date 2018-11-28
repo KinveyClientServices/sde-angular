@@ -16,10 +16,14 @@
 
 <ListView class="list-group" [items]="items">
     <ng-template let-item="item">
-        <GridLayout class="list-group-item" rows="*" columns="auto, *">
-            <Image row="0" col="0" [src]="item.img" class="thumb img-rounded"></Image>
-
-            <Label textWrap="true" row="0" col="1" [text]="item.title"></Label>
+        <GridLayout class="list-group-item" rows="auto, *" columns="*, auto">
+            <Label row="0" [text]="item.Name" class="list-group-item-heading"></Label>
+            <Label textWrap="true" horizontalAlignment="left" width="40%" row="1" text="41 Montvale Ave #550 Stoneham MA 02180"
+                class="list-group-item-text"></Label>
+            <StackLayout col="1">
+                <Label text="&#xf041;" class="fa center" style="color:#0080c2;font-size:30"></Label>
+                <Label row="0" text="4.3 mi" class="center list-group-item-text"></Label>
+            </StackLayout>
         </GridLayout>
     </ng-template>
 </ListView>

@@ -3,4 +3,4 @@
 
     <Label class="action-bar-title" [text]="item.prettyname"></Label>
 </ActionBar>
-<PDFView [src]="item._downloadURL"></PDFView>
+<Button (tap)="addToCalendar()" text="Set Reminder"></Button>
