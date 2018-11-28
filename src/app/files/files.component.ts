@@ -15,11 +15,12 @@ export class FilesComponent implements OnInit {
     private service: DataService,
     private router: Router,
     private zone: NgZone
-  ) {}
+  ) { }
 
   ngOnInit() {
-    this.service.getFiles().then(files => {
+    this.service.getFiles().subscribe(files => {
       this.zone.run(() => {
+        console.log(files);
         this.items = files;
       });
     });

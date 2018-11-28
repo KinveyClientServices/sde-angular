@@ -20,7 +20,7 @@ export class Config {
   static productsCollectionName = "hospitals";
   static productsPageVisible: boolean = true;
   //FILES
-  static filesPageTitle: string = "Files";
+  static filesPageTitle: string = "Messages";
   static filesPageVisible: boolean = false;
 
   //TASKS

@@ -14,9 +14,9 @@ export class DataService {
 
   saveProfile(): Promise<any> {
     return this.profilesStore.create({
-      userName: "Ignacio A Fuentes",
+      userName: "Ryan Reynolds",
       userPic:
-        "https://media.licdn.com/dms/image/C4E03AQHHcqvlwtquAg/profile-displayphoto-shrink_200_200/0?e=1548892800&v=beta&t=ykpVYTdaZNaUU3w-sW9i9VtpVc3BVxkz0DK51YFgt2c"
+        "https://media.licdn.com/dms/image/C5603AQHjEyDjsuPCmA/profile-displayphoto-shrink_800_800/0?e=1548892800&v=beta&t=dVSPq22SjW_N1aLUTmYYBeyg5bApKsHUS-PenISmnmg"
     });
   }
   deleteItem(): any {
@@ -38,6 +38,7 @@ export class DataService {
     Kinvey.DataStoreType.Network
   );
   private tasksStore = Kinvey.DataStore.collection(Config.taskCollectionName);
+  private messagesStore = Kinvey.DataStore.collection("messages", Kinvey.DataStoreType.Network);
 
   private accountsStore = Kinvey.DataStore.collection(
     Config.accountsCollectionName
@@ -89,10 +90,8 @@ export class DataService {
     return this.tasksStore.save(task);
   }
 
-  getFiles(): Promise<any[]> {
-    var q = new Kinvey.Query();
-    q.equalTo("mimeType", "application/pdf");
-    return Kinvey.Files.find(q);
+  getFiles(): Observable<any[]> {
+    return this.messagesStore.find();
   }
 
   getItems(): Observable<any> {
@@ -100,7 +99,7 @@ export class DataService {
   }
 
   login(name, password): Promise<Kinvey.User> {
-    console.log("loggin in");
+    console.log("loggin ins");
     if (Kinvey.User.getActiveUser()) {
       console.log("already logged in");
       return Promise.resolve(Kinvey.User.getActiveUser());

@@ -6,10 +6,10 @@
 
 <ListView class="list-group" [items]="items">
     <ng-template let-item="item">
-        <GridLayout class="list-group-item" rows="*" columns="auto, *" (tap)="goToDetails(item)">
-            <Label text="&#xf1c1;" class="icon" row="0" col="0" style="text-align: center; vertical-align: center; color: #fff; font-size: 20; background-color: #f1582c;"></Label>
-
-            <Label textWrap="true" row="0" col="1" [text]="item.prettyname"></Label>
+        <GridLayout class="list-group-item" rows="auto, *" columns="*, auto">
+            <Label row="0" [text]="item.body" style="font-weight:bold" class="list-group-item-heading"></Label>
+            <Label row="1" [text]="item.from" class="list-group-item-text"></Label>
+            <Label class="reportedValue" col="1" [text]="item.createdAt | date"></Label>
         </GridLayout>
     </ng-template>
 </ListView>

@@ -8,8 +8,8 @@
   "pluginsData": {
     "kinvey-nativescript-sdk": {
       "config": {
-        "appKey": "kid_ZJk02vOUFg",
-        "appSecret": "c1a32d5b3c474d0fa20a6f33fef396d5",
+        "appKey": "kid_H1HzvDTi7",
+        "appSecret": "14c79462dabf43e08d9478c613e76a29",
         "redirectUri": "sde://"
       }
     }

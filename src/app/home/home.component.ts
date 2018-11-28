@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
     this.service.getProfile().subscribe(data => {
       console.log(data.length);
       console.log("we are here");
+
       this.profile = data[0];
       this.userPic = this.profile.userPic;
       this.userName = this.profile.userName;
@@ -36,6 +37,9 @@ export class HomeComponent implements OnInit {
   }
   goToDetails() {
     this.router.navigate(["tasks"]);
+  }
+  goToMessages() {
+    this.router.navigate(["files"]);
   }
 
   onDrawerButtonTap(): void {
