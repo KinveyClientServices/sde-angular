@@ -8,7 +8,6 @@ import { ProductsComponent } from "./products/products.component";
 import { FilesComponent } from "./files/files.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { TasksComponent } from "./tasks/tasks.component";
-import { OfflineComponent } from "./offline/offline.component";
 import { MapComponent } from "./map/map.component";
 import { ChatComponent } from "./chat/chat.component";
 import { ArComponent } from "./ar/ar.component";
@@ -45,7 +44,6 @@ if (platform.isIOS) {
     FilesComponent,
     LoginComponent,
     MapComponent,
-    OfflineComponent,
     ProductsComponent,
     SettingsComponent,
     TasksComponent,
@@ -64,4 +62,4 @@ if (platform.isIOS) {
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })
-export class AppModule {}
+export class AppModule { }

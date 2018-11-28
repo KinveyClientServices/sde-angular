@@ -9,8 +9,8 @@ import { Config } from "../config";
   styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit {
-  username = "ignacio";
-  password = "ignacio";
+  username = "admin";
+  password = "admin";
   processing: boolean;
   logo: string;
   title: string;

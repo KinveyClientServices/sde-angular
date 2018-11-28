@@ -6,7 +6,6 @@ import { ProductsComponent } from "./products/products.component";
 import { FilesComponent } from "./files/files.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { TasksComponent } from "./tasks/tasks.component";
-import { OfflineComponent } from "./offline/offline.component";
 import { MapComponent } from "./map/map.component";
 import { ChatComponent } from "./chat/chat.component";
 import { ArComponent } from "./ar/ar.component";
@@ -33,7 +32,6 @@ export const routes: Routes = [
       { path: "settings", component: SettingsComponent },
       { path: "tasks", component: TasksComponent },
       { path: "tasks/add-task", component: AddTaskComponent },
-      { path: "offline", component: OfflineComponent },
       { path: "map", component: MapComponent },
       { path: "chat", component: ChatComponent },
       { path: "ar", component: ArComponent }

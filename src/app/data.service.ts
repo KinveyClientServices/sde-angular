@@ -8,15 +8,21 @@ import { Config } from "./config";
   providedIn: "root"
 })
 export class DataService {
+
+  getProfile(): Observable<any[]> {
+    return this.profilesStore.find();
+  }
+
+  saveProfile(): Promise<any> {
+    return this.profilesStore.create({ userName: "Ignacio A Fuentes", userPic: "https://media.licdn.com/dms/image/C4E03AQHHcqvlwtquAg/profile-displayphoto-shrink_200_200/0?e=1548892800&v=beta&t=ykpVYTdaZNaUU3w-sW9i9VtpVc3BVxkz0DK51YFgt2c" });
+  }
   deleteItem(): any {
     return this.tasksStore.remove();
   }
   getFilesCount(): any {
     return Kinvey.Files.count();
   }
-  getPendingCount(): Promise<{ count: number }> {
-    return this.accountsStore.pendingSyncCount();
-  }
+
   getCount(): Observable<any> {
     return this.accountsStore.count();
   }
@@ -24,11 +30,11 @@ export class DataService {
   private myDataStore = Kinvey.DataStore.collection(
     Config.productsCollectionName
   );
-  private tasksStore = Kinvey.DataStore.collection(Config.taskCollectionName);
-  private offlineAccountsStore = Kinvey.DataStore.collection(
-    Config.offlineAccountsCollectionName,
-    Kinvey.DataStoreType.Sync
+  private profilesStore = Kinvey.DataStore.collection(
+    "profiles", Kinvey.DataStoreType.Network
   );
+  private tasksStore = Kinvey.DataStore.collection(Config.taskCollectionName);
+
   private accountsStore = Kinvey.DataStore.collection(
     Config.accountsCollectionName
   );
@@ -64,18 +70,7 @@ export class DataService {
   getTasks(): Observable<any[]> {
     return this.tasksStore.find();
   }
-  async pullAccountData() {
-    let num = await this.offlineAccountsStore.pendingSyncCount();
-    console.log(num);
-    if (<any>num === 0) {
-      //THIS IS A BUG IN THE d.ts
-      console.log("pulling");
-      return this.offlineAccountsStore.pull();
-    } else Promise.resolve();
-  }
-  getSyncAccounts(): Observable<any[]> {
-    return this.offlineAccountsStore.find();
-  }
+
   getAccounts(id?: string): Observable<any> {
     if (id) {
       return this.accountsStore.findById(id);
@@ -83,14 +78,7 @@ export class DataService {
       return this.accountsStore.find();
     }
   }
-  addSyncAccounts(accounts): any {
-    return Promise.all(
-      accounts.map(item => this.offlineAccountsStore.save(item))
-    );
-  }
-  pushSyncAccountData(): any {
-    return this.offlineAccountsStore.sync();
-  }
+
   toggleTaskStatus(task): any {
     task.completed = !task.completed;
     return this.tasksStore.save(task);
@@ -109,6 +97,8 @@ export class DataService {
   getItems(): Observable<any> {
     return this.myDataStore.find();
   }
+
+
 
   login(name, password): Promise<Kinvey.User> {
     console.log("loggin in");

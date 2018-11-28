@@ -8,7 +8,6 @@ import { ChatComponent } from "./chat/chat.component";
 import { FilesComponent } from "./files/files.component";
 import { LoginComponent } from "./login/login.component";
 import { MapComponent } from "./map/map.component";
-import { OfflineComponent } from "./offline/offline.component";
 import { ProductsComponent } from "./products/products.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { TasksComponent } from "./tasks/tasks.component";
@@ -28,7 +27,6 @@ import { AccountDetailsComponent } from './accounts/account-details/account-deta
     FilesComponent,
     LoginComponent,
     MapComponent,
-    OfflineComponent,
     ProductsComponent,
     SettingsComponent,
     TasksComponent,
@@ -43,4 +41,4 @@ import { AccountDetailsComponent } from './accounts/account-details/account-deta
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

@@ -15,6 +15,38 @@
 </ActionBar>
 
 <StackLayout class="page page-content">
-    <Image [src]="logo" id="logo" width="75%" margin="20 0 0 0"></Image>
-    <Label margin="20" horizontalAlignment="center" textWrap="true" class="Tagline" [text]="heading"></Label>
+    <GridLayout verticalAlignment="top">
+        <Image [src]="logo" id="logo" margin="0 0 0 0"></Image>
+        <StackLayout style="margin:30">
+            <Image id="userPic" [src]="userPic"></Image>
+            <Label verticalAlignment="bottom" horizontalAlignment="center" row="1" class="name" [text]="userName"></Label>
+        </StackLayout>
+
+    </GridLayout>
+
+    <GridLayout class="item" verticalAlignment="top" columns="50,*,40">
+        <Label verticalAlignment="top" class="fa left-icon med" text="&#xf004;"></Label>
+        <Label class="m-y-10 m-l-5" col="1" text="Medications"></Label>
+        <Label horizontalAlignment="right" col="2" class="fa icon m-r-2" text="&#xf054;"></Label>
+        <StackLayout verticalAlignment="bottom" col="1" colSpan="2" class="m-l-5 hr-light"></StackLayout>
+    </GridLayout>
+
+    <GridLayout class="item" verticalAlignment="top" columns="50,*,40">
+        <Label verticalAlignment="top" class="fa left-icon cond" text="&#xf067;"></Label>
+        <Label class="m-y-10 m-l-5" col="1" text="Medical Conditions"></Label>
+        <Label horizontalAlignment="right" col="2" class="fa icon m-r-2" text="&#xf054;"></Label>
+        <StackLayout verticalAlignment="bottom" col="1" colSpan="2" class="m-l-5 hr-light"></StackLayout>
+    </GridLayout>
+    <GridLayout class="item" verticalAlignment="top" columns="50,*,40">
+        <Label verticalAlignment="top" class="fa left-icon all" text="&#xf2dc;"></Label>
+        <Label class="m-y-10 m-l-5" col="1" text="Allergies"></Label>
+        <Label horizontalAlignment="right" col="2" class="fa icon m-r-2" text="&#xf054;"></Label>
+        <StackLayout verticalAlignment="bottom" col="1" colSpan="2" class="m-l-5 hr-light"></StackLayout>
+    </GridLayout>
+    <GridLayout class="item" verticalAlignment="top" columns="50,*,40">
+        <Label verticalAlignment="top" class="fa left-icon lab" text="&#xf0ca;"></Label>
+        <Label class="m-y-10 m-l-5" col="1" text="Lab Results"></Label>
+        <Label horizontalAlignment="right" col="2" class="fa icon m-r-2" text="&#xf054;"></Label>
+        <StackLayout verticalAlignment="bottom" col="1" colSpan="2" class="m-l-5 hr-light"></StackLayout>
+    </GridLayout>
 </StackLayout>

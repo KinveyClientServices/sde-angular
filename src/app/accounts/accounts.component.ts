@@ -16,11 +16,11 @@ export class AccountsComponent implements OnInit {
     private service: DataService,
     private router: Router,
     private zone: NgZone
-  ) {}
+  ) { }
 
   async ngOnInit() {
+
     this.title = Config.accountsPageTitle;
-    await this.service.pullAccountData();
     this.service.getAccounts().subscribe(data => {
       this.zone.run(() => {
         this.items = data;
