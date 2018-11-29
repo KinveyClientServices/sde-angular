@@ -37,7 +37,7 @@ export class DataService {
     "profiles",
     Kinvey.DataStoreType.Network
   );
-  private tasksStore = Kinvey.DataStore.collection(Config.taskCollectionName);
+  private tasksStore = Kinvey.DataStore.collection(Config.taskCollectionName, Kinvey.DataStoreType.Cache);
   private messagesStore = Kinvey.DataStore.collection("messages", Kinvey.DataStoreType.Network);
 
   private accountsStore = Kinvey.DataStore.collection(
@@ -87,7 +87,7 @@ export class DataService {
   }
   saveTask(task): any {
     task.completed = false;
-    return this.tasksStore.save(task);
+    return this.tasksStore.create(task);
   }
 
   getFiles(): Observable<any[]> {

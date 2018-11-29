@@ -15,16 +15,12 @@ export class TasksComponent implements OnInit {
     private service: DataService,
     private router: Router,
     private zone: NgZone
-  ) {}
+  ) { }
 
   ngOnInit() {
     console.log("ON INIT TASKS");
     this.title = Config.tasksPageTitle;
-    this.service.getTasks().subscribe(data => {
-      this.zone.run(() => {
-        this.items = data;
-      });
-    });
+    this.items = this.service.getTasks();
   }
   onDrawerButtonTap(): void {
     DrawerHelper.show();

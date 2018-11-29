@@ -15,7 +15,7 @@
     <Label class="action-bar-title" [text]="title"></Label>
 </ActionBar>
 
-<ListView class="list-group" [items]="items">
+<ListView class="list-group" [items]="items |async">
     <ng-template let-item="item">
         <GridLayout class="list-group-item" rows="auto, *" columns="40, *">
             <Label (tap)="markDone(item)" row="0" col="0" class="fa" [text]="item.completed ? '&#xf00c;':'&#xf1ce;'"
