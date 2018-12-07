@@ -18,6 +18,12 @@ import { LayoutComponent } from "./layout/layout.component";
 import { ArComponent } from "./ar/ar.component";
 import { AccountsComponent } from './accounts/accounts.component';
 import { AccountDetailsComponent } from './accounts/account-details/account-details.component';
+import { ChartsModule } from '@progress/kendo-angular-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import 'hammerjs';
+
+
+
 
 @NgModule({
   declarations: [
@@ -37,7 +43,7 @@ import { AccountDetailsComponent } from './accounts/account-details/account-deta
     AccountsComponent,
     AccountDetailsComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ChartsModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
