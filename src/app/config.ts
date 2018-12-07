@@ -16,7 +16,7 @@ export class Config {
   //ACCOUNTS
   static accountsPageTitle: string = "Health Data";
   static accountsCollectionName: string = "healthData";
-  static accountsPageVisible: boolean = true;
+  static accountsPageVisible: boolean = false;
 
   //PRODUCTS
   static productsPageTitle: string = "Hospitals";

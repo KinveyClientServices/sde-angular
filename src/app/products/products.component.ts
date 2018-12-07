@@ -10,11 +10,14 @@ import { Config } from "../config";
   styleUrls: ["./products.component.scss"]
 })
 export class ProductsComponent implements OnInit {
-  items = [];
+  items;
   title: string;
-  constructor(private service: DataService, private cd: ChangeDetectorRef) { }
+  constructor(private service: DataService) { }
 
   ngOnInit() {
+    this.service.getItems().subscribe(data => {
+      this.items = data;
+    });
     this.title = Config.productsPageTitle;
   }
   onDrawerButtonTap(): void {
