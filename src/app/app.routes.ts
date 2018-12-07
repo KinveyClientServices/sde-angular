@@ -22,7 +22,7 @@ export const routes: Routes = [
     canActivate: [LoggedInGuard],
     component: LayoutComponent,
     children: [
-      { path: "", redirectTo: "accounts", pathMatch: "full" },
+      { path: "", redirectTo: "home", pathMatch: "full" },
       { path: "home", component: HomeComponent },
       { path: "products", component: ProductsComponent },
       { path: "accounts", component: AccountsComponent },
