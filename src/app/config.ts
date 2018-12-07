@@ -1,4 +1,7 @@
 export class Config {
+
+  static appKey = "kid_H1HzvDTi7";
+  static appSecret = "14c79462dabf43e08d9478c613e76a29";
   //LOGIN
   static appLogo: string = "images/logo-4.png";
   static appTitle: string = "";

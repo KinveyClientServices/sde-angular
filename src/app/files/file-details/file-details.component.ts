@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { DataService } from "../../data.service";
 import { Router } from "../../utils";
-import * as Calendar from "nativescript-calendar";
+//import * as Calendar from "nativescript-calendar";
 
 
 @Component({

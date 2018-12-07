@@ -3,7 +3,7 @@ import { DataService } from "../../data.service";
 
 import { Router } from "../../utils";
 import { Config } from "../../config";
-import * as Calendar from "nativescript-calendar";
+//import * as Calendar from "nativescript-calendar";
 
 
 @Component({
@@ -49,16 +49,6 @@ export class AddTaskComponent implements OnInit {
       endDate: end
     };
 
-
-
-    Calendar.createEvent(options).then(
-      function (createdId) {
-        console.log("Created Event with ID: " + createdId);
-      },
-      function (error) {
-        console.log("Error creating an Event: " + error);
-      }
-    );
   }
   back() {
     (<any>this.router).back();

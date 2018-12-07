@@ -49,7 +49,10 @@ export class DataService {
   public username: Observable<string>;
 
   constructor() {
-    Kinvey.init();
+    Kinvey.init({
+      appKey: Config.appKey,
+      appSecret: Config.appSecret
+    });
     this.isLoggedIn = new BehaviorSubject<boolean>(
       Kinvey.User.getActiveUser() != null
     );
