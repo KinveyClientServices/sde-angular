@@ -21,7 +21,7 @@ export class AccountsComponent implements OnInit {
   }, {
     name: "Germany",
     data: [0.010, -0.375, 1.161, 0.684, 3.7, 3.269, 1.083, -5.127, 3.690, 2.995]
-  },{
+  }, {
     name: "World",
     data: [1.988, 2.733, 3.994, 3.464, 4.001, 3.939, 1.333, -2.245, 4.339, 2.727]
   }];
@@ -29,18 +29,11 @@ export class AccountsComponent implements OnInit {
   constructor(
     private service: DataService,
     private router: Router,
-    private zone: NgZone
   ) { }
 
   async ngOnInit() {
 
     this.title = Config.accountsPageTitle;
-    this.service.getAccounts().subscribe(data => {
-      this.zone.run(() => {
-        console.log(data);
-        this.items = data;
-      });
-    });
   }
   onDrawerButtonTap(): void {
     DrawerHelper.show();
