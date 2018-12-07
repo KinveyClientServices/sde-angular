@@ -19,7 +19,7 @@ import { AccountDetailsComponent } from "./accounts/account-details/account-deta
 export const routes: Routes = [
   {
     path: "",
-    canActivate: [LoggedInGuard],
+    //canActivate: [LoggedInGuard],
     component: LayoutComponent,
     children: [
       { path: "", redirectTo: "accounts", pathMatch: "full" },
@@ -37,5 +37,5 @@ export const routes: Routes = [
       { path: "ar", component: ArComponent }
     ]
   },
-  { path: "login", component: LoginComponent, canActivate: [AnonGuard] }
+  { path: "login", component: LoginComponent }
 ]; //{ path: "", redirectTo: "products", pathMatch: "full" },

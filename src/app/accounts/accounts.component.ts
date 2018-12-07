@@ -31,7 +31,7 @@ export class AccountsComponent implements OnInit {
     private router: Router,
   ) { }
 
-  async ngOnInit() {
+  ngOnInit() {
 
     this.title = Config.accountsPageTitle;
   }

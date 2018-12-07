@@ -21,14 +21,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.service.getProfile().subscribe(data => {
-      console.log(data.length);
-      console.log("we are here");
-
-      this.profile = data[0];
-      this.userPic = this.profile.userPic;
-      this.userName = this.profile.userName;
-    })
     this.logo = "https://www.desktopbackground.org/p/2012/07/19/423367_anime-scenery-wallpapers-tumblr-hd-cool-7-hd-wallpapers_1366x768_h.jpg"
     this.title = "Profile";
 
