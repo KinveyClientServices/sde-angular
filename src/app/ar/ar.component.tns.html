@@ -12,6 +12,7 @@
     <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
     </ActionItem>
     <Label class="action-bar-title" text="AR"></Label>
+
 </ActionBar>
 
 <AR debugLevel="FEATURE_POINTS" detectPlanes="true" showStatistics="true" [planeMaterial]="planeMaterial" (planeTapped)="planeTapped($event)">

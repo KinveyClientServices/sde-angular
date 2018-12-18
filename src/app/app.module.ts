@@ -18,6 +18,7 @@ import { LayoutComponent } from "./layout/layout.component";
 import { ArComponent } from "./ar/ar.component";
 import { AccountsComponent } from './accounts/accounts.component';
 import { AccountDetailsComponent } from './accounts/account-details/account-details.component';
+import { SettingsComponent } from "./settings/settings.component";
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AccountDetailsComponent } from './accounts/account-details/account-deta
     FileDetailsComponent,
     LayoutComponent,
     ArComponent,
+    SettingsComponent,
     AccountsComponent,
     AccountDetailsComponent
   ],

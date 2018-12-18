@@ -28,11 +28,6 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 // import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
 import { NativeChatModule } from "@progress-nativechat/nativescript-nativechat/angular";
 
-import * as platform from "platform";
-declare var GMSServices: any;
-if (platform.isIOS) {
-  GMSServices.provideAPIKey("AIzaSyCSln6LZF0vbnI23oGPpoQsYLbETImR3QQ");
-}
 
 @NgModule({
   declarations: [
@@ -51,6 +46,7 @@ if (platform.isIOS) {
     TasksComponent,
     AddTaskComponent,
     FileDetailsComponent,
+    SettingsComponent,
     LayoutComponent
   ],
   imports: [
@@ -64,4 +60,4 @@ if (platform.isIOS) {
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })
-export class AppModule {}
+export class AppModule { }

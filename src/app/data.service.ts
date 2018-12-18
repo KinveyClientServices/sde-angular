@@ -41,7 +41,7 @@ export class DataService {
   getPendingCount(): any {
     return this.accountsStore.pendingSyncCount();
   }
-  getCount(): Observable<any> {
+  getCount(): any {
     return this.accountsStore.count();
   }
 
@@ -61,7 +61,7 @@ export class DataService {
   private user: BehaviorSubject<Kinvey.User>;
   public username: Observable<string>;
 
-  getTasks(): Observable<any[]> {
+  getTasks() {
     return this.tasksStore.find();
   }
   async pullAccountData() {
@@ -73,10 +73,10 @@ export class DataService {
       return this.offlineAccountsStore.pull();
     } else Promise.resolve();
   }
-  getSyncAccounts(): Observable<any[]> {
+  getSyncAccounts() {
     return this.offlineAccountsStore.find();
   }
-  getAccounts(id?: string): Observable<any> {
+  getAccounts(id?: string): any {
     if (id) {
       return this.accountsStore.findById(id);
     } else {
@@ -106,7 +106,7 @@ export class DataService {
     return Kinvey.Files.find(q);
   }
 
-  getItems(): Observable<any> {
+  getItems(): any {
     return this.myDataStore.find();
   }
 
