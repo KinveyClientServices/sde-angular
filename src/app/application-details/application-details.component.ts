@@ -17,7 +17,6 @@ export class ApplicationDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log("init details");
     this.route.params.subscribe(params => {
       this.id = params["id"]; // (+) converts string 'id' to a number
       console.log(this.id);
@@ -28,7 +27,6 @@ export class ApplicationDetailsComponent implements OnInit {
         });
       });
 
-      // In a real app: dispatch action to load the details here.
     });
   }
   async changeStatus(status: "Approved" | "Rejected") {

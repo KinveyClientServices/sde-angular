@@ -1,10 +1,6 @@
-@import "../../app-variables";
-
-$text-color: $login-page-text-color;
-
 .page {
-  background-color: $login-page-background;
-  color: $text-color;
+  background-color: #2e73be;
+  color: white;
 }
 .logo {
   margin-top: 20;
@@ -12,7 +8,7 @@ $text-color: $login-page-text-color;
   horizontal-align: center;
 }
 .h1 {
-  color: $text-color;
+  color: white;
   font-size: 28;
   text-align: center;
   margin-top: 20;
@@ -55,7 +51,7 @@ TextField {
 .login {
   horizontal-align: center;
   color: #ffffff;
-  background-color: $login-button-background-color;
+  background-color: #ff9500;
   font-size: 14;
   border-radius: 30;
   padding: 15 0;

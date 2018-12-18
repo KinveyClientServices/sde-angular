@@ -12,8 +12,8 @@ import { RouterExtensions } from "nativescript-angular/router";
   styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit {
-  username = "ignacio";
-  password = "ignacio";
+  username = "admin";
+  password = "admin";
   processing: boolean;
   logo: string;
   title: string;
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     try {
       this.processing = true;
       await this.dataService.login(this.username, this.password);
-      console.log("LOG IN SUCsCESSFUL");
+      console.log("LOG IN SUsCsCESSFUL");
       this.router.navigate(["home"], { clearHistory: true });
     } catch {
       alert("Invalid credentials");

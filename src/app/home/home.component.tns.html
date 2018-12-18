@@ -13,8 +13,17 @@
     </ActionItem>
     <Label class="action-bar-title" [text]="title"></Label>
 </ActionBar>
-
-<StackLayout class="page page-content">
-    <Image [src]="logo" id="logo" width="75%" margin="20 0 0 0"></Image>
-    <Label margin="20" horizontalAlignment="center" textWrap="true" class="Tagline" [text]="heading"></Label>
-</StackLayout>
+<ListView row="1" [items]="applications" class="list-group" [class.visible]="listLoaded">
+    <ng-template let-order="item">
+        <StackLayout>
+            <GridLayout [nsRouterLink]="['/details', order._id]" class="item-container" rows="auto, auto" columns="auto, *, 110">
+                <Image col="0" rowSpan="2" class="list-image" [src]="order.photo"></Image>
+                <Label col="
+                    1" row="0" class="list-order" [text]="order._id"></Label>
+                <Label col="1" row="1" class="list-location" [text]="order.name"></Label>
+                <Label col="2" row="0" rowSpan="2" class="list-status bold" [color]="getStatusColor(order.status)"
+                    [text]="order.status" textTransform="uppercase"></Label>
+            </GridLayout>
+        </StackLayout>
+    </ng-template>
+</ListView>

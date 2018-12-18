@@ -1,1 +1,31 @@
-<Button text="application-details works!" class="btn btn-primary"></Button>
+<ActionBar class="action-bar">
+    <NavigationButton text="Back" android.systemIcon="ic_menu_back" (tap)="back()"></NavigationButton>
+
+    <Label class="action-bar-title" [text]="mortgageApplication.name" *ngIf="mortgageApplication"></Label>
+    <ActionItem (tap)="onOpenDrawerTap()" ios.position="right" text="Edit" android.position="right"></ActionItem>
+</ActionBar>
+<RadSideDrawer drawerLocation="Bottom">
+    <StackLayout tkDrawerContent class="drawer" verticalAlignment="top">
+        <Label class="my-label" text="Edit Application Status" horizontalAlignment="center"></Label>
+        <Button (tap)="changeStatus('Approved')" class="approve-button" text="Approve"></Button>
+        <Button (tap)="changeStatus('Rejected')" class="reject-button" text="Reject"></Button>
+    </StackLayout>
+    <GridLayout class="page" tkMainContent rows="auto, auto">
+        <StackLayout row="0" class="image-container" *ngIf="mortgageApplication">
+            <Image [src]="mortgageApplication.photo" class="img"></Image>
+        </StackLayout>
+        <StackLayout class="m-y-30 m-x-10 center" horizontalAlignment="center" row="1" *ngIf="mortgageApplication">
+            <Label textWrap="true" [text]="'ID: '+mortgageApplication._id"></Label>
+            <StackLayout class="hr-light"></StackLayout>
+
+            <Label textWrap="true" [text]="'DUE DATE: '+(mortgageApplication.dueDate | date)"></Label>
+            <StackLayout class="hr-light"></StackLayout>
+
+            <Label textWrap="true" [text]="'Amount: '+(mortgageApplication.total | currency)"></Label>
+            <StackLayout class="hr-light"></StackLayout>
+
+            <Label textWrap="true" [class.success]="mortgageApplication.status==='Approved'" [class.error]="mortgageApplication.status==='Rejected'"
+                [text]="mortgageApplication.status" [class.warning]="mortgageApplication.status==='Pending'"></Label>
+        </StackLayout>
+    </GridLayout>
+</RadSideDrawer>
