@@ -1,6 +1,7 @@
 import { Component, OnInit, NgZone } from "@angular/core";
 import { DataService } from "../data.service";
 import { DrawerHelper } from "../utils/drawer-helper";
+import { Config } from "../config";
 
 @Component({
   selector: "app-home",
@@ -8,7 +9,7 @@ import { DrawerHelper } from "../utils/drawer-helper";
   styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
-  title = "Mortgage Applications";
+  title = Config.homePageTitle;
   applications: any;
   isLoading: boolean;
   listLoaded: boolean;
