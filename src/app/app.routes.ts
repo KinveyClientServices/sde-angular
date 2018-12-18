@@ -16,6 +16,7 @@ import { FileDetailsComponent } from "./files/file-details/file-details.componen
 import { LayoutComponent } from "./layout/layout.component";
 import { AccountsComponent } from "./accounts/accounts.component";
 import { AccountDetailsComponent } from "./accounts/account-details/account-details.component";
+import { ApplicationDetailsComponent } from "./application-details/application-details.component";
 
 export const routes: Routes = [
   {
@@ -27,6 +28,7 @@ export const routes: Routes = [
       { path: "home", component: HomeComponent },
       { path: "products", component: ProductsComponent },
       { path: "accounts", component: AccountsComponent },
+      { path: "details/:id", component: ApplicationDetailsComponent },
       { path: "account-details/:id", component: AccountDetailsComponent },
       { path: "files", component: FilesComponent },
       { path: "files/details", component: FileDetailsComponent },

@@ -1,6 +1,40 @@
 <div class="row">
-    <div class="col-sm-12 mt-4">
-        <img [src]="logo" id="logo" class="img-responsive" />
-        <h1 margin="20">{{heading}}</h1>
+    <div class="col-sm-12">
+        <h1 class="my-3">Mortgage Applications</h1>
+
+        <kendo-grid [kendoGridBinding]="applications" [pageSize]="10" [pageable]="true" [height]="450">
+            <kendo-grid-column field="_id" title="ID" width="24" media="(min-width: 450px)">
+                <ng-template kendoGridCellTemplate let-dataItem>
+                    <a [routerLink]="['/details', dataItem._id]">{{ dataItem._id }}</a>
+                </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column field="dueDate" title="DUE DATE" width="20" media="(min-width: 450px)">
+                <ng-template kendoGridCellTemplate let-dataItem>
+                    <span>{{ dataItem.dueDate | date }}</span>
+                </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column field="photo" title="PHOTO" width="12" [style]="{ 'text-align': 'center' }" media="(min-width: 450px)">
+                <ng-template kendoGridCellTemplate let-dataItem>
+                    <img [src]="dataItem.photo" class="grid-profile-pic" />
+                </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column field="name" title="NAME" width="30" media="(min-width: 450px)">
+            </kendo-grid-column>
+            <kendo-grid-column field="total" format="{0:c}" title="TOTAL AMOUNT OF MORTGAGE LOAN REQUIRED" width="40"
+                media="(min-width: 450px)">
+            </kendo-grid-column>
+            <kendo-grid-column field="status" title="STATUS" width="20" media="(min-width: 450px)">
+                <ng-template kendoGridCellTemplate let-dataItem>
+                    <span [className]="
+                dataItem.status === 'Approved'
+                  ? 'text-success'
+                  : dataItem.status === 'Pending'
+                  ? 'text-warning'
+                  : 'text-danger'
+              ">
+                        {{ dataItem.status }}</span>
+                </ng-template>
+            </kendo-grid-column>
+        </kendo-grid>
     </div>
 </div>

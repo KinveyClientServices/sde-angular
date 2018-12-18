@@ -13,12 +13,17 @@ import { ProductsComponent } from "./products/products.component";
 import { TasksComponent } from "./tasks/tasks.component";
 import { AddTaskComponent } from "./tasks/add-task/add-task.component";
 import { FileDetailsComponent } from "./files/file-details/file-details.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { LayoutComponent } from "./layout/layout.component";
 import { ArComponent } from "./ar/ar.component";
 import { AccountsComponent } from './accounts/accounts.component';
 import { AccountDetailsComponent } from './accounts/account-details/account-details.component';
 import { SettingsComponent } from "./settings/settings.component";
+import { GridModule } from '@progress/kendo-angular-grid';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ApplicationDetailsComponent } from './application-details/application-details.component';
+
+
 
 @NgModule({
   declarations: [
@@ -37,9 +42,10 @@ import { SettingsComponent } from "./settings/settings.component";
     ArComponent,
     SettingsComponent,
     AccountsComponent,
-    AccountDetailsComponent
+    AccountDetailsComponent,
+    ApplicationDetailsComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, GridModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,82 @@
+<div class="row my-3">
+  <div class="col-sm-11">
+    <span class="h2">Mortgage Applications</span><span class="h3"> / Detail</span>
+  </div>
+  <div class="col-sm-1">
+    <button routerLink="/home" type="button" class="close" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>
+
+<div class="row mt-5" *ngIf="mortgageApplication">
+  <div class="col-sm-4 text-center border-right">
+    <img [src]="mortgageApplication.photo" class="details-profile-pic" />
+    <h2>{{ mortgageApplication.name }}</h2>
+    <button (click)="changeStatus('Approved')" class="approve-button btn-lg mt-5">
+      Approve
+    </button>
+    <button (click)="changeStatus('Rejected')" class="reject-button btn-lg my-5">
+      Reject
+    </button>
+  </div>
+  <div class="col-sm-8">
+    <h5>Loan Information</h5>
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">{{ mortgageApplication._id }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">DUE DATE</th>
+          <td>{{ mortgageApplication.dueDate | date }}</td>
+        </tr>
+        <tr>
+          <th scope="row">TOTAL AMOUNT OF MORTGAGE LOAN REQUIRED</th>
+          <td>{{ mortgageApplication.total | currency }}</td>
+        </tr>
+        <tr>
+          <th scope="row">STATUS</th>
+          <td colspan="2" [class.text-success]="mortgageApplication.status == 'Approved'" [class.text-warning]="mortgageApplication.status == 'Pending'"
+            [class.text-danger]="mortgageApplication.status == 'Rejected'">
+            {{ mortgageApplication.status }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <h5>Property Information</h5>
+    <span class="text-secondary">14 Oak Park Drive Bedford, MA 01730</span>
+    <iframe width="100%" height="180" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBC92ke9tSB1Kl9cZMFhHQrQvVnC1XC2ng
+    &q=Space+Needle,Seattle+WA"
+      allowfullscreen>
+    </iframe>
+    <p class="text-secondary">
+      Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+      roots in a piece of classical Latin literature from 45 BC, making it over
+      2000 years old. Richard McClintock.
+    </p>
+    <h5>Property Information</h5>
+    <div class="row mt-2">
+      <div class="col-sm-2">
+        <i class="far fa-file-powerpoint icon"></i><br />
+        <span class="text-secondary small">slidedeck.pptx</span>
+      </div>
+      <div class="col-sm-2">
+        <i class="far fa-file-excel icon"></i><br />
+        <span class="text-secondary small">quote.xlss</span>
+      </div>
+      <div class="col-sm-2">
+        <i class="far fa-file icon"></i><br />
+        <span class="text-secondary small">notes.txt</span>
+      </div>
+      <div class="col-sm-2">
+        <i class="far fa-file-pdf icon"></i><br />
+        <span class="text-secondary small">receipt.pdf</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -27,6 +27,7 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 // Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
 // import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
 import { NativeChatModule } from "@progress-nativechat/nativescript-nativechat/angular";
+import { ApplicationDetailsComponent } from './application-details/application-details.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { NativeChatModule } from "@progress-nativechat/nativescript-nativechat/a
     AddTaskComponent,
     FileDetailsComponent,
     SettingsComponent,
-    LayoutComponent
+    LayoutComponent,
+    ApplicationDetailsComponent
   ],
   imports: [
     NativeScriptModule,

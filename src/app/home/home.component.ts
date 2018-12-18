@@ -1,27 +1,25 @@
-import { Component, OnInit } from "@angular/core";
-import { DrawerHelper } from "../utils/drawer-helper";
-import { Config } from "../config";
+import { Component, OnInit, NgZone } from "@angular/core";
+import { DataService } from "../data.service";
 
 @Component({
-  selector: "Home",
-  templateUrl: "./home.component.html"
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
-  logo: string;
-  title: string;
-  heading: string;
-  constructor() {
-    // Use the component constructor to inject providers.
-  }
+  title = "acme-manager";
+  applications: any;
+  constructor(private zone: NgZone, private service: DataService) { }
 
-  ngOnInit(): void {
-    this.logo = Config.logo;
-    this.title = Config.homePageTitle;
-    this.heading = Config.homePageHeading;
-    // Init your component properties here.
+  ngOnInit() {
+    console.log("loadData");
+    this.loadData();
   }
-
-  onDrawerButtonTap(): void {
-    DrawerHelper.show();
+  loadData() {
+    this.service.getApplications().subscribe(data => {
+      this.zone.run(() => {
+        this.applications = data;
+      });
+    });
   }
 }

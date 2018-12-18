@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://use.fontawesome.com/releases/v5.6.1/css/all.css");
+
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~ionicons/dist/css/ionicons.css";
 @import "app-variables";
@@ -8,11 +10,9 @@
   src: url("/assets/Nunito-Regular.ttf");
 }
 html {
-  height: 100%;
 }
 body {
   font-family: Nunito-Regular;
-  height: 100%;
 }
 .popup {
   opacity: 0.9;
@@ -20,53 +20,6 @@ body {
 
 .k-grid-content .k-button {
   margin: 0;
-}
-
-.my-form {
-  color: $login-page-text-color;
-  height: 100%;
-  background: $login-page-background;
-}
-.form-signin {
-  height: 100%;
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: 6em auto;
-}
-.form-signin .checkbox {
-  font-weight: 400;
-}
-.form-signin .form-control {
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
-  padding: 10px;
-  font-size: 16px;
-}
-.form-signin .form-control:focus {
-  border-color: #ff6358;
-  box-shadow: none;
-  z-index: 2;
-}
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-.my-button {
-  background-color: $login-button-background-color !important;
-  border-radius: 26px;
-  color: white;
-}
-.mic {
-  cursor: pointer;
-  color: $login-page-text-color;
 }
 
 .title {

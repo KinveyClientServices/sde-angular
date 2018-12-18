@@ -3,16 +3,29 @@ import { Kinvey } from "./utils";
 import { BehaviorSubject, Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { Config } from "./config";
+export interface MortgageApplication {
+  _id;
+  dueDate: Date;
+  photo;
+  name;
+  total;
+  status;
+}
 
 @Injectable({
   providedIn: "root"
 })
 export class DataService {
+  applicationsStore;
+
   constructor() {
     Kinvey.init({
       appKey: Config.appKey,
       appSecret: Config.appSecret
     });
+    this.applicationsStore = Kinvey.DataStore.collection<MortgageApplication>(
+      "applications"
+    );
     this.isLoggedIn = new BehaviorSubject<boolean>(
       Kinvey.User.getActiveUser() != null
     );
@@ -30,6 +43,17 @@ export class DataService {
         }
       })
     );
+  }
+  getApplications(): any {
+    var query = new Kinvey.Query();
+    query.descending("dueDate");
+    return this.applicationsStore.find(query);
+  }
+  getSingleApplication(id): any {
+    return this.applicationsStore.findById(id);
+  }
+  setApplicationStatus(mortgageApplication): any {
+    return this.applicationsStore.save(mortgageApplication);
   }
 
   deleteItem(): any {
