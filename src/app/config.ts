@@ -5,7 +5,7 @@ export class Config {
 
   //LOGIN
   static appLogo: string = "images/logo.png";
-  static appTitle: string = "ACME Mortgage";
+  static appTitle: string = "Forrester Demo";
 
   //HOME
   static homePageTitle: string = "Mortgage Applications";
@@ -17,7 +17,7 @@ export class Config {
   //ACCOUNTS
   static accountsPageTitle: string = "Accounts";
   static accountsCollectionName: string = "accounts";
-  static accountsPageVisible: boolean = false;
+  static accountsPageVisible: boolean = false; 
 
   //PRODUCTS
   static productsPageTitle: string = "Products";

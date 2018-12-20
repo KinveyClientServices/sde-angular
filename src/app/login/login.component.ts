@@ -2,6 +2,8 @@ import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { FormGroup, Validators, FormBuilder } from "@angular/forms";
 import { DataService } from "../data.service";
 import { Router } from "@angular/router";
+import { Config } from "../config";
+
 
 @Component({
   selector: "app-login",
@@ -27,8 +29,8 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.logo = "images/logo.png";
-    this.title = "ACME Mortgage";
+    this.logo = Config.appLogo;
+    this.title = Config.appTitle;
   }
   async login() {
     console.log("test");

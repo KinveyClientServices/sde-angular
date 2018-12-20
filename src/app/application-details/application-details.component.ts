@@ -32,6 +32,6 @@ export class ApplicationDetailsComponent implements OnInit {
   async changeStatus(status: "Approved" | "Rejected") {
     this.mortgageApplication.status = status;
     await this.service.setApplicationStatus(this.mortgageApplication);
-    console.log("saved");
+    alert("saved");
   }
 }

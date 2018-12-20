@@ -25,13 +25,7 @@
             </kendo-grid-column>
             <kendo-grid-column field="status" title="STATUS" width="20" media="(min-width: 450px)">
                 <ng-template kendoGridCellTemplate let-dataItem>
-                    <span [className]="
-                dataItem.status === 'Approved'
-                  ? 'text-success'
-                  : dataItem.status === 'Pending'
-                  ? 'text-warning'
-                  : 'text-danger'
-              ">
+                    <span [style.color]="getStatusColor(dataItem.status)">
                         {{ dataItem.status }}</span>
                 </ng-template>
             </kendo-grid-column>

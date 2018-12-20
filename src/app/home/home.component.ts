@@ -9,7 +9,7 @@ import { Config } from "../config";
   styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
-  title = Config.homePageTitle;
+  title = "Forrester Demo";
   applications: any;
   isLoading: boolean;
   listLoaded: boolean;
@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
 
   getStatusColor(status) {
     if (status == "Approved") {
-      return "#00880A";
+      return "#FFFF33";
     } else if (status == "Pending") {
       return "#DDAA00";
     } else {
