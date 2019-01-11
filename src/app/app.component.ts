@@ -9,62 +9,8 @@ import { Config } from "./config";
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"]
 })
-export class AppComponent implements OnInit {
-  gesturesEnabled;
-  user;
-  homePageTitle: string;
-  productsPageTitle: string;
-  tasksPageTitle: string;
-  offlinePageTitle: string;
-  mapPageTitle: string;
-  filesPageTitle: string;
-  arPageTitle: string;
-  chatPageTitle: string;
-  accountsPageTitle: string;
-  homePageVisible: boolean;
-  accountsPageVisible: boolean;
-  productsPageVisible: boolean;
-  tasksPageVisible: boolean;
-  filesPageVisible: boolean;
-  offlinePageVisible: boolean;
-  mapPageVisible: boolean;
-  chatPageVisible: boolean;
-  arPageVisible: boolean;
+export class AppComponent {
 
-  constructor(private service: DataService, private router: Router) {}
+  constructor(private service: DataService, private router: Router) { }
 
-  ngOnInit(): void {
-    this.user = this.service.username;
-    this.gesturesEnabled = this.service.isLoggedIn;
-
-    this.homePageTitle = Config.homePageTitle;
-    this.productsPageTitle = Config.productsPageTitle;
-    this.accountsPageTitle = Config.accountsPageTitle;
-    this.tasksPageTitle = Config.tasksPageTitle;
-    this.filesPageTitle = Config.filesPageTitle;
-    this.mapPageTitle = Config.mapPageTitle;
-    this.offlinePageTitle = Config.offlinePageTitle;
-    this.chatPageTitle = Config.chatPageTitle;
-    this.arPageTitle = Config.arPageTitle;
-
-    this.homePageVisible = Config.homePageVisible;
-    this.productsPageVisible = Config.productsPageVisible;
-    this.accountsPageVisible = Config.accountsPageVisible;
-    this.tasksPageVisible = Config.tasksPageVisible;
-    this.filesPageVisible = Config.filesPageVisible;
-    this.mapPageVisible = Config.mapPageVisible;
-    this.offlinePageVisible = Config.offlinePageVisible;
-    this.chatPageVisible = Config.chatPageVisible;
-    this.arPageVisible = Config.arPageVisible;
-  }
-
-  goToSettings() {
-    this.router.navigate(["settings"]);
-    DrawerHelper.hide();
-  }
-
-  onNavItemTap(navItemRoute: string): void {
-    this.router.navigate([navItemRoute]);
-    DrawerHelper.hide();
-  }
 }
