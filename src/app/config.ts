@@ -4,13 +4,13 @@ export class Config {
   static appSecret: string = "c1a32d5b3c474d0fa20a6f33fef396d5";
 
   //LOGIN
-  static appLogo: string = "images/logo-1.png";
-  static appTitle: string = "SDE Kinvey";
+  static appLogo: string = "images/logo.png";
+  static appTitle: string = "";
 
   //HOME
   static homePageTitle: string = "Home";
   static logo: string =
-    "https://devcenter.kinvey.com/images/Progress_Kinvey_Primary.png";
+    "https://mediatrustpr.com/images-web/client/LOGO%20DARIA%20VARIA.png";
   static homePageVisible: boolean = true;
   static homePageHeading: string = "We got your backend...";
 

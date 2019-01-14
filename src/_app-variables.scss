@@ -3,13 +3,13 @@
 // for example '~nativescript-theme-core/scss/dark'.
 @import "~nativescript-theme-core/scss/light";
 
-//cool color: #383741;
-$main-color: #383741;
-$login-page-text-color: white;
-$login-page-background: $main-color;
+$cool-color: #383741;
+$main-color: #0080c2;;
+$login-page-text-color: black;
+$login-page-background: white;
 
 $login-button-background-color: #ff584e;
-//$login-button-background-color: #0080c2;
+$login-button-background-color: #0080c2;
 $logged-in-user-color: white;
 
 $ab-color: $white;
