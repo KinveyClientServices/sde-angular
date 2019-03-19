@@ -4,6 +4,9 @@
     "id": "org.nativescript.angularsde",
     "tns-ios": {
       "version": "5.0.0"
+    },
+    "tns-android": {
+      "version": "5.2.1"
     }
   },
   "version": "0.0.0",

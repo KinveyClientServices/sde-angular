@@ -1,0 +1,60 @@
+@import "../../../app-variables";
+$sidedrawer-header-image-size: 60;
+$sidedrawer-header-image-offset-top: 20;
+$sidedrawer-header-image-offset-bottom: 5;
+$sidedrawer-list-item-offset-left: 15;
+$sidedrawer-list-icon-offset: 10;
+$sidedrawer-list-icon-size: 20;
+$background-dark: lightgray;
+.nurse {
+    opacity:0.5;
+}
+.page-color{
+    background-color:rgb(97, 93, 102);
+    
+}
+
+.pitem {
+    background-color: transparent;
+color:white;
+}
+.white {
+    color:white
+}
+
+.doctor-image {
+    margin:20;
+    height: 40;
+    width: 40;
+    border-radius:50%;
+    
+}
+
+.details {
+    color:white;
+    margin:20;
+}
+
+.cicl{
+    color:transparent;
+    border-radius: 50%;
+    background-color: rgb(64, 142,72);
+}
+
+
+.cicl-void{
+    border-width:1;
+    opacity:0;
+    border-color:red;
+    border-radius: 50%;
+    background-color: white
+}
+
+.white {
+    background-color: white;
+ 
+}
+
+.smaller {
+    font-size:12;
+}

@@ -9,12 +9,13 @@
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
     -->
-    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
     </ActionItem>
     <Label class="action-bar-title" [text]="title"></Label>
 </ActionBar>
 
-<StackLayout class="page page-content">
-    <Image [src]="logo" id="logo" width="75%" margin="20 0 0 0"></Image>
-    <Label margin="20" horizontalAlignment="center" textWrap="true" class="Tagline" [text]="heading"></Label>
+<StackLayout class="page page-content" backgroundColor="#383741">
+    <Image [src]="'~/app/'+logo" id="logo" width="75%" margin="20 0 0 0"></Image>
+    <Label margin="20" horizontalAlignment="center" textWrap="true" class="Tagline" [text]="''"></Label>
 </StackLayout>

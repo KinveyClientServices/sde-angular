@@ -4,11 +4,71 @@
     <Label class="action-bar-title" [text]="account.accountname"></Label>
 </ActionBar>
 
-<ListView class="list-group" [items]="account.invoice">
-    <ng-template let-item="item">
-        <GridLayout class="list-group-item" rows="auto, *" columns="*">
-            <Label row="0" [text]="item.Amount" class="list-group-item-heading"></Label>
-            <Label row="1" [text]="item.InvoiceNumber" class="list-group-item-text"></Label>
-        </GridLayout>
-    </ng-template>
-</ListView>
+<GridLayout class="list-page page-color" rows="*">
+    <Image stretch="aspectFill" class="nurse" src="~/app/images/nurs.jpg"></Image>
+    <GridLayout class="m-y-10" columns="auto, auto, *" rows="auto, auto, auto, auto, auto, auto, *">
+        <Label text="" width="1" col="1" rowSpan="7" backgroundColor="white"></Label>
+        <Image row="0" stretch="fill" col="0" class="doctor-image"
+            src="https://clinicalnotebook.com/wp-content/uploads/2015/04/Doctor-Profile-Pic-Example.png"></Image>
+        <StackLayout row="0" text="" class="cicl-void" width="40" height="40" col="1"></StackLayout>
+
+        <Label row="0" text="" class="cicl" width="20" height="20" col="1"></Label>
+
+        <StackLayout row="0" class="details" col="2">
+            <Label class="" [text]="'Patient Arrived'"></Label>
+            <Label class="smaller" [text]="'September 12, 2019 3PM'"></Label>
+        </StackLayout>
+        <Image row="1" stretch="fill" col="0" class="doctor-image"
+            src="https://clinicalnotebook.com/wp-content/uploads/2015/04/Doctor-Profile-Pic-Example.png"></Image>
+        <Label row="1" text="" class="cicl" width="20" height="20" col="1"></Label>
+        <StackLayout row="1" class="details" col="2">
+            <Label class="" [text]="'Patient Registered'"></Label>
+            <Label class="smaller" [text]="'September 12, 2019 3.30PM'"></Label>
+        </StackLayout>
+
+
+
+        <Image row="2" stretch="fill" col="0" class="doctor-image"
+            src="https://nyulangone.org/images/doctors/l/lieberman/1881890119/seth-m-lieberman-square.jpg"></Image>
+        <Label row="2" text="" class="cicl" width="20" height="20" col="1"></Label>
+
+        <StackLayout row="2" class="details" col="2">
+            <Label class="" [text]="'Anesthesia Completed'"></Label>
+            <Label class="smaller" [text]="'September 12, 2019 3.30PM'"></Label>
+
+        </StackLayout>
+
+
+        <Label row="3" text="" class="cicl white" width="20" height="20" col="1"></Label>
+
+        <StackLayout row="3" class="details" col="2">
+            <Label class="" [text]="'Consent & Site Mark'"></Label>
+            <Label class="smaller" [text]="''"></Label>
+
+        </StackLayout>
+
+
+        <Image row="4" stretch="fill" col="0" class="doctor-image"
+            src="https://clinicalnotebook.com/wp-content/uploads/2015/04/Doctor-Profile-Pic-Example.png"></Image>
+        <Label row="4" text="" class="cicl" width="20" height="20" col="1"></Label>
+
+        <StackLayout row="4" class="details" col="2">
+            <Label class="" [text]="'OR Ready'"></Label>
+            <Label class="smaller" [text]="''"></Label>
+
+        </StackLayout>
+
+
+        <Image row="5" stretch="fill" col="0" class="doctor-image"
+            src="https://nyulangone.org/images/doctors/k/kwok/1629068671/phyllis-m-kwok-square.jpg"></Image>
+        <Label row="5" text="" class="cicl" width="20" height="20" col="1"></Label>
+
+        <StackLayout row="5" class="details" col="2">
+            <Label class="" [text]="'Attending in House'"></Label>
+            <Label class="smaller" [text]="''"></Label>
+
+        </StackLayout>
+    </GridLayout>
+
+
+</GridLayout>
