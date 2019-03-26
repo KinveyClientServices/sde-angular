@@ -41,6 +41,25 @@ color:white;
     background-color: rgb(64, 142,72);
 }
 
+.ring {
+    border-color: white;
+    border-width: 1;
+    height: 35;
+    width: 35;
+    border-radius: 35;
+
+
+    background-color: transparent;
+    vertical-align: middle;
+}
+.circle {
+    border-radius:16;
+    width: 16;
+    height: 16;
+
+    background-color:rgb(80, 224, 94)
+}
+
 
 .cicl-void{
     border-width:1;
