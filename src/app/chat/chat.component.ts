@@ -10,14 +10,12 @@ import { Config } from "../config";
 export class ChatComponent implements OnInit {
   nativeChatConfig: any;
   title: string;
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     this.title = Config.chatPageTitle;
     this.nativeChatConfig = {
-      botId: Config.botId,
-      channelId: Config.channelId,
-      channelToken: Config.channelToken,
+      ...Config.chatConfig,
       session: {
         clear: true,
         userMessage: "Hello"

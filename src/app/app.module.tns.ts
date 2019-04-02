@@ -20,6 +20,7 @@ import { AccountsComponent } from "./accounts/accounts.component";
 import { AccountDetailsComponent } from "./accounts/account-details/account-details.component";
 
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular/side-drawer-directives";
+import { NativeScriptUIChartModule } from "nativescript-ui-chart/angular";
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -59,6 +60,7 @@ if (isIOS) {
     AppRoutingModule,
     NativeScriptFormsModule,
     NativeScriptUISideDrawerModule,
+    NativeScriptUIChartModule,
     NativeChatModule
   ],
   providers: [],

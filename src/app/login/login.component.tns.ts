@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { DataService } from "../data.service";
 import { Router } from "../utils";
 import { Config } from "../config";
-import { Page } from "ui/page";
+import { Page } from "tns-core-modules/ui/page";
 import { RouterExtensions } from "nativescript-angular/router";
 
 
