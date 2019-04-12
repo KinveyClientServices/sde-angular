@@ -19,6 +19,10 @@ import { ArComponent } from "./ar/ar.component";
 import { AccountsComponent } from './accounts/accounts.component';
 import { AccountDetailsComponent } from './accounts/account-details/account-details.component';
 import { SettingsComponent } from "./settings/settings.component";
+import { GridModule } from '@progress/kendo-angular-grid';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -39,7 +43,7 @@ import { SettingsComponent } from "./settings/settings.component";
     AccountDetailsComponent,
     SettingsComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, GridModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

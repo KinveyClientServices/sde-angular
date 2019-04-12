@@ -1,12 +1,19 @@
 <div class="row">
   <div class="col-sm-12 mt-4">
-    <h1>Accounts</h1>
-    <div class="list-group">
-      <a *ngFor="let p of items" [routerLink]="['/account-details', p._id]" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">{{p.accountname}}</h5>
-        </div>
-        <small>{{p.accountcompany}}</small>
-      </a>
-    </div>
+    <h1>Appointments</h1>
+    <kendo-grid [data]="items" [height]="410">
+      <kendo-grid-column field="PatientName" title="Patient" width="150">
+      </kendo-grid-column>
+      <kendo-grid-column field="Doctor" title="Doctor" width="150">
+      </kendo-grid-column>
+      <kendo-grid-column field="Date" title="Date" width="80">
+      </kendo-grid-column>
+      <kendo-grid-column field="Time" title="Time" width="80">
+      </kendo-grid-column>
+      <kendo-grid-column field="Status" title="Status" width="120">
+        <ng-template kendoGridCellTemplate let-dataItem>
+          {{dataItem.Status}}
+        </ng-template>
+      </kendo-grid-column>
+    </kendo-grid>
   </div>

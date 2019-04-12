@@ -16,14 +16,14 @@ import { Router } from "../../utils/router";
 export class AccountDetailsComponent implements OnInit {
   sub: any;
   id: any;
-  account: any = { invoice: [] };
+  appointment: any = { invoice: [] };
 
   constructor(
     private service: DataService,
     private route: ActivatedRoute,
     private router: Router,
     private cd: ChangeDetectorRef
-  ) {}
+  ) { }
   back() {
     (<any>this.router).back();
   }
@@ -35,7 +35,7 @@ export class AccountDetailsComponent implements OnInit {
       console.log(this.id);
       this.service.getAccounts(this.id).subscribe(account => {
         console.log(account);
-        this.account = account;
+        this.appointment = account;
         this.cd.detectChanges();
       });
 

@@ -12,16 +12,32 @@
     <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
         ios.position="left">
     </ActionItem>
+    <ActionItem (tap)="chat()" text="+" ios.position="right" android.position="right">
+        <Label col="0" text="&#xf067;" class="fa text-light"></Label>
+    </ActionItem>
+
     <Label class="action-bar-title" [text]="title"></Label>
 </ActionBar>
 
-<StackLayout>
-    <ListView class="list-group" [items]="items">
+
+<GridLayout rows="auto,*">
+    <SegmentedBar [items]="myItems" selectedIndex="0" (selectedIndexChange)="onSelectedIndexChange($event)" class="m-5">
+
+    </SegmentedBar>
+
+    <ListView class="list-group" [items]="items" row="1">
         <ng-template let-item="item">
-            <GridLayout class="list-group-item" rows="auto, *" columns="*" (tap)="goToDetails(item)">
-                <Label row="0" [text]="item.accountname" class="list-group-item-heading"></Label>
-                <Label row="1" [text]="item.Status" class="list-group-item-text"></Label>
+            <GridLayout class="list-group-item" rows="*" columns="auto, *, auto" (tap)="goToDetails(item)">
+                <Image row="0" col="0" [src]="item.DoctorImage" class="rounded"></Image>
+                <StackLayout col="1">
+                    <Label class="doc" textWrap="true" [text]="item.Doctor"></Label>
+                    <Label class="date" textWrap="true" [text]="item.Date"></Label>
+                    <Label class="time" textWrap="true" [text]="item.Time"></Label>
+                </StackLayout>
+                <StackLayout col="2">
+                    <Label [class]="item.Status" textWrap="true" [text]="item.Status"></Label>
+                </StackLayout>
             </GridLayout>
         </ng-template>
     </ListView>
-</StackLayout>
+</GridLayout>

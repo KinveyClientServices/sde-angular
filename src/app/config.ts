@@ -15,14 +15,14 @@ export class Config {
   static homePageHeading: string = "We got your backend...";
 
   //ACCOUNTS
-  static accountsPageTitle: string = "Accounts";
-  static accountsCollectionName: string = "accounts";
-  static accountsPageVisible: boolean = false;
+  static accountsPageTitle: string = "Appointments";
+  static accountsCollectionName: string = "appointments";
+  static accountsPageVisible: boolean = true;
 
   //PRODUCTS
-  static productsPageTitle: string = "Appointments";
-  static productsCollectionName = "appointments";
-  static productsPageVisible: boolean = true;
+  static productsPageTitle: string = "Products";
+  static productsCollectionName = "products";
+  static productsPageVisible: boolean = false;
   //FILES
   static filesPageTitle: string = "Patient and Visitor Services";
   static filesPageVisible: boolean = true;

@@ -3,6 +3,7 @@ import { DataService } from "../data.service";
 import { Config } from "../config";
 import { DrawerHelper } from "../utils/drawer-helper";
 import { Router } from "../utils";
+import { SegmentedBarItem } from "tns-core-modules/ui/segmented-bar/segmented-bar";
 
 @Component({
   selector: "app-accounts",
@@ -19,6 +20,13 @@ export class AccountsComponent implements OnInit {
     private zone: NgZone
   ) {
 
+    this.myItems = [];
+    const item = new SegmentedBarItem();
+    item.title = "Upcoming"
+    this.myItems.push(item);
+    const item2 = new SegmentedBarItem();
+    item2.title = "Past"
+    this.myItems.push(item2);
   }
 
   async ngOnInit() {

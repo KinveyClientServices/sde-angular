@@ -1,14 +1,42 @@
 <ActionBar class="action-bar">
     <NavigationButton text="Back" android.systemIcon="ic_menu_back" (tap)="back()"></NavigationButton>
-
-    <Label class="action-bar-title" [text]="account.accountname"></Label>
+    <Label class="action-bar-title" [text]="appointment.Doctor"></Label>
 </ActionBar>
 
-<ListView class="list-group" [items]="account.invoice">
-    <ng-template let-item="item">
-        <GridLayout class="list-group-item" rows="auto, *" columns="*">
-            <Label row="0" [text]="item.Amount" class="list-group-item-heading"></Label>
-            <Label row="1" [text]="item.InvoiceNumber" class="list-group-item-text"></Label>
-        </GridLayout>
-    </ng-template>
-</ListView>
+<StackLayout class="page page-content">
+    <ScrollView>
+        <StackLayout>
+            <StackLayout class="box m-10">
+                <GridLayout height="40" columns="auto, auto, *" class="bg-primary-b box">
+                    <Label col="1" class="p-10 text-light" text="Appointment"></Label>
+                    <Label col="0" text="&#xf2ba;" class="fa text-light m-l-10"></Label>
+
+                </GridLayout>
+                <StackLayout class="m-x-10">
+                    <GridLayout class="m-y-10 appointment" rows="*" columns="auto, *, auto">
+                        <Image row="0" col="0" [src]="appointment.DoctorImage" class="rounded"></Image>
+                        <StackLayout col="1">
+                            <Label class="doc" textWrap="true" [text]="appointment.Doctor"></Label>
+                            <Label class="date" textWrap="true" [text]="appointment.Date"></Label>
+                            <Label class="time" textWrap="true" [text]="appointment.Time"></Label>
+                        </StackLayout>
+                        <StackLayout col="2">
+                            <Label [class]="appointment.Status" textWrap="true" [text]="appointment.Status"></Label>
+                        </StackLayout>
+                    </GridLayout>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout class="box m-10">
+                <GridLayout height="40" columns="auto, auto, *" class="bg-primary-n box">
+                    <Label col="1" class="p-10 text-light" text="Notes"></Label>
+                    <Label col="0" text="&#xf0f3;" class="fa text-light m-l-10"></Label>
+                    <Label col="2" text="&#xf105;" horizontalAlignment="right" class="fa text-light m-r-10"></Label>
+
+                </GridLayout>
+                <StackLayout class="m-x-10">
+                    <Label textWrap="true" class="m-10" text="Please remember to take your medicine!"></Label>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</StackLayout>
