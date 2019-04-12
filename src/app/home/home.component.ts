@@ -1,6 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { DrawerHelper } from "../utils/drawer-helper";
 import { Config } from "../config";
+import { Router } from "../utils";
+import { openApp } from "nativescript-open-app";
+
 
 @Component({
   selector: "Home",
@@ -8,6 +11,7 @@ import { Config } from "../config";
   styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
+
   logo: string;
   title: string;
   heading: string;
@@ -18,7 +22,7 @@ export class HomeComponent implements OnInit {
     { Country: "Thursday", Amount: 11, SecondVal: 19, ThirdVal: 24 },
     { Country: "Friday", Amount: 18, SecondVal: 8, ThirdVal: 21 }
   ];
-  constructor() {
+  constructor(private router: Router) {
     // Use the component constructor to inject providers.
   }
 
@@ -32,5 +36,12 @@ export class HomeComponent implements OnInit {
 
   onDrawerButtonTap(): void {
     DrawerHelper.show();
+  }
+  navigate(to) {
+    console.log(to);
+    this.router.navigate([to]);
+  }
+  go() {
+    openApp("doctor://");
   }
 }

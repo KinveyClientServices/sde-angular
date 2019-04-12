@@ -17,80 +17,64 @@
 <StackLayout class="page page-content">
     <ScrollView>
         <StackLayout>
-            <GridLayout height="40" columns="auto, auto, *" class="bg-primary-green">
-                <Label col="1" class="p-10 text-light" text="Open the app directly into this page?"></Label>
-                <Switch col="2" checked="false" class="switch m-r-10" horizontalAlignment="right"></Switch>
-            </GridLayout>
-            <StackLayout class="box m-10">
-                <GridLayout height="40" columns="auto, auto, *" class="bg-danger-r box">
-                    <Label col="1" class="p-10 text-light" text="Reminder"></Label>
-                    <Label col="0" text="&#xf0f3;" class="fa text-light m-l-10"></Label>
-                    <Label col="2" text="&#xf105;" horizontalAlignment="right" class="fa text-light m-r-10"></Label>
+            <ScrollView orientation="horizontal" class="bg-primary-green">
+                <StackLayout orientation="horizontal">
+                    <Label text="&#xf2bc;" class="fa item text-light m-10"></Label>
+                    <Label text="&#xf2ca;" class="fa item text-light m-10"></Label>
+                    <Label text="&#xf0f1;" class="fa item text-light m-10"></Label>
+                    <Label text="&#xf233;" class="fa item text-light m-10"></Label>
+                    <Label text="&#xf003;" class="fa item text-light m-10"></Label>
+                    <Label text="&#xf2a4;" class="fa item text-light m-10"></Label>
+                    <Label text="&#xf0e9;" class="fa item text-light m-10"></Label>
+                    <Label text="&#xf1ec;" class="fa item text-light m-10"></Label>
+                    <Label text="&#xf0e9;" class="fa item text-light m-10"></Label>
 
-                </GridLayout>
-                <StackLayout class="m-x-10">
-                    <Label textWrap="true" class="m-10"
-                        text="Have you taken your reliever today? If yes, how many times?"></Label>
                 </StackLayout>
-            </StackLayout>
-            <StackLayout class="box m-10">
-                <GridLayout height="40" columns="auto, auto, *" class="bg-primary-b box">
-                    <Label col="1" class="p-10 text-light" text="Historical Data"></Label>
-                    <Label col="0" text="&#xf0e9;" class="fa text-light m-l-10"></Label>
+            </ScrollView>
 
+            <StackLayout class="m-y-30">
+                <GridLayout rows="*" columns="*, *, *" class="m-b-10">
+                    <StackLayout (tap)="go()" row="0" col="0" horizontalAlignment="center">
+                        <Label text="&#xf2ba;" class="fa menu-item" horizontalAlignment="center"></Label>
+                        <Label text="Find a Physician" class="small" horizontalAlignment="center"></Label>
+                    </StackLayout>
+                    <StackLayout row="0" col="1" horizontalAlignment="center">
+                        <Label text="&#xf0ea;" class="fa menu-item" horizontalAlignment="center"></Label>
+                        <Label text="Patient and visitor services" textWrap="true" class="small"
+                            horizontalAlignment="center"></Label>
+                    </StackLayout>
+                    <StackLayout (tap)="navigate('/tasks')" row="0" col="2" horizontalAlignment="center">
+                        <Label text="&#xf09d;" class="fa menu-item" horizontalAlignment="center"></Label>
+                        <Label text="Insurance and Billing" textWrap="true" class="small"
+                            horizontalAlignment="center"></Label>
+                    </StackLayout>
                 </GridLayout>
-                <GridLayout class="" rows="*" height="400px">
-                    <RadCartesianChart row="0">
-                        <CategoricalAxis tkCartesianHorizontalAxis></CategoricalAxis>
-                        <LinearAxis tkCartesianVerticalAxis></LinearAxis>
-                        <BarSeries tkCartesianSeries [items]="categoricalSource" categoryProperty="Country"
-                            valueProperty="Amount"></BarSeries>
-                    </RadCartesianChart>
+                <GridLayout rows="*" columns="*, *, *">
+                    <StackLayout (tap)="navigate('/offline')" row="0" col="0" horizontalAlignment="center">
+                        <Label text="&#xf2bc;" class="fa menu-item" horizontalAlignment="center"></Label>
+                        <Label text="My Chart" class="small" horizontalAlignment="center"></Label>
+                    </StackLayout>
+                    <StackLayout (tap)="navigate('/map')" row="0" col="1" horizontalAlignment="center">
+                        <Label text="&#xf278;" class="fa menu-item" horizontalAlignment="center"></Label>
+                        <Label text="Directions" class="small" horizontalAlignment="center"></Label>
+                    </StackLayout>
+                    <StackLayout (tap)="navigate('/chat')" row="0" col="2" horizontalAlignment="center">
+                        <Label text="&#xf109;" class="fa menu-item" horizontalAlignment="center"></Label>
+                        <Label text="Contact Us" class="small" horizontalAlignment="center"></Label>
+                    </StackLayout>
                 </GridLayout>
             </StackLayout>
-            <StackLayout class="box m-10">
-                <GridLayout height="40" columns="auto, auto, *" class="bg-danger-r box">
-                    <Label col="1" class="p-10 text-light" text="Reminder"></Label>
-                    <Label col="0" text="&#xf0f3;" class="fa text-light m-l-10"></Label>
-                    <Label col="2" text="&#xf105;" horizontalAlignment="right" class="fa text-light m-r-10"></Label>
+
+
+            <StackLayout class="m-y-10">
+                <GridLayout height="40" columns="auto, auto, *" class="bg-primary-b box">
+                    <Label col="1" class="p-10 text-light" text="News"></Label>
+                    <Label col="0" text="&#xf1ea;" class="fa text-light m-l-10"></Label>
 
                 </GridLayout>
                 <StackLayout class="m-x-10">
                     <Label textWrap="true" class="m-10"
-                        text="Have you missed taking your preventer at all this week?"></Label>
-                </StackLayout>
-            </StackLayout>
-            <StackLayout class="box m-10">
-                <GridLayout height="40" columns="auto, auto, *" class="bg-primary-b box">
-                    <Label col="1" class="p-10 text-light" text="Destination Weather"></Label>
-                    <Label col="0" text="&#xf0e9;" class="fa text-light m-l-10"></Label>
-
-                </GridLayout>
-                <StackLayout class="m-x-10">
-                    <Label textWrap="true" class="m-10"
-                        text="Today in Melrose it will be sunny. With a high of 51 and a low of 43 degrees. Please remember to bring your reliever inhaler with you."></Label>
-                </StackLayout>
-            </StackLayout>
-            <StackLayout class="box m-10">
-                <GridLayout height="40" columns="auto, auto, *" class="bg-primary-b box">
-                    <Label col="1" class="p-10 text-light" text="Appointment this morning"></Label>
-                    <Label col="0" text="&#xf0e9;" class="fa text-light m-l-10"></Label>
-
-                </GridLayout>
-                <StackLayout class="m-x-10">
-                    <Label textWrap="true" class="m-10"
-                        text="Today in Melrose it will be sunny. With a high of 51 and a low of 43 degrees. Please remember to bring your reliever inhaler with you."></Label>
-                </StackLayout>
-            </StackLayout>
-            <StackLayout class="box m-10">
-                <GridLayout height="40" columns="auto, auto, *" class="bg-primary-b box">
-                    <Label col="1" class="p-10 text-light" text="Appointment this morning"></Label>
-                    <Label col="0" text="&#xf0e9;" class="fa text-light m-l-10"></Label>
-
-                </GridLayout>
-                <StackLayout class="m-x-10">
-                    <Label textWrap="true" class="m-10"
-                        text="Today in Melrose it will be sunny. With a high of 51 and a low of 43 degrees. Please remember to bring your reliever inhaler with you."></Label>
+                        text="Get your flu shot at Baptist Health. Free of Cost. Jacksonville, Fl. 12345. Baptist Health of Jacksonville is proud to once again offer free flu shots for the local community."></Label>
                 </StackLayout>
             </StackLayout>
         </StackLayout>

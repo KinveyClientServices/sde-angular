@@ -1,16 +1,16 @@
 export class Config {
   //KINVEY
-  static appKey: string = "kid_HJNLlfWF4";
-  static appSecret: string = "608d3936aa4748a69eb49a7d8a2fed74";
+  static appKey: string = "kid_SJsgc-cKV";
+  static appSecret: string = "e9b25c3ea90141ac977d1e4655fe83fd";
 
   //LOGIN
-  static appLogo: string = "images/logo-r.png";
-  static appTitle: string = "Asthma Tracker";
+  static appLogo: string = "images/logo-bb.png";
+  static appTitle: string = " ";
 
   //HOME
-  static homePageTitle: string = "Asthma Tracker";
+  static homePageTitle: string = "Home";
   static logo: string =
-    "https://devcenter.kinvey.com/images/Progress_Kinvey_Primary.png";
+    "https://cdn3.baptistjax.com/images/global/logos/logo-baptist-health.png";
   static homePageVisible: boolean = true;
   static homePageHeading: string = "We got your backend...";
 
@@ -20,15 +20,15 @@ export class Config {
   static accountsPageVisible: boolean = false;
 
   //PRODUCTS
-  static productsPageTitle: string = "Store";
+  static productsPageTitle: string = "Find a Doctor";
   static productsCollectionName = "products";
   static productsPageVisible: boolean = true;
   //FILES
-  static filesPageTitle: string = "Files";
-  static filesPageVisible: boolean = false;
+  static filesPageTitle: string = "Patient and Visitor Services";
+  static filesPageVisible: boolean = true;
 
   //TASKS
-  static tasksPageTitle: string = "Attacks";
+  static tasksPageTitle: string = "Insurance and Billing";
   static taskCollectionName: string = "attacks";
   static tasksPageVisible: boolean = true;
 
@@ -36,16 +36,16 @@ export class Config {
   static addTaskPageTitle: string = "Add Task";
 
   //OFFLINE
-  static offlinePageTitle: string = "Offline";
+  static offlinePageTitle: string = "My Chart";
   static offlineAccountsCollectionName: any = "accounts";
-  static offlinePageVisible: boolean = false;
+  static offlinePageVisible: boolean = true;
 
   //MAP
-  static mapPageTitle: string = "Map";
-  static mapPageVisible: boolean = false;
+  static mapPageTitle: string = "Directions";
+  static mapPageVisible: boolean = true;
 
   //CHAT
-  static chatPageTitle: string = "Chat";
+  static chatPageTitle: string = "Virtual Visits";
   static chatConfig = {
     "botId": "5c993e6c49ecf64c7f053b11",
     "channelId": "4db24498-d303-4a7f-a48a-b9579d5c0fcc",

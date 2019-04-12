@@ -9,20 +9,91 @@
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
     -->
-    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
     </ActionItem>
-    <ActionItem ios.systemIcon="4" ios.position="right" android.systemIcon="ic_menu_add" (tap)="addMe()"></ActionItem>
-    <ActionItem ios.systemIcon="13" ios.position="right" style="color:white;" android.systemIcon="ic_menu_refresh"
-        (tap)="syncMe()"></ActionItem>
-
     <Label class="action-bar-title" [text]="title"></Label>
 </ActionBar>
+<StackLayout class="page page-content">
+    <ScrollView>
+        <StackLayout>
+            <GridLayout height="40" columns="auto, auto, *" class="bg-primary-green">
+                <Label col="1" class="p-10 text-light" text="Open the app directly into this page?"></Label>
+                <Switch col="2" checked="false" class="switch m-r-10" horizontalAlignment="right"></Switch>
+            </GridLayout>
+            <StackLayout class="box m-10">
+                <GridLayout height="40" columns="auto, auto, *" class="bg-danger-r box">
+                    <Label col="1" class="p-10 text-light" text="Reminder"></Label>
+                    <Label col="0" text="&#xf0f3;" class="fa text-light m-l-10"></Label>
+                    <Label col="2" text="&#xf105;" horizontalAlignment="right" class="fa text-light m-r-10"></Label>
 
-<ListView class="list-group" [items]="items">
-    <ng-template let-item="item">
-        <GridLayout class="list-group-item" rows="auto, *" columns="*">
-            <Label row="0" [text]="item.accountname" class="list-group-item-heading"></Label>
-            <Label row="1" [text]="item.accountcompany" class="list-group-item-text"></Label>
-        </GridLayout>
-    </ng-template>
-</ListView>
+                </GridLayout>
+                <StackLayout class="m-x-10">
+                    <Label textWrap="true" class="m-10"
+                        text="Have you taken your reliever today? If yes, how many times?"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout class="box m-10">
+                <GridLayout height="40" columns="auto, auto, *" class="bg-primary-b box">
+                    <Label col="1" class="p-10 text-light" text="Historical Data"></Label>
+                    <Label col="0" text="&#xf0e9;" class="fa text-light m-l-10"></Label>
+
+
+                </GridLayout>
+                <GridLayout class="" rows="*" height="400px">
+                    <RadCartesianChart row="0">
+                        <CategoricalAxis tkCartesianHorizontalAxis></CategoricalAxis>
+                        <LinearAxis tkCartesianVerticalAxis></LinearAxis>
+                        <BarSeries tkCartesianSeries [items]="categoricalSource" categoryProperty="Country"
+                            valueProperty="Amount"></BarSeries>
+                    </RadCartesianChart>
+                </GridLayout>
+            </StackLayout>
+            <StackLayout class="box m-10">
+                <GridLayout height="40" columns="auto, auto, *" class="bg-danger-r box">
+                    <Label col="1" class="p-10 text-light" text="Reminder"></Label>
+                    <Label col="0" text="&#xf0f3;" class="fa text-light m-l-10"></Label>
+                    <Label col="2" text="&#xf105;" horizontalAlignment="right" class="fa text-light m-r-10"></Label>
+
+                </GridLayout>
+                <StackLayout class="m-x-10">
+                    <Label textWrap="true" class="m-10"
+                        text="Have you missed taking your preventer at all this week?"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout class="box m-10">
+                <GridLayout height="40" columns="auto, auto, *" class="bg-primary-b box">
+                    <Label col="1" class="p-10 text-light" text="Destination Weather"></Label>
+                    <Label col="0" text="&#xf0e9;" class="fa text-light m-l-10"></Label>
+
+                </GridLayout>
+                <StackLayout class="m-x-10">
+                    <Label textWrap="true" class="m-10"
+                        text="Today in Melrose it will be sunny. With a high of 51 and a low of 43 degrees. Please remember to bring your reliever inhaler with you."></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout class="box m-10">
+                <GridLayout height="40" columns="auto, auto, *" class="bg-primary-b box">
+                    <Label col="1" class="p-10 text-light" text="Appointment this morning"></Label>
+                    <Label col="0" text="&#xf0e9;" class="fa text-light m-l-10"></Label>
+
+                </GridLayout>
+                <StackLayout class="m-x-10">
+                    <Label textWrap="true" class="m-10"
+                        text="Today in Melrose it will be sunny. With a high of 51 and a low of 43 degrees. Please remember to bring your reliever inhaler with you."></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout class="box m-10">
+                <GridLayout height="40" columns="auto, auto, *" class="bg-primary-b box">
+                    <Label col="1" class="p-10 text-light" text="Appointment this morning"></Label>
+                    <Label col="0" text="&#xf0e9;" class="fa text-light m-l-10"></Label>
+
+                </GridLayout>
+                <StackLayout class="m-x-10">
+                    <Label textWrap="true" class="m-10"
+                        text="Today in Melrose it will be sunny. With a high of 51 and a low of 43 degrees. Please remember to bring your reliever inhaler with you."></Label>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</StackLayout>
