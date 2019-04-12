@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { DrawerHelper } from "../utils/drawer-helper";
 import { Config } from "../config";
 import { Router } from "../utils";
-import { openApp } from "nativescript-open-app";
+//import { openApp } from "nativescript-open-app";
 
 
 @Component({
@@ -42,6 +42,6 @@ export class HomeComponent implements OnInit {
     this.router.navigate([to]);
   }
   go() {
-    openApp("doctor://");
+    //openApp("doctor://");
   }
 }

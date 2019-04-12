@@ -12,11 +12,12 @@ import { Config } from "../config";
 export class ProductsComponent implements OnInit {
   items;
   title: string;
-  constructor(private service: DataService, private cd: ChangeDetectorRef) {}
+  constructor(private service: DataService, private cd: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.service.getItems().subscribe(data => {
       this.items = data;
+      console.log(this.items);
       this.cd.detectChanges();
     });
     this.title = Config.productsPageTitle;

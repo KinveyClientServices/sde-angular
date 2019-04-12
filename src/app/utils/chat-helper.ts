@@ -1,17 +1,30 @@
-declare var nativechat: any;
+declare var NativeChat: any;
 
 export class ChatHelper {
   public static show() {
     var settings = {
       bot: {
-        id: "5a6f258d7eef5c4ecfb128fc",
-        channelId: "2d280b2e-a0d6-4231-9602-0dbb38d2fa46",
-        token: "46d2e012-32d4-4e32-95c1-c7e2d889579a"
+        id: "5c993e6c49ecf64c7f053b11"
+      },
+      channel: {
+        id: "a6765664-6db2-445c-9504-58d38f6523c8",
+        token: "88449dad-1cdb-47c3-994d-ac5cd89c3845"
+      },
+      session: {
+        clear: true,
+        userMessage: "Hello"
       }
     };
     console.log("show");
-    nativechat.init(settings);
+    NativeChat.load(({
+      id: "chatwidget",
+      origin: "",
+      display: {
+        mode: "modal"
+      },
+      chat: settings
+    }));
   }
 
-  public static hide() {}
+  public static hide() { }
 }

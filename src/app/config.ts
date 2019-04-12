@@ -1,16 +1,16 @@
 export class Config {
   //KINVEY
-  static appKey: string = "kid_SJsgc-cKV";
-  static appSecret: string = "e9b25c3ea90141ac977d1e4655fe83fd";
+  static appKey: string = "kid_HJSfxFpFN";
+  static appSecret: string = "e8fcf60652f74cb89bba2f3021674516";
 
   //LOGIN
-  static appLogo: string = "images/logo-bb.png";
+  static appLogo: string = "images/logo-p.png";
   static appTitle: string = " ";
 
   //HOME
   static homePageTitle: string = "Home";
   static logo: string =
-    "https://cdn3.baptistjax.com/images/global/logos/logo-baptist-health.png";
+    "https://pathforward.us/wp-content/uploads/2018/07/pftoplogo.png";
   static homePageVisible: boolean = true;
   static homePageHeading: string = "We got your backend...";
 
@@ -20,8 +20,8 @@ export class Config {
   static accountsPageVisible: boolean = false;
 
   //PRODUCTS
-  static productsPageTitle: string = "Find a Doctor";
-  static productsCollectionName = "products";
+  static productsPageTitle: string = "Appointments";
+  static productsCollectionName = "appointments";
   static productsPageVisible: boolean = true;
   //FILES
   static filesPageTitle: string = "Patient and Visitor Services";

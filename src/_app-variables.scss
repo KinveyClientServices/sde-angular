@@ -4,11 +4,11 @@
 @import "~nativescript-theme-core/scss/light";
 
 //cool color: #383741;
-$main-color: rgb(16,64,128);
-$login-page-text-color: #575756;
-$login-page-background: white;
+$main-color: rgb(41,165,224);
+$login-page-text-color: white;
+$login-page-background: $main-color;
 
-$login-button-background-color: $main-color;
+$login-button-background-color: rgb(247,148,28);
 //$login-button-background-color: #0080c2;
 $logged-in-user-color: white;
 
