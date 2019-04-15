@@ -4,7 +4,7 @@ export class Config {
   static appSecret: string = "e9b25c3ea90141ac977d1e4655fe83fd";
 
   //LOGIN
-  static appLogo: string = "images/logo-bb.png";
+  static appLogo: string = "images/logo-ru.png";
   static appTitle: string = " ";
 
   //HOME
