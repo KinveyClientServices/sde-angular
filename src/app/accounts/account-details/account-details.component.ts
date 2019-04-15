@@ -16,7 +16,7 @@ import { Router } from "../../utils/router";
 export class AccountDetailsComponent implements OnInit {
   sub: any;
   id: any;
-  appointment: any = { invoice: [] };
+  appointment: any = {};
 
   constructor(
     private service: DataService,
@@ -41,5 +41,10 @@ export class AccountDetailsComponent implements OnInit {
 
       // In a real app: dispatch action to load the details here.
     });
+  }
+  async changeStatus(status) {
+    this.appointment.Status = status;
+    await this.service.setAppointmentStatus(this.appointment);
+    console.log("saved");
   }
 }

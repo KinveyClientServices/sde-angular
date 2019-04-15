@@ -8,6 +8,9 @@ import { Config } from "./config";
   providedIn: "root"
 })
 export class DataService {
+  setAppointmentStatus(appointment): any {
+    return this.accountsStore.save(appointment);
+  }
   constructor() {
     Kinvey.init({
       appKey: Config.appKey,

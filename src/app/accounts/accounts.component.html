@@ -3,6 +3,9 @@
     <h1>Appointments</h1>
     <kendo-grid [data]="items" [height]="410">
       <kendo-grid-column field="PatientName" title="Patient" width="150">
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <a [routerLink]="['/account-details', dataItem._id]">{{ dataItem.PatientName }}</a>
+        </ng-template>
       </kendo-grid-column>
       <kendo-grid-column field="Doctor" title="Doctor" width="150">
       </kendo-grid-column>
@@ -12,7 +15,14 @@
       </kendo-grid-column>
       <kendo-grid-column field="Status" title="Status" width="120">
         <ng-template kendoGridCellTemplate let-dataItem>
-          {{dataItem.Status}}
+          <span [className]="
+                  dataItem.Status === 'Approved'
+                    ? 'text-success'
+                    : dataItem.Status === 'Pending'
+                    ? 'text-warning'
+                    : 'text-danger'
+                ">
+            {{ dataItem.Status }}</span>
         </ng-template>
       </kendo-grid-column>
     </kendo-grid>
