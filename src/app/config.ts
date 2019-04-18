@@ -1,11 +1,17 @@
 export class Config {
   //KINVEY
-  static appKey: string = "kid_ZJk02vOUFg";
-  static appSecret: string = "c1a32d5b3c474d0fa20a6f33fef396d5";
+  static appKey: string = "kid_B1ik-nH-z";
+  static appSecret: string = "b418aa4a7bf34294a56751fa19a9da10";
+  static instanceId: string = "kvy-us2";
 
   //LOGIN
   static appLogo: string = "images/logo-1.png";
   static appTitle: string = "SDE Kinvey";
+
+  //Dashboard
+  static dashboardPageTitle: string = "Dashboard";
+  static dashboardCollectionName: string = "dashboard";
+  static dashboardPageVisible: boolean = true;
 
   //HOME
   static homePageTitle: string = "Home";

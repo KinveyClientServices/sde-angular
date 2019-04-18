@@ -18,6 +18,7 @@ import { FileDetailsComponent } from "./files/file-details/file-details.componen
 import { LayoutComponent } from "./layout/layout.component";
 import { AccountsComponent } from "./accounts/accounts.component";
 import { AccountDetailsComponent } from "./accounts/account-details/account-details.component";
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular/side-drawer-directives";
 
@@ -52,7 +53,8 @@ if (isIOS) {
     TasksComponent,
     AddTaskComponent,
     FileDetailsComponent,
-    LayoutComponent
+    LayoutComponent,
+    DashboardComponent
   ],
   imports: [
     NativeScriptModule,

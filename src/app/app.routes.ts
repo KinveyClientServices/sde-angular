@@ -16,6 +16,7 @@ import { FileDetailsComponent } from "./files/file-details/file-details.componen
 import { LayoutComponent } from "./layout/layout.component";
 import { AccountsComponent } from "./accounts/accounts.component";
 import { AccountDetailsComponent } from "./accounts/account-details/account-details.component";
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 export const routes: Routes = [
   {
@@ -25,6 +26,7 @@ export const routes: Routes = [
     children: [
       { path: "", redirectTo: "home", pathMatch: "full" },
       { path: "home", component: HomeComponent },
+      { path: "dashboard", component: DashboardComponent },
       { path: "products", component: ProductsComponent },
       { path: "accounts", component: AccountsComponent },
       { path: "account-details/:id", component: AccountDetailsComponent },

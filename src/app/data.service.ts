@@ -11,7 +11,8 @@ export class DataService {
   constructor() {
     Kinvey.init({
       appKey: Config.appKey,
-      appSecret: Config.appSecret
+      appSecret: Config.appSecret,
+      instanceId: Config.instanceId
     });
     this.isLoggedIn = new BehaviorSubject<boolean>(
       Kinvey.User.getActiveUser() != null
@@ -56,6 +57,9 @@ export class DataService {
   private accountsStore = Kinvey.DataStore.collection(
     Config.accountsCollectionName
   );
+  private dashboardStore = Kinvey.DataStore.collection(
+    Config.dashboardCollectionName
+  );
   public selectedFile: any;
   public isLoggedIn: BehaviorSubject<boolean>;
   private user: BehaviorSubject<Kinvey.User>;
@@ -83,6 +87,10 @@ export class DataService {
       return this.accountsStore.find();
     }
   }
+  getDashboard() {
+    return this.dashboardStore.find();
+  }
+
   addSyncAccounts(accounts): any {
     return Promise.all(
       accounts.map(item => this.offlineAccountsStore.save(item))

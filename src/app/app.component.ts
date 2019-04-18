@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   gesturesEnabled;
   user;
   homePageTitle: string;
+  dashboardPageTitle: string;
   productsPageTitle: string;
   tasksPageTitle: string;
   offlinePageTitle: string;
@@ -22,6 +23,7 @@ export class AppComponent implements OnInit {
   chatPageTitle: string;
   accountsPageTitle: string;
   homePageVisible: boolean;
+  dashboardPageVisible: boolean;
   accountsPageVisible: boolean;
   productsPageVisible: boolean;
   tasksPageVisible: boolean;
@@ -38,6 +40,7 @@ export class AppComponent implements OnInit {
     this.gesturesEnabled = this.service.isLoggedIn;
 
     this.homePageTitle = Config.homePageTitle;
+    this.dashboardPageTitle = Config.dashboardPageTitle;
     this.productsPageTitle = Config.productsPageTitle;
     this.accountsPageTitle = Config.accountsPageTitle;
     this.tasksPageTitle = Config.tasksPageTitle;
@@ -48,6 +51,7 @@ export class AppComponent implements OnInit {
     this.arPageTitle = Config.arPageTitle;
 
     this.homePageVisible = Config.homePageVisible;
+    this.dashboardPageVisible = Config.dashboardPageVisible;
     this.productsPageVisible = Config.productsPageVisible;
     this.accountsPageVisible = Config.accountsPageVisible;
     this.tasksPageVisible = Config.tasksPageVisible;

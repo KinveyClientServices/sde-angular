@@ -19,6 +19,7 @@ import { ArComponent } from "./ar/ar.component";
 import { AccountsComponent } from './accounts/accounts.component';
 import { AccountDetailsComponent } from './accounts/account-details/account-details.component';
 import { SettingsComponent } from "./settings/settings.component";
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { SettingsComponent } from "./settings/settings.component";
     ArComponent,
     AccountsComponent,
     AccountDetailsComponent,
-    SettingsComponent
+    SettingsComponent,
+    DashboardComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
