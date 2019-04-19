@@ -17,6 +17,8 @@ export class AccountDetailsComponent implements OnInit {
   sub: any;
   id: any;
   account: any = { invoice: [] };
+  action;
+  duedate;
 
   constructor(
     private service: DataService,
@@ -37,9 +39,25 @@ export class AccountDetailsComponent implements OnInit {
         console.log(account);
         this.account = account;
         this.cd.detectChanges();
+      }, (error) => {
+        console.log(error);
+      }, () => {
+        // ...
       });
 
       // In a real app: dispatch action to load the details here.
     });
+  }
+
+  async save() {
+    // console.log("here");
+    // console.log(this.action);
+    // console.log(this.duedate.toLocaleDateString());
+    // await this.service.saveTask({
+    //   action: this.action,
+    //   duedate: this.duedate.toLocaleDateString()
+    // });
+    // this.router.navigate(["tasks"]);
+    console.log("CLICKED")
   }
 }

@@ -1,3 +1,23 @@
-<p>
-  add-task works!
-</p>
+    <mat-form-field style="width: 250px; padding-left: 15px;">
+        <mat-label>Select Task</mat-label>
+        <mat-select [(ngModel)]='goalTask'>
+          <mat-option *ngFor="let name of names" [value]="name.value">
+            {{name.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  <div class="col-sm-12 mt-4">
+
+    <label for="action" class="m-12">Details</label>
+    <br>
+    <textarea style="width: 250px;" [(ngModel)]='action' hint="Wash Dishes" class="input input-border m-12" name="action"></textarea>
+    <br>
+    <label for="date" class="m-12">Date</label>
+    <br>
+    <input type="date" style="width: 250px;"  [(ngModel)]='date' hint="Wash Dishes" class="input input-border m-12" name="date"/>
+    <br>
+    <br>
+    <button (click)="saveTask()" class="btn-primary">Save Task</button>
+  </div>
+
+

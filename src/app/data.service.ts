@@ -8,6 +8,29 @@ import { Config } from "./config";
   providedIn: "root"
 })
 export class DataService {
+
+  private myDataStore = Kinvey.DataStore.collection(
+    Config.productsCollectionName
+  );
+  private tasksStore = Kinvey.DataStore.collection(Config.taskCollectionName);
+
+  private goaltasksStore = Kinvey.DataStore.collection('tasks');
+
+
+  private offlineAccountsStore = Kinvey.DataStore.collection(
+    Config.offlineAccountsCollectionName,
+    Kinvey.DataStoreType.Sync
+  );
+  private accountsStore = Kinvey.DataStore.collection(
+    Config.accountsCollectionName,
+    Kinvey.DataStoreType.Network
+  );
+  public selectedFile: any;
+  public isLoggedIn: BehaviorSubject<boolean>;
+  private user: BehaviorSubject<Kinvey.User>;
+  public username: Observable<string>;
+
+
   constructor() {
     Kinvey.init({
       appKey: Config.appKey,
@@ -45,24 +68,16 @@ export class DataService {
     return this.accountsStore.count();
   }
 
-  private myDataStore = Kinvey.DataStore.collection(
-    Config.productsCollectionName
-  );
-  private tasksStore = Kinvey.DataStore.collection(Config.taskCollectionName);
-  private offlineAccountsStore = Kinvey.DataStore.collection(
-    Config.offlineAccountsCollectionName,
-    Kinvey.DataStoreType.Sync
-  );
-  private accountsStore = Kinvey.DataStore.collection(
-    Config.accountsCollectionName
-  );
-  public selectedFile: any;
-  public isLoggedIn: BehaviorSubject<boolean>;
-  private user: BehaviorSubject<Kinvey.User>;
-  public username: Observable<string>;
+  updateAccount(entity): any {
+    console.log("ENTITY: ", entity);
+    return this.tasksStore.save(entity);
+  }
 
-  getTasks() {
-    return this.tasksStore.find();
+  getTasks(id) {
+    const query = new Kinvey.Query();
+    query.equalTo('clientID', id);
+
+    return this.tasksStore.find(query);
   }
   async pullAccountData() {
     let num = await this.offlineAccountsStore.pendingSyncCount();
@@ -78,8 +93,10 @@ export class DataService {
   }
   getAccounts(id?: string): any {
     if (id) {
+      console.log("Have Account ID!: ", id)
       return this.accountsStore.findById(id);
     } else {
+      console.log("DO NOT Have Account ID!")
       return this.accountsStore.find();
     }
   }
@@ -97,7 +114,7 @@ export class DataService {
   }
   saveTask(task): any {
     task.completed = false;
-    return this.tasksStore.save(task);
+    return this.goaltasksStore.save(task);
   }
 
   getFiles(): Promise<any[]> {

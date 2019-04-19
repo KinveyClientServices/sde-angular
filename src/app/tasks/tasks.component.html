@@ -1,18 +1,20 @@
 <div class="row">
   <div class="col-sm-12 mt-4">
-    <h1>Tasks</h1>
+    <h1>Goals</h1>
     <div class="list-group">
-      <div *ngFor="let p of items" class="list-group-item list-group-item-action">
+      <div *ngFor="let p of items" class="list-group-item list-group-item-action" >
         <div class="d-flex flex-row w-100">
           <div class="mr-4 mt-2" (click)="markDone(p)">
-            <i class="icon" [class.ion-md-checkmark]="p.completed" [class.ion-md-remove-circle-outline]="!p.completed"></i>
-          </div>
+              <img class="ml-auto" [src]="p.goalStatus" alt="" height="75px">
+            </div>
           <div class="">
-            <h5 class="mb-1">{{p.action}}</h5>
-            <small>{{p.duedate}}</small>
+            <h2 class="mb-1">{{p.goal}}</h2>
           </div>
-          <small class="ml-auto">{{p.duedate}}</small>
+          <!-- <small class="ml-auto">{{p.goalStatus}}</small> -->
         </div>
       </div>
+
     </div>
+    <button style="margin-top: 20px" class="btn btn-primary btn-large" [routerLink]="['/tasks/add-task', id]">Add Task</button>
+
   </div>

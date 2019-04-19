@@ -1,7 +1,7 @@
 export class Config {
   //KINVEY
-  static appKey: string = "kid_ZJk02vOUFg";
-  static appSecret: string = "c1a32d5b3c474d0fa20a6f33fef396d5";
+  static appKey: string = "kid_Hk9eH04cV";
+  static appSecret: string = "74f45cb3c5ab499f8addc7afad2aa980";
 
   //LOGIN
   static appLogo: string = "images/logo-1.png";
@@ -10,26 +10,26 @@ export class Config {
   //HOME
   static homePageTitle: string = "Home";
   static logo: string =
-    "https://devcenter.kinvey.com/images/Progress_Kinvey_Primary.png";
+    "https://healthworksgrp.com/wp-content/uploads/Logo-White-Dark-BG-1.png";
   static homePageVisible: boolean = true;
-  static homePageHeading: string = "We got your backend...";
+  static homePageHeading: string = "Making Healthcare Work Better";
 
   //ACCOUNTS
-  static accountsPageTitle: string = "Accounts";
-  static accountsCollectionName: string = "accounts";
+  static accountsPageTitle: string = "Clients";
+  static accountsCollectionName: string = "Clients";
   static accountsPageVisible: boolean = true;
 
   //PRODUCTS
   static productsPageTitle: string = "Products";
   static productsCollectionName = "products";
-  static productsPageVisible: boolean = true;
+  static productsPageVisible: boolean = false;
   //FILES
   static filesPageTitle: string = "Files";
-  static filesPageVisible: boolean = true;
+  static filesPageVisible: boolean = false;
 
   //TASKS
-  static tasksPageTitle: string = "Tasks";
-  static taskCollectionName: string = "tasks";
+  static tasksPageTitle: string = "Goals";
+  static taskCollectionName: string = "goals";
   static tasksPageVisible: boolean = true;
 
   //ADD TASKS
@@ -38,7 +38,7 @@ export class Config {
   //OFFLINE
   static offlinePageTitle: string = "Offline";
   static offlineAccountsCollectionName: any = "accounts";
-  static offlinePageVisible: boolean = true;
+  static offlinePageVisible: boolean = false;
 
   //MAP
   static mapPageTitle: string = "Map";

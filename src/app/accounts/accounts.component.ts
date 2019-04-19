@@ -20,7 +20,7 @@ export class AccountsComponent implements OnInit {
 
   async ngOnInit() {
     this.title = Config.accountsPageTitle;
-    await this.service.pullAccountData();
+    // await this.service.pullAccountData();
     this.service.getAccounts().subscribe(data => {
       this.zone.run(() => {
         this.items = data;
@@ -34,5 +34,11 @@ export class AccountsComponent implements OnInit {
   goToDetails(item) {
     //console.log(item);
     this.router.navigate(["account-details", item._id]);
+  }
+
+  viewTasks(item) {
+    event.preventDefault();
+    console.log("viewTasks");
+    this.router.navigate(["tasks/:id", item._id]);
   }
 }

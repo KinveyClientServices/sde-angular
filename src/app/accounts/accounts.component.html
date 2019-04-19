@@ -1,12 +1,12 @@
 <div class="row">
   <div class="col-sm-12 mt-4">
-    <h1>Accounts</h1>
+    <h1>Clients</h1>
     <div class="list-group">
-      <a *ngFor="let p of items" [routerLink]="['/account-details', p._id]" class="list-group-item list-group-item-action flex-column align-items-start">
+      <a *ngFor="let p of items" [routerLink]="['/tasks', p._id]" class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">{{p.accountname}}</h5>
+          <h3 class="mb-1">{{p.accountname}}</h3>
         </div>
-        <small>{{p.accountcompany}}</small>
+        <small>Release Date: {{p.releaseDate}}</small>
       </a>
     </div>
   </div>
