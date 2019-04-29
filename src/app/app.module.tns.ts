@@ -32,7 +32,7 @@ import { isAndroid, isIOS, device, screen } from "tns-core-modules/platform";
 
 declare var GMSServices: any;
 if (isIOS) {
-  GMSServices.provideAPIKey("AIzaSyCSln6LZF0vbnI23oGPpoQsYLbETImR3QQ");
+  GMSServices.provideAPIKey("AIzaSyBBIAv8OR81gBsM1KhitCGGZpTOEbdMpvw");
 }
 
 @NgModule({
@@ -65,4 +65,4 @@ if (isIOS) {
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule {}

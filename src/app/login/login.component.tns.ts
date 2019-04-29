@@ -2,9 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { DataService } from "../data.service";
 import { Router } from "../utils";
 import { Config } from "../config";
-import { Page } from "ui/page";
+import { Page } from "tns-core-modules/ui/page";
 import { RouterExtensions } from "nativescript-angular/router";
-
 
 @Component({
   selector: "Login",
@@ -47,7 +46,7 @@ export class LoginComponent implements OnInit {
   async loginWithMIC() {
     try {
       this.processing = true;
-      await this.dataService.loginWithMIC('sde://');
+      await this.dataService.loginWithMIC("sde://");
       this.router.navigate([""]);
     } catch {
       alert("Invalid credentials");
