@@ -57,4 +57,9 @@ export class Config {
 
   //SETTINGS
   static settingsPageTitle: string = "Settings";
+  static chatConfig: any = {
+    botId: "5c993e6c49ecf64c7f053b11",
+    channelId: "4db24498-d303-4a7f-a48a-b9579d5c0fcc",
+    channelToken: "49ed1630-53ef-4bdf-a98d-160a0a4853d7"
+  };
 }

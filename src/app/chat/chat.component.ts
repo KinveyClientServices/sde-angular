@@ -15,9 +15,7 @@ export class ChatComponent implements OnInit {
   ngOnInit() {
     this.title = Config.chatPageTitle;
     this.nativeChatConfig = {
-      botId: Config.botId,
-      channelId: Config.channelId,
-      channelToken: Config.channelToken,
+      ...Config.chatConfig,
       session: {
         clear: true,
         userMessage: "Hello"
