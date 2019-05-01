@@ -4,31 +4,31 @@ export class Config {
   static appSecret: string = "74f45cb3c5ab499f8addc7afad2aa980";
 
   //LOGIN
-  static appLogo: string = "images/logo-1.png";
+  static appLogo: string = "images/axa_logo.jpg";
   static appTitle: string = "SDE Kinvey";
 
   //HOME
-  static homePageTitle: string = "Home";
+  static homePageTitle: string = "About";
   static logo: string =
     "https://healthworksgrp.com/wp-content/uploads/Logo-White-Dark-BG-1.png";
   static homePageVisible: boolean = true;
   static homePageHeading: string = "Making Healthcare Work Better";
 
   //ACCOUNTS
-  static accountsPageTitle: string = "Clients";
+  static accountsPageTitle: string = "Individual";
   static accountsCollectionName: string = "Clients";
   static accountsPageVisible: boolean = true;
 
   //PRODUCTS
-  static productsPageTitle: string = "Products";
+  static productsPageTitle: string = "SME";
   static productsCollectionName = "products";
-  static productsPageVisible: boolean = false;
+  static productsPageVisible: boolean = true;
   //FILES
-  static filesPageTitle: string = "Files";
-  static filesPageVisible: boolean = false;
+  static filesPageTitle: string = "Corporate";
+  static filesPageVisible: boolean = true;
 
   //TASKS
-  static tasksPageTitle: string = "Goals";
+  static tasksPageTitle: string = "FAQs";
   static taskCollectionName: string = "goals";
   static tasksPageVisible: boolean = true;
 
@@ -36,13 +36,13 @@ export class Config {
   static addTaskPageTitle: string = "Add Task";
 
   //OFFLINE
-  static offlinePageTitle: string = "Offline";
+  static offlinePageTitle: string = "Contact Us";
   static offlineAccountsCollectionName: any = "accounts";
-  static offlinePageVisible: boolean = false;
+  static offlinePageVisible: boolean = true;
 
   //MAP
   static mapPageTitle: string = "Map";
-  static mapPageVisible: boolean = true;
+  static mapPageVisible: boolean = false;
 
   //CHAT
   static chatPageTitle: string = "Chat";

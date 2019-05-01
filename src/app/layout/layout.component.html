@@ -1,49 +1,53 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-0 my-nav">
-  <a class="navbar-brand" routerLink="/">
-    <img [src]="'assets/'+logo" class="mr-2" width="40" height="40" alt="">
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
+  <div class="navbar-sections navbar-section2">
+      <a class="navbar-brand" routerLink="/">
+        <img [src]="'assets/'+logo" class="mr-2" width="51" height="51" alt="">
+      </a>
+  <div class="welcomeDiv">
+      <a class="mr-2" (click)="logout()" style="cursor: pointer">
+          Welcome to AXA Middle East
+        </a>
+  </div>
+
+  </div>
+
+  
+  <div class="collapse navbar-collapse navbar-sections navbar-section1" id="navbarNav">
     <ul class="navbar-nav mr-auto">
       <li *ngIf="homePageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
                 true}">
         <a routerLink="/home" class="nav-link menu-item">
-          <i class="icon ion-md-home menu-logo mx-2"></i>{{homePageTitle}}
+         {{homePageTitle}}
         </a>
       </li>
       <li *ngIf="accountsPageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
         true}">
         <a routerLink="/accounts" class="nav-link menu-item">
-          <i class="icon ion-md-person menu-logo mx-2"></i>{{accountsPageTitle}}
+        {{accountsPageTitle}}
         </a>
       </li>
       <li *ngIf="productsPageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
                       true}">
         <a routerLink="/products" class="nav-link menu-item">
-          <i class="icon ion-md-list menu-logo mx-2"></i>{{productsPageTitle}}
+        {{productsPageTitle}}
         </a>
       </li>
       <li *ngIf="filesPageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
         true}">
         <a routerLink="/files" class="nav-link menu-item">
-          <i class="icon ion-md-folder menu-logo mx-2"></i>{{filesPageTitle}}
+         {{filesPageTitle}}
         </a>
       </li>
       <li *ngIf="tasksPageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
   true}">
         <a routerLink="/tasks" class="nav-link menu-item">
-          <i class="icon ion-md-checkbox-outline	
-          menu-logo mx-2"></i>{{tasksPageTitle}}
+         {{tasksPageTitle}}
         </a>
       </li>
       <li *ngIf="offlinePageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
                         true}">
         <a routerLink="/offline" class="nav-link menu-item">
-          <i class="icon ion-md-wifi	
-          menu-logo mx-2"></i>{{offlinePageTitle}}
+         {{offlinePageTitle}}
         </a>
       </li>
       <li *ngIf="mapPageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
@@ -53,10 +57,7 @@
         </a>
       </li>
     </ul>
-    <span style="color:white">{{username|async}}, </span>
-    <a class="mr-2" (click)="logout()" style="cursor: pointer; color:white">
-      Logout
-    </a>
+
 
   </div>
 </nav>
