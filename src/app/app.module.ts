@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -81,6 +82,7 @@ import {
   imports: [BrowserModule, AppRoutingModule, FormsModule, BrowserAnimationsModule, MatSelectModule,
     MatAutocompleteModule,
     MatBadgeModule,
+    NgxSpinnerModule,
     MatBottomSheetModule,
     MatButtonModule,
     MatButtonToggleModule,

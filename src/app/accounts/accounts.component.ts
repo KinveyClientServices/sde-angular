@@ -3,6 +3,7 @@ import { DataService } from "../data.service";
 import { Config } from "../config";
 import { DrawerHelper } from "../utils/drawer-helper";
 import { Router } from "../utils";
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: "app-accounts",
@@ -12,21 +13,27 @@ import { Router } from "../utils";
 export class AccountsComponent implements OnInit {
   items;
   title: any;
+  myStyles: any;
   constructor(
     private service: DataService,
     private router: Router,
     private zone: NgZone,
-    private cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef,
+    private spinner: NgxSpinnerService
 
   ) {}
 
-  async ngOnInit() {
+  ngOnInit() {
+    this.myStyles = {display: 'none'};
+    setTimeout(() => {
+      this.myStyles = {display: 'block'};
+    }, 500);
+    this.spinner.show();
     this.title = Config.accountsPageTitle;
     // await this.service.pullAccountData();
     this.service.getAccounts().subscribe(data => {
       this.zone.run(() => {
         this.items = data[0];
-        console.log("DATA: ", this.items.insLimits);
         this.cd.detectChanges();
       });
     });

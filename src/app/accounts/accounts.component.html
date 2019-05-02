@@ -1,6 +1,9 @@
-<div class="row">
-  <h1 class="text-center" style="text-align: center">Current Insurance Plans</h1>
-    <div class="row card" style="width: 35rem; margin-bottom: 60px;">
+
+<ngx-spinner></ngx-spinner>
+
+<div class="row insContainer">
+  <h1>Current Insurance Plans</h1>
+    <div class="row card" style="width: 35rem; margin-bottom: 60px;" [ngStyle]="this.myStyles">
         <div class="col-sm-12 mt-4 card-body">
             <img class="card-img-top" src={{items.insImg}} alt="Card image cap">
           <h1 class="card-title" style="padding-top:20px">{{items.insName}}</h1>
@@ -13,7 +16,5 @@
           </ul>
           <p>Coverage for {{items.insCoverage}}</p>
           <button class="btn btn-primary">Update Insurance</button>
-          <!-- <div class="travelInsContain" *ngFor="let p of items">
-          </div> -->
         </div>
 </div>
