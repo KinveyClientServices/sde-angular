@@ -1,14 +1,19 @@
 <div class="row">
-  <div class="col-sm-12 mt-4">
-    <h1>Travel Insurance</h1>
-    <h4>The total cost for {{items.insLength}} is {{items.insCost}} and you get: Travel medical insurance for individuals, families and groups</h4>
-    <p>Renewable up to {{items.insRenew}}</p>
-    <h3>Deductable Options:</h3>
-    <ul>
-      <li>{{items.insDed}}</li>
-      <li>Maximum limits from {{items.insLimits}}</li>
-    </ul>
-    <p>Coverage for {{items.insCoverage}}</p>
-    <!-- <div class="travelInsContain" *ngFor="let p of items">
-    </div> -->
-  </div>
+  <h1 class="text-center" style="text-align: center">Current Insurance Plans</h1>
+    <div class="row card" style="width: 35rem; margin-bottom: 60px;">
+        <div class="col-sm-12 mt-4 card-body">
+            <img class="card-img-top" src={{items.insImg}} alt="Card image cap">
+          <h1 class="card-title" style="padding-top:20px">{{items.insName}}</h1>
+          <h5 class="card-subtitle">The total cost for {{items.insLength}} is {{items.insCost}} and you get: Travel medical insurance for individuals, families and groups</h5>
+          <p style="padding-top: 20px">Renewable up to {{items.insRenew}}</p>
+          <h3>Deductable Options:</h3>
+          <ul>
+            <li>{{items.insDed}}</li>
+            <li>Maximum limits from {{items.insLimits}}</li>
+          </ul>
+          <p>Coverage for {{items.insCoverage}}</p>
+          <button class="btn btn-primary">Update Insurance</button>
+          <!-- <div class="travelInsContain" *ngFor="let p of items">
+          </div> -->
+        </div>
+</div>
