@@ -4,9 +4,9 @@ export class ChatHelper {
   public static show() {
     var settings = {
       bot: {
-        id: "5a6f258d7eef5c4ecfb128fc",
-        channelId: "2d280b2e-a0d6-4231-9602-0dbb38d2fa46",
-        token: "46d2e012-32d4-4e32-95c1-c7e2d889579a"
+        id: "5c7940da00923e705e04e488",
+        channelId: "9cda619d-5aa2-479c-9c57-d87eded08daa",
+        token: "b1ea9b2f-f49d-43e6-8050-2e6c7ef0113c"
       }
     };
     console.log("show");

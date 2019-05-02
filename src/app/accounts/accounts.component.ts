@@ -15,7 +15,9 @@ export class AccountsComponent implements OnInit {
   constructor(
     private service: DataService,
     private router: Router,
-    private zone: NgZone
+    private zone: NgZone,
+    private cd: ChangeDetectorRef
+
   ) {}
 
   async ngOnInit() {
@@ -23,7 +25,9 @@ export class AccountsComponent implements OnInit {
     // await this.service.pullAccountData();
     this.service.getAccounts().subscribe(data => {
       this.zone.run(() => {
-        this.items = data;
+        this.items = data[0];
+        console.log("DATA: ", this.items.insLimits);
+        this.cd.detectChanges();
       });
     });
   }

@@ -1,12 +1,14 @@
 <div class="row">
   <div class="col-sm-12 mt-4">
-    <h1>Clients</h1>
-    <div class="list-group">
-      <a *ngFor="let p of items" [routerLink]="['/tasks', p._id]" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-          <h3 class="mb-1">{{p.accountname}}</h3>
-        </div>
-        <small>Release Date: {{p.releaseDate}}</small>
-      </a>
-    </div>
+    <h1>Travel Insurance</h1>
+    <h4>The total cost for {{items.insLength}} is {{items.insCost}} and you get: Travel medical insurance for individuals, families and groups</h4>
+    <p>Renewable up to {{items.insRenew}}</p>
+    <h3>Deductable Options:</h3>
+    <ul>
+      <li>{{items.insDed}}</li>
+      <li>Maximum limits from {{items.insLimits}}</li>
+    </ul>
+    <p>Coverage for {{items.insCoverage}}</p>
+    <!-- <div class="travelInsContain" *ngFor="let p of items">
+    </div> -->
   </div>

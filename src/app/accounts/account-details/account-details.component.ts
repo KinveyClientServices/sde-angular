@@ -30,7 +30,7 @@ export class AccountDetailsComponent implements OnInit {
     (<any>this.router).back();
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     console.log("init details");
     this.sub = this.route.params.subscribe(params => {
       this.id = params["id"]; // (+) converts string 'id' to a number

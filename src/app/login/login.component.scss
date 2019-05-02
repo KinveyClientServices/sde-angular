@@ -11,7 +11,7 @@ input {
   }
   .form-signin {
     width: 100%;
-    max-width: 330px;
+    max-width: 400px;
     padding: 15px;
     margin: 6em auto;
   }
@@ -36,16 +36,19 @@ input {
     border-bottom-left-radius: 0;
   }
   .form-signin input[type="password"] {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
   .my-button {
-    background-color: $login-button-background-color !important;
+    background-color: #00008f !important;
     border-radius: 26px;
     color: white;
   }
   .mic {
     cursor: pointer;
     color: $login-page-text-color;
+    border: 1px solid $login-page-text-color;
+    border-radius: 26px;
+    padding: 0.7rem 1rem;
   }

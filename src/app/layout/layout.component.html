@@ -14,6 +14,9 @@
   
   <div class="collapse navbar-collapse navbar-sections navbar-section1" id="navbarNav">
     <ul class="navbar-nav mr-auto">
+      <li class="nav-item pr-4">
+          <i class="icon ion-md-home menu-logo mx-2"></i>
+      </li>
       <li *ngIf="homePageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
                 true}">
         <a routerLink="/home" class="nav-link menu-item">
@@ -55,6 +58,13 @@
         <a routerLink="/map" class="nav-link menu-item">
           <i class="icon ion-md-map menu-logo mx-2"></i>{{mapPageTitle}}
         </a>
+      </li>
+      <li class="nav-item pr-4">
+          <div class="search-table">
+              <div class="search-field">
+                  <input type="text" placeholder="Search..." value="" name="s" id="s">
+              </div>
+          </div>
       </li>
     </ul>
 
