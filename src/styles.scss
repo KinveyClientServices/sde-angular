@@ -149,3 +149,11 @@ input[type=text] {
   background: url(/assets/images/chat-close.svg) center no-repeat !important;
 
 }
+button:focus { outline: none; }
+li:focus { 
+  outline: none; 
+}
+
+li {
+  cursor: pointer;
+}

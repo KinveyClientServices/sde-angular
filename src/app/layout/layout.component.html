@@ -14,44 +14,45 @@
   
   <div class="collapse navbar-collapse navbar-sections navbar-section1" id="navbarNav">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item pr-4">
+      <li class="nav-item pr-4" routerLink="/home">
           <i class="icon ion-md-home menu-logo mx-2"></i>
       </li>
       <li *ngIf="homePageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
                 true}">
-        <a routerLink="/home" class="nav-link menu-item">
-         {{homePageTitle}}
-        </a>
+                <button mat-button>{{homePageTitle}}</button>
+
+
       </li>
       <li *ngIf="accountsPageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
         true}">
-        <a routerLink="/accounts" class="nav-link menu-item">
+        <button mat-button [matMenuTriggerFor]="menu">{{accountsPageTitle}}</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Foreigner Insurance</button>
+          <button mat-menu-item>Home Insurance</button>
+          <button mat-menu-item>Medical Insurance</button>
+          <button mat-menu-item>Car Insurance</button>
+          <button mat-menu-item routerLink="/accounts">Travel Insurance</button>
+          <button mat-menu-item>Personal Accident</button>
+        </mat-menu>
+        <!-- <a routerLink="/accounts" class="nav-link menu-item">
         {{accountsPageTitle}}
-        </a>
+        </a> -->
       </li>
       <li *ngIf="productsPageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
                       true}">
-        <a routerLink="/products" class="nav-link menu-item">
-        {{productsPageTitle}}
-        </a>
+                      <button mat-button>{{productsPageTitle}}</button>
       </li>
       <li *ngIf="filesPageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
         true}">
-        <a routerLink="/files" class="nav-link menu-item">
-         {{filesPageTitle}}
-        </a>
+        <button mat-button>{{filesPageTitle}}</button>
       </li>
       <li *ngIf="tasksPageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
   true}">
-        <a routerLink="/tasks" class="nav-link menu-item">
-         {{tasksPageTitle}}
-        </a>
+  <button mat-button>{{tasksPageTitle}}</button>
       </li>
       <li *ngIf="offlinePageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
                         true}">
-        <a routerLink="/offline" class="nav-link menu-item">
-         {{offlinePageTitle}}
-        </a>
+                        <button mat-button>{{offlinePageTitle}}</button>
       </li>
       <li *ngIf="mapPageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
                           true}">
