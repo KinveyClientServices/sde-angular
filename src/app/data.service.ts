@@ -4,7 +4,8 @@ import {
   FilesService,
   DataStoreService,
   DataStoreType,
-  Query
+  Query,
+  AuthorizationGrant
 } from "./utils";
 import { BehaviorSubject, Observable } from "rxjs";
 import { map } from "rxjs/operators";
@@ -41,9 +42,6 @@ export class DataService {
 
   deleteItem(): any {
     return this.tasksStore.remove();
-  }
-  getFilesCount(): any {
-    return 3;
   }
   getPendingCount(): any {
     return this.accountsStore.pendingSyncCount();
@@ -140,13 +138,19 @@ export class DataService {
     if (this.userService.getActiveUser()) {
       return Promise.resolve(this.userService.getActiveUser());
     } else {
-      return this.userService.loginWithMIC(redirectUri, "test").then(user => {
-        console.log("we bassck");
-        this.isLoggedIn.next(true);
-        //console.log(user);
-        this.user.next(user);
-        return Promise.resolve(user);
-      });
+      //this.userService.
+      return this.userService
+        .loginWithMIC(
+          redirectUri,
+          AuthorizationGrant.AuthorizationCodeLoginPage
+        )
+        .then(user => {
+          console.log("we bassck");
+          this.isLoggedIn.next(true);
+          //console.log(user);
+          this.user.next(user);
+          return Promise.resolve(user);
+        });
     }
   }
   logout(): Promise<void> {

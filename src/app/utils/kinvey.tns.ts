@@ -3,5 +3,6 @@ export {
   DataStoreType,
   FilesService,
   DataStoreService,
-  Query
+  Query,
+  AuthorizationGrant
 } from "kinvey-nativescript-sdk/angular";
