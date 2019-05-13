@@ -1,3 +1,5 @@
+import { User } from "kinvey-js-sdk";
+
 export {
   UserService,
   DataStoreType,
@@ -6,3 +8,5 @@ export {
   Query,
   AuthorizationGrant
 } from "kinvey-angular-sdk";
+
+export { User };

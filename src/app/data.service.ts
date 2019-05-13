@@ -5,7 +5,8 @@ import {
   DataStoreService,
   DataStoreType,
   Query,
-  AuthorizationGrant
+  AuthorizationGrant,
+  User
 } from "./utils";
 import { BehaviorSubject, Observable } from "rxjs";
 import { map } from "rxjs/operators";
@@ -21,10 +22,11 @@ export class DataService {
     private datastoreService: DataStoreService
   ) {
     this.isLoggedIn = new BehaviorSubject<boolean>(this.activeUser != null);
-    this.user = new BehaviorSubject<any>(this.activeUser);
+    this.user = new BehaviorSubject<User>(this.activeUser);
     this.username = this.user.pipe(
       map(kinveyUser => {
         if (kinveyUser) {
+          console.log(kinveyUser);
           if ((<any>kinveyUser.data)._socialIdentity) {
             return (<any>kinveyUser.data)._socialIdentity.kinveyAuth.id;
           } else {
@@ -65,7 +67,7 @@ export class DataService {
   );
   public selectedFile: any;
   public isLoggedIn: BehaviorSubject<boolean>;
-  private user: BehaviorSubject<any>;
+  private user: BehaviorSubject<User>;
   public username: Observable<string>;
 
   getTasks() {
@@ -74,8 +76,7 @@ export class DataService {
   async pullAccountData() {
     let num = await this.offlineAccountsStore.pendingSyncCount();
     console.log(num);
-    if (<any>num === 0) {
-      //THIS IS A BUG IN THE d.ts
+    if (num === 0) {
       console.log("pulling");
       return this.offlineAccountsStore.pull();
     } else Promise.resolve();
@@ -107,34 +108,33 @@ export class DataService {
     return this.tasksStore.save(task);
   }
 
-  getFiles(): Promise<any[]> {
+  getFiles(): Promise<any> {
     var q = new Query();
     q.equalTo("mimeType", "application/pdf");
     return this.filesService.find(q);
   }
 
-  getItems() {
+  getItems(): any {
     return this.myDataStore.find();
   }
 
-  login(name, password): Promise<any> {
+  async login(name, password): Promise<User> {
     console.log("login in");
     if (this.userService.getActiveUser()) {
       console.log("already logzgesd in");
       return Promise.resolve(this.userService.getActiveUser());
     } else {
       console.log("nsot yet");
-      return this.userService.login(name, password).then(user => {
-        console.log("we bsack");
-        this.isLoggedIn.next(true);
-        //console.log(user);
-        this.user.next(user);
-        return Promise.resolve(user);
-      });
+      let u = await this.userService.login(name, password);
+      console.log("we bsack");
+      this.isLoggedIn.next(true);
+      //console.log(user);
+      this.user.next(u);
+      return u;
     }
   }
 
-  loginWithMIC(redirectUri: string): Promise<any> {
+  loginWithMIC(redirectUri: string): Promise<User> {
     if (this.userService.getActiveUser()) {
       return Promise.resolve(this.userService.getActiveUser());
     } else {
@@ -153,10 +153,9 @@ export class DataService {
         });
     }
   }
-  logout(): Promise<void> {
-    return this.userService.logout().then(() => {
-      this.isLoggedIn.next(false);
-      this.user.next(null);
-    });
+  async logout(): Promise<void> {
+    await this.userService.logout();
+    this.isLoggedIn.next(false);
+    this.user.next(null);
   }
 }
