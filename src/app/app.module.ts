@@ -16,9 +16,13 @@ import { FileDetailsComponent } from "./files/file-details/file-details.componen
 import { FormsModule } from "@angular/forms";
 import { LayoutComponent } from "./layout/layout.component";
 import { ArComponent } from "./ar/ar.component";
-import { AccountsComponent } from './accounts/accounts.component';
-import { AccountDetailsComponent } from './accounts/account-details/account-details.component';
+import { AccountsComponent } from "./accounts/accounts.component";
+import { AccountDetailsComponent } from "./accounts/account-details/account-details.component";
 import { SettingsComponent } from "./settings/settings.component";
+
+import { KinveyModule } from "kinvey-angular-sdk";
+
+import { Config } from "./config";
 
 @NgModule({
   declarations: [
@@ -39,8 +43,16 @@ import { SettingsComponent } from "./settings/settings.component";
     AccountDetailsComponent,
     SettingsComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    KinveyModule.init({
+      appKey: Config.appKey,
+      appSecret: Config.appSecret
+    })
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

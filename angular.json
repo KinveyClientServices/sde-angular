@@ -6,7 +6,7 @@
     "defaultCollection": "@nativescript/schematics"
   },
   "projects": {
-    "angular-sde": {
+    "sde-angular": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-sde",
+            "outputPath": "dist/sde-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -57,18 +57,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-sde:build"
+            "browserTarget": "sde-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-sde:build:production"
+              "browserTarget": "sde-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-sde:build"
+            "browserTarget": "sde-angular:build"
           }
         },
         "test": {
@@ -102,7 +102,7 @@
         }
       }
     },
-    "angular-sde-e2e": {
+    "sde-angular-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -110,11 +110,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-sde:serve"
+            "devServerTarget": "sde-angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-sde:serve:production"
+              "devServerTarget": "sde-angular:serve:production"
             }
           }
         },
@@ -130,5 +130,5 @@
       }
     }
   },
-  "defaultProject": "angular-sde"
+  "defaultProject": "sde-angular"
 }

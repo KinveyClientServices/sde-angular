@@ -8,7 +8,7 @@
 android {  
   defaultConfig {  
     generatedDensities = []
-    applicationId = "org.nativescript.angularsde" 
+    applicationId = "org.nativescript.sdeangular" 
     
     //override supported platforms
     // ndk {

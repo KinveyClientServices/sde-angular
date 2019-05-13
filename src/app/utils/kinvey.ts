@@ -1,1 +1,7 @@
-export { Kinvey, CacheStore, DataStoreType, User } from "kinvey-angular2-sdk";
+export {
+  UserService,
+  DataStoreType,
+  FilesService,
+  DataStoreService,
+  Query
+} from "kinvey-angular-sdk";

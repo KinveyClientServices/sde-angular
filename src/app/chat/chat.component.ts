@@ -15,7 +15,6 @@ export class ChatComponent implements OnInit {
   ngOnInit() {
     this.title = Config.chatPageTitle;
     this.nativeChatConfig = {
-      ...Config.chatConfig,
       session: {
         clear: true,
         userMessage: "Hello"

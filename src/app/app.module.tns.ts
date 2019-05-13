@@ -29,6 +29,8 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { NativeChatModule } from "@progress-nativechat/nativescript-nativechat/angular";
 
 import { isAndroid, isIOS, device, screen } from "tns-core-modules/platform";
+import { KinveyModule } from "kinvey-nativescript-sdk/angular";
+import { Config } from "./config";
 
 declare var GMSServices: any;
 if (isIOS) {
@@ -59,7 +61,11 @@ if (isIOS) {
     AppRoutingModule,
     NativeScriptFormsModule,
     NativeScriptUISideDrawerModule,
-    NativeChatModule
+    NativeChatModule,
+    KinveyModule.init({
+      appKey: Config.appKey,
+      appSecret: Config.appSecret
+    })
   ],
   providers: [],
   bootstrap: [AppComponent],

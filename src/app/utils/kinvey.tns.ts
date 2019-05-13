@@ -1,6 +1,7 @@
 export {
-  Kinvey,
-  CacheStore,
+  UserService,
   DataStoreType,
-  User
-} from "kinvey-nativescript-sdk";
+  FilesService,
+  DataStoreService,
+  Query
+} from "kinvey-nativescript-sdk/angular";
