@@ -1,17 +1,21 @@
-<GridLayout class="page">
-  <StackLayout class="circle"></StackLayout>
-  <StackLayout>
+<AbsoluteLayout class="page">
+  <Label class="circle"></Label>
+  <StackLayout class="login-page">
     <GridLayout rows="auto">
       <Label col="0" text="&#xf0c2;" class="fa main-logo-cloud"></Label>
     </GridLayout>
     <Label class="h1" [text]="title"></Label>
     <StackLayout class="form-container">
-      <GridLayout class="m-30" rows="auto, auto" columns="*,1,*">
-        <Label col="0" text="&#xf007;" class="fa login-icon selected"></Label>
+      <GridLayout class="m-30" rows="auto" columns="*,1,*">
+        <StackLayout>
+          <Label col="0" text="&#xf007;" class="fa login-icon selected"></Label>
+          <Label col="0" row="1" text="Patient" class="option"></Label>
+        </StackLayout>
         <Label class="hr" col="1" rowSpan="2"></Label>
-        <Label col="2" text="&#xf80d;" class="hospital-icon login-icon"></Label>
-        <Label col="0" row="1" text="Patient" class="option"></Label>
-        <Label col="2" row="1" text="Provider" class="option"></Label>
+        <StackLayout col="2">
+          <Label text="&#xf80d;" class="hospital-icon login-icon"></Label>
+          <Label text="Provider" class="option"></Label>
+        </StackLayout>
       </GridLayout>
       <TextField
         hint="Username"
@@ -48,4 +52,4 @@
       ></Label>
     </GridLayout>
   </StackLayout>
-</GridLayout>
+</AbsoluteLayout>

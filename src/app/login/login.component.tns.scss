@@ -2,23 +2,37 @@
 
 $text-color: $login-page-text-color;
 
-.page {
-  background: $login-page-background;
-  color: $text-color;
-}
-.logo {
-  margin-top: 20;
-  height: 160;
+.login-page {
   horizontal-align: center;
+  left: 50;
+  top: 0;
+  width: 280;
+  height: 100%;
 }
+.circle {
+  clip-path: circle(100% at 0% 50%);
+  text-align: center;
+  width: 900;
+  height: 900;
+  top: 0;
+  left: -254;
+  background: $circle-color;
+}
+.main-logo-cloud {
+  color: white;
+  margin: 40;
+  font-size: 110;
+  text-align: center;
+}
+
 .h1 {
+  margin-bottom: 30;
   color: $text-color;
   font-size: 26;
   text-align: center;
 }
 
 .form-container {
-  margin: 20 50 0 50;
   padding: 15 0;
   color: black;
   background: white;
@@ -76,7 +90,7 @@ button:disabled {
   font-size: 16;
 }
 .sign-up {
-  margin: 40;
+  margin-top: 40;
   horizontal-align: center;
 }
 
@@ -89,22 +103,11 @@ button:disabled {
   margin-left: 4;
   color: #f76e62;
 }
-.circle {
-  width: 100%;
-  height: 65%;
-  vertical-align: top;
-  border-radius: 0 0 90 90;
 
-  background: $circle-color;
-}
 .selected {
   color: #f15175;
 }
-.main-logo-cloud {
-  margin: 20;
-  font-size: 110;
-  text-align: center;
-}
+
 .option {
   margin-top: 20;
   text-align: center;
