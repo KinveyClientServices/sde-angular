@@ -5,7 +5,7 @@ export class Config {
 
   //LOGIN
   static appLogo: string = "images/logo-1.png";
-  static appTitle: string = "SDE Kinvey";
+  static appTitle: string = "Please Login as";
 
   //HOME
   static homePageTitle: string = "Home";

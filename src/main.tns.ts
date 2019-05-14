@@ -14,5 +14,9 @@ import { registerElement } from "nativescript-angular";
 registerElement("PDFView", () => PDFView);
 registerElement("AR", () => require("nativescript-ar").AR);
 registerElement("MapView", () => MapView);
+registerElement(
+  "PreviousNextView",
+  () => require("nativescript-iqkeyboardmanager").PreviousNextView
+);
 
 platformNativeScriptDynamic().bootstrapModule(AppModule);

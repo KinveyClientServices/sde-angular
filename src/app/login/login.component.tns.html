@@ -1,28 +1,44 @@
 <StackLayout class="page">
-    <Image class="logo" [src]="'~/app/'+logo"></Image>
-    <Label class="h1" [text]="title"></Label>
-    <GridLayout rows="auto, auto, auto">
-        <GridLayout row="0" rows="*, *" columns="50, *" class="form-container">
-            <Label row="0" rowSpan="2" col="0" class="ion" text="&#xf47d;"></Label>
-            <Label row="0" col="1" class="upper-label" text="USER"></Label>
-            <TextField autocapitalizationType="none" row="1" col="1" [(ngModel)]="username"></TextField>
-        </GridLayout>
-
-        <StackLayout row="1" class="hr"></StackLayout>
-
-        <GridLayout row="2" rows="*, *" columns="50, *" class="form-container">
-            <Label row="0" rowSpan="2" col="0" class="ion" text="&#xf4c8;"></Label>
-            <Label row="0" col="1" class="upper-label" text="PASSWORD"></Label>
-            <TextField secure="true" hint="password" row="1" col="1" [(ngModel)]="password"></TextField>
-        </GridLayout>
-
-        <ActivityIndicator rowSpan="3" [busy]="processing"></ActivityIndicator>
+  <Image class="logo" [src]="'~/app/' + logo"></Image>
+  <Label class="h1" [text]="title"></Label>
+  <StackLayout>
+    <GridLayout row="0" rows="*, *" columns="50, *" class="form-container">
+      <Label row="0" rowSpan="2" col="0" class="ion" text="&#xf47d;"></Label>
+      <Label row="0" col="1" class="upper-label" text="USER"></Label>
+      <TextField
+        autocapitalizationType="none"
+        row="1"
+        col="1"
+        [(ngModel)]="username"
+      ></TextField>
     </GridLayout>
 
-    <StackLayout class="hr"></StackLayout>
+    <StackLayout row="1" class="hr"></StackLayout>
 
-    <Button class="login btn btn-primary" [isEnabled]="!processing" text="Sign in With Kinvey" (tap)="login()"></Button>
+    <GridLayout row="2" rows="*, *" columns="50, *" class="form-container">
+      <Label row="0" rowSpan="2" col="0" class="ion" text="&#xf4c8;"></Label>
+      <Label row="0" col="1" class="upper-label" text="PASSWORD"></Label>
+      <TextField
+        secure="true"
+        hint="password"
+        row="1"
+        col="1"
+        [(ngModel)]="password"
+      ></TextField>
+    </GridLayout>
 
-    <Label class="or" text="OR"></Label>
-    <Label class="sign-in" text="COMPANY SIGN IN" (tap)="loginWithMIC()"></Label>
+    <ActivityIndicator rowSpan="3" [busy]="processing"></ActivityIndicator>
+  </StackLayout>
+
+  <StackLayout class="hr"></StackLayout>
+
+  <Button
+    class="login btn btn-primary"
+    [isEnabled]="!processing"
+    text="Sign in With Kinvey"
+    (tap)="login()"
+  ></Button>
+
+  <Label class="or" text="OR"></Label>
+  <Label class="sign-in" text="COMPANY SIGN IN" (tap)="loginWithMIC()"></Label>
 </StackLayout>
