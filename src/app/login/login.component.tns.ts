@@ -11,8 +11,8 @@ import { RouterExtensions } from "nativescript-angular/router";
   styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit {
-  username = "ignacio";
-  password = "ignacio";
+  username;
+  password;
   processing: boolean;
   logo: string;
   title: string;

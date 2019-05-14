@@ -1,44 +1,51 @@
-<StackLayout class="page">
-  <Image class="logo" [src]="'~/app/' + logo"></Image>
-  <Label class="h1" [text]="title"></Label>
+<GridLayout class="page">
+  <StackLayout class="circle"></StackLayout>
   <StackLayout>
-    <GridLayout row="0" rows="*, *" columns="50, *" class="form-container">
-      <Label row="0" rowSpan="2" col="0" class="ion" text="&#xf47d;"></Label>
-      <Label row="0" col="1" class="upper-label" text="USER"></Label>
+    <GridLayout rows="auto">
+      <Label col="0" text="&#xf0c2;" class="fa main-logo-cloud"></Label>
+    </GridLayout>
+    <Label class="h1" [text]="title"></Label>
+    <StackLayout class="form-container">
+      <GridLayout class="m-30" rows="auto, auto" columns="*,1,*">
+        <Label col="0" text="&#xf007;" class="fa login-icon selected"></Label>
+        <Label class="hr" col="1" rowSpan="2"></Label>
+        <Label col="2" text="&#xf80d;" class="hospital-icon login-icon"></Label>
+        <Label col="0" row="1" text="Patient" class="option"></Label>
+        <Label col="2" row="1" text="Provider" class="option"></Label>
+      </GridLayout>
       <TextField
+        hint="Username"
         autocapitalizationType="none"
+        class="rounded-input"
         row="1"
         col="1"
         [(ngModel)]="username"
       ></TextField>
-    </GridLayout>
-
-    <StackLayout row="1" class="hr"></StackLayout>
-
-    <GridLayout row="2" rows="*, *" columns="50, *" class="form-container">
-      <Label row="0" rowSpan="2" col="0" class="ion" text="&#xf4c8;"></Label>
-      <Label row="0" col="1" class="upper-label" text="PASSWORD"></Label>
       <TextField
+        class="rounded-input"
         secure="true"
-        hint="password"
+        hint="Password"
         row="1"
         col="1"
         [(ngModel)]="password"
       ></TextField>
+
+      <Button
+        class="login"
+        [isEnabled]="!processing"
+        text="LOG IN"
+        (tap)="login()"
+      ></Button>
+      <ActivityIndicator [busy]="processing"></ActivityIndicator>
+    </StackLayout>
+    <GridLayout class="sign-up" rows="auto" columns="auto, auto">
+      <Label class="or" text="Don't have an account?"></Label>
+      <Label
+        col="1"
+        class="sign-in"
+        text="Sign Up"
+        (tap)="loginWithMIC()"
+      ></Label>
     </GridLayout>
-
-    <ActivityIndicator rowSpan="3" [busy]="processing"></ActivityIndicator>
   </StackLayout>
-
-  <StackLayout class="hr"></StackLayout>
-
-  <Button
-    class="login btn btn-primary"
-    [isEnabled]="!processing"
-    text="Sign in With Kinvey"
-    (tap)="login()"
-  ></Button>
-
-  <Label class="or" text="OR"></Label>
-  <Label class="sign-in" text="COMPANY SIGN IN" (tap)="loginWithMIC()"></Label>
-</StackLayout>
+</GridLayout>

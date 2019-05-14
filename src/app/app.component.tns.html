@@ -12,44 +12,92 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
 
     <ScrollView row="1">
       <StackLayout class="sidedrawer-content">
-        <GridLayout columns="auto, *" class="sidedrawer-list-item" (tap)="onNavItemTap('/')" *ngIf="homePageVisible">
+        <GridLayout
+          columns="auto, *"
+          class="sidedrawer-list-item"
+          (tap)="onNavItemTap('/')"
+          *ngIf="homePageVisible"
+        >
           <Label col="0" text="&#xf015;" class="fa"></Label>
           <Label col="1" [text]="homePageTitle" class="p-r-10"></Label>
         </GridLayout>
-        <GridLayout columns="auto, *" class="sidedrawer-list-item" (tap)="onNavItemTap('/accounts')" *ngIf="accountsPageVisible">
+        <GridLayout
+          columns="auto, *"
+          class="sidedrawer-list-item"
+          (tap)="onNavItemTap('/accounts')"
+          *ngIf="accountsPageVisible"
+        >
           <Label col="0" text="&#xf2bd;" class="fa"></Label>
           <Label col="1" [text]="accountsPageTitle" class="p-r-10"></Label>
         </GridLayout>
-        <GridLayout columns="auto, *" class="sidedrawer-list-item" (tap)="onNavItemTap('/products')" *ngIf="productsPageVisible">
+        <GridLayout
+          columns="auto, *"
+          class="sidedrawer-list-item"
+          (tap)="onNavItemTap('/products')"
+          *ngIf="productsPageVisible"
+        >
           <Label col="0" text="&#xf0cb;" class="fa"></Label>
           <Label col="1" [text]="productsPageTitle" class="p-r-10"></Label>
         </GridLayout>
-        <GridLayout columns="auto, *" class="sidedrawer-list-item" (tap)="onNavItemTap('/files')" *ngIf="filesPageVisible">
+        <GridLayout
+          columns="auto, *"
+          class="sidedrawer-list-item"
+          (tap)="onNavItemTap('/files')"
+          *ngIf="filesPageVisible"
+        >
           <Label col="0" text="&#xf15c;" class="fa"></Label>
           <Label col="1" [text]="filesPageTitle" class="p-r-10"></Label>
         </GridLayout>
-        <GridLayout columns="auto, *" class="sidedrawer-list-item" (tap)="onNavItemTap('/tasks')" *ngIf="tasksPageVisible">
+        <GridLayout
+          columns="auto, *"
+          class="sidedrawer-list-item"
+          (tap)="onNavItemTap('/tasks')"
+          *ngIf="tasksPageVisible"
+        >
           <Label col="0" text="&#xf0ae;" class="fa"></Label>
           <Label col="1" [text]="tasksPageTitle" class="p-r-10"></Label>
         </GridLayout>
-        <GridLayout columns="auto, *" class="sidedrawer-list-item" (tap)="onNavItemTap('/offline')" *ngIf="offlinePageVisible">
+        <GridLayout
+          columns="auto, *"
+          class="sidedrawer-list-item"
+          (tap)="onNavItemTap('/offline')"
+          *ngIf="offlinePageVisible"
+        >
           <Label col="0" text="&#xf1e6;" class="fa"></Label>
           <Label col="1" [text]="offlinePageTitle" class="p-r-10"></Label>
         </GridLayout>
-        <GridLayout columns="auto, *" class="sidedrawer-list-item" (tap)="onNavItemTap('/map')" *ngIf="offlinePageVisible">
+        <GridLayout
+          columns="auto, *"
+          class="sidedrawer-list-item"
+          (tap)="onNavItemTap('/map')"
+          *ngIf="offlinePageVisible"
+        >
           <Label col="0" text="&#xf279;" class="fa"></Label>
           <Label col="1" [text]="mapPageTitle" class="p-r-10"></Label>
         </GridLayout>
-        <GridLayout columns="auto, *" class="sidedrawer-list-item" (tap)="onNavItemTap('/chat')" *ngIf="chatPageVisible">
+        <GridLayout
+          columns="auto, *"
+          class="sidedrawer-list-item"
+          (tap)="onNavItemTap('/chat')"
+          *ngIf="chatPageVisible"
+        >
           <Label col="0" text="&#xf086;" class="fa"></Label>
           <Label col="1" [text]="chatPageTitle" class="p-r-10"></Label>
         </GridLayout>
-        <GridLayout columns="auto, *" class="sidedrawer-list-item" (tap)="onNavItemTap('/ar')" *ngIf="arPageVisible">
+        <GridLayout
+          columns="auto, *"
+          class="sidedrawer-list-item"
+          (tap)="onNavItemTap('/ar')"
+          *ngIf="arPageVisible"
+        >
           <Label col="0" text="&#xf042;" class="fa"></Label>
           <Label col="1" [text]="arPageTitle" class="p-r-10"></Label>
         </GridLayout>
       </StackLayout>
     </ScrollView>
   </GridLayout>
-  <page-router-outlet tkMainContent class="page page-content"></page-router-outlet>
+  <page-router-outlet
+    tkMainContent
+    class="page page-content"
+  ></page-router-outlet>
 </RadSideDrawer>
