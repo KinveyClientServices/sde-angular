@@ -1,12 +1,14 @@
-<AbsoluteLayout class="page">
-  <Label class="circle"></Label>
-  <StackLayout class="login-page">
-    <GridLayout rows="auto">
-      <Label col="0" text="&#xf0c2;" class="fa main-logo-cloud"></Label>
-    </GridLayout>
+<GridLayout rows="3*,9*,2*">
+  <AbsoluteLayout rowSpan="3">
+    <Label class="circle"></Label>
+  </AbsoluteLayout>
+  <ActivityIndicator [busy]="processing"></ActivityIndicator>
+
+  <Label row="0" text="&#xf0c2;" class="fa main-logo-cloud"></Label>
+  <GridLayout verticalAlignment="top" rows="auto,*" class="login-page" row="1">
     <Label class="h1" [text]="title"></Label>
-    <StackLayout class="form-container">
-      <GridLayout class="m-30" rows="auto" columns="*,1,*">
+    <GridLayout rows="auto auto, auto,auto" row="1" class="form-container">
+      <GridLayout class="m-b-30" rows="auto" columns="*,1,*">
         <StackLayout>
           <Label col="0" text="&#xf007;" class="fa login-icon selected"></Label>
           <Label col="0" row="1" text="Patient" class="option"></Label>
@@ -22,34 +24,35 @@
         autocapitalizationType="none"
         class="rounded-input"
         row="1"
-        col="1"
         [(ngModel)]="username"
       ></TextField>
+
       <TextField
         class="rounded-input"
         secure="true"
         hint="Password"
-        row="1"
-        col="1"
+        row="2"
         [(ngModel)]="password"
       ></TextField>
 
       <Button
+        row="3"
         class="login"
         [isEnabled]="!processing"
         text="LOG IN"
         (tap)="login()"
       ></Button>
-      <ActivityIndicator [busy]="processing"></ActivityIndicator>
-    </StackLayout>
-    <GridLayout class="sign-up" rows="auto" columns="auto, auto">
-      <Label class="or" text="Don't have an account?"></Label>
-      <Label
-        col="1"
-        class="sign-in"
-        text="Sign Up"
-        (tap)="loginWithMIC()"
-      ></Label>
     </GridLayout>
-  </StackLayout>
-</AbsoluteLayout>
+  </GridLayout>
+
+  <GridLayout class="sign-up" rows="auto" columns="auto, auto" row="2">
+    <Label class="or" text="Don't have an account?"></Label>
+
+    <Label
+      col="1"
+      class="sign-in"
+      text="Sign Up"
+      (tap)="loginWithMIC()"
+    ></Label>
+  </GridLayout>
+</GridLayout>

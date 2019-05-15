@@ -1,44 +1,39 @@
 @import "../../app-variables";
 
 $text-color: $login-page-text-color;
-
-.login-page {
-  horizontal-align: center;
-  left: 50;
-  top: 0;
-  width: 280;
-  height: 100%;
-}
 .circle {
   clip-path: circle(100% at 0% 50%);
   text-align: center;
   width: 900;
-  height: 900;
+  height: 130%;
   top: 0;
   left: -254;
   background: $circle-color;
 }
 .main-logo-cloud {
   color: white;
-  margin: 40;
   font-size: 110;
   text-align: center;
 }
 
+.login-page {
+  width: 280;
+}
+
 .h1 {
-  margin-bottom: 30;
   color: $text-color;
   font-size: 26;
   text-align: center;
+  margin-bottom: 20;
 }
 
 .form-container {
-  padding: 15 0;
   color: black;
   background: white;
   border-radius: 14;
   border-color: #a7a7a7;
   border-width: 1;
+  padding: 40;
 }
 .form-element {
 }
@@ -47,19 +42,16 @@ $text-color: $login-page-text-color;
   background-color: #a7a7a7;
 }
 
-.android TextField {
-  font-weight: 300;
-}
 .rounded-input {
   width: 213;
   border-color: #a7a7a7;
   font-size: 16;
-  padding: 2;
   text-align: center;
-  height: 47;
   border-width: 1;
   border-radius: 30;
-  margin-bottom: 20;
+  height: 50;
+  margin-bottom: 16;
+  vertical-align: center;
 }
 
 .login {
@@ -68,18 +60,19 @@ $text-color: $login-page-text-color;
   color: #f15175;
   font-size: 16;
   border-color: #f15175;
+  height: 40;
   border-width: 1;
   border-radius: 30;
-
-  height: 47;
+  vertical-align: center;
 }
 .login-icon {
   text-align: center;
   font-size: 40;
   color: #707070;
+  padding: 6;
 }
 .hospital-icon {
-  font-family: "Font Awesome 5 Pro";
+  font-family: Font Awesome 5 Pro, Font Awesome 5 Pro-Solid-900;
 }
 button:disabled {
   opacity: 0.5;
@@ -90,8 +83,8 @@ button:disabled {
   font-size: 16;
 }
 .sign-up {
-  margin-top: 40;
   horizontal-align: center;
+  margin-top: 20;
 }
 
 .or {
@@ -109,6 +102,5 @@ button:disabled {
 }
 
 .option {
-  margin-top: 20;
   text-align: center;
 }
