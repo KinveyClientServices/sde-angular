@@ -1,28 +1,36 @@
+/*
+In NativeScript, the app.css file is where you place CSS rules that
+you would like to apply to your entire application. Check out
+http://docs.nativescript.org/ui/styling for a full list of the CSS
+selectors and properties you can use to style UI components.
+
+/*
+In many cases you may want to use the NativeScript core theme instead
+of writing your own CSS rules. For a full list of class names in the theme
+refer to http://docs.nativescript.org/ui/theme.
+*/
 @import "../../app-variables";
 
 $text-color: $login-page-text-color;
+
 .circle {
-  clip-path: circle(100% at 0% 50%);
+  clip-path: circle(240% at 0% 50%);
   text-align: center;
-  width: 900;
-  height: 130%;
+  height: 100%;
   top: 0;
-  left: -254;
-  background: $circle-color;
+  background: linear-gradient(222deg, #ff9f40, #e60ca5);
 }
 .main-logo-cloud {
+  margin-top: 80;
+  height:130;
+  margin-bottom: 30;
   color: white;
-  font-size: 110;
   text-align: center;
-}
-
-.login-page {
-  width: 280;
 }
 
 .h1 {
-  color: $text-color;
-  font-size: 26;
+  color: white;
+  font-size: 20;
   text-align: center;
   margin-bottom: 20;
 }
@@ -33,7 +41,8 @@ $text-color: $login-page-text-color;
   border-radius: 14;
   border-color: #a7a7a7;
   border-width: 1;
-  padding: 40;
+  padding: 30;
+  width: 260;
 }
 .form-element {
 }
@@ -49,7 +58,7 @@ $text-color: $login-page-text-color;
   text-align: center;
   border-width: 1;
   border-radius: 30;
-  height: 50;
+  height: 44;
   margin-bottom: 16;
   vertical-align: center;
 }
@@ -67,24 +76,18 @@ $text-color: $login-page-text-color;
 }
 .login-icon {
   text-align: center;
-  font-size: 40;
+  font-size: 30;
   color: #707070;
-  padding: 6;
-}
-.hospital-icon {
-  font-family: Font Awesome 5 Pro, Font Awesome 5 Pro-Solid-900;
+  padding: 0;
+  margin-bottom: 10;
 }
 button:disabled {
   opacity: 0.5;
 }
-.android button {
-  font-weight: 400;
-  text-transform: none;
-  font-size: 16;
-}
 .sign-up {
+  margin-top: 10;
+  vertical-align: center;
   horizontal-align: center;
-  margin-top: 20;
 }
 
 .or {
@@ -99,6 +102,10 @@ button:disabled {
 
 .selected {
   color: #f15175;
+}
+
+.options {
+  margin-bottom: 40;
 }
 
 .option {
