@@ -1,58 +1,60 @@
-<GridLayout rows="3*,9*,2*">
-  <AbsoluteLayout rowSpan="3">
-    <Label class="circle"></Label>
-  </AbsoluteLayout>
+<GridLayout>
   <ActivityIndicator [busy]="processing"></ActivityIndicator>
+  <ContentView class="circle" row="0" rowSpan="4"> </ContentView>
+  <ScrollView>
+    <GridLayout rows="auto,auto,auto,*">
+      <Image row="0" src="res://logo" class="main-logo-cloud"></Image>
+      <Label row="1" class="h1" text="Please Login as"></Label>
+      <GridLayout row="2" rows="auto *, *,*" class="form-container">
+        <GridLayout class="m-b-30" rows="auto" columns="*,1,*">
+          <StackLayout>
+            <Label
+              col="0"
+              text="&#xf007;"
+              class="fa login-icon selected"
+            ></Label>
+            <Label col="0" row="1" text="Patient" class="option"></Label>
+          </StackLayout>
+          <Label class="hr" col="1" rowSpan="2"></Label>
+          <StackLayout col="2">
+            <Label text="&#xf80d;" class="fa login-icon"></Label>
+            <Label text="Provider" class="option"></Label>
+          </StackLayout>
+        </GridLayout>
+        <TextField
+          hint="Username"
+          autocapitalizationType="none"
+          class="rounded-input"
+          row="1"
+          [(ngModel)]="username"
+        ></TextField>
 
-  <Label row="0" text="&#xf0c2;" class="fa main-logo-cloud"></Label>
-  <GridLayout verticalAlignment="top" rows="auto,*" class="login-page" row="1">
-    <Label class="h1" [text]="title"></Label>
-    <GridLayout rows="auto auto, auto,auto" row="1" class="form-container">
-      <GridLayout class="m-b-30" rows="auto" columns="*,1,*">
-        <StackLayout>
-          <Label col="0" text="&#xf007;" class="fa login-icon selected"></Label>
-          <Label col="0" row="1" text="Patient" class="option"></Label>
-        </StackLayout>
-        <Label class="hr" col="1" rowSpan="2"></Label>
-        <StackLayout col="2">
-          <Label text="&#xf80d;" class="hospital-icon login-icon"></Label>
-          <Label text="Provider" class="option"></Label>
-        </StackLayout>
+        <TextField
+          class="rounded-input"
+          secure="true"
+          hint="Password"
+          row="2"
+          [(ngModel)]="password"
+        ></TextField>
+
+        <Button
+          row="3"
+          class="login"
+          [isEnabled]="!processing"
+          text="LOG IN"
+          (tap)="login()"
+        ></Button>
       </GridLayout>
-      <TextField
-        hint="Username"
-        autocapitalizationType="none"
-        class="rounded-input"
-        row="1"
-        [(ngModel)]="username"
-      ></TextField>
 
-      <TextField
-        class="rounded-input"
-        secure="true"
-        hint="Password"
-        row="2"
-        [(ngModel)]="password"
-      ></TextField>
-
-      <Button
-        row="3"
-        class="login"
-        [isEnabled]="!processing"
-        text="LOG IN"
-        (tap)="login()"
-      ></Button>
+      <GridLayout class="sign-up" rows="auto" columns="auto, auto" row="3">
+        <Label class="or" text="Don't have an account?"></Label>
+        <Label
+          col="1"
+          class="sign-in"
+          text="Sign Up"
+          (tap)="loginWithMIC()"
+        ></Label>
+      </GridLayout>
     </GridLayout>
-  </GridLayout>
-
-  <GridLayout class="sign-up" rows="auto" columns="auto, auto" row="2">
-    <Label class="or" text="Don't have an account?"></Label>
-
-    <Label
-      col="1"
-      class="sign-in"
-      text="Sign Up"
-      (tap)="loginWithMIC()"
-    ></Label>
-  </GridLayout>
+  </ScrollView>
 </GridLayout>
