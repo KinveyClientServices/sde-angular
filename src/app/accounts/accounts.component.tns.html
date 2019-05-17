@@ -1,24 +1,21 @@
-<ActionBar class="action-bar">
-    <!-- 
-    Use the NavigationButton as a side-drawer button in Android
-    because ActionItems are shown on the right side of the ActionBar
-    -->
-    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
-    <!-- 
-    Use the ActionItem for IOS with position set to left. Using the
-    NavigationButton as a side-drawer button in iOS is not possible,
-    because its function is to always navigate back in the application.
-    -->
-    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
-    </ActionItem>
-    <Label class="action-bar-title" [text]="title"></Label>
-</ActionBar>
-
 <ListView class="list-group" [items]="items">
-    <ng-template let-item="item">
-        <GridLayout class="list-group-item" rows="auto, *" columns="*" (tap)="goToDetails(item)">
-            <Label row="0" [text]="item.accountname" class="list-group-item-heading"></Label>
-            <Label row="1" [text]="item.accountcompany" class="list-group-item-text"></Label>
-        </GridLayout>
-    </ng-template>
+  <ng-template let-item="item">
+    <GridLayout
+      class="list-group-item"
+      rows="auto, *"
+      columns="*"
+      (tap)="goToDetails(item)"
+    >
+      <Label
+        row="0"
+        [text]="item.accountname"
+        class="list-group-item-heading"
+      ></Label>
+      <Label
+        row="1"
+        [text]="item.accountcompany"
+        class="list-group-item-text"
+      ></Label>
+    </GridLayout>
+  </ng-template>
 </ListView>

@@ -23,6 +23,7 @@ import { SettingsComponent } from "./settings/settings.component";
 import { KinveyModule } from "kinvey-angular-sdk";
 
 import { Config } from "./config";
+import { TabsComponent } from "./tabs/tabs.component";
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { Config } from "./config";
     ArComponent,
     AccountsComponent,
     AccountDetailsComponent,
-    SettingsComponent
+    SettingsComponent,
+    TabsComponent
   ],
   imports: [
     BrowserModule,

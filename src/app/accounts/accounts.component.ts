@@ -3,6 +3,7 @@ import { DataService } from "../data.service";
 import { Config } from "../config";
 import { DrawerHelper } from "../utils/drawer-helper";
 import { Router } from "../utils";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-accounts",
@@ -15,7 +16,8 @@ export class AccountsComponent implements OnInit {
   constructor(
     private service: DataService,
     private router: Router,
-    private zone: NgZone
+    private zone: NgZone,
+    private activeRoute: ActivatedRoute
   ) {}
 
   async ngOnInit() {
@@ -33,6 +35,8 @@ export class AccountsComponent implements OnInit {
 
   goToDetails(item) {
     //console.log(item);
-    this.router.navigate(["account-details", item._id]);
+    this.router.navigate(["../account", item._id], {
+      relativeTo: this.activeRoute
+    });
   }
 }
