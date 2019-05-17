@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit {
   async login() {
     try {
       this.processing = true;
-      await this.dataService.login(this.username, this.password);
+      let u: any = await this.dataService.login(this.username, this.password);
+      let roleId = u.data._kmd.roles[0].roleId;
       console.log("LOG IN SUCsCESSFUL");
       this.router.navigate(["../tabs/default"], { clearHistory: true });
     } catch {

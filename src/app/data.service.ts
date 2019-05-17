@@ -125,7 +125,9 @@ export class DataService {
       return Promise.resolve(this.userService.getActiveUser());
     } else {
       console.log("nsot yet");
-      let u = await this.userService.login(name, password);
+      let u: any = await this.userService.login(name, password);
+      let roleId = u.data._kmd.roles[0].roleId;
+      console.log(roleId);
       console.log("we bsack");
       this.isLoggedIn.next(true);
       //console.log(user);

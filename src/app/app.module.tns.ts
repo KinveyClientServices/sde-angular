@@ -66,7 +66,8 @@ if (isIOS) {
     NativeChatModule,
     KinveyModule.init({
       appKey: Config.appKey,
-      appSecret: Config.appSecret
+      appSecret: Config.appSecret,
+      instanceId: "kvy-us2"
     })
   ],
   providers: [],
