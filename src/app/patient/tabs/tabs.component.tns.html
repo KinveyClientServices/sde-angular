@@ -1,0 +1,40 @@
+<TabView
+  tabTextColor="#707070"
+  tabBackgroundColor="white"
+  androidTabsPosition="bottom"
+  selectedTabTextColor="#F15175"
+  tabTextFontSize="14"
+>
+  <page-router-outlet
+    color="green"
+    *tabItem="{ iconSource: 'res://tabs/dashboard/dashboard' }"
+    name="accountsTab"
+  >
+  </page-router-outlet>
+
+  <page-router-outlet
+    *tabItem="{ iconSource: 'res://tabs/doctor/doctor' }"
+    name="filesTab"
+    actionBarVisibility="never"
+  >
+  </page-router-outlet>
+  <page-router-outlet
+    *tabItem="{ iconSource: 'res://tabs/appointments/appointments' }"
+    name="filesTab"
+    actionBarVisibility="never"
+  >
+  </page-router-outlet>
+  <page-router-outlet
+    *tabItem="{ iconSource: 'res://tabs/telemedicine/telemedicine' }"
+    name="telemedicineTab"
+    actionBarVisibility="never"
+  >
+  </page-router-outlet>
+
+  <page-router-outlet
+    *tabItem="{ iconSource: 'res://tabs/profile/profile' }"
+    name="settingsTab"
+    actionBarVisibility="never"
+  >
+  </page-router-outlet>
+</TabView>

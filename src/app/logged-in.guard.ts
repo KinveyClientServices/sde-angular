@@ -15,7 +15,7 @@ export class LoggedInGuard implements CanActivate {
   constructor(private service: DataService, private router: Router) {}
 
   canActivate() {
-    console.log("checking access");
+    console.log("checking access...");
     if (!this.service.isLoggedIn.value) {
       console.log("user is not logged in");
       this.router.navigate(["login"]);

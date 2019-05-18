@@ -119,7 +119,7 @@ export class DataService {
   }
 
   async login(name, password): Promise<User> {
-    console.log("login in");
+    console.log("login indd");
     if (this.userService.getActiveUser()) {
       console.log("already logzgesd in");
       return Promise.resolve(this.userService.getActiveUser());
