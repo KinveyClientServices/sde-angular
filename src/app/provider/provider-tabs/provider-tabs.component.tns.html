@@ -6,21 +6,18 @@
   tabTextFontSize="14"
 >
   <page-router-outlet
-    color="green"
+    *tabItem="{ iconSource: 'res://tabs/dashboard/dashboard' }"
+    name="patientsTab"
+  >
+  </page-router-outlet>
+  <page-router-outlet
     *tabItem="{ iconSource: 'res://tabs/dashboard/dashboard' }"
     name="appointmentsTab"
   >
   </page-router-outlet>
   <page-router-outlet
-    color="green"
     *tabItem="{ iconSource: 'res://tabs/dashboard/dashboard' }"
-    name="appointmentsTab"
-  >
-  </page-router-outlet>
-  <page-router-outlet
-    color="green"
-    *tabItem="{ iconSource: 'res://tabs/dashboard/dashboard' }"
-    name="appointmentsTab"
+    name="ticketsTab"
   >
   </page-router-outlet>
 </TabView>

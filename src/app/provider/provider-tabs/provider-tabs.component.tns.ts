@@ -19,7 +19,9 @@ export class ProviderTabsComponent implements OnInit {
       [
         {
           outlets: {
-            appointmentsTab: ["appointments"]
+            patientsTab: ["patients"],
+            appointmentsTab: ["appointments"],
+            ticketsTab: ["tickets"]
           }
         }
       ],

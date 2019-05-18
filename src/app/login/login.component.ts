@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
   async loginWithMIC() {
     try {
       this.processing = true;
-      await this.dataService.loginWithMIC('http://localhost:4200');
+      await this.dataService.loginWithMIC("http://localhost:4200");
       this.router.navigate([""]);
     } catch {
       alert("Invalid credentials");

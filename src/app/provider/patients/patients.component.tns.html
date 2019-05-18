@@ -1,1 +1,33 @@
-<Button text="patients works!" class="btn btn-primary"></Button>
+<GridLayout rows="auto,*,auto">
+  <GridLayout class="m-x-20 m-b-10" columns="*,auto">
+    <Label class="heading" text="Patients"></Label>
+    <GridLayout col="1" (tap)="logout()">
+      <Label class="circle"></Label>
+      <Label text="&#xf2f5;" class="fa logout-button"></Label>
+    </GridLayout>
+  </GridLayout>
+
+  <ListView row="1" [items]="myItems" (itemTap)="onItemTap($event)">
+    <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
+      <GridLayout rows="*" class="m-x-20" columns="auto,*,auto" height="80">
+        <Image
+          col="0"
+          class="doctor-image"
+          src="https://2.gravatar.com/avatar/7fc56bb23fe5236b432b5b91597109a1?s=160"
+        ></Image>
+        <StackLayout col="1" verticalAlignment="center">
+          <Label class="name" [text]="item.name"></Label>
+          <Label
+            row="1"
+            class="subscriber-id"
+            [text]="'08881256659996'"
+          ></Label>
+        </StackLayout>
+        <Label col="2" text="&#xf054;" class="fa list-arrow"></Label>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+  <GridLayout class="p-30 footer" row="2">
+    <Button class="refresh-button" text="REFRESH"></Button>
+  </GridLayout>
+</GridLayout>
