@@ -9,7 +9,7 @@ export class DashboardComponent implements OnInit {
   items = [
     {
       title: "Steps",
-      icon: String.fromCharCode(parseInt("f554", 16)),
+      icon: "\uf554",
       value: 5120,
       color: "#F15175",
       angle: 180,
@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
 
     {
       title: "kCal Burned",
-      icon: String.fromCharCode(parseInt("f46a", 16)),
+      icon: "\uf46a",
       value: 230,
       color: "#FF9F40",
       angle: 320,
@@ -33,7 +33,7 @@ export class DashboardComponent implements OnInit {
     },
     {
       title: "kCal Consumed",
-      icon: String.fromCharCode(parseInt("f2e7", 16)),
+      icon: "\uf2e7",
       value: 800,
       color: "#6AB04C",
       angle: 220,
@@ -45,7 +45,7 @@ export class DashboardComponent implements OnInit {
     },
     {
       title: "Hours Slept",
-      icon: String.fromCharCode(parseInt("f755", 16)),
+      icon: "\uf755",
       value: 6,
       color: "#686DE0",
       angle: 340,
