@@ -11,3 +11,24 @@
 Page {
   font-family: Avenir, "Nunito-Regular";
 }
+
+.heading {
+  font-size: 40;
+  font-family: "Helvetica Neue";
+  font-weight: bold;
+}
+.heading-icon-circle {
+  width: 40;
+  height: 40;
+  border-radius: 40;
+  opacity: 0.1;
+  background: #36547c;
+  horizontal-align: center;
+  vertical-align: center;
+}
+
+.heading-icon-button {
+  font-size: 24;
+  horizontal-align: center;
+  vertical-align: center;
+}

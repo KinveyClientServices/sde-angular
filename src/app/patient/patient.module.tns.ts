@@ -9,6 +9,9 @@ import { SettingsComponent } from "./settings/settings.component";
 import { ChatComponent } from "./chat/chat.component";
 import { TabsComponent } from "./tabs/tabs.component";
 import { NativeChatModule } from "@progress-nativechat/nativescript-nativechat/angular";
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { FindDoctorComponent } from './find-doctor/find-doctor.component';
+import { MyAppointmentsComponent } from './my-appointments/my-appointments.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { NativeChatModule } from "@progress-nativechat/nativescript-nativechat/a
     AccountDetailsComponent,
     FilesComponent,
     SettingsComponent,
-    ChatComponent
+    ChatComponent,
+    DashboardComponent,
+    FindDoctorComponent,
+    MyAppointmentsComponent
   ],
   imports: [PatientRoutingModule, NativeChatModule, NativeScriptCommonModule],
   schemas: [NO_ERRORS_SCHEMA]

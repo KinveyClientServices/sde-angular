@@ -10,12 +10,32 @@ import { AccountDetailsComponent } from "./accounts/account-details/account-deta
 import { FilesComponent } from "./files/files.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { ChatComponent } from "./chat/chat.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { FindDoctorComponent } from "./find-doctor/find-doctor.component";
 
 const routes: Routes = [
   {
     path: "default",
     component: TabsComponent,
     children: [
+      {
+        path: "dashboard",
+        outlet: "dashboardTab",
+        component: NSEmptyOutletComponent,
+        children: [
+          { path: "", redirectTo: "dashboard", pathMatch: "full" },
+          { path: "dashboard", component: DashboardComponent }
+        ]
+      },
+      {
+        path: "find-doctor",
+        outlet: "findDoctorTab",
+        component: NSEmptyOutletComponent,
+        children: [
+          { path: "", redirectTo: "find-doctor", pathMatch: "full" },
+          { path: "find-doctor", component: FindDoctorComponent }
+        ]
+      },
       {
         path: "accounts",
         outlet: "accountsTab",

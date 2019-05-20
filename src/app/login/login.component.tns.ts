@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { DataService } from "../data.service";
 import { Router } from "../utils";
 import { Config } from "../config";
-import { Page } from "tns-core-modules/ui/page";
 import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
@@ -11,17 +10,16 @@ import { RouterExtensions } from "nativescript-angular/router";
   styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit {
-  username = "drignacio";
-  password = "drignacio";
+  username = "ignacio";
+  password = "ignacio";
   processing: boolean;
   logo: string;
   title: string;
   constructor(
     private dataService: DataService,
-    private router: RouterExtensions,
-    private page: Page
+    private router: RouterExtensions
   ) {
-    this.page.actionBarHidden = true;
+    //this.page.actionBarHidden = true;
     // Use the component constructor to inject providers.
   }
 
