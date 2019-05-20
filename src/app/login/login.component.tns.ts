@@ -10,9 +10,14 @@ import { RouterExtensions } from "nativescript-angular/router";
   styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit {
-  username = "ignacio";
-  password = "ignacio";
+  patientUserName = "ignacio";
+  patientPassword = "ignacio";
+  drUserName = "drignacio";
+  drPassword = "drignacio";
+  username = this.patientUserName;
+  password = this.patientPassword;
   processing: boolean;
+  loggingInAs = "patient";
   logo: string;
   title: string;
   constructor(
@@ -63,5 +68,10 @@ export class LoginComponent implements OnInit {
     } finally {
       this.processing = false;
     }
+  }
+  changeSelected(to) {
+    this.loggingInAs = to;
+    this.username = to === "provider" ? this.drUserName : this.patientUserName;
+    this.password = to === "provider" ? this.drPassword : this.patientPassword;
   }
 }

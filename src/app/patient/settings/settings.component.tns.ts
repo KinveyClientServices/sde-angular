@@ -20,10 +20,11 @@ export class SettingsComponent implements OnInit {
     // Init your component properties here.
     this.title = Config.settingsPageTitle;
   }
-  logout() {
-    this.dataService.logout().then(() => {
-      this.router.navigate(["login"], { clearHistory: true });
-    });
+  async logout() {
+    if (await confirm("Do you want to log out??")) {
+      await this.dataService.logout();
+      this.router.navigate(["login"], <any>{ clearHistory: true });
+    }
   }
 
   onDrawerButtonTap(): void {
