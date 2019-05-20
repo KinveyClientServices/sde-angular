@@ -11,9 +11,9 @@ import { TabsComponent } from "./tabs/tabs.component";
 import { NativeChatModule } from "@progress-nativechat/nativescript-nativechat/angular";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { FindDoctorComponent } from "./find-doctor/find-doctor.component";
-import { AppointmentsComponent } from './appointments/appointments.component';
-import { TelemedicineComponent } from './telemedicine/telemedicine.component';
-
+import { AppointmentsComponent } from "./appointments/appointments.component";
+import { TelemedicineComponent } from "./telemedicine/telemedicine.component";
+import { NativeScriptUIGaugeModule } from "nativescript-ui-gauge/angular";
 @NgModule({
   declarations: [
     TabsComponent,
@@ -27,7 +27,12 @@ import { TelemedicineComponent } from './telemedicine/telemedicine.component';
     AppointmentsComponent,
     TelemedicineComponent
   ],
-  imports: [PatientRoutingModule, NativeChatModule, NativeScriptCommonModule],
+  imports: [
+    PatientRoutingModule,
+    NativeChatModule,
+    NativeScriptCommonModule,
+    NativeScriptUIGaugeModule
+  ],
   schemas: [NO_ERRORS_SCHEMA]
 })
 export class PatientModule {}

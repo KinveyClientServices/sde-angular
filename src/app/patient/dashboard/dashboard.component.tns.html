@@ -1,4 +1,4 @@
-<GridLayout rows="auto,*,auto">
+<GridLayout rows="auto,*">
   <GridLayout class="m-x-20 m-b-10" columns="*,auto">
     <Label class="heading" text="Dashboard"></Label>
     <GridLayout col="1">
@@ -6,6 +6,63 @@
       <Label text="&#xf095;" class="fa heading-icon-button"></Label>
     </GridLayout>
   </GridLayout>
-  <GridLayout row="1"></GridLayout>
-  <GridLayout row="2"></GridLayout>
+  <ScrollView row="1" class="m-l-30 m-r-20">
+    <StackLayout>
+      <GridLayout columns="6*, 4*">
+        <Label class="heading" text="Steps"></Label>
+        <GridLayout col="1">
+          <Label
+            text="5152"
+            class="main chart-label"
+            verticalAlignment="center"
+            horizontalAlignment="center"
+          ></Label>
+          <RadRadialGauge class="gauge" height="200">
+            <RadialScale
+              #myScale
+              tkRadialGaugeScales
+              startAngle="270"
+              sweepAngle="360"
+              minimum="0"
+              maximum="360"
+              radius="0.9"
+            >
+              <ScaleStyle
+                tkRadialScaleStyle
+                ticksVisible="false"
+                labelsVisible="false"
+                lineThickness="0"
+              ></ScaleStyle>
+
+              <RadialBarIndicator
+                tkRadialScaleIndicators
+                minimum="0"
+                maximum="360"
+                location="1"
+              >
+                <BarIndicatorStyle
+                  tkRadialBarIndicatorStyle
+                  fillColor="#A7A7A7"
+                  barWidth="0.06"
+                ></BarIndicatorStyle>
+              </RadialBarIndicator>
+
+              <RadialBarIndicator
+                tkRadialScaleIndicators
+                minimum="0"
+                maximum="190"
+                location="1"
+              >
+                <BarIndicatorStyle
+                  tkRadialBarIndicatorStyle
+                  fillColor="#F15175"
+                  barWidth="0.1"
+                ></BarIndicatorStyle>
+              </RadialBarIndicator>
+            </RadialScale>
+          </RadRadialGauge>
+        </GridLayout>
+      </GridLayout>
+    </StackLayout>
+  </ScrollView>
 </GridLayout>
