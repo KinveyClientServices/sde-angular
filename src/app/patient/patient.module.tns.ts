@@ -14,6 +14,7 @@ import { FindDoctorComponent } from "./find-doctor/find-doctor.component";
 import { AppointmentsComponent } from "./appointments/appointments.component";
 import { TelemedicineComponent } from "./telemedicine/telemedicine.component";
 import { NativeScriptUIGaugeModule } from "nativescript-ui-gauge/angular";
+import { RadialChartComponent } from './dashboard/radial-chart/radial-chart.component';
 @NgModule({
   declarations: [
     TabsComponent,
@@ -25,7 +26,8 @@ import { NativeScriptUIGaugeModule } from "nativescript-ui-gauge/angular";
     DashboardComponent,
     FindDoctorComponent,
     AppointmentsComponent,
-    TelemedicineComponent
+    TelemedicineComponent,
+    RadialChartComponent
   ],
   imports: [
     PatientRoutingModule,

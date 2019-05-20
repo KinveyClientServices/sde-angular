@@ -1,6 +1,16 @@
 /* Add mobile styles for the component here.  */
-.chart-label {
-  font-size: 30;
-  font-family: "Helvetica Neue";
-  font-weight: 500;
+.dashboard-h2 {
+  margin-left: 10;
+  padding: 6;
+}
+.h2-container {
+  margin: 0 0 10 0;
+}
+
+.h2-background {
+  opacity: 0.15;
+  border-radius: 10;
+}
+.my-card {
+  margin-bottom: 50;
 }

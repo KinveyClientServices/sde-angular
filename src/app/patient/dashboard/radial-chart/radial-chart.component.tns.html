@@ -1,0 +1,48 @@
+<GridLayout [col]="col">
+  <Label [text]="text" class="chart-label" [color]="color"></Label>
+  <RadRadialGauge class="gauge">
+    <RadialScale
+      verticalAlignment="top"
+      tkRadialGaugeScales
+      startAngle="270"
+      sweepAngle="360"
+      minimum="0"
+      maximum="360"
+      radius="0.9"
+    >
+      <ScaleStyle
+        tkRadialScaleStyle
+        ticksVisible="false"
+        labelsVisible="false"
+        lineThickness="0"
+      ></ScaleStyle>
+
+      <RadialBarIndicator
+        verticalAlignment="top"
+        tkRadialScaleIndicators
+        minimum="0"
+        maximum="360"
+        location="1"
+      >
+        <BarIndicatorStyle
+          tkRadialBarIndicatorStyle
+          fillColor="#A7A7A7"
+          barWidth="0.06"
+        ></BarIndicatorStyle>
+      </RadialBarIndicator>
+
+      <RadialBarIndicator
+        tkRadialScaleIndicators
+        minimum="0"
+        maximum="190"
+        location="1"
+      >
+        <BarIndicatorStyle
+          tkRadialBarIndicatorStyle
+          [fillColor]="color"
+          barWidth="0.1"
+        ></BarIndicatorStyle>
+      </RadialBarIndicator>
+    </RadialScale>
+  </RadRadialGauge>
+</GridLayout>
