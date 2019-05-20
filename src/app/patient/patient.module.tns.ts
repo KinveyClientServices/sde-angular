@@ -9,9 +9,10 @@ import { SettingsComponent } from "./settings/settings.component";
 import { ChatComponent } from "./chat/chat.component";
 import { TabsComponent } from "./tabs/tabs.component";
 import { NativeChatModule } from "@progress-nativechat/nativescript-nativechat/angular";
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { FindDoctorComponent } from './find-doctor/find-doctor.component';
-import { MyAppointmentsComponent } from './my-appointments/my-appointments.component';
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { FindDoctorComponent } from "./find-doctor/find-doctor.component";
+import { AppointmentsComponent } from './appointments/appointments.component';
+import { TelemedicineComponent } from './telemedicine/telemedicine.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MyAppointmentsComponent } from './my-appointments/my-appointments.compo
     ChatComponent,
     DashboardComponent,
     FindDoctorComponent,
-    MyAppointmentsComponent
+    AppointmentsComponent,
+    TelemedicineComponent
   ],
   imports: [PatientRoutingModule, NativeChatModule, NativeScriptCommonModule],
   schemas: [NO_ERRORS_SCHEMA]

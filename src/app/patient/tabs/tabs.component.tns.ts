@@ -21,10 +21,9 @@ export class TabsComponent implements OnInit {
           outlets: {
             dashboardTab: ["dashboard"],
             findDoctorTab: ["find-doctor"],
-            accountsTab: ["accounts"],
-            filesTab: ["files"],
-            settingsTab: ["settings"],
-            telemedicineTab: ["telemedicine"]
+            appointmentsTab: ["appointments"],
+            telemedicineTab: ["telemedicine"],
+            settingsTab: ["settings"]
           }
         }
       ],

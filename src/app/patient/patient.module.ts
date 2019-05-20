@@ -7,9 +7,10 @@ import { AccountsComponent } from "./accounts/accounts.component";
 import { AccountDetailsComponent } from "./accounts/account-details/account-details.component";
 import { FilesComponent } from "./files/files.component";
 import { SettingsComponent } from "./settings/settings.component";
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { FindDoctorComponent } from './find-doctor/find-doctor.component';
-import { MyAppointmentsComponent } from './my-appointments/my-appointments.component';
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { FindDoctorComponent } from "./find-doctor/find-doctor.component";
+import { AppointmentsComponent } from './appointments/appointments.component';
+import { TelemedicineComponent } from './telemedicine/telemedicine.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MyAppointmentsComponent } from './my-appointments/my-appointments.compo
     SettingsComponent,
     DashboardComponent,
     FindDoctorComponent,
-    MyAppointmentsComponent
+    AppointmentsComponent,
+    TelemedicineComponent
   ],
   imports: [CommonModule, PatientRoutingModule]
 })

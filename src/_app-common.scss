@@ -1,6 +1,8 @@
 // Place any CSS rules you want to apply on both iOS and Android here.
 // This is where the vast majority of your CSS code goes.
 // Font icon class
+@import "_app-variables";
+
 .fa {
   font-family: Font Awesome 5 Pro, Font Awesome 5 Pro-Solid-900;
 }
@@ -31,4 +33,8 @@ Page {
   font-size: 24;
   horizontal-align: center;
   vertical-align: center;
+}
+
+.main {
+  color: $main-color;
 }

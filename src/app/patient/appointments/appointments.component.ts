@@ -16,11 +16,11 @@ export class AppointmentsComponent implements OnInit {
   ngOnInit() {
     this.myItems = [];
     this.counter = 0;
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < 8; i++) {
       this.myItems.push(
         new DataItem(
           i,
-          "Ignacio Fuentes",
+          "Dr. John Doe",
           "https://2.gravatar.com/avatar/7fc56bb23fe5236b432b5b91597109a1?s=160"
         )
       );

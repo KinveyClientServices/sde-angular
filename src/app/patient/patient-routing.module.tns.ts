@@ -12,6 +12,8 @@ import { SettingsComponent } from "./settings/settings.component";
 import { ChatComponent } from "./chat/chat.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { FindDoctorComponent } from "./find-doctor/find-doctor.component";
+import { AppointmentsComponent } from "./appointments/appointments.component";
+import { TelemedicineComponent } from "./telemedicine/telemedicine.component";
 
 const routes: Routes = [
   {
@@ -37,22 +39,21 @@ const routes: Routes = [
         ]
       },
       {
-        path: "accounts",
-        outlet: "accountsTab",
+        path: "appointments",
+        outlet: "appointmentsTab",
         component: NSEmptyOutletComponent,
         children: [
-          { path: "", redirectTo: "accounts", pathMatch: "full" },
-          { path: "accounts", component: AccountsComponent },
-          { path: "account/:id", component: AccountDetailsComponent }
+          { path: "", redirectTo: "appointments", pathMatch: "full" },
+          { path: "appointments", component: AppointmentsComponent }
         ]
       },
       {
-        path: "files",
-        outlet: "filesTab",
+        path: "telemedicine",
+        outlet: "telemedicineTab",
         component: NSEmptyOutletComponent,
         children: [
-          { path: "", redirectTo: "files", pathMatch: "full" },
-          { path: "files", component: FilesComponent }
+          { path: "", redirectTo: "telemedicine", pathMatch: "full" },
+          { path: "telemedicine", component: TelemedicineComponent }
         ]
       },
       {

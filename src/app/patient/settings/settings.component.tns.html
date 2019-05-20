@@ -1,7 +1,13 @@
-<ActionBar class="action-bar" [title]="title">
-
-</ActionBar>
-
-<StackLayout class="page page-content">
-    <Button (tap)="logout()" class="btn btn-primary" text="Log out"></Button>
-</StackLayout>
+<GridLayout rows="auto,*,auto">
+  <GridLayout class="m-x-20 m-b-10" columns="*,auto, auto">
+    <Label class="heading" text="My Profile"></Label>
+    <GridLayout col="1" class="m-r-10">
+      <Label class="heading-icon-circle"></Label>
+      <Label text="&#xf095;" class="fa heading-icon-button"></Label>
+    </GridLayout>
+    <GridLayout col="2" (tap)="logout()">
+      <Label class="heading-icon-circle"></Label>
+      <Label text="&#xf2f5;" class="fa heading-icon-button main"></Label>
+    </GridLayout>
+  </GridLayout>
+</GridLayout>
