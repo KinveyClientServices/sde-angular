@@ -7,6 +7,8 @@ import {
 
 import { ProviderTabsComponent } from "./provider-tabs/provider-tabs.component";
 import { PatientsComponent } from "./patients/patients.component";
+import { PatientDetailsComponent } from "./patients/patient-details/patient-details.component";
+
 import { AppointmentsComponent } from "./appointments/appointments.component";
 import { TicketsComponent } from "./tickets/tickets.component";
 
@@ -21,7 +23,8 @@ const routes: Routes = [
         component: NSEmptyOutletComponent,
         children: [
           { path: "", redirectTo: "patients", pathMatch: "full" },
-          { path: "patients", component: PatientsComponent }
+          { path: "patients", component: PatientsComponent },
+          { path: "patient/:id", component: PatientDetailsComponent }
         ]
       },
       {
