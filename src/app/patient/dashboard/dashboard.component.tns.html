@@ -8,23 +8,32 @@
   </GridLayout>
   <ScrollView row="1" class="m-l-30 m-r-20">
     <StackLayout>
-      <GridLayout rows="auto, 120" class="my-card" *ngFor="let i of items">
-        <GridLayout class="h2-container">
+      <GridLayout rows="auto,auto" class="my-card" *ngFor="let i of items">
+        <GridLayout class="h2-container" columns="*,auto">
           <StackLayout
+            colSpan="2"
             class="h2-background"
             [backgroundColor]="i.color"
           ></StackLayout>
           <Label class="h2 dashboard-h2" [text]="i.title"></Label>
+          <Label
+            col="1"
+            [text]="i.icon"
+            [color]="i.color"
+            class="fa h2-icon"
+          ></Label>
         </GridLayout>
-        <GridLayout class="m-l-20" row="1" rows="140" columns="6*, 4*">
+        <GridLayout class="m-l-20" row="1" columns="6*, 4*">
           <StackLayout>
-            <Label text="Actual"></Label>
-            <Label text="5.152"></Label>
-            <Label text="Goal"></Label>
-            <Label text="5.152"></Label>
-            <Label text="Monthly"></Label>
-            <Label text="5.152"></Label>
+            <StackLayout
+              class="m-b-10"
+              *ngFor="let sub of i.subItems | keyvalue"
+            >
+              <Label class="sub-item" [text]="sub.key"></Label>
+              <Label class="sub-item-value" [text]="sub.value"></Label>
+            </StackLayout>
           </StackLayout>
+
           <app-radial-chart
             col="1"
             [text]="i.value"

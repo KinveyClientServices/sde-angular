@@ -1,10 +1,10 @@
 /* Add mobile styles for the component here.  */
 .dashboard-h2 {
   margin-left: 10;
-  padding: 6;
+  padding: 4;
 }
 .h2-container {
-  margin: 0 0 10 0;
+  margin: 0 0 24 0;
 }
 
 .h2-background {
@@ -12,5 +12,13 @@
   border-radius: 10;
 }
 .my-card {
-  margin-bottom: 50;
+  margin-bottom: 30;
+}
+.sub-item {
+  color: #a7a7a7;
+  font-size: 12;
+}
+.sub-item-value {
+  font-weight: 500;
+  font-size: 22;
 }

@@ -2,6 +2,9 @@
 // This is where the vast majority of your CSS code goes.
 // Font icon class
 @import "_app-variables";
+Page {
+  font-family: "Helvetica Neue";
+}
 
 .fa {
   font-family: Font Awesome 5 Pro, Font Awesome 5 Pro-Solid-900;
@@ -9,9 +12,6 @@
 .ion {
   font-family: Ionicons, ionicons;
   font-size: 60;
-}
-Page {
-  font-family: Avenir, "Nunito-Regular";
 }
 
 .heading {
@@ -32,6 +32,10 @@ Page {
   background: #36547c;
   horizontal-align: center;
   vertical-align: center;
+}
+.h2-icon {
+  font-size: 22;
+  margin-right: 14;
 }
 
 .heading-icon-button {
