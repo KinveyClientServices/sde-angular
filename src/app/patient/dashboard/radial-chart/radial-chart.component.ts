@@ -12,6 +12,7 @@ export class RadialChartComponent implements OnInit {
   @Input() row;
   @Input() rowSpan;
   @Input() color;
+  @Input() angle;
   constructor() {}
 
   ngOnInit() {}
