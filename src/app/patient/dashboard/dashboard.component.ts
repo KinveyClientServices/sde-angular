@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./dashboard.component.scss"]
 })
 export class DashboardComponent implements OnInit {
-  selected = 1;
+  selected = 0;
   markSelected(v) {
     console.log(v);
     this.selected = v;

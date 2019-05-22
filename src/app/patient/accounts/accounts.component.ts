@@ -1,7 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef, NgZone } from "@angular/core";
 import { DataService } from "../../data.service";
 import { Config } from "../../config";
-import { DrawerHelper } from "../../utils/drawer-helper";
 import { Router } from "../../utils";
 import { ActivatedRoute } from "@angular/router";
 
@@ -29,9 +28,7 @@ export class AccountsComponent implements OnInit {
       });
     });
   }
-  onDrawerButtonTap(): void {
-    DrawerHelper.show();
-  }
+  onDrawerButtonTap(): void {}
 
   goToDetails(item) {
     //console.log(item);

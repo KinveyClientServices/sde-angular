@@ -7,13 +7,7 @@ import { AppModule } from "./app/app.module.tns";
 // Angular applications need to take care of their own initialization: modules, components, directives, routes, DI providers.
 // A NativeScript Angular app needs to make both paradigms work together, so we provide a wrapper platform object, platformNativeScriptDynamic,
 // that sets up a NativeScript application and can bootstrap the Angular framework.
-import { MapView } from "nativescript-google-maps-sdk";
-
-import { PDFView } from "nativescript-pdf-view";
 import { registerElement } from "nativescript-angular";
-registerElement("PDFView", () => PDFView);
-registerElement("AR", () => require("nativescript-ar").AR);
-registerElement("MapView", () => MapView);
 registerElement(
   "PreviousNextView",
   () => require("nativescript-iqkeyboardmanager").PreviousNextView

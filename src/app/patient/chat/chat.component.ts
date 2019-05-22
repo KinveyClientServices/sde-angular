@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { Config } from "../../config";
-import { DrawerHelper } from "../../utils/drawer-helper";
 @Component({
   selector: "app-chat",
   templateUrl: "./chat.component.html",
@@ -21,7 +20,5 @@ export class ChatComponent implements OnInit {
       }
     };
   }
-  onDrawerButtonTap(): void {
-    DrawerHelper.show();
-  }
+  onDrawerButtonTap(): void {}
 }

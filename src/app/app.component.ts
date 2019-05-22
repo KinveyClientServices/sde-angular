@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "./utils";
 import { DataService } from "./data.service";
-import { DrawerHelper } from "./utils/drawer-helper";
 import { Config } from "./config";
 
 @Component({
@@ -60,11 +59,9 @@ export class AppComponent implements OnInit {
 
   goToSettings() {
     this.router.navigate(["settings"]);
-    DrawerHelper.hide();
   }
 
   onNavItemTap(navItemRoute: string): void {
     this.router.navigate([navItemRoute]);
-    DrawerHelper.hide();
   }
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { DataService } from "../../data.service";
 import { Router } from "../../utils";
-import { DrawerHelper } from "../../utils/drawer-helper";
 import { Config } from "../../config";
 
 @Component({
@@ -23,7 +22,5 @@ export class SettingsComponent implements OnInit {
     });
   }
 
-  onDrawerButtonTap(): void {
-    DrawerHelper.show();
-  }
+  onDrawerButtonTap(): void {}
 }

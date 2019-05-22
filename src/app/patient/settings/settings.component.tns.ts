@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { DataService } from "../../data.service";
-import { DrawerHelper } from "../../utils/drawer-helper";
 import { Config } from "../../config";
 import { RouterExtensions } from "nativescript-angular/router";
 
@@ -27,7 +26,5 @@ export class SettingsComponent implements OnInit {
     }
   }
 
-  onDrawerButtonTap(): void {
-    DrawerHelper.show();
-  }
+  onDrawerButtonTap(): void {}
 }
