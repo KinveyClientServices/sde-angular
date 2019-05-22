@@ -8,7 +8,7 @@
       sweepAngle="360"
       minimum="0"
       maximum="360"
-      radius="0.9"
+      radius="1"
     >
       <ScaleStyle
         tkRadialScaleStyle
@@ -22,12 +22,14 @@
         tkRadialScaleIndicators
         minimum="0"
         maximum="360"
-        location="1"
+        location="0.98"
       >
         <BarIndicatorStyle
           tkRadialBarIndicatorStyle
-          fillColor="#A7A7A7"
-          barWidth="0.06"
+          cap="Round"
+          location="0.95"
+          fillColor="#f0f0f0"
+          barWidth="0.05"
         ></BarIndicatorStyle>
       </RadialBarIndicator>
 
@@ -39,6 +41,7 @@
       >
         <BarIndicatorStyle
           tkRadialBarIndicatorStyle
+          cap="Round"
           [fillColor]="color"
           barWidth="0.1"
         ></BarIndicatorStyle>

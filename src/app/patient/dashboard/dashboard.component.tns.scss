@@ -8,7 +8,7 @@
 }
 
 .h2-background {
-  opacity: 0.15;
+  opacity: 0.05;
   border-radius: 10;
 }
 .my-card {
@@ -21,4 +21,59 @@
 .sub-item-value {
   font-weight: 500;
   font-size: 22;
+}
+.sub-heading {
+  color: rgba(112, 112, 112, 1);
+  horizontal-align: center;
+  height: 40;
+  padding: 0 17 0 17;
+  font-size: 17;
+}
+.selected {
+  color: black;
+  font-weight: 500;
+  background: rgba(54, 84, 124, 0.1);
+  border-radius: 32;
+}
+.card {
+  margin-bottom: 20;
+  padding: 10;
+  border-radius: 10;
+  border-width: 1;
+  border-color: #f3f1f1;
+}
+.notification {
+  margin-bottom: 5;
+}
+.tip {
+  margin-bottom: 30;
+}
+.date {
+  color: rgba(167, 167, 167, 1);
+  font-size: 12;
+  horizontal-align: right;
+  vertical-align: top;
+}
+.badge {
+  background: rgba(0, 206, 201, 1);
+  color: white;
+  font-size: 18;
+  height: 28;
+  width: 28;
+  border-radius: 28;
+  text-align: center;
+  font-weight: 500;
+  margin-right: 5;
+}
+.notification-text {
+  font-family: "SF UI Text";
+  font-weight: bold;
+}
+.tip-icon {
+  font-size: 25;
+  margin-right: 14;
+  color: rgba(0, 206, 201, 1);
+}
+.notification-sub-text {
+  color: rgba(140, 140, 140, 1);
 }

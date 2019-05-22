@@ -1,13 +1,41 @@
-<GridLayout rows="auto,*">
-  <GridLayout class="m-x-20 m-b-10" columns="*,auto">
+<GridLayout rows="auto,auto,*">
+  <GridLayout class="m-x-15 m-b-10" columns="*,auto">
     <Label class="heading" text="Dashboard"></Label>
     <GridLayout col="1">
       <Label class="heading-icon-circle"></Label>
       <Label text="&#xf095;" class="fa heading-icon-button"></Label>
     </GridLayout>
   </GridLayout>
-  <ScrollView row="1" class="m-l-30 m-r-20">
+  <GridLayout row="1" class="m-b-15 m-r-15" columns="*,*">
+    <Label
+      class="sub-heading"
+      text="My Daily Goals"
+      (tap)="markSelected(0)"
+      [class.selected]="selected === 0"
+    ></Label>
+    <Label
+      class="sub-heading"
+      col="1"
+      text="Reminders & Tips"
+      (tap)="markSelected(1)"
+      [class.selected]="selected === 1"
+    ></Label>
+  </GridLayout>
+  <ScrollView *ngIf="selected === 0" row="2" class="m-l-20 m-r-20">
     <StackLayout>
+      <GridLayout class="card" rows="auto" columns="*">
+        <Label class="date" text="03.05.2019"></Label>
+        <StackLayout>
+          <GridLayout
+            class="notification"
+            columns="auto, *"
+            *ngFor="let n of notifications"
+          >
+            <Label [text]="n.badge" class="badge"></Label>
+            <Label col="1" class="notification-text" [text]="n.text"></Label>
+          </GridLayout>
+        </StackLayout>
+      </GridLayout>
       <GridLayout rows="auto,auto" class="my-card" *ngFor="let i of items">
         <GridLayout class="h2-container" columns="*,auto">
           <StackLayout
@@ -23,7 +51,7 @@
             class="fa h2-icon"
           ></Label>
         </GridLayout>
-        <GridLayout class="m-l-20" row="1" columns="6*, 4*">
+        <GridLayout class="m-l-10" row="1" columns="4*, 6*">
           <StackLayout>
             <StackLayout
               class="m-b-10"
@@ -39,6 +67,81 @@
             [text]="i.value"
             [color]="i.color"
             [angle]="i.angle"
+          ></app-radial-chart>
+        </GridLayout>
+      </GridLayout>
+    </StackLayout>
+  </ScrollView>
+  <ScrollView *ngIf="selected === 1" row="2" class="m-l-20 m-r-20">
+    <StackLayout>
+      <GridLayout class="card" rows="auto" columns="*">
+        <StackLayout>
+          <GridLayout class="tip" columns="auto, *" *ngFor="let tip of tips">
+            <Label [text]="tip.icon" class="tip-icon fa"></Label>
+            <StackLayout col="1">
+              <Label
+                class="notification-text"
+                [text]="tip.text"
+                textWrap="true"
+              ></Label>
+              <Label
+                class="notification-sub-text"
+                [text]="tip.subText"
+                textWrap="true"
+              ></Label>
+            </StackLayout>
+          </GridLayout>
+        </StackLayout>
+      </GridLayout>
+      <GridLayout rows="auto,auto" class="my-card">
+        <GridLayout class="h2-container" columns="*,auto">
+          <StackLayout colSpan="2" class="h2-background"></StackLayout>
+          <Label class="h2 dashboard-h2" text="Health Plan Expenses"></Label>
+          <Label
+            col="1"
+            text="&#xf657;"
+            class="fa h2-icon"
+            color="#F15175"
+            fontSize="28"
+          ></Label>
+        </GridLayout>
+        <GridLayout class="m-l-10" row="1" columns="4*, 6*">
+          <StackLayout>
+            <StackLayout class="m-b-10">
+              <Label class="sub-item" text="Used"></Label>
+              <Label class="sub-item-value" text="300"></Label>
+            </StackLayout>
+            <StackLayout class="m-b-10">
+              <Label class="sub-item" text="Planned"></Label>
+              <Label class="sub-item-value" text="2300"></Label>
+            </StackLayout>
+          </StackLayout>
+
+          <app-radial-chart
+            col="1"
+            text="300"
+            color="#F15175"
+            angle="80"
+          ></app-radial-chart>
+        </GridLayout>
+      </GridLayout>
+      <GridLayout rows="auto" class="my-card">
+        <GridLayout class="m-l-10" columns="4*, 6*">
+          <StackLayout>
+            <StackLayout class="m-b-10">
+              <Label class="sub-item" text="Used"></Label>
+              <Label class="sub-item-value" text="1300"></Label>
+            </StackLayout>
+            <StackLayout class="m-b-10">
+              <Label class="sub-item" text="Planned"></Label>
+              <Label class="sub-item-value" text="3000"></Label>
+            </StackLayout>
+          </StackLayout>
+          <app-radial-chart
+            col="1"
+            text="1300"
+            color="#0076FF"
+            angle="180"
           ></app-radial-chart>
         </GridLayout>
       </GridLayout>

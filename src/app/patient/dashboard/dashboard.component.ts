@@ -6,6 +6,34 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./dashboard.component.scss"]
 })
 export class DashboardComponent implements OnInit {
+  selected = 1;
+  markSelected(v) {
+    console.log(v);
+    this.selected = v;
+  }
+  notifications = [
+    { badge: 2, text: "Upcoming Appointments" },
+    { badge: 3, text: "Current Medications" }
+  ];
+  tips = [
+    {
+      text: "Free Physical Exam at John Muir Co.",
+      subText: "Schedule appointment required",
+      icon: "\uf470"
+    },
+    {
+      text: "Flu Season is Here",
+      subText: "Schedule an appointment with your PCP to get your flu shot",
+      icon: "\uf48e"
+    },
+    {
+      text: "Colon Cancer Screening",
+      subText:
+        "It’s been 9 months since your last colon screening. Schedule an appointment now.",
+      icon: "\uf830"
+    }
+  ];
+
   items = [
     {
       title: "Steps",
