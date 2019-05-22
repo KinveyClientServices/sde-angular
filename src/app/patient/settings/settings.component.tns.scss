@@ -1,0 +1,62 @@
+.insurance-card {
+  background: linear-gradient(90deg, #e60ca5, #ff9f40);
+  margin: 0 20 20 20;
+  border-radius: 20;
+  padding: 14;
+}
+.footer {
+  background-color: rgb(242, 242, 242);
+}
+.refresh-button {
+  border-radius: 30;
+  color: white;
+  height: 50;
+  background: linear-gradient(257deg, #ff9f40, #e60ca5);
+}
+.card-heading {
+  font-size: 12;
+  horizontal-align: left;
+  color: rgb(218, 218, 218);
+  margin-bottom: 8;
+}
+.card-data {
+  font-size: 14;
+  horizontal-align: left;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 16;
+}
+.card-data-bottom {
+  font-size: 14;
+  horizontal-align: left;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 6;
+}
+.wallet {
+  vertical-align: top;
+  horizontal-align: left;
+  width: 50%;
+  margin-left: 20;
+}
+.general-info {
+}
+.general-info-heading {
+  margin-left: 20;
+  font-size: 17;
+}
+.amount {
+  margin-right: 30;
+  horizontal-align: right;
+  color: rgba(0, 118, 255, 1);
+}
+
+.list-arrow {
+  vertical-align: center;
+  color: #c7c7cc;
+  margin-right: 30;
+}
+.document-icon {
+  color: rgba(0, 206, 201, 1);
+  margin-left: 20;
+}

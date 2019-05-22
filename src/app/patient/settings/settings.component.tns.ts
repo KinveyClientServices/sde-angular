@@ -10,6 +10,10 @@ import { RouterExtensions } from "nativescript-angular/router";
 })
 export class SettingsComponent implements OnInit {
   title: string;
+  selected = 0;
+  myItems: any[];
+  references: { name: string }[];
+
   constructor(
     private dataService: DataService,
     private router: RouterExtensions
@@ -18,12 +22,38 @@ export class SettingsComponent implements OnInit {
   ngOnInit(): void {
     // Init your component properties here.
     this.title = Config.settingsPageTitle;
+    this.myItems = [
+      {
+        name: "Office Visit Co-pay",
+        amount: 20
+      },
+      {
+        name: "Specialist Care Co-pay",
+        amount: 30
+      },
+      {
+        name: "Individual Deductible",
+        amount: 2983.57
+      }
+    ];
+    this.references = [
+      {
+        name: "Office Visit Co-pay"
+      },
+      {
+        name: "Estimate of Benefits"
+      }
+    ];
   }
   async logout() {
     if (await confirm("Do you want to log out??")) {
       await this.dataService.logout();
       this.router.navigate(["login"], <any>{ clearHistory: true });
     }
+  }
+  markSelected(v) {
+    console.log(v);
+    this.selected = v;
   }
 
   onDrawerButtonTap(): void {}

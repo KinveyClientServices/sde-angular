@@ -11,14 +11,14 @@
       class="sub-heading"
       text="My Daily Goals"
       (tap)="markSelected(0)"
-      [class.selected]="selected === 0"
+      [class.sub-heading-selected]="selected === 0"
     ></Label>
     <Label
       class="sub-heading"
       col="1"
       text="Reminders & Tips"
       (tap)="markSelected(1)"
-      [class.selected]="selected === 1"
+      [class.sub-heading-selected]="selected === 1"
     ></Label>
   </GridLayout>
   <ScrollView *ngIf="selected === 0" row="2" class="m-l-20 m-r-20">

@@ -1,5 +1,5 @@
-<GridLayout rows="auto,*,auto">
-  <GridLayout class="m-x-20 m-b-10" columns="*,auto, auto">
+<GridLayout rows="auto,auto,*">
+  <GridLayout row="0" class="m-x-20 m-b-10" columns="*,auto, auto">
     <Label class="heading" text="My Profile"></Label>
     <GridLayout col="1" class="m-r-10">
       <Label class="heading-icon-circle"></Label>
@@ -9,5 +9,90 @@
       <Label class="heading-icon-circle"></Label>
       <Label text="&#xf2f5;" class="fa heading-icon-button main"></Label>
     </GridLayout>
+  </GridLayout>
+  <GridLayout row="1" class="m-b-15 m-r-15" columns="*,*">
+    <Label
+      class="sub-heading"
+      text="Insurance ID"
+      (tap)="markSelected(0)"
+      [class.sub-heading-selected]="selected === 0"
+    ></Label>
+    <Label
+      class="sub-heading"
+      col="1"
+      text="References"
+      (tap)="markSelected(1)"
+      [class.sub-heading-selected]="selected === 1"
+    ></Label>
+  </GridLayout>
+  <GridLayout row="2" *ngIf="selected === 0" rows="auto, auto, *, auto">
+    <GridLayout
+      row="0"
+      columns="*, *"
+      rows="auto, auto, auto, auto, auto, auto"
+      class="insurance-card"
+    >
+      <Label col="0" row="0" text="GROUP NAME" class="card-heading"></Label>
+      <Label col="1" row="0" text="GROUP #" class="card-heading"></Label>
+      <Label col="0" row="1" text="MOCK INDIVIDUAL" class="card-data"></Label>
+      <Label
+        col="1"
+        row="1"
+        text="0888881888010000123"
+        class="card-data"
+      ></Label>
+      <Label col="0" row="2" text="INSURANCE TYPE" class="card-heading"></Label>
+      <Label col="1" row="2" text="PPO" class="card-heading"></Label>
+      <Label col="0" row="3" text="SUBSCRIBER #" class="card-data"></Label>
+      <Label
+        col="1"
+        row="3"
+        text="088888188801008911"
+        class="card-data"
+      ></Label>
+      <Label col="0" row="4" text="PLAN" class="card-heading"></Label>
+      <Label col="1" row="4" text="ISSUE DATE" class="card-heading"></Label>
+      <Label
+        col="0"
+        row="5"
+        text="OPEN CHOICE"
+        class="card-data-bottom"
+      ></Label>
+      <Label col="1" row="5" text="2013-08-10" class="card-data-bottom"></Label>
+    </GridLayout>
+    <Image row="1" class="wallet" src="~/app/images/wallet.png"></Image>
+    <GridLayout row="2">
+      <ListView [items]="myItems" class="general-info">
+        <ng-template
+          let-item="item"
+          let-i="index"
+          let-odd="odd"
+          let-even="even"
+        >
+          <GridLayout columns="auto,*" height="54">
+            <Label class="general-info-heading" [text]="item.name"></Label>
+            <Label col="1" [text]="item.amount" class="amount"></Label>
+          </GridLayout>
+        </ng-template>
+      </ListView>
+    </GridLayout>
+    <GridLayout row="3" class="p-30 footer">
+      <Button class="refresh-button" text="SAVE"></Button>
+    </GridLayout>
+  </GridLayout>
+  <GridLayout row="2" *ngIf="selected === 1">
+    <ListView [items]="references" class="general-info">
+      <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
+        <GridLayout columns="auto,*, auto" height="54">
+          <Label text="&#xf15c;" class="fa document-icon"></Label>
+          <Label
+            col="1"
+            [text]="item.name"
+            class="general-info-heading"
+          ></Label>
+          <Label col="2" text="&#xf054;" class="fa list-arrow"></Label>
+        </GridLayout>
+      </ng-template>
+    </ListView>
   </GridLayout>
 </GridLayout>
