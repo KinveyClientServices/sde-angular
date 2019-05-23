@@ -3,7 +3,11 @@
     <Label class="heading" text="Dashboard"></Label>
     <GridLayout col="1">
       <Label class="heading-icon-circle"></Label>
-      <Label text="&#xf095;" class="fa heading-icon-button"></Label>
+      <Label
+        (tap)="supportButtonTapped()"
+        text="&#xf095;"
+        class="fa heading-icon-button"
+      ></Label>
     </GridLayout>
   </GridLayout>
   <GridLayout row="1" class="m-b-15 m-r-15" columns="*,*">

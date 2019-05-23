@@ -14,7 +14,8 @@ import { FindDoctorComponent } from "./find-doctor/find-doctor.component";
 import { AppointmentsComponent } from "./appointments/appointments.component";
 import { TelemedicineComponent } from "./telemedicine/telemedicine.component";
 import { NativeScriptUIGaugeModule } from "nativescript-ui-gauge/angular";
-import { RadialChartComponent } from './dashboard/radial-chart/radial-chart.component';
+import { RadialChartComponent } from "./dashboard/radial-chart/radial-chart.component";
+import { SupportComponent } from "../support/support.component";
 @NgModule({
   declarations: [
     TabsComponent,
@@ -27,8 +28,10 @@ import { RadialChartComponent } from './dashboard/radial-chart/radial-chart.comp
     FindDoctorComponent,
     AppointmentsComponent,
     TelemedicineComponent,
-    RadialChartComponent
+    RadialChartComponent,
+    SupportComponent
   ],
+  entryComponents: [SupportComponent],
   imports: [
     PatientRoutingModule,
     NativeChatModule,

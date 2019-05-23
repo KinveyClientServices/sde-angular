@@ -1,4 +1,11 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewContainerRef } from "@angular/core";
+import { Router } from "~/app/utils";
+import { ActivatedRoute } from "@angular/router";
+import {
+  ModalDialogOptions,
+  ModalDialogService
+} from "nativescript-angular/modal-dialog";
+import { SupportComponent } from "~/app/support/support.component";
 
 @Component({
   selector: "app-dashboard",
@@ -84,7 +91,24 @@ export class DashboardComponent implements OnInit {
       }
     }
   ];
-  constructor() {}
+
+  constructor(
+    private _modalService: ModalDialogService,
+    private _vcRef: ViewContainerRef
+  ) {}
+  supportButtonTapped(): void {
+    const options: ModalDialogOptions = {
+      viewContainerRef: this._vcRef,
+      context: {},
+      fullscreen: false
+    };
+
+    this._modalService
+      .showModal(SupportComponent, options)
+      .then((result: string) => {
+        console.log(result);
+      });
+  }
 
   ngOnInit() {}
 }

@@ -9,6 +9,7 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 // Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
 // import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
+import { ModalDialogService } from "nativescript-angular/modal-dialog";
 
 import { isIOS } from "tns-core-modules/platform";
 import { KinveyModule } from "kinvey-nativescript-sdk/angular";
@@ -27,7 +28,7 @@ import { COMPONENTS } from "./app-routing.module";
       instanceId: "kvy-us2"
     })
   ],
-  providers: [],
+  providers: [ModalDialogService],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })
