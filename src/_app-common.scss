@@ -42,6 +42,7 @@ Page {
   font-size: 24;
   horizontal-align: center;
   vertical-align: center;
+  color: black;
 }
 
 .main {
@@ -61,4 +62,14 @@ Page {
   font-weight: 500;
   background: rgba(54, 84, 124, 0.1);
   border-radius: 32;
+}
+.footer {
+  background-color: rgb(242, 242, 242);
+}
+
+.refresh-button {
+  border-radius: 30;
+  color: white;
+  height: 50;
+  background: linear-gradient(257deg, #ff9f40, #e60ca5);
 }
