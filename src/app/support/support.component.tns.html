@@ -1,5 +1,5 @@
-<GridLayout rows="auto,*">
-  <GridLayout class="m-x-15 m-b-10" columns="*,auto">
+<GridLayout rows="auto,*" class="support-page">
+  <GridLayout class="m-l-15 m-r-30 m-b-10" columns="*,auto">
     <Label class="heading" text="Support"></Label>
     <Label
       col="1"
@@ -8,16 +8,41 @@
       class="fa modal-close-icon-button"
     ></Label>
   </GridLayout>
-  <ScrollView row="1" class="m-l-20 m-r-20">
+  <ScrollView row="1">
     <StackLayout>
-      <GridLayout class="notification m-20" columns="auto, *">
-        <Label text="&#xf82e;" class="tip-icon fa"></Label>
+      <GridLayout class="notification m-y-20 m-x-30" columns="auto, *">
+        <Label text="&#xf481;" class="tip-icon fa"></Label>
         <Label
           col="1"
           class="notification-text"
           text="Discuss any Health Concerns"
         ></Label>
       </GridLayout>
+      <StackLayout class="hr"></StackLayout>
+      <GridLayout class="call-us m-y-20 m-l-20 m-r-20" columns="*, auto">
+        <Label
+          col="0"
+          textWrap="true"
+          class="call-us-text"
+          text="Call KinveyHealh Toll Free 1-888-KHEALTH"
+        ></Label>
+        <GridLayout col="1" verticalAlignment="center">
+          <Label class="phone-circle"></Label>
+          <Label text="&#xf095;" class="fa phone-button"></Label>
+        </GridLayout>
+      </GridLayout>
+      <StackLayout class="m-l-20">
+        <TextField class="support-input" hint="Name"></TextField>
+        <StackLayout class="hr"></StackLayout>
+
+        <TextField class="support-input" hint="Email"></TextField>
+        <StackLayout class="hr"></StackLayout>
+
+        <TextField class="support-input" hint="Phone"></TextField>
+
+        <Label text="COMMENTS" class="form-label"></Label>
+        <TextView class="form-text-view" hint="Type text here"></TextView>
+      </StackLayout>
     </StackLayout>
   </ScrollView>
 </GridLayout>
