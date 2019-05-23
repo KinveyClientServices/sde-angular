@@ -16,6 +16,7 @@ import { TelemedicineComponent } from "./telemedicine/telemedicine.component";
 import { NativeScriptUIGaugeModule } from "nativescript-ui-gauge/angular";
 import { RadialChartComponent } from "./dashboard/radial-chart/radial-chart.component";
 import { SupportComponent } from "../support/support.component";
+import { SupportButtonComponent } from './support-button/support-button.component';
 @NgModule({
   declarations: [
     TabsComponent,
@@ -29,7 +30,8 @@ import { SupportComponent } from "../support/support.component";
     AppointmentsComponent,
     TelemedicineComponent,
     RadialChartComponent,
-    SupportComponent
+    SupportComponent,
+    SupportButtonComponent
   ],
   entryComponents: [SupportComponent],
   imports: [
