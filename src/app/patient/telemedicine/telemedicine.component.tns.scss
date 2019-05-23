@@ -1,1 +1,74 @@
 /* Add mobile styles for the component here.  */
+.tip-icon {
+  font-size: 25;
+  margin-right: 14;
+  color: rgba(0, 206, 201, 1);
+}
+.concern-form {
+  background: rgba(54, 84, 124, 0.05);
+  padding: 20;
+}
+.form-label {
+  color: rgba(167, 167, 167, 1);
+  margin-bottom: 10;
+  font-size: 12;
+}
+.form-text-view {
+  height: 160;
+  margin-bottom: 10;
+}
+.images-upload {
+  margin-bottom: 20;
+}
+
+.camera-icon {
+  font-size: 24;
+  margin-right: 16;
+}
+.uploaded-image {
+  margin: 0 0 0 10;
+  height: 40;
+  border-radius: 10;
+}
+.discomfort-picker-container {
+}
+.heart-icon {
+  horizontal-align: center;
+  color: rgba(54, 84, 124, 0.5);
+}
+.discomfort-slider {
+  background: #e60ca5;
+  color: rgba(241, 81, 117, 1);
+  horizontal-align: center;
+  margin: 0 20 20 20;
+  // background: linear-gradient(90deg, #e60ca5, #ff9f40);
+}
+.refresh-button {
+  border-radius: 30;
+  color: white;
+  height: 50;
+  background: linear-gradient(257deg, #ff9f40, #e60ca5);
+}
+.prev-treated {
+  background: rgba(241, 81, 117, 1);
+}
+
+.footer {
+  background-color: rgb(242, 242, 242);
+}
+
+.list-arrow {
+  vertical-align: center;
+  color: #c7c7cc;
+}
+
+.name {
+  font-family: "SF UI Text";
+  font-weight: 500;
+  font-size: 17;
+  margin-bottom: 8;
+}
+.subscriber-id {
+  color: #8c8c8c;
+  font-size: 15;
+}
