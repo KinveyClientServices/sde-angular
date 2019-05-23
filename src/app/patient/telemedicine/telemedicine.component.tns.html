@@ -65,7 +65,7 @@
   <GridLayout row="3" *ngIf="selected === 0" class="p-30 footer">
     <Button class="refresh-button" text="SUBMIT"></Button>
   </GridLayout>
-  <GridLayout *ngIf="selected === 1" row="2" class="m-l-20 m-r-20">
+  <GridLayout *ngIf="selected === 1" row="2">
     <ListView [items]="tickets">
       <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
         <GridLayout rows="*" class="m-x-20" columns="*,auto" height="80">

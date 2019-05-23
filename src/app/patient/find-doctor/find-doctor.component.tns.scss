@@ -1,1 +1,57 @@
 /* Add mobile styles for the component here.  */
+.footer {
+  background-color: rgb(242, 242, 242);
+}
+
+.refresh-button {
+  border-radius: 30;
+  color: white;
+  height: 50;
+  background: linear-gradient(257deg, #ff9f40, #e60ca5);
+}
+.find-doctor-form {
+  padding: 20;
+}
+.address {
+  background: white;
+  background: rgba(54, 84, 124, 0.05);
+  height: 30;
+  border-radius: 10;
+  margin-bottom: 10;
+}
+.form-field {
+  margin-top: 10;
+  margin-bottom: 10;
+}
+.form-label {
+  color: rgba(167, 167, 167, 1);
+  margin-bottom: 10;
+  font-size: 12;
+}
+.selection {
+  color: rgba(0, 118, 255, 1);
+  margin-right: 20;
+}
+
+.hr {
+  height: 1;
+  background: rgba(205, 206, 210, 1);
+}
+.list-arrow {
+  vertical-align: center;
+  color: #c7c7cc;
+}
+.prev-treated {
+  background: rgba(241, 81, 117, 1);
+}
+.doctor-image {
+  margin-right: 10;
+  height: 40;
+  width: 40;
+  border-radius: 40;
+}
+
+.subscriber-id {
+  color: #8c8c8c;
+  font-size: 15;
+}
