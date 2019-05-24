@@ -1,5 +1,5 @@
 <GridLayout rows="auto,auto,*, auto">
-  <GridLayout class="m-x-15 m-b-10" columns="*,auto">
+  <GridLayout class="m-x-15 m-y-10" columns="*,auto">
     <Label class="heading" text="Find a Doctor"></Label>
     <SupportButton col="1"></SupportButton>
   </GridLayout>
@@ -53,24 +53,25 @@
   <GridLayout *ngIf="selected === 1" row="2">
     <ListView row="1" [items]="doctors">
       <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
-        <GridLayout
-          rows="*"
-          class="m-x-20"
-          columns="auto,*,auto"
-          height="80"
-          [nsRouterLink]="['../patient', 1]"
-        >
-          <Image col="0" class="doctor-image" [src]="item.image"></Image>
-          <StackLayout col="1" verticalAlignment="center">
-            <Label class="name" [text]="item.name"></Label>
-            <Label
-              row="1"
-              class="subscriber-id"
-              [text]="'March 10, 2020'"
-            ></Label>
-          </StackLayout>
-          <Label col="2" text="&#xf054;" class="fa list-arrow"></Label>
-        </GridLayout>
+        <StackLayout>
+          <GridLayout
+            class="m-x-20"
+            columns="auto,*,auto"
+            height="80"
+            [nsRouterLink]="['../patient', 1]"
+          >
+            <Image col="0" class="doctor-image" [src]="item.image"></Image>
+            <StackLayout col="1" verticalAlignment="center">
+              <Label class="name" [text]="item.name"></Label>
+              <Label
+                row="1"
+                class="subscriber-id"
+                [text]="'March 10, 2020'"
+              ></Label>
+            </StackLayout>
+            <Label col="2" text="&#xf054;" class="fa list-arrow"></Label>
+          </GridLayout>
+        </StackLayout>
       </ng-template>
     </ListView>
   </GridLayout>

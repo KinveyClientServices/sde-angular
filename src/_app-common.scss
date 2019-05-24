@@ -5,6 +5,7 @@
 Page {
   font-family: "Helvetica Neue";
   color: black;
+  vertical-align: center;
 }
 
 .fa {
@@ -18,6 +19,7 @@ Page {
 .heading {
   font-size: 40;
   font-family: "Helvetica Neue";
+  color: black;
   font-weight: bold;
 }
 .h2 {
@@ -29,6 +31,7 @@ Page {
 .h2-icon {
   font-size: 22;
   margin-right: 14;
+  vertical-align: middle;
 }
 
 .main {
@@ -38,8 +41,8 @@ Page {
 .sub-heading {
   color: rgba(112, 112, 112, 1);
   horizontal-align: center;
-  height: 40;
-  padding: 0 17 0 17;
+  vertical-align: center;
+  padding: 10 17 10 17;
   font-size: 17;
 }
 
@@ -58,4 +61,10 @@ Page {
   color: white;
   height: 50;
   background: linear-gradient(257deg, #ff9f40, #e60ca5);
+}
+
+//hack
+TextField {
+  border-bottom-width: 1;
+  border-color: transparent;
 }

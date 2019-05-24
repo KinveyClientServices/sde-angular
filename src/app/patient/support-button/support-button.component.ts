@@ -20,7 +20,7 @@ export class SupportButtonComponent implements OnInit {
     const options: ModalDialogOptions = {
       viewContainerRef: this._vcRef,
       context: {},
-      fullscreen: false
+      fullscreen: true
     };
 
     this._modalService

@@ -1,5 +1,5 @@
 <GridLayout rows="auto,auto,*">
-  <GridLayout row="0" class="m-x-15 m-b-10" columns="*,auto, auto">
+  <GridLayout row="0" class="m-x-15 m-y-10" columns="*,auto, auto">
     <Label class="heading" text="My Profile"></Label>
     <SupportButton col="1"></SupportButton>
     <Button
@@ -69,10 +69,12 @@
           let-odd="odd"
           let-even="even"
         >
-          <GridLayout columns="auto,*" height="54">
-            <Label class="general-info-heading" [text]="item.name"></Label>
-            <Label col="1" [text]="item.amount" class="amount"></Label>
-          </GridLayout>
+          <StackLayout>
+            <GridLayout columns="auto,*" height="54">
+              <Label class="general-info-heading" [text]="item.name"></Label>
+              <Label col="1" [text]="item.amount" class="amount"></Label>
+            </GridLayout>
+          </StackLayout>
         </ng-template>
       </ListView>
     </GridLayout>
@@ -83,15 +85,17 @@
   <GridLayout row="2" *ngIf="selected === 1">
     <ListView [items]="references" class="general-info">
       <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
-        <GridLayout columns="auto,*, auto" height="54">
-          <Label text="&#xf15c;" class="fa document-icon"></Label>
-          <Label
-            col="1"
-            [text]="item.name"
-            class="general-info-heading"
-          ></Label>
-          <Label col="2" text="&#xf054;" class="fa list-arrow"></Label>
-        </GridLayout>
+        <StackLayout>
+          <GridLayout columns="auto,*, auto" height="54">
+            <Label text="&#xf15c;" class="fa document-icon"></Label>
+            <Label
+              col="1"
+              [text]="item.name"
+              class="general-info-heading"
+            ></Label>
+            <Label col="2" text="&#xf054;" class="fa list-arrow"></Label>
+          </GridLayout>
+        </StackLayout>
       </ng-template>
     </ListView>
   </GridLayout>
