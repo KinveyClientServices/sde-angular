@@ -51,14 +51,13 @@
         <GridLayout class="m-l-10" row="1" columns="4*, 6*">
           <StackLayout>
             <StackLayout
-              class="m-b-10"
+              class="m-y-5"
               *ngFor="let sub of i.subItems | keyvalue"
             >
               <Label class="sub-item" [text]="sub.key"></Label>
               <Label class="sub-item-value" [text]="sub.value"></Label>
             </StackLayout>
           </StackLayout>
-
           <app-radial-chart
             col="1"
             [text]="i.value"
