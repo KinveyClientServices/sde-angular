@@ -56,7 +56,7 @@ $text-color: $login-page-text-color;
   text-align: center;
   border-width: 1;
   border-radius: 30;
-  height: 44;
+  padding: 12;
   margin-bottom: 16;
   vertical-align: center;
 }
@@ -67,10 +67,11 @@ $text-color: $login-page-text-color;
   color: #f15175;
   font-size: 16;
   border-color: #f15175;
-  height: 40;
+  padding: 12;
   border-width: 1;
   border-radius: 30;
   vertical-align: center;
+  background-color: white;
 }
 .login-icon {
   text-align: center;

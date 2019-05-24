@@ -1,10 +1,9 @@
 <GridLayout>
-  <ActivityIndicator [busy]="processing"></ActivityIndicator>
   <ContentView class="circle" row="0" rowSpan="4"> </ContentView>
   <ScrollView>
     <GridLayout rows="auto,auto,auto,*">
-      <Image row="0" src="res://logo" class="main-logo-cloud"></Image>
-      <Label row="1" class="h1" text="Please Login as"></Label>
+      <Image row="0" src="res://loginlogo" class="main-logo-cloud"></Image>
+      <Label row="1" class="h1" text="Please Logisssn as"></Label>
       <GridLayout row="2" rows="auto *, *,*" class="form-container">
         <GridLayout class="m-b-30" rows="auto" columns="*,1,*">
           <StackLayout (tap)="changeSelected('patient')">
@@ -41,14 +40,20 @@
           row="2"
           [(ngModel)]="password"
         ></TextField>
-
-        <Button
-          row="3"
-          class="login"
-          [isEnabled]="!processing"
-          text="LOG IN"
-          (tap)="login()"
-        ></Button>
+        <GridLayout row="3">
+          <Button
+            class="login"
+            [isEnabled]="!processing"
+            text="LOG IN"
+            (tap)="login()"
+          ></Button>
+          <ActivityIndicator
+            [busy]="processing"
+            verticalAlignment="center"
+            horizontalAlignment="right"
+            style="margin-right:20"
+          ></ActivityIndicator>
+        </GridLayout>
       </GridLayout>
 
       <GridLayout class="sign-up" rows="auto" columns="auto, auto" row="3">
