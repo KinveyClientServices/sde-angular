@@ -29,7 +29,8 @@ export class LoginComponent implements OnInit {
       this.processing = true;
       await this.dataService.login(this.username, this.password);
       this.router.navigate([""], <any>{ clearHistory: true });
-    } catch {
+    } catch (exception) {
+      console.log(exception);
       alert("Invalid credentials");
     } finally {
       this.processing = false;
