@@ -4,6 +4,7 @@
 @import "_app-variables";
 Page {
   font-family: "Helvetica Neue";
+  color: black;
 }
 
 .fa {
@@ -24,25 +25,10 @@ Page {
   font-family: "Helvetica Neue";
   font-weight: bold;
 }
-.heading-icon-circle {
-  width: 40;
-  height: 40;
-  border-radius: 40;
-  opacity: 0.1;
-  background: #36547c;
-  horizontal-align: center;
-  vertical-align: center;
-}
+
 .h2-icon {
   font-size: 22;
   margin-right: 14;
-}
-
-.heading-icon-button {
-  font-size: 24;
-  horizontal-align: center;
-  vertical-align: center;
-  color: black;
 }
 
 .main {

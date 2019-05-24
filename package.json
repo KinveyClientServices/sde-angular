@@ -4,6 +4,9 @@
     "id": "org.nativescript.sdeangular",
     "tns-ios": {
       "version": "5.4.0"
+    },
+    "tns-android": {
+      "version": "5.4.0"
     }
   },
   "version": "0.0.1",

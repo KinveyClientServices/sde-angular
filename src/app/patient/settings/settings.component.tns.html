@@ -2,10 +2,13 @@
   <GridLayout row="0" class="m-x-15 m-b-10" columns="*,auto, auto">
     <Label class="heading" text="My Profile"></Label>
     <SupportButton col="1"></SupportButton>
-    <GridLayout col="2" (tap)="logout()">
-      <Label class="heading-icon-circle"></Label>
-      <Label text="&#xf2f5;" class="fa heading-icon-button main"></Label>
-    </GridLayout>
+    <Button
+      class="heading-icon-button fa"
+      col="2"
+      text="&#xf2f5;"
+      (tap)="logout()"
+    >
+    </Button>
   </GridLayout>
   <GridLayout row="1" class="m-b-15 m-r-15" columns="*,*">
     <Label
