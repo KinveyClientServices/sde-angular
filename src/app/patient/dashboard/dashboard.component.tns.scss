@@ -72,3 +72,22 @@
 .notification-sub-text {
   color: rgba(140, 140, 140, 1);
 }
+.summary {
+  background: rgb(244, 246, 248);
+  padding: 10;
+  margin: 10 0 10 0;
+  border-radius: 10;
+}
+.summary-value {
+  font-size: 32;
+  font-family: "Helvetica Neue";
+  vertical-align: center;
+  margin-right: 4;
+}
+.summary-units {
+  font-size: 14;
+  margin-top: 12;
+  vertical-align: center;
+  color: #707070;
+  font-family: "Helvetica Neue";
+}

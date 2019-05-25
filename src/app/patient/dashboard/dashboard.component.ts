@@ -84,6 +84,21 @@ export class DashboardComponent implements OnInit {
       }
     }
   ];
+  summary = [
+    { title: "Weight", value: "200", units: "Lbs", color: "#0076FF" },
+    {
+      title: "Blood Pressure",
+      value: "119/67",
+      units: "",
+      color: "#F15175"
+    },
+    {
+      title: "Total Cholesterol",
+      value: "195",
+      units: "mg/dL",
+      color: "#6AB04C"
+    }
+  ];
 
   ngOnInit() {}
 }

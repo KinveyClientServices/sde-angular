@@ -68,6 +68,26 @@
           ></app-radial-chart>
         </GridLayout>
       </GridLayout>
+      <GridLayout
+        *ngFor="let item of summary"
+        class="summary p-0 m-0"
+        rows="auto, *"
+        columns="auto, *"
+      >
+        <Label [text]="item.title" colSpan="2" class="sub-item"></Label>
+        <Label
+          row="1"
+          [text]="item.value"
+          class="summary-value"
+          [color]="item.color"
+        ></Label>
+        <Label
+          row="1"
+          col="1"
+          [text]="item.units"
+          class="summary-units"
+        ></Label>
+      </GridLayout>
     </StackLayout>
   </ScrollView>
   <ScrollView *ngIf="selected === 1" row="2" class="m-l-20 m-r-20">
