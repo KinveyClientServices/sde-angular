@@ -15,8 +15,7 @@ import { AppointmentsComponent } from "./appointments/appointments.component";
 import { TelemedicineComponent } from "./telemedicine/telemedicine.component";
 import { NativeScriptUIGaugeModule } from "nativescript-ui-gauge/angular";
 import { RadialChartComponent } from "./dashboard/radial-chart/radial-chart.component";
-import { SupportComponent } from "../support/support.component";
-import { SupportButtonComponent } from './support-button/support-button.component';
+import { SharedModule } from "../shared/shared.module";
 @NgModule({
   declarations: [
     TabsComponent,
@@ -29,16 +28,14 @@ import { SupportButtonComponent } from './support-button/support-button.componen
     FindDoctorComponent,
     AppointmentsComponent,
     TelemedicineComponent,
-    RadialChartComponent,
-    SupportComponent,
-    SupportButtonComponent
+    RadialChartComponent
   ],
-  entryComponents: [SupportComponent],
   imports: [
     PatientRoutingModule,
     NativeChatModule,
     NativeScriptCommonModule,
-    NativeScriptUIGaugeModule
+    NativeScriptUIGaugeModule,
+    SharedModule
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })

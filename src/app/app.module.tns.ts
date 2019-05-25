@@ -15,6 +15,7 @@ import { isIOS } from "tns-core-modules/platform";
 import { KinveyModule } from "kinvey-nativescript-sdk/angular";
 import { Config } from "./config";
 import { COMPONENTS } from "./app-routing.module";
+import { SharedModule } from "./shared/shared.module";
 
 @NgModule({
   declarations: [AppComponent, ...COMPONENTS],
