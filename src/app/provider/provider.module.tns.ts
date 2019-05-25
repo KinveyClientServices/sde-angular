@@ -6,7 +6,8 @@ import { ProviderTabsComponent } from "./provider-tabs/provider-tabs.component";
 import { PatientsComponent } from "./patients/patients.component";
 import { AppointmentsComponent } from "./appointments/appointments.component";
 import { TicketsComponent } from "./tickets/tickets.component";
-import { PatientDetailsComponent } from './patients/patient-details/patient-details.component';
+import { PatientDetailsComponent } from "./patients/patient-details/patient-details.component";
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { PatientDetailsComponent } from './patients/patient-details/patient-deta
     TicketsComponent,
     PatientDetailsComponent
   ],
-  imports: [ProviderRoutingModule, NativeScriptCommonModule],
+  imports: [ProviderRoutingModule, NativeScriptCommonModule, SharedModule],
   schemas: [NO_ERRORS_SCHEMA]
 })
 export class ProviderModule {}

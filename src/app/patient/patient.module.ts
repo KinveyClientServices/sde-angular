@@ -9,11 +9,11 @@ import { FilesComponent } from "./files/files.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { FindDoctorComponent } from "./find-doctor/find-doctor.component";
-import { AppointmentsComponent } from './appointments/appointments.component';
-import { TelemedicineComponent } from './telemedicine/telemedicine.component';
-import { RadialChartComponent } from './dashboard/radial-chart/radial-chart.component';
-import { SupportComponent } from '../support/support.component';
-import { SupportButtonComponent } from './support-button/support-button.component';
+import { AppointmentsComponent } from "./appointments/appointments.component";
+import { TelemedicineComponent } from "./telemedicine/telemedicine.component";
+import { RadialChartComponent } from "./dashboard/radial-chart/radial-chart.component";
+import { SupportComponent } from "../shared/support/support.component";
+import { SupportButtonComponent } from "../shared/support-button/support-button.component";
 
 @NgModule({
   declarations: [
