@@ -25,63 +25,64 @@
       [class.sub-heading-selected]="selected === 1"
     ></Label>
   </GridLayout>
-  <GridLayout row="2" *ngIf="selected === 0" rows="auto, auto, *, auto">
-    <GridLayout
-      row="0"
-      columns="*, *"
-      rows="auto, auto, auto, auto, auto, auto"
-      class="insurance-card"
-    >
-      <Label col="0" row="0" text="GROUP NAME" class="card-heading"></Label>
-      <Label col="1" row="0" text="GROUP #" class="card-heading"></Label>
-      <Label col="0" row="1" text="IGNACIO FUENTES" class="card-data"></Label>
-      <Label
-        col="1"
-        row="1"
-        text="0888881888010000123"
-        class="card-data"
-      ></Label>
-      <Label col="0" row="2" text="INSURANCE TYPE" class="card-heading"></Label>
-      <Label col="1" row="2" text="SUBSCRIBER #" class="card-heading"></Label>
-      <Label col="0" row="3" text="PPO" class="card-data"></Label>
-      <Label
-        col="1"
-        row="3"
-        text="088888188801008911"
-        class="card-data"
-      ></Label>
-      <Label col="0" row="4" text="PLAN" class="card-heading"></Label>
-      <Label col="1" row="4" text="ISSUE DATE" class="card-heading"></Label>
-      <Label
-        col="0"
-        row="5"
-        text="OPEN CHOICE"
-        class="card-data-bottom"
-      ></Label>
-      <Label col="1" row="5" text="2013-08-10" class="card-data-bottom"></Label>
-    </GridLayout>
-    <Image row="1" class="wallet" src="~/app/images/wallet.png"></Image>
-    <GridLayout row="2">
-      <ListView [items]="myItems" class="general-info">
-        <ng-template
-          let-item="item"
-          let-i="index"
-          let-odd="odd"
-          let-even="even"
-        >
-          <StackLayout>
-            <GridLayout columns="auto,*" height="54">
-              <Label class="general-info-heading" [text]="item.name"></Label>
-              <Label col="1" [text]="item.amount" class="amount"></Label>
-            </GridLayout>
-          </StackLayout>
-        </ng-template>
-      </ListView>
-    </GridLayout>
-    <GridLayout row="3" class="p-30 footer">
-      <Button class="refresh-button" text="SAVE"></Button>
-    </GridLayout>
-  </GridLayout>
+  <ScrollView row="2" *ngIf="selected === 0">
+    <StackLayout>
+      <GridLayout
+        row="0"
+        columns="*, *"
+        rows="auto, auto, auto, auto, auto, auto"
+        class="insurance-card"
+      >
+        <Label col="0" row="0" text="GROUP NAME" class="card-heading"></Label>
+        <Label col="1" row="0" text="GROUP #" class="card-heading"></Label>
+        <Label col="0" row="1" text="IGNACIO FUENTES" class="card-data"></Label>
+        <Label
+          col="1"
+          row="1"
+          text="0888881888010000123"
+          class="card-data"
+        ></Label>
+        <Label
+          col="0"
+          row="2"
+          text="INSURANCE TYPE"
+          class="card-heading"
+        ></Label>
+        <Label col="1" row="2" text="SUBSCRIBER #" class="card-heading"></Label>
+        <Label col="0" row="3" text="PPO" class="card-data"></Label>
+        <Label
+          col="1"
+          row="3"
+          text="088888188801008911"
+          class="card-data"
+        ></Label>
+        <Label col="0" row="4" text="PLAN" class="card-heading"></Label>
+        <Label col="1" row="4" text="ISSUE DATE" class="card-heading"></Label>
+        <Label
+          col="0"
+          row="5"
+          text="OPEN CHOICE"
+          class="card-data-bottom"
+        ></Label>
+        <Label
+          col="1"
+          row="5"
+          text="2013-08-10"
+          class="card-data-bottom"
+        ></Label>
+      </GridLayout>
+      <Image row="1" class="wallet" src="~/app/images/wallet.png"></Image>
+      <StackLayout *ngFor="let item of myItems">
+        <GridLayout columns="auto,*" height="54">
+          <Label class="general-info-heading" [text]="item.name"></Label>
+          <Label col="1" [text]="item.amount" class="amount"></Label>
+        </GridLayout>
+      </StackLayout>
+      <GridLayout row="3" class="p-30">
+        <Button class="refresh-button" text="SAVE"></Button>
+      </GridLayout>
+    </StackLayout>
+  </ScrollView>
   <GridLayout row="2" *ngIf="selected === 1">
     <ListView [items]="references" class="general-info">
       <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
