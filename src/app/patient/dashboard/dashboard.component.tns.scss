@@ -31,10 +31,11 @@
   border-color: #f3f1f1;
 }
 .notification {
-  margin-bottom: 5;
+  padding: 5;
+  vertical-align: center;
 }
 .tip {
-  margin-bottom: 30;
+  padding: 8 0 8 0;
 }
 .date {
   color: rgba(167, 167, 167, 1);
@@ -42,21 +43,26 @@
   horizontal-align: right;
   vertical-align: top;
 }
-.badge {
+.badge-bg {
   background: rgba(0, 206, 201, 1);
+  height: 32;
+  width: 32;
+  border-radius: 32;
+  margin-right: 5;
+}
+.badge-text {
   color: white;
   font-size: 18;
-  height: 28;
-  width: 28;
-  border-radius: 28;
   text-align: center;
-  vertical-align: middle;
+  horizontal-align: center;
+  vertical-align: center;
   font-weight: 500;
-  margin-right: 5;
 }
 .notification-text {
   font-family: "SF UI Text";
   font-weight: bold;
+  vertical-align: center;
+  font-size: 16;
 }
 .tip-icon {
   font-size: 25;

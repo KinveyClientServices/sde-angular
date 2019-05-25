@@ -28,7 +28,9 @@
             columns="auto, *"
             *ngFor="let n of notifications"
           >
-            <Label [text]="n.badge" class="badge"></Label>
+            <GridLayout class="badge-bg">
+              <Label [text]="n.badge" class="badge-text"></Label>
+            </GridLayout>
             <Label col="1" class="notification-text" [text]="n.text"></Label>
           </GridLayout>
         </StackLayout>
