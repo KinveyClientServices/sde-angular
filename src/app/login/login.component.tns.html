@@ -5,6 +5,13 @@
       <Image row="0" src="res://loginlogo" class="main-logo-cloud"></Image>
       <Label row="1" class="h1" text="Please Login as"></Label>
       <GridLayout row="2" rows="auto *, *,*" class="form-container">
+        <ActivityIndicator
+          [busy]="processing"
+          color="#ff6358"
+          verticalAlignment="center"
+          horizontalAlignment="center"
+          rowSpan="4"
+        ></ActivityIndicator>
         <GridLayout class="m-b-30" rows="auto" columns="*,1,*">
           <StackLayout (tap)="changeSelected('patient')">
             <Label
@@ -47,12 +54,6 @@
             text="LOG IN"
             (tap)="login()"
           ></Button>
-          <ActivityIndicator
-            [busy]="processing"
-            verticalAlignment="center"
-            horizontalAlignment="right"
-            style="margin-right:20"
-          ></ActivityIndicator>
         </GridLayout>
       </GridLayout>
 
