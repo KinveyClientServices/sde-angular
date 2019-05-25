@@ -6,18 +6,21 @@
   tabTextFontSize="14"
 >
   <page-router-outlet
-    *tabItem="{ iconSource: 'res://tabs/patients/patients' }"
+    *tabItem="{ iconSource: 'res://patients' }"
     name="patientsTab"
+    actionBarVisibility="never"
   >
   </page-router-outlet>
   <page-router-outlet
-    *tabItem="{ iconSource: 'res://tabs/appointments/appointments' }"
+    *tabItem="{ iconSource: 'res://appointments' }"
     name="appointmentsTab"
+    actionBarVisibility="never"
   >
   </page-router-outlet>
   <page-router-outlet
-    *tabItem="{ iconSource: 'res://tabs/tickets/tickets' }"
+    *tabItem="{ iconSource: 'res://tickets' }"
     name="ticketsTab"
+    actionBarVisibility="never"
   >
   </page-router-outlet>
 </TabView>
