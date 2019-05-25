@@ -24,6 +24,7 @@
 .camera-icon {
   font-size: 24;
   margin-right: 16;
+  vertical-align: middle;
 }
 .uploaded-image {
   margin: 0 0 0 10;
@@ -34,13 +35,16 @@
 }
 .heart-icon {
   horizontal-align: center;
+  vertical-align: middle;
   color: rgba(54, 84, 124, 0.5);
 }
 .discomfort-slider {
   background: #e60ca5;
   color: rgba(241, 81, 117, 1);
   horizontal-align: center;
-  margin: 0 20 20 20;
+  margin: 0 40 0 40;
+  width: 80%;
+  vertical-align: middle;
   // background: linear-gradient(90deg, #e60ca5, #ff9f40);
 }
 .prev-treated {
