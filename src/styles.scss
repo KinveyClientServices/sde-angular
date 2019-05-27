@@ -24,25 +24,3 @@ body {
   top: 4px;
   font-weight: lighter;
 }
-
-.selected {
-  background-color: darken($main-color, 10%);
-  border-bottom: 2px solid #ff6358;
-}
-.menu-item {
-  color: white !important;
-}
-
-.menu-item i::before {
-  position: relative;
-  top: 3px;
-}
-
-.menu-logo {
-  font-size: 1.5em;
-  color: white;
-}
-
-.my-nav {
-  background-color: $main-color !important;
-}

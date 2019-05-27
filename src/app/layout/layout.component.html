@@ -1,67 +1,85 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-0 my-nav">
-  <a class="navbar-brand" routerLink="/">
-    <img [src]="'assets/'+logo" class="mr-2" width="40" height="40" alt="">
+<div class="col-md-12 logo-container">
+  <a class="navbar-brand p-4" routerLink="/">
+    <img [src]="'assets/' + logo" class="mr-2" height="50" alt="" />
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-    aria-expanded="false" aria-label="Toggle navigation">
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-0 my-nav">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav mr-auto">
-      <li *ngIf="homePageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
-                true}">
+      <li
+        class="nav-item  mx-3"
+        routerLinkActive="selected"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
         <a routerLink="/home" class="nav-link menu-item">
-          <i class="icon ion-md-home menu-logo mx-2"></i>{{homePageTitle}}
+          Search Legacy Devices
         </a>
       </li>
-      <li *ngIf="accountsPageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
-        true}">
-        <a routerLink="/accounts" class="nav-link menu-item">
-          <i class="icon ion-md-person menu-logo mx-2"></i>{{accountsPageTitle}}
+      <li
+        class="nav-item  mx-3"
+        routerLinkActive="selected"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a routerLink="/home" class="nav-link menu-item">
+          Search Inventory
         </a>
       </li>
-      <li *ngIf="productsPageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
-                      true}">
-        <a routerLink="/products" class="nav-link menu-item">
-          <i class="icon ion-md-list menu-logo mx-2"></i>{{productsPageTitle}}
+      <li
+        class="nav-item  mx-3"
+        routerLinkActive="selected"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a routerLink="/home" class="nav-link menu-item">
+          Update Inventory
         </a>
       </li>
-      <li *ngIf="filesPageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
-        true}">
-        <a routerLink="/files" class="nav-link menu-item">
-          <i class="icon ion-md-folder menu-logo mx-2"></i>{{filesPageTitle}}
+      <li
+        class="nav-item  mx-3"
+        routerLinkActive="selected"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a routerLink="/home" class="nav-link menu-item">
+          Update Network Inventory
         </a>
       </li>
-      <li *ngIf="tasksPageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
-  true}">
-        <a routerLink="/tasks" class="nav-link menu-item">
-          <i class="icon ion-md-checkbox-outline	
-          menu-logo mx-2"></i>{{tasksPageTitle}}
-        </a>
-      </li>
-      <li *ngIf="offlinePageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
-                        true}">
-        <a routerLink="/offline" class="nav-link menu-item">
-          <i class="icon ion-md-wifi	
-          menu-logo mx-2"></i>{{offlinePageTitle}}
-        </a>
-      </li>
-      <li *ngIf="mapPageVisible" class="nav-item pr-4" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
-                          true}">
-        <a routerLink="/map" class="nav-link menu-item">
-          <i class="icon ion-md-map menu-logo mx-2"></i>{{mapPageTitle}}
-        </a>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          data-toggle="dropdown"
+          href="#"
+          role="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          >Dropdown</a
+        >
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+        </div>
       </li>
     </ul>
-    <span style="color:white">{{username|async}}, </span>
-    <a class="mr-2" (click)="logout()" style="cursor: pointer; color:white">
-      Logout
-    </a>
 
+    <span style="color:white">{{ username | async }} </span>
+    <a class="mr-4" (click)="logout()" style="cursor: pointer; color:white">
+      {{ ", Logout" }}
+    </a>
   </div>
 </nav>
-
-
 
 <div class="container-fluid">
   <router-outlet></router-outlet>

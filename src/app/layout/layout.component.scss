@@ -1,0 +1,24 @@
+@import "../../app-variables";
+
+.hr {
+  background: $login-button-background-color;
+  height: 10px;
+}
+.my-nav {
+  background-color: rgb(54, 64, 80) !important;
+  height: 70px;
+}
+
+.menu-item {
+  color: white !important;
+  font-weight: bold;
+}
+
+.menu-logo {
+  font-size: 1.5em;
+  color: white;
+}
+.logo-container {
+  background: $main-color;
+  border-bottom: 10px solid #f0b942;
+}
