@@ -13,7 +13,7 @@ import { ProductsComponent } from "./products/products.component";
 import { TasksComponent } from "./tasks/tasks.component";
 import { AddTaskComponent } from "./tasks/add-task/add-task.component";
 import { FileDetailsComponent } from "./files/file-details/file-details.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { LayoutComponent } from "./layout/layout.component";
 import { ArComponent } from "./ar/ar.component";
 import { AccountsComponent } from "./accounts/accounts.component";
@@ -21,8 +21,13 @@ import { AccountDetailsComponent } from "./accounts/account-details/account-deta
 import { SettingsComponent } from "./settings/settings.component";
 
 import { KinveyModule } from "kinvey-angular-sdk";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { Config } from "./config";
+import { GridModule } from "@progress/kendo-angular-grid";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { KendoGridEditFormComponent } from "./kendo-grid-edit-form/kendo-grid-edit-form.component";
+import { DialogsModule } from "@progress/kendo-angular-dialog";
 
 @NgModule({
   declarations: [
@@ -41,16 +46,22 @@ import { Config } from "./config";
     ArComponent,
     AccountsComponent,
     AccountDetailsComponent,
-    SettingsComponent
+    SettingsComponent,
+    KendoGridEditFormComponent
   ],
   imports: [
+    NgbModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     KinveyModule.init({
       appKey: Config.appKey,
       appSecret: Config.appSecret
-    })
+    }),
+    GridModule,
+    BrowserAnimationsModule,
+    DialogsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

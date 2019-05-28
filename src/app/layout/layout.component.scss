@@ -6,7 +6,6 @@
 }
 .my-nav {
   background-color: rgb(54, 64, 80) !important;
-  height: 70px;
 }
 
 .menu-item {
@@ -21,4 +20,7 @@
 .logo-container {
   background: $main-color;
   border-bottom: 10px solid #f0b942;
+}
+.dropd {
+  cursor: pointer;
 }

@@ -1,0 +1,202 @@
+<kendo-dialog *ngIf="active" (close)="closeForm()">
+  <kendo-dialog-titlebar>
+    {{ isNew ? "Add new record" : "Edit record" }}
+  </kendo-dialog-titlebar>
+
+  <form novalidate [formGroup]="editForm">
+    <div class="form-group">
+      <label for="AssetTag" class="control-label">Asset Tag</label>
+
+      <input type="text" class="k-textbox" formControlName="AssetTag" />
+      <br />
+
+      <div
+        class="k-tooltip k-tooltip-validation"
+        [hidden]="
+          editForm.controls.AssetTag.valid ||
+          editForm.controls.AssetTag.pristine
+        "
+      >
+        Asset Tag is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="SubType" class="control-label">Sub Type</label>
+
+      <input type="text" class="k-textbox" formControlName="SubType" />
+      <br />
+
+      <div
+        class="k-tooltip k-tooltip-validation"
+        [hidden]="
+          editForm.controls.SubType.valid || editForm.controls.SubType.pristine
+        "
+      >
+        Sub Type is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Make" class="control-label">Make</label>
+
+      <input type="text" class="k-textbox" formControlName="Make" />
+      <br />
+
+      <div
+        class="k-tooltip k-tooltip-validation"
+        [hidden]="
+          editForm.controls.Make.valid || editForm.controls.Make.pristine
+        "
+      >
+        Make is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Specs" class="control-label">Specs</label>
+
+      <input type="text" class="k-textbox" formControlName="Specs" />
+      <br />
+
+      <div
+        class="k-tooltip k-tooltip-validation"
+        [hidden]="
+          editForm.controls.Specs.valid || editForm.controls.Specs.pristine
+        "
+      >
+        Specs is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Owner" class="control-label">Owner</label>
+
+      <input type="text" class="k-textbox" formControlName="Owner" />
+      <br />
+
+      <div
+        class="k-tooltip k-tooltip-validation"
+        [hidden]="
+          editForm.controls.Owner.valid || editForm.controls.Owner.pristine
+        "
+      >
+        Owner is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Custodian" class="control-label">Custodian</label>
+
+      <input type="text" class="k-textbox" formControlName="Custodian" />
+      <br />
+
+      <div
+        class="k-tooltip k-tooltip-validation"
+        [hidden]="
+          editForm.controls.Custodian.valid ||
+          editForm.controls.Custodian.pristine
+        "
+      >
+        Custodian is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Location" class="control-label">Location</label>
+
+      <input type="text" class="k-textbox" formControlName="Location" />
+      <br />
+
+      <div
+        class="k-tooltip k-tooltip-validation"
+        [hidden]="
+          editForm.controls.Location.valid ||
+          editForm.controls.Location.pristine
+        "
+      >
+        Location is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Department" class="control-label">Department</label>
+
+      <input type="text" class="k-textbox" formControlName="Department" />
+      <br />
+
+      <div
+        class="k-tooltip k-tooltip-validation"
+        [hidden]="
+          editForm.controls.Department.valid ||
+          editForm.controls.Department.pristine
+        "
+      >
+        Department is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Status" class="control-label">Status</label>
+
+      <input type="text" class="k-textbox" formControlName="Status" />
+      <br />
+
+      <div
+        class="k-tooltip k-tooltip-validation"
+        [hidden]="
+          editForm.controls.Status.valid || editForm.controls.Status.pristine
+        "
+      >
+        Status is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="LCR" class="control-label">LCR</label>
+
+      <input type="checkbox" formControlName="LCR" />
+      <br />
+
+      <div
+        class="k-tooltip k-tooltip-validation"
+        [hidden]="editForm.controls.LCR.valid || editForm.controls.LCR.pristine"
+      >
+        LCR is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Reported" class="control-label">Reported</label>
+
+      <input type="checkbox" formControlName="Reported" />
+      <br />
+
+      <div
+        class="k-tooltip k-tooltip-validation"
+        [hidden]="
+          editForm.controls.Reported.valid ||
+          editForm.controls.Reported.pristine
+        "
+      >
+        Reported is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Audit" class="control-label">Audit</label>
+
+      <input type="checkbox" formControlName="Audit" />
+      <br />
+
+      <div
+        class="k-tooltip k-tooltip-validation"
+        [hidden]="
+          editForm.controls.Audit.valid || editForm.controls.Audit.pristine
+        "
+      >
+        Audit is required
+      </div>
+    </div>
+  </form>
+
+  <kendo-dialog-actions>
+    <button class="k-button" (click)="onCancel($event)">Cancel</button>
+    <button
+      class="k-button k-primary"
+      [disabled]="!editForm.valid"
+      (click)="onSave($event)"
+    >
+      Save
+    </button>
+  </kendo-dialog-actions>
+</kendo-dialog>

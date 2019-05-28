@@ -4,22 +4,25 @@
   </a>
 </div>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-0 my-nav">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark my-nav">
   <button
-    class="navbar-toggler"
+    class="ml-auto navbar-toggler hidden-sm-up"
     type="button"
-    data-toggle="collapse"
-    data-target="#navbarNav"
-    aria-controls="navbarNav"
+    (click)="isNavbarCollapsed = !isNavbarCollapsed"
+    aria-controls="exCollapsingNavbar2"
     aria-expanded="false"
     aria-label="Toggle navigation"
   >
-    <span class="navbar-toggler-icon"></span>
+    &#9776;
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
+  <div
+    [ngbCollapse]="isNavbarCollapsed"
+    class="collapse navbar-collapse"
+    id="exCollapsingNavbar2"
+  >
     <ul class="navbar-nav mr-auto">
       <li
-        class="nav-item  mx-3"
+        class="nav-item mx-3"
         routerLinkActive="selected"
         [routerLinkActiveOptions]="{ exact: true }"
       >
@@ -28,16 +31,16 @@
         </a>
       </li>
       <li
-        class="nav-item  mx-3"
+        class="nav-item mx-3"
         routerLinkActive="selected"
         [routerLinkActiveOptions]="{ exact: true }"
       >
-        <a routerLink="/home" class="nav-link menu-item">
+        <a routerLink="/products" class="nav-link menu-item">
           Search Inventory
         </a>
       </li>
       <li
-        class="nav-item  mx-3"
+        class="nav-item mx-3"
         routerLinkActive="selected"
         [routerLinkActiveOptions]="{ exact: true }"
       >
@@ -46,7 +49,7 @@
         </a>
       </li>
       <li
-        class="nav-item  mx-3"
+        class="nav-item mx-3"
         routerLinkActive="selected"
         [routerLinkActiveOptions]="{ exact: true }"
       >
@@ -55,25 +58,22 @@
         </a>
       </li>
       <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle"
-          data-toggle="dropdown"
-          href="#"
-          role="button"
-          aria-haspopup="true"
-          aria-expanded="false"
-          >Dropdown</a
-        >
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Separated link</a>
+        <div ngbDropdown class="d-inline-block">
+          <a
+            class="nav-link menu-item dropd"
+            id="dropdownBasic1"
+            ngbDropdownToggle
+          >
+            Administration
+          </a>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <a routerLink="/home" ngbDropdownItem>Administer Inventory</a>
+            <button ngbDropdownItem>Contact</button>
+            <button ngbDropdownItem>FAQ</button>
+          </div>
         </div>
       </li>
     </ul>
-
     <span style="color:white">{{ username | async }} </span>
     <a class="mr-4" (click)="logout()" style="cursor: pointer; color:white">
       {{ ", Logout" }}

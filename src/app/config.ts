@@ -1,7 +1,7 @@
 export class Config {
   //KINVEY
-  static appKey: string = "kid_ZJk02vOUFg";
-  static appSecret: string = "c1a32d5b3c474d0fa20a6f33fef396d5";
+  static appKey: string = "kid_H1qZdQqTV";
+  static appSecret: string = "6d8f1850824344cfbfa033c406a184d6";
 
   //LOGIN
   static appLogo: string = "images/logo.png";

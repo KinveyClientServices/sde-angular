@@ -31,6 +31,7 @@ import { NativeChatModule } from "@progress-nativechat/nativescript-nativechat/a
 import { isAndroid, isIOS, device, screen } from "tns-core-modules/platform";
 import { KinveyModule } from "kinvey-nativescript-sdk/angular";
 import { Config } from "./config";
+import { KendoGridEditFormComponent } from './kendo-grid-edit-form/kendo-grid-edit-form.component';
 
 declare var GMSServices: any;
 if (isIOS) {
@@ -54,7 +55,8 @@ if (isIOS) {
     TasksComponent,
     AddTaskComponent,
     FileDetailsComponent,
-    LayoutComponent
+    LayoutComponent,
+    KendoGridEditFormComponent
   ],
   imports: [
     NativeScriptModule,

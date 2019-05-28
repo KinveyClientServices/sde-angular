@@ -1,8 +1,92 @@
 <div class="row">
   <div class="col-md-12 mt-4">
-    <div class="my-breadcrumb p-4">
+    <div class="my-breadcrumb p-2">
       <i class="icon ion-md-home breadcrumb-item mx-2"></i>
-      Hello
+      Administration / Administer Inventory
     </div>
+  </div>
+  <div class="col-md-12 mt-4">
+    <kendo-grid
+      [data]="view | async"
+      [pageable]="true"
+      [pageSize]="gridState.take"
+      [height]="510"
+      (add)="addHandler($event)"
+      (edit)="editHandler($event)"
+      (remove)="removeHandler($event)"
+      (dataStateChange)="onStateChange($event)"
+      [skip]="gridState.skip"
+      [sort]="gridState.sort"
+    >
+      <ng-template kendoGridToolbarTemplate>
+        <button class="add-item" kendoGridAddCommand>Add new</button>
+      </ng-template>
+      <kendo-grid-column field="_id" title="" width="90">
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <button
+            kendoGridEditCommand
+            iconClass="icon ion-md-create"
+            class="k-primary"
+          ></button>
+          <button
+            kendoGridRemoveCommand
+            iconClass="icon ion-md-search"
+            class="k-primary"
+          ></button>
+        </ng-template>
+      </kendo-grid-column>
+      <kendo-grid-column field="_id" title="" width="40">
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <input type="checkbox" [checked]="dataItem.Discontinued" disabled />
+        </ng-template>
+      </kendo-grid-column>
+      <kendo-grid-column field="_id" title="" width="132">
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <a class="grid-link">Attributes</a>
+          <a class="grid-link">History</a>
+          <a class="grid-link">Files</a>
+        </ng-template>
+      </kendo-grid-column>
+      <kendo-grid-column field="AssetTag" title="Asset Tag" width="80">
+      </kendo-grid-column>
+      <kendo-grid-column field="SubType" title="Sub-Type" width="100">
+      </kendo-grid-column>
+      <kendo-grid-column field="Make" title="Make/Model" width="90">
+      </kendo-grid-column>
+      <kendo-grid-column field="Specs" title="Specs" width="66">
+      </kendo-grid-column>
+      <kendo-grid-column field="Owner" title="Owner(View Only)" width="130">
+      </kendo-grid-column>
+      <kendo-grid-column field="Custodian" title="Custodian" width="80">
+      </kendo-grid-column>
+      <kendo-grid-column field="Location" title="Location" width="80">
+      </kendo-grid-column>
+      <kendo-grid-column field="Department" title="Department" width="90">
+      </kendo-grid-column>
+      <kendo-grid-column field="Status" title="Status" width="90">
+      </kendo-grid-column>
+      <kendo-grid-column field="LCR" title="LCR NOT Eligible" width="130">
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <input type="checkbox" [checked]="dataItem.LCR" disabled />
+        </ng-template>
+      </kendo-grid-column>
+      <kendo-grid-column field="Reported" title="Reported">
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <input type="checkbox" [checked]="dataItem.Reported" disabled />
+        </ng-template>
+      </kendo-grid-column>
+      <kendo-grid-column field="Audit" title="Audit">
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <input type="checkbox" [checked]="dataItem.Audit" disabled />
+        </ng-template>
+      </kendo-grid-column>
+    </kendo-grid>
+    <kendo-grid-edit-form
+      [model]="editDataItem"
+      [isNew]="isNew"
+      (save)="saveHandler($event)"
+      (cancel)="cancelHandler()"
+    >
+    </kendo-grid-edit-form>
   </div>
 </div>

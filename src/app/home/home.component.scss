@@ -1,7 +1,28 @@
 .my-breadcrumb {
   background: rgb(237, 240, 241);
-  font-size: 24px;
-}
-.breadcrumb-item {
+  font-size: 20px;
   color: rgb(107, 187, 156);
+}
+.add-item {
+  background: rgb(54, 64, 80) !important;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+}
+.grid-icon {
+  color: #6bbb9c;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.grid-link {
+  margin-right: 2px;
+  color: #6bbb9c !important;
+  font-weight: bold;
+  font-size: 10px;
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+.k-grid {
+  font-size: 12px;
 }

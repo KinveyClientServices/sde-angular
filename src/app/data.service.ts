@@ -11,11 +11,27 @@ import {
 import { BehaviorSubject, Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { Config } from "./config";
+import { Inventory } from "./home/home.component";
 
 @Injectable({
   providedIn: "root"
 })
 export class DataService {
+  removeInventory(dataItem: any) {
+    return this.inventoryStore.removeById(dataItem._id);
+  }
+  saveInventory(inventory: Inventory, isNew: boolean): Promise<any> {
+    console.log(inventory);
+    console.log(isNew);
+    if (isNew) {
+      delete inventory._id;
+    }
+
+    return this.inventoryStore.save(inventory);
+  }
+  getInventory(): Observable<any> {
+    return this.inventoryStore.find();
+  }
   constructor(
     private userService: UserService,
     private filesService: FilesService,
@@ -65,6 +81,7 @@ export class DataService {
   private accountsStore = this.datastoreService.collection(
     Config.accountsCollectionName
   );
+  private inventoryStore = this.datastoreService.collection("inventory");
   public selectedFile: any;
   public isLoggedIn: BehaviorSubject<boolean>;
   private user: BehaviorSubject<User>;
