@@ -4,7 +4,7 @@
     <SupportButton col="1"></SupportButton>
   </GridLayout>
 
-  <ListView row="1" [items]="myItems" (itemTap)="onItemTap($event)">
+  <ListView row="1" [items]="myItems">
     <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
       <StackLayout>
         <GridLayout rows="*" class="m-x-20" columns="auto,*,auto" height="80">
