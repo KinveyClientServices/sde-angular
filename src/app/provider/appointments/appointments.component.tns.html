@@ -7,13 +7,7 @@
   <ListView row="1" [items]="myItems" (itemTap)="onItemTap($event)">
     <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
       <StackLayout>
-        <GridLayout
-          rows="*"
-          class="m-x-20"
-          columns="auto,*,auto"
-          height="80"
-          [nsRouterLink]="['../patient', 1]"
-        >
+        <GridLayout rows="*" class="m-x-20" columns="auto,*,auto" height="80">
           <Image col="0" class="doctor-image" [src]="item.image"></Image>
           <StackLayout col="1" verticalAlignment="center">
             <Label class="name" [text]="item.name"></Label>
