@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { DataService } from "../../data.service";
 import { Router } from "../../utils";
+import { Page } from "tns-core-modules/ui/page/page";
 class DataItem {
   constructor(public id: number, public name: string, public image: string) {}
 }
@@ -14,7 +15,14 @@ export class PatientsComponent implements OnInit {
   myItems: any[];
   counter: number;
 
-  constructor(private dataService: DataService, private router: Router) {}
+  constructor(
+    private dataService: DataService,
+    private router: Router,
+    private page: Page
+  ) {
+    //HACK needed for Android Action Bar Hidden On Master Page but not Details Page
+    this.page.actionBarHidden = true;
+  }
 
   ngOnInit() {
     this.myItems = [];

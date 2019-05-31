@@ -1,15 +1,12 @@
-<ActionBar title="Patients">
-  <NavigationButton></NavigationButton>
-  <StackLayout>
-    <Label text="Patients" class="action-label"></Label>
-  </StackLayout>
+<ActionBar title="Patients" backgroundColor="white">
+  <NavigationButton icon="res://chevron" (tap)="goBack()"></NavigationButton>
 </ActionBar>
 <GridLayout rows="auto,*">
   <GridLayout
     row="0"
     rows="auto, *"
     columns="2*,4*,2*"
-    class="profile-section p-y-30"
+    class="profile-section p-t-30"
   >
     <Image col="1" class="patient-profile-image" [src]="patient.image"></Image>
     <GridLayout col="2" class="m-x-10" verticalAlignment="center">
@@ -25,7 +22,7 @@
   </GridLayout>
   <Button class="refresh-button" text="ADMIT"></Button>
 
-  <GridLayout row="1">
+  <GridLayout row="1" class="m-t-5">
     <ListView [items]="patient.patientData">
       <ng-template let-item="item">
         <Label [text]="item" class="patient-data-item m-l-20"></Label>

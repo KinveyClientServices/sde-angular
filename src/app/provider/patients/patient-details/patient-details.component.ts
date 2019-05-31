@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "~/app/utils";
 
 @Component({
   selector: "app-patient-details",
@@ -6,6 +7,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./patient-details.component.scss"]
 })
 export class PatientDetailsComponent implements OnInit {
+  constructor(private router: Router) {}
   patient = {
     id: 1,
     name: "Ignacio Fuentes",
@@ -25,7 +27,10 @@ export class PatientDetailsComponent implements OnInit {
     ]
   };
 
-  constructor() {}
-
   ngOnInit() {}
+
+  public goBack() {
+    console.log("HERE");
+    (<any>this.router).backToPreviousPage();
+  }
 }
