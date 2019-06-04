@@ -5,9 +5,6 @@ import {
   NSEmptyOutletComponent
 } from "nativescript-angular/router";
 import { TabsComponent } from "./tabs/tabs.component";
-import { AccountsComponent } from "./accounts/accounts.component";
-import { AccountDetailsComponent } from "./accounts/account-details/account-details.component";
-import { FilesComponent } from "./files/files.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { ChatComponent } from "./chat/chat.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
