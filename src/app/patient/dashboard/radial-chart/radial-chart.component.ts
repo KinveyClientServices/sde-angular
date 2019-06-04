@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { text } from "@angular/core/src/render3";
 
 @Component({
   selector: "app-radial-chart",

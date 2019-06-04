@@ -18,12 +18,14 @@ const routes: Routes = [
   {
     path: "patient",
     canActivate: [LoggedInGuard],
-    loadChildren: "~/app/patient/patient.module#PatientModule"
+    loadChildren: () =>
+      import("./patient/patient.module").then(mod => mod.PatientModule)
   },
   {
     path: "provider",
     canActivate: [LoggedInGuard],
-    loadChildren: "~/app/provider/provider.module#ProviderModule"
+    loadChildren: () =>
+      import("./provider/provider.module").then(mod => mod.ProviderModule)
   }
 ];
 
