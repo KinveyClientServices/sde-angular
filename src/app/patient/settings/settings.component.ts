@@ -14,7 +14,6 @@ export class SettingsComponent implements OnInit {
 
   ngOnInit(): void {
     // Init your component properties here.
-    this.title = Config.settingsPageTitle;
   }
   logout() {
     this.dataService.logout().then(() => {

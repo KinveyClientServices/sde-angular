@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { DataService } from "~/app/data.service";
+import { Router } from "~/app/utils";
 
 @Component({
   selector: "app-dashboard",
@@ -6,6 +8,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./dashboard.component.scss"]
 })
 export class DashboardComponent implements OnInit {
+  constructor(private service: DataService, private router: Router) {}
   selected = 0;
   markSelected(v) {
     console.log(v);
@@ -99,6 +102,11 @@ export class DashboardComponent implements OnInit {
       color: "#6AB04C"
     }
   ];
+
+  async logout() {
+    await this.service.logout();
+    this.router.navigate([""]);
+  }
 
   ngOnInit() {}
 }

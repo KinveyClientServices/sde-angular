@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { ModalDialogParams } from "nativescript-angular/modal-dialog";
+import { Page } from "tns-core-modules/ui/page";
 
 @Component({
   selector: "app-support",
@@ -6,7 +8,11 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./support.component.scss"]
 })
 export class SupportComponent implements OnInit {
-  constructor() {}
+  constructor(private _params: ModalDialogParams) {}
 
   ngOnInit() {}
+
+  closeModal(): void {
+    this._params.closeCallback("return value");
+  }
 }

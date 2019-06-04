@@ -6,7 +6,6 @@ import {
 } from "nativescript-angular/router";
 import { TabsComponent } from "./tabs/tabs.component";
 import { SettingsComponent } from "./settings/settings.component";
-import { ChatComponent } from "./chat/chat.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { FindDoctorComponent } from "./find-doctor/find-doctor.component";
 import { AppointmentsComponent } from "./appointments/appointments.component";
@@ -51,15 +50,6 @@ const routes: Routes = [
         children: [
           { path: "", redirectTo: "telemedicine", pathMatch: "full" },
           { path: "telemedicine", component: TelemedicineComponent }
-        ]
-      },
-      {
-        path: "telemedicine",
-        outlet: "telemedicineTab",
-        component: NSEmptyOutletComponent,
-        children: [
-          { path: "", redirectTo: "telemedicine", pathMatch: "full" },
-          { path: "telemedicine", component: ChatComponent }
         ]
       },
       {

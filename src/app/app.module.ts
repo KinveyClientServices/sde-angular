@@ -6,10 +6,20 @@ import { AppComponent } from "./app.component";
 import { FormsModule } from "@angular/forms";
 
 import { Config } from "./config";
+import { KinveyModule } from "kinvey-angular-sdk";
 
 @NgModule({
   declarations: [AppComponent, ...COMPONENTS],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    KinveyModule.init({
+      appKey: Config.appKey,
+      appSecret: Config.appSecret,
+      instanceId: "kvy-us2"
+    })
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

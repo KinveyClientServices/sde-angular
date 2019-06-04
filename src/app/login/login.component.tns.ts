@@ -30,8 +30,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     // Init your component properties here.
-    this.logo = Config.appLogo;
-    this.title = Config.appTitle;
   }
 
   async login() {

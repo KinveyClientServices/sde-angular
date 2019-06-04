@@ -3,7 +3,6 @@ import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { PatientRoutingModule } from "./patient-routing.module";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 import { SettingsComponent } from "./settings/settings.component";
-import { ChatComponent } from "./chat/chat.component";
 import { TabsComponent } from "./tabs/tabs.component";
 import { NativeChatModule } from "@progress-nativechat/nativescript-nativechat/angular";
 import { DashboardComponent } from "./dashboard/dashboard.component";
@@ -17,7 +16,6 @@ import { SharedModule } from "../shared/shared.module";
   declarations: [
     TabsComponent,
     SettingsComponent,
-    ChatComponent,
     DashboardComponent,
     FindDoctorComponent,
     AppointmentsComponent,
