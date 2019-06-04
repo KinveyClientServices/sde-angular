@@ -13,13 +13,20 @@
     </ActionItem>
     <Label class="action-bar-title" [text]="title"></Label>
 </ActionBar>
+<StackLayout class="page page-content">
+    <Label
+    text="Choose what you want to view, {{user.data.fullname}}"
+    height=50
+    textAlignment="center"
+    ></Label>
+    <StackLayout class="hr-light"></StackLayout>
+    <ListView class="list-group" height=100% [items]="items">
+        <ng-template let-item="item">
+            <GridLayout class="list-group-item" rows="*" columns="auto, *" (tap)="goToDetails(item)">
+                <Label text="&#xf1c1;" class="icon" row="0" col="0" style="text-align: center; vertical-align: center; margin-right: 20; color: #fff; font-size: 20; background-color: #f1582c;"></Label>
 
-<ListView class="list-group" [items]="items">
-    <ng-template let-item="item">
-        <GridLayout class="list-group-item" rows="*" columns="auto, *" (tap)="goToDetails(item)">
-            <Label text="&#xf1c1;" class="icon" row="0" col="0" style="text-align: center; vertical-align: center; color: #fff; font-size: 20; background-color: #f1582c;"></Label>
-
-            <Label textWrap="true" row="0" col="1" [text]="item.prettyname"></Label>
-        </GridLayout>
-    </ng-template>
-</ListView>
+                <Label textWrap="true" row="0" col="1" [text]="item.prettyname"></Label>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+</StackLayout>

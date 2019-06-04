@@ -4,6 +4,7 @@ import { Router } from "../utils";
 import { Config } from "../config";
 import { Page } from "tns-core-modules/ui/page";
 import { RouterExtensions } from "nativescript-angular/router";
+import * as Kinvey from "kinvey-nativescript-sdk";
 
 @Component({
   selector: "Login",
@@ -31,14 +32,19 @@ export class LoginComponent implements OnInit {
     this.title = Config.appTitle;
   }
 
+  async logout() {
+    await this.dataService.logout();
+
+  }
+
   async login() {
     try {
       this.processing = true;
-      await this.dataService.login(this.username, this.password);
-      console.log("LOG IN SUCsCESSFUL");
+      await this.dataService.loginAnon();
+      console.log("LOG IN SUCCESSFUL");
       this.router.navigate(["home"], { clearHistory: true });
-    } catch {
-      alert("Invalid credentials");
+    } catch(err) {
+      alert(err);
     } finally {
       this.processing = false;
     }

@@ -111,7 +111,7 @@ export class DataService {
   getFiles(): Promise<any> {
     var q = new Query();
     q.equalTo("mimeType", "application/pdf");
-    return this.filesService.find(q);
+    return this.filesService.find();
   }
 
   getItems(): any {
@@ -126,6 +126,22 @@ export class DataService {
     } else {
       console.log("nsot yet");
       let u = await this.userService.login(name, password);
+      console.log("we bsack");
+      this.isLoggedIn.next(true);
+      //console.log(user);
+      this.user.next(u);
+      return u;
+    }
+  }
+
+  async loginAnon(): Promise<User> {
+    console.log("login in");
+    if (this.userService.getActiveUser()) {
+      console.log("already logzgesd in");
+      return Promise.resolve(this.userService.getActiveUser());
+    } else {
+      console.log("nsot yet");
+      let u = await this.userService.signup({});
       console.log("we bsack");
       this.isLoggedIn.next(true);
       //console.log(user);

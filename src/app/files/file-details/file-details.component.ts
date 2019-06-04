@@ -10,7 +10,10 @@ import { Router } from "../../utils";
 export class FileDetailsComponent implements OnInit {
   item;
 
-  constructor(private service: DataService, private router: Router) {
+  constructor(
+    private service: DataService, 
+    private router: Router
+    ) {
     this.item = this.service.selectedFile;
   }
   back() {
@@ -18,4 +21,8 @@ export class FileDetailsComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  finished(){
+    this.router.navigate(["tasks/add-task"]);
+  }
 }

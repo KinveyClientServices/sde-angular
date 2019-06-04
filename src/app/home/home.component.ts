@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { DrawerHelper } from "../utils/drawer-helper";
 import { Config } from "../config";
+import * as Kinvey from "kinvey-nativescript-sdk";
+import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
   selector: "Home",
@@ -10,7 +12,10 @@ export class HomeComponent implements OnInit {
   logo: string;
   title: string;
   heading: string;
-  constructor() {
+  fullName: string;
+  constructor(
+    private router: RouterExtensions
+  ) {
     // Use the component constructor to inject providers.
   }
 
@@ -23,5 +28,23 @@ export class HomeComponent implements OnInit {
 
   onDrawerButtonTap(): void {
     DrawerHelper.show();
+  }
+  viewContent(): void {
+    Promise.resolve(Kinvey.User.getActiveUser())
+    .then((user: Kinvey.User) => {
+      if (user) {
+        return user.update({
+          fullname: this.fullName
+        });
+      }
+      return user;
+    })
+    .then((user: Kinvey.User) => {
+      this.router.navigate(["files"]);
+
+    })
+    .catch(() => {
+      // ...
+    });
   }
 }

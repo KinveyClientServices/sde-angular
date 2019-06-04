@@ -3,6 +3,7 @@ import { DataService } from "../../data.service";
 
 import { Router } from "../../utils";
 import { Config } from "../../config";
+import * as Kinvey from "kinvey-nativescript-sdk";
 
 @Component({
   selector: "app-add-task",
@@ -10,25 +11,45 @@ import { Config } from "../../config";
   styleUrls: ["./add-task.component.scss"]
 })
 export class AddTaskComponent implements OnInit {
-  action;
-  duedate;
+  item;
+  prettyname;
+  email;
+  _downloadURL;
   title: string;
+  logo: string;
 
-  constructor(private service: DataService, private router: Router) {}
+  constructor(private service: DataService, private router: Router) {
+    this.item = this.service.selectedFile;
+  }
 
   ngOnInit() {
     this.title = Config.addTaskPageTitle;
+    this.logo = Config.logo;
   }
 
   async save() {
+    const that = this;
     console.log("here");
-    console.log(this.action);
-    console.log(this.duedate.toLocaleDateString());
-    await this.service.saveTask({
-      action: this.action,
-      duedate: this.duedate.toLocaleDateString()
+    Promise.resolve(Kinvey.User.getActiveUser())
+    .then((user: Kinvey.User) => {
+      if (user) {
+        console.log("prettyname: ", this.item.prettyname)
+        return user.update({
+          email: this.email,
+          prettyname: this.item.prettyname,
+          _downloadURL: this.item._downloadURL
+        });
+      }
+      return user;
+    })
+    .then((user: Kinvey.User) => {
+      this.router.navigate(["files"]);
+
+    })
+    .catch(() => {
+      // ...
     });
-    this.router.navigate(["tasks"]);
+    this.router.navigate(["files"]);
   }
   back() {
     (<any>this.router).back();

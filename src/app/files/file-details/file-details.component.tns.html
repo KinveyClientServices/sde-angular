@@ -3,4 +3,18 @@
 
     <Label class="action-bar-title" [text]="item.prettyname"></Label>
 </ActionBar>
-<PDFView [src]="item._downloadURL"></PDFView>
+
+<StackLayout>
+    <ScrollView height="91%" >
+        <PDFView 
+[src]="item._downloadURL"
+
+></PDFView>
+    </ScrollView>
+    <Button 
+    class="login btn btn-primary" 
+    [isEnabled]="!processing" 
+    text="Finished" 
+    (tap)="finished()"
+    ></Button>
+</StackLayout>

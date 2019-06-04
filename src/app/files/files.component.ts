@@ -3,6 +3,8 @@ import { DataService } from "../data.service";
 import { DrawerHelper } from "../utils/drawer-helper";
 import { Router } from "../utils";
 import { Config } from "../config";
+import * as Kinvey from "kinvey-nativescript-sdk";
+
 @Component({
   selector: "app-files",
   templateUrl: "./files.component.html",
@@ -11,6 +13,7 @@ import { Config } from "../config";
 export class FilesComponent implements OnInit {
   items;
   title: string;
+  user;
   constructor(
     private service: DataService,
     private router: Router,
@@ -18,11 +21,19 @@ export class FilesComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.service.getFiles().then(files => {
+    const dataStore = Kinvey.DataStore.collection('whitepapers');
+    this.user = Kinvey.User.getActiveUser();
+    console.log("user", this.user)
+
+    const subscription = dataStore.find()
+    .subscribe((entities: {}[]) => {
       this.zone.run(() => {
-        this.items = files;
+        this.items = entities;
       });
+    }, (e) => {
+      console.log(e)
     });
+
     this.title = Config.filesPageTitle;
   }
   goToDetails(item) {

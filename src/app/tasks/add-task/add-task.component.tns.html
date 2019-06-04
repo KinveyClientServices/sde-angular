@@ -5,10 +5,15 @@
 
 <GridLayout class="page page-content" rows="*,auto">
     <StackLayout class="form">
-
-        <TextField [(ngModel)]='action' hint="Wash Dishes" class="input input-border m-10"></TextField>
-        <DatePicker [(ngModel)]="duedate"></DatePicker>
+            <Image [src]="logo" id="logo" width="75%" margin="20 0 0 0"></Image>
+        <Label
+        text="Was that interesting? Enter Email below to recieve a copy to share or save for later"
+        margin="40"
+        textWrap="true"
+        textAlignment="center"
+        ></Label>
+        <TextField [(ngModel)]='email' hint="Email Address" class="input input-border m-10"></TextField>
     </StackLayout>
-    <Button row="1" class="btn btn-primary" text="Save" (tap)="save()"></Button>
+    <Button row="1" class="btn btn-primary" text="Submit" (tap)="save()"></Button>
 
 </GridLayout>
