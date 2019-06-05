@@ -1,51 +1,54 @@
-<GridLayout [col]="col" rows="*" verticalAlignment="center">
-  <Label [text]="text" class="chart-label" [color]="color"></Label>
-  <RadRadialGauge class="gauge">
-    <RadialScale
+<Label col="1" [text]="text" class="chart-label" [color]="color"></Label>
+<RadRadialGauge
+  class="gauge"
+  col="1"
+  verticalAlignment="stretch"
+  horizontalAlignment="stretch"
+>
+  <RadialScale
+    verticalAlignment="top"
+    tkRadialGaugeScales
+    startAngle="270"
+    sweepAngle="360"
+    minimum="0"
+    maximum="360"
+    radius="1"
+  >
+    <ScaleStyle
+      tkRadialScaleStyle
+      ticksVisible="false"
+      labelsVisible="false"
+      lineThickness="0"
+    ></ScaleStyle>
+
+    <RadialBarIndicator
       verticalAlignment="top"
-      tkRadialGaugeScales
-      startAngle="270"
-      sweepAngle="360"
+      tkRadialScaleIndicators
       minimum="0"
       maximum="360"
-      radius="1"
+      location="0.98"
     >
-      <ScaleStyle
-        tkRadialScaleStyle
-        ticksVisible="false"
-        labelsVisible="false"
-        lineThickness="0"
-      ></ScaleStyle>
+      <BarIndicatorStyle
+        tkRadialBarIndicatorStyle
+        cap="Round"
+        location="0.95"
+        fillColor="#f0f0f0"
+        barWidth="0.05"
+      ></BarIndicatorStyle>
+    </RadialBarIndicator>
 
-      <RadialBarIndicator
-        verticalAlignment="top"
-        tkRadialScaleIndicators
-        minimum="0"
-        maximum="360"
-        location="0.98"
-      >
-        <BarIndicatorStyle
-          tkRadialBarIndicatorStyle
-          cap="Round"
-          location="0.95"
-          fillColor="#f0f0f0"
-          barWidth="0.05"
-        ></BarIndicatorStyle>
-      </RadialBarIndicator>
-
-      <RadialBarIndicator
-        tkRadialScaleIndicators
-        minimum="0"
-        [maximum]="angle"
-        location="1"
-      >
-        <BarIndicatorStyle
-          tkRadialBarIndicatorStyle
-          cap="Round"
-          [fillColor]="color"
-          barWidth="0.1"
-        ></BarIndicatorStyle>
-      </RadialBarIndicator>
-    </RadialScale>
-  </RadRadialGauge>
-</GridLayout>
+    <RadialBarIndicator
+      tkRadialScaleIndicators
+      minimum="0"
+      [maximum]="angle"
+      location="1"
+    >
+      <BarIndicatorStyle
+        tkRadialBarIndicatorStyle
+        cap="Round"
+        [fillColor]="color"
+        barWidth="0.1"
+      ></BarIndicatorStyle>
+    </RadialBarIndicator>
+  </RadialScale>
+</RadRadialGauge>

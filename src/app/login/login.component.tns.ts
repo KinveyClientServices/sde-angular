@@ -3,6 +3,8 @@ import { DataService } from "../data.service";
 import { Router } from "../utils";
 import { Config } from "../config";
 import { RouterExtensions } from "nativescript-angular/router";
+import { Page } from "tns-core-modules/ui/page/page";
+import { device } from "tns-core-modules/platform";
 
 @Component({
   selector: "Login",
@@ -20,9 +22,11 @@ export class LoginComponent implements OnInit {
   loggingInAs = "patient";
   logo: string;
   title: string;
+  isTablet: boolean;
   constructor(
     private dataService: DataService,
-    private router: RouterExtensions
+    private router: RouterExtensions,
+    private page: Page
   ) {
     //this.page.actionBarHidden = true;
     // Use the component constructor to inject providers.
@@ -32,6 +36,7 @@ export class LoginComponent implements OnInit {
     // Init your component properties here.
     this.logo = Config.appLogo;
     this.title = Config.appTitle;
+    this.isTablet = device.deviceType === "Tablet";
   }
 
   async login() {

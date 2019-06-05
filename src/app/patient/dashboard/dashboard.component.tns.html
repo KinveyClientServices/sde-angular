@@ -50,7 +50,7 @@
             class="fa h2-icon"
           ></Label>
         </GridLayout>
-        <GridLayout class="m-l-10" row="1" columns="4*, 6*">
+        <GridLayout rows="*" class="m-x-10" row="1" columns="4*, 6*">
           <StackLayout>
             <StackLayout
               class="m-y-5"
@@ -60,8 +60,8 @@
               <Label class="sub-item-value" [text]="sub.value"></Label>
             </StackLayout>
           </StackLayout>
+
           <app-radial-chart
-            col="1"
             [text]="i.value"
             [color]="i.color"
             [angle]="i.angle"

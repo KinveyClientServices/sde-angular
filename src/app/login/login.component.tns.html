@@ -1,10 +1,15 @@
-<GridLayout>
-  <ContentView class="circle" row="0" rowSpan="4"> </ContentView>
-  <ScrollView>
+<GridLayout rows="*, auto" [class.tablet]="isTablet">
+  <StackLayout class="circle" row="0"> </StackLayout>
+  <ScrollView verticalAlignment="center" rowSpan="2">
     <GridLayout rows="auto,auto,auto,*">
-      <Image row="0" src="res://loginlogo" class="main-logo-cloud"></Image>
+      <Image
+        row="0"
+        src="res://loginlogo"
+        stretch="aspectFit"
+        class="main-logo-cloud"
+      ></Image>
       <Label row="1" class="h1" text="Please Login as"></Label>
-      <GridLayout row="2" rows="auto *, *,*" class="form-container">
+      <GridLayout row="2" rows="auto *, *,*" columns="*" class="form-container">
         <ActivityIndicator
           [busy]="processing"
           color="#ff6358"
@@ -12,7 +17,7 @@
           horizontalAlignment="center"
           rowSpan="4"
         ></ActivityIndicator>
-        <GridLayout class="m-b-30" rows="auto" columns="*,1,*">
+        <GridLayout class="options-container" rows="auto" columns="*,1,*">
           <StackLayout (tap)="changeSelected('patient')">
             <Label
               col="0"
@@ -56,16 +61,15 @@
           ></Button>
         </GridLayout>
       </GridLayout>
-
-      <GridLayout class="sign-up" rows="auto" columns="auto, auto" row="3">
-        <Label class="or" text="Don't have an account?"></Label>
-        <Label
-          col="1"
-          class="sign-in"
-          text="Sign Up"
-          (tap)="loginWithMIC()"
-        ></Label>
-      </GridLayout>
     </GridLayout>
   </ScrollView>
+  <GridLayout class="sign-up" rows="auto" columns="auto, auto" row="1">
+    <Label class="or" text="Don't have an account?"></Label>
+    <Label
+      col="1"
+      class="sign-in"
+      text="Sign Up"
+      (tap)="loginWithMIC()"
+    ></Label>
+  </GridLayout>
 </GridLayout>
