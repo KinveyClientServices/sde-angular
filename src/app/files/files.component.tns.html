@@ -11,6 +11,10 @@
     -->
     <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
     </ActionItem>
+    <!-- <ActionItem icon="res://navigation/refresh" height= 20 android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem> -->
+    <ActionItem class="fa" text="&#xf0cb;" android:visibility="collapsed" (tap)="refresh()" ios.position="right">
+    </ActionItem>
     <Label class="action-bar-title" [text]="title"></Label>
 </ActionBar>
 <StackLayout class="page page-content">

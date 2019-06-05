@@ -43,4 +43,16 @@ export class FilesComponent implements OnInit {
   onDrawerButtonTap(): void {
     DrawerHelper.show();
   }
+  refresh(): void {
+    const dataStore = Kinvey.DataStore.collection('whitepapers');
+
+    const subscription = dataStore.find()
+    .subscribe((entities: {}[]) => {
+      this.zone.run(() => {
+        this.items = entities;
+      });
+    }, (e) => {
+      console.log(e)
+    });
+  }
 }
