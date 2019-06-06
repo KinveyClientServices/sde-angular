@@ -21,7 +21,10 @@
   <ScrollView row="2" *ngIf="selected === 0" class="">
     <StackLayout>
       <GridLayout class="notification m-20" columns="auto, *">
-        <Label text="&#xf82e;" class="tip-icon fa"></Label>
+        <Label
+          text="{{ 'fa-user-md-chat' | fonticon }}"
+          class="tip-icon fa"
+        ></Label>
         <Label
           col="1"
           class="notification-text"
@@ -33,7 +36,10 @@
         <TextView class="form-text-view" hint="Type text here"></TextView>
         <Label text="ATTACH PHOTO" class="form-label"></Label>
         <StackLayout class="images-upload" orientation="horizontal">
-          <Label text="&#xf030;" class="fa camera-icon"></Label>
+          <Label
+            text="{{ 'fa-camera' | fonticon }}"
+            class="fa camera-icon"
+          ></Label>
           <Image
             src="https://2.gravatar.com/avatar/7fc56bb23fe5236b432b5b91597109a1?s=160"
             class="uploaded-image"
@@ -45,7 +51,10 @@
           class="discomfort-picker-container m-b-20"
           columns="auto, *, auto"
         >
-          <Label text="&#xf004;" class="fa heart-icon"></Label>
+          <Label
+            text="{{ 'fa-heart' | fonticon }}"
+            class="fa heart-icon"
+          ></Label>
           <Slider
             col="1"
             class="discomfort-slider"
@@ -53,7 +62,11 @@
             minValue="0"
             maxValue="100"
           ></Slider>
-          <Label col="2" text="&#xf7a9;" class="fa heart-icon"></Label>
+          <Label
+            col="2"
+            text="{{ 'fa-heart-broken' | fonticon }}"
+            class="fa heart-icon"
+          ></Label>
         </GridLayout>
         <GridLayout class="discomfort-picker-container" columns="*, auto">
           <Label text="PREVIOUSLY TREATED" class="form-label"></Label>
@@ -78,7 +91,11 @@
                 [text]="'March 10, 2020'"
               ></Label>
             </StackLayout>
-            <Label col="2" text="&#xf054;" class="fa list-arrow"></Label>
+            <Label
+              col="2"
+              text="{{ 'fa-chevron-right' | fonticon }}"
+              class="fa list-arrow"
+            ></Label>
           </GridLayout>
         </StackLayout>
       </ng-template>

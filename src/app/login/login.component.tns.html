@@ -21,7 +21,8 @@
           <StackLayout (tap)="changeSelected('patient')">
             <Label
               col="0"
-              text="&#xf007;"
+              row="1"
+              text="{{ 'fa-user' | fonticon }}"
               class="fa login-icon"
               [class.selected]="loggingInAs === 'patient'"
             ></Label>
@@ -30,7 +31,7 @@
           <Label class="hr" col="1" rowSpan="2"></Label>
           <StackLayout col="2" (tap)="changeSelected('provider')">
             <Label
-              text="&#xf80d;"
+              text="{{ 'fa-hospital-user' | fonticon }}"
               class="fa login-icon"
               [class.selected]="loggingInAs === 'provider'"
             ></Label>

@@ -4,14 +4,17 @@
     <Button
       col="1"
       (tap)="closeModal()"
-      text="&#xf00d;"
+      text="{{ 'fa-times' | fonticon }}"
       class="fa modal-close-icon-button"
     ></Button>
   </GridLayout>
   <ScrollView row="1">
     <StackLayout>
       <GridLayout class="notification m-y-20 m-x-30" columns="auto, *">
-        <Label text="&#xf481;" class="tip-icon fa"></Label>
+        <Label
+          text="{{ 'fa-notes-medical' | fonticon }}"
+          class="tip-icon fa"
+        ></Label>
         <Label
           col="1"
           class="support-discuss"
@@ -28,7 +31,10 @@
         ></Label>
         <GridLayout col="1" verticalAlignment="center">
           <Label class="phone-circle"></Label>
-          <Label text="&#xf095;" class="fa phone-button"></Label>
+          <Label
+            text="{{ 'fa-phone' | fonticon }}"
+            class="fa phone-button"
+          ></Label>
         </GridLayout>
       </GridLayout>
       <StackLayout class="m-l-20">

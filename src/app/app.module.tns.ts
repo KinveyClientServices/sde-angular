@@ -11,11 +11,10 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 // import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
 import { ModalDialogService } from "nativescript-angular/modal-dialog";
 
-import { isIOS } from "tns-core-modules/platform";
 import { KinveyModule } from "kinvey-nativescript-sdk/angular";
 import { Config } from "./config";
 import { COMPONENTS } from "./app-routing.module";
-import { SharedModule } from "./shared/shared.module";
+import { TNSFontIconModule } from "nativescript-ngx-fonticon";
 
 @NgModule({
   declarations: [AppComponent, ...COMPONENTS],
@@ -27,6 +26,9 @@ import { SharedModule } from "./shared/shared.module";
       appKey: Config.appKey,
       appSecret: Config.appSecret,
       instanceId: "kvy-us2"
+    }),
+    TNSFontIconModule.forRoot({
+      fa: "./fonts/font-awesome.css"
     })
   ],
   providers: [ModalDialogService],

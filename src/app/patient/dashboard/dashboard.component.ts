@@ -20,25 +20,25 @@ export class DashboardComponent implements OnInit {
       {
         text: "Free Physical Exam at John Muir Co.",
         subText: "Schedule appointment required",
-        icon: "\uf470"
+        icon: "fa-diagnoses"
       },
       {
         text: "Flu Season is Here",
         subText: "Schedule an appointment with your PCP to get your flu shot",
-        icon: "\uf48e"
+        icon: "fa-syringe"
       },
       {
         text: "Colon Cancer Screening",
         subText:
           "It’s been 9 months since your last colon screening. Schedule an appointment now.",
-        icon: "\uf830"
+        icon: "fa-users-medical"
       }
     ],
 
     items: [
       {
         title: "Steps",
-        icon: "\uf554",
+        icon: "fa-walking",
         value: 5120,
         color: "#F15175",
         angle: 180,
@@ -51,7 +51,7 @@ export class DashboardComponent implements OnInit {
 
       {
         title: "kCal Burned",
-        icon: "\uf46a",
+        icon: "fa-burn",
         value: 230,
         color: "#FF9F40",
         angle: 320,
@@ -62,7 +62,7 @@ export class DashboardComponent implements OnInit {
       },
       {
         title: "kCal Consumed",
-        icon: "\uf2e7",
+        icon: "fa-utensils",
         value: 800,
         color: "#6AB04C",
         angle: 220,
@@ -74,7 +74,7 @@ export class DashboardComponent implements OnInit {
       },
       {
         title: "Hours Slept",
-        icon: "\uf755",
+        icon: "fa-moon-stars",
         value: 6,
         color: "#686DE0",
         angle: 340,

@@ -16,6 +16,7 @@ import { TelemedicineComponent } from "./telemedicine/telemedicine.component";
 import { NativeScriptUIGaugeModule } from "nativescript-ui-gauge/angular";
 import { RadialChartComponent } from "./dashboard/radial-chart/radial-chart.component";
 import { SharedModule } from "../shared/shared.module";
+
 @NgModule({
   declarations: [
     TabsComponent,

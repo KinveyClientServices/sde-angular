@@ -11,7 +11,10 @@
     <Image col="1" class="patient-profile-image" [src]="patient.image"></Image>
     <GridLayout col="2" class="m-x-10" verticalAlignment="center">
       <Label class="circle"></Label>
-      <Label text="&#xf095;" class="fa logout-button"></Label>
+      <Label
+        text="{{ 'fa-phone' | fonticon }}"
+        class="fa logout-button"
+      ></Label>
     </GridLayout>
     <Label
       colSpan="3"

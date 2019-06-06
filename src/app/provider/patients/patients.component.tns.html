@@ -7,7 +7,7 @@
     <GridLayout col="1">
       <Button
         (tap)="logout()"
-        text="&#xf2f5;"
+        text="{{ 'fa-sign-out-alt' | fonticon }}"
         class="fa heading-icon-button main"
       ></Button>
     </GridLayout>
@@ -32,7 +32,11 @@
               [text]="'08881256659996'"
             ></Label>
           </StackLayout>
-          <Label col="2" text="&#xf054;" class="fa list-arrow"></Label>
+          <Label
+            col="2"
+            text="{{ 'fa-chevron-right' | fonticon }}"
+            class="fa list-arrow"
+          ></Label>
         </GridLayout>
       </StackLayout>
     </ng-template>

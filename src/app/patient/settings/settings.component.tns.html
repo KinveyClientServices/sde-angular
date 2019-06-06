@@ -5,7 +5,7 @@
     <Button
       class="heading-icon-button fa"
       col="2"
-      text="&#xf2f5;"
+      text="{{ 'fa-sign-out-alt' | fonticon }}"
       (tap)="logout()"
     >
     </Button>
@@ -88,13 +88,20 @@
       <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
         <StackLayout>
           <GridLayout columns="auto,*, auto" height="54">
-            <Label text="&#xf15c;" class="fa document-icon"></Label>
+            <Label
+              text="{{ 'fa-file-alt' | fonticon }}"
+              class="fa document-icon"
+            ></Label>
             <Label
               col="1"
               [text]="item.name"
               class="general-info-heading"
             ></Label>
-            <Label col="2" text="&#xf054;" class="fa list-arrow"></Label>
+            <Label
+              col="2"
+              text="{{ 'fa-chevron-right' | fonticon }}"
+              class="fa list-arrow"
+            ></Label>
           </GridLayout>
         </StackLayout>
       </ng-template>

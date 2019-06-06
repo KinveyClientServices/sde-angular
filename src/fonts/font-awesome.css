@@ -1,0 +1,63 @@
+.fa-hospital-user:before {
+  content: "\f80d";
+}
+.fa-user:before {
+  content: "\f007";
+}
+.fa-walking:before {
+  content: "\f554";
+}
+.fa-burn:before {
+  content: "\f46a";
+}
+.fa-utensils:before {
+  content: "\f2e7";
+}
+.fa-moon-stars:before {
+  content: "\f755";
+}
+.fa-diagnoses:before {
+  content: "\f470";
+}
+.fa-syringe:before {
+  content: "\f48e";
+}
+.fa-users-medical:before {
+  content: "\f830";
+}
+.fa-envelope-open-dollar:before {
+  content: "\f657";
+}
+.fa-chevron-right:before {
+  content: "\f054";
+}
+.fa-file-pdf:before {
+  content: "\f1c1";
+}
+.fa-sign-out-alt:before {
+  content: "\f2f5";
+}
+.fa-file-alt:before {
+  content: "\f15c";
+}
+.fa-user-md-chat:before {
+  content: "\f82e";
+}
+.fa-camera:before {
+  content: "\f030";
+}
+.fa-heart:before {
+  content: "\f004";
+}
+.fa-heart-broken:before {
+  content: "\f7a9";
+}
+.fa-phone:before {
+  content: "\f095";
+}
+.fa-times:before {
+  content: "\f00d";
+}
+.fa-notes-medical:before {
+  content: "\f481";
+}

@@ -47,9 +47,10 @@
             [backgroundColor]="i.color"
           ></StackLayout>
           <Label class="h2 dashboard-h2" [text]="i.title"></Label>
+          <Label col="1" [color]="i.color" class="fa h2-icon"></Label>
           <Label
             col="1"
-            [text]="i.icon"
+            [text]="i.icon | fonticon"
             [color]="i.color"
             class="fa h2-icon"
           ></Label>
@@ -103,7 +104,7 @@
             columns="auto, *"
             *ngFor="let tip of dashboard.tips"
           >
-            <Label [text]="tip.icon" class="tip-icon fa"></Label>
+            <Label [text]="tip.icon | fonticon" class="tip-icon fa"></Label>
             <StackLayout col="1">
               <Label
                 class="notification-text"
@@ -125,7 +126,7 @@
           <Label class="h2 dashboard-h2" text="Health Plan Expenses"></Label>
           <Label
             col="1"
-            text="&#xf657;"
+            text="{{ 'fa-envelope-open-dollar' | fonticon }}"
             class="fa h2-icon"
             color="#F15175"
             fontSize="28"
