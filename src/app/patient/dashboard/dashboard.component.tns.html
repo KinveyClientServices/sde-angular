@@ -26,7 +26,7 @@
           <GridLayout
             class="notification"
             columns="auto, *"
-            *ngFor="let n of notifications"
+            *ngFor="let n of dashboard.notifications"
           >
             <GridLayout class="badge-bg">
               <Label [text]="n.badge" class="badge-text"></Label>
@@ -35,7 +35,11 @@
           </GridLayout>
         </StackLayout>
       </GridLayout>
-      <GridLayout rows="auto,auto" class="my-card" *ngFor="let i of items">
+      <GridLayout
+        rows="auto,auto"
+        class="my-card"
+        *ngFor="let i of dashboard.items"
+      >
         <GridLayout class="h2-container" columns="*,auto">
           <StackLayout
             colSpan="2"
@@ -69,7 +73,7 @@
         </GridLayout>
       </GridLayout>
       <GridLayout
-        *ngFor="let item of summary"
+        *ngFor="let item of dashboard.summary"
         class="summary p-0 m-0"
         rows="auto, *"
         columns="auto, *"
@@ -94,7 +98,11 @@
     <StackLayout>
       <GridLayout class="card" rows="auto" columns="*">
         <StackLayout>
-          <GridLayout class="tip" columns="auto, *" *ngFor="let tip of tips">
+          <GridLayout
+            class="tip"
+            columns="auto, *"
+            *ngFor="let tip of dashboard.tips"
+          >
             <Label [text]="tip.icon" class="tip-icon fa"></Label>
             <StackLayout col="1">
               <Label
@@ -123,45 +131,33 @@
             fontSize="28"
           ></Label>
         </GridLayout>
-        <GridLayout class="m-l-10" row="1" columns="4*, 6*">
-          <StackLayout>
-            <StackLayout class="m-b-10">
-              <Label class="sub-item" text="Used"></Label>
-              <Label class="sub-item-value" text="300"></Label>
+        <StackLayout class="m-l-10" row="1">
+          <GridLayout
+            class="m-b-10"
+            columns="4*, 6*"
+            *ngFor="let expense of dashboard.expenses"
+          >
+            <StackLayout>
+              <StackLayout
+                class="m-b-10"
+                *ngFor="let subItem of expense.subItems | keyvalue"
+              >
+                <Label
+                  class="sub-item"
+                  [text]="subItem.key | titlecase"
+                ></Label>
+                <Label class="sub-item-value" [text]="subItem.value"></Label>
+              </StackLayout>
             </StackLayout>
-            <StackLayout class="m-b-10">
-              <Label class="sub-item" text="Planned"></Label>
-              <Label class="sub-item-value" text="2300"></Label>
-            </StackLayout>
-          </StackLayout>
 
-          <app-radial-chart
-            col="1"
-            text="300"
-            color="#F15175"
-            angle="80"
-          ></app-radial-chart>
-        </GridLayout>
-      </GridLayout>
-      <GridLayout rows="auto" class="my-card">
-        <GridLayout class="m-l-10" columns="4*, 6*">
-          <StackLayout>
-            <StackLayout class="m-b-10">
-              <Label class="sub-item" text="Used"></Label>
-              <Label class="sub-item-value" text="1300"></Label>
-            </StackLayout>
-            <StackLayout class="m-b-10">
-              <Label class="sub-item" text="Planned"></Label>
-              <Label class="sub-item-value" text="3000"></Label>
-            </StackLayout>
-          </StackLayout>
-          <app-radial-chart
-            col="1"
-            text="1300"
-            color="#0076FF"
-            angle="180"
-          ></app-radial-chart>
-        </GridLayout>
+            <app-radial-chart
+              col="1"
+              [text]="expense.value"
+              [color]="expense.color"
+              [angle]="expense.angle"
+            ></app-radial-chart>
+          </GridLayout>
+        </StackLayout>
       </GridLayout>
     </StackLayout>
   </ScrollView>

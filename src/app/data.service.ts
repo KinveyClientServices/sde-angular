@@ -53,17 +53,20 @@ export class DataService {
   }
 
   private myDataStore = this.datastoreService.collection(
-    Config.productsCollectionName
+    Config.productsCollectionName,
+    DataStoreType.Auto
   );
   private tasksStore = this.datastoreService.collection(
-    Config.taskCollectionName
+    Config.taskCollectionName,
+    DataStoreType.Auto
   );
   private offlineAccountsStore = this.datastoreService.collection(
     Config.offlineAccountsCollectionName,
     DataStoreType.Sync
   );
   private accountsStore = this.datastoreService.collection(
-    Config.accountsCollectionName
+    Config.accountsCollectionName,
+    DataStoreType.Auto
   );
   public selectedFile: any;
   public isLoggedIn: BehaviorSubject<boolean>;
