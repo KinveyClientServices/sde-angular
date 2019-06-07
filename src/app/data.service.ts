@@ -64,6 +64,10 @@ export class DataService {
     Config.offlineAccountsCollectionName,
     DataStoreType.Sync
   );
+  private dashBoardStore = this.datastoreService.collection(
+    Config.dashboardStore,
+    DataStoreType.Auto
+  );
   private accountsStore = this.datastoreService.collection(
     Config.accountsCollectionName,
     DataStoreType.Auto
@@ -72,6 +76,14 @@ export class DataService {
   public isLoggedIn: BehaviorSubject<boolean>;
   private user: BehaviorSubject<User>;
   public username: Observable<string>;
+
+  async getDashboardData() {
+    const query = new Query();
+    query.limit = 1;
+    query.skip = 0;
+    let items = await this.dashBoardStore.find(query);
+    return items[0];
+  }
 
   getTasks() {
     return this.tasksStore.find();

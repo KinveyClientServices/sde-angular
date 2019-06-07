@@ -62,4 +62,5 @@ export class Config {
     channelId: "4db24498-d303-4a7f-a48a-b9579d5c0fcc",
     channelToken: "49ed1630-53ef-4bdf-a98d-160a0a4853d7"
   };
+  static dashboardStore: string = "dashboard";
 }
