@@ -14,6 +14,7 @@ import { TelemedicineComponent } from "./telemedicine/telemedicine.component";
 import { RadialChartComponent } from "./dashboard/radial-chart/radial-chart.component";
 import { SupportComponent } from "../shared/support/support.component";
 import { SupportButtonComponent } from "../shared/support-button/support-button.component";
+import { ConfirmComponent } from './confirm/confirm.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SupportButtonComponent } from "../shared/support-button/support-button.
     TelemedicineComponent,
     RadialChartComponent,
     SupportComponent,
-    SupportButtonComponent
+    SupportButtonComponent,
+    ConfirmComponent
   ],
   imports: [CommonModule, PatientRoutingModule]
 })

@@ -149,6 +149,26 @@ export class DataService {
     }
   }
 
+  async signUp(user: { username: string; password: string; email: string }) {
+    console.log("login indd");
+    if (this.userService.getActiveUser()) {
+      console.log("already logzgesd in");
+      return Promise.resolve(this.userService.getActiveUser());
+    } else {
+      console.log("nsot yet");
+      let u: any = await this.userService.signup({
+        username: user.username,
+        password: user.password,
+        email: user.email
+      });
+      console.log("we bsack");
+      this.isLoggedIn.next(true);
+      //console.log(user);
+      this.user.next(u);
+      return u;
+    }
+  }
+
   loginWithMIC(redirectUri: string): Promise<User> {
     if (this.userService.getActiveUser()) {
       return Promise.resolve(this.userService.getActiveUser());
@@ -172,5 +192,9 @@ export class DataService {
     await this.userService.logout();
     this.isLoggedIn.next(false);
     this.user.next(null);
+  }
+
+  async checkVerified() {
+    return this.userService.me();
   }
 }

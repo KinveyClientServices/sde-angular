@@ -1,0 +1,21 @@
+<GridLayout rows="auto,*,auto" class="support-page">
+  <GridLayout class="m-x-15 m-y-10" columns="*,auto">
+    <Label class="heading" text="Verify"></Label>
+    <Button col="1" (tap)="closeModal()" text="Sign out"></Button>
+  </GridLayout>
+  <StackLayout row="1" class="p-30">
+    <Label text="Please verify your email"></Label>
+    <Button
+      (tap)="checkIfVerified()"
+      class="m-t-10 refresh-button"
+      text="Proceed"
+    ></Button>
+    <Label class="m-t-30" text="Didn't receive it?"></Label>
+    <Button class="m-t-10" text="Resend Email"></Button>
+  </StackLayout>
+  <ActivityIndicator
+    [busy]="loading"
+    rowSpan="3"
+    verticalAlignment="center"
+  ></ActivityIndicator>
+</GridLayout>

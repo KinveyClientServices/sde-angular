@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
     try {
       this.processing = true;
       let u: any = await this.dataService.login(this.username, this.password);
+      console.log(u);
       let roleId = u.data._kmd.roles ? u.data._kmd.roles[0].roleId : null;
       if (roleId != null) {
         console.log(roleId);
@@ -58,6 +59,22 @@ export class LoginComponent implements OnInit {
       console.log("LOG IN SUCsCESSFUL");
     } catch (exception) {
       console.log(exception);
+      alert("Invalid credentials");
+    } finally {
+      this.processing = false;
+    }
+  }
+  async signUp() {
+    try {
+      this.processing = true;
+      let user = await this.dataService.signUp({
+        username: "testing",
+        password: "testing",
+        email: "ignacio.fuentes@telerik.com"
+      });
+      console.log(user);
+      this.router.navigate(["../patient/default"], { clearHistory: true });
+    } catch {
       alert("Invalid credentials");
     } finally {
       this.processing = false;

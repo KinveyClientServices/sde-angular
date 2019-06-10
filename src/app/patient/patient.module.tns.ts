@@ -16,6 +16,7 @@ import { TelemedicineComponent } from "./telemedicine/telemedicine.component";
 import { NativeScriptUIGaugeModule } from "nativescript-ui-gauge/angular";
 import { RadialChartComponent } from "./dashboard/radial-chart/radial-chart.component";
 import { SharedModule } from "../shared/shared.module";
+import { ConfirmComponent } from "./confirm/confirm.component";
 
 @NgModule({
   declarations: [
@@ -29,8 +30,10 @@ import { SharedModule } from "../shared/shared.module";
     FindDoctorComponent,
     AppointmentsComponent,
     TelemedicineComponent,
-    RadialChartComponent
+    RadialChartComponent,
+    ConfirmComponent
   ],
+  entryComponents: [ConfirmComponent],
   imports: [
     PatientRoutingModule,
     NativeChatModule,
