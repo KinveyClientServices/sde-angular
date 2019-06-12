@@ -1,17 +1,17 @@
 export class Config {
   //KINVEY
-  static appKey: string = "kid_ByNOXbm0V";
-  static appSecret: string = "dd07d8d220604072963ffe43344e4e06";
+  static appKey: string = "kid_B1x00rhRV";
+  static appSecret: string = "40313900b83c48aba217db6e33406493";
 
   //LOGIN
-  static appLogo: string = "images/SW-logo-h.png";
-  static appTitle: string = "Sierra Wireless";
+  static appLogo: string = "images/cn-logo.png";
+  static appTitle: string = "CN Rail";
 
   //HOME
-  static homePageTitle: string = "Sierra Wireless";
-  static logo: string = "~/app/images/SW-logo-h.png";
+  static homePageTitle: string = "CN Rail";
+  static logo: string = "~/app/images/cn-logo.png";
   static homePageVisible: boolean = true;
-  static homePageHeading: string = "IoT, Internet of Things, M2M Communication & Wireless Solutions";
+  static homePageHeading: string = "Canadian National Railway";
 
   //ACCOUNTS
   static accountsPageTitle: string = "Accounts";
@@ -24,24 +24,24 @@ export class Config {
   static productsPageVisible: boolean = false;
   //FILES
   static filesPageTitle: string = "Learning Materials";
-  static filesPageVisible: boolean = true;
+  static filesPageVisible: boolean = false;
 
   //TASKS
-  static tasksPageTitle: string = "Tasks";
-  static taskCollectionName: string = "tasks";
-  static tasksPageVisible: boolean = false;
+  static tasksPageTitle: string = "Shipment Details";
+  static taskCollectionName: string = "tracking";
+  static tasksPageVisible: boolean = true;
 
   //ADD TASKS
   static addTaskPageTitle: string = "Get Stuff";
 
   //OFFLINE
-  static offlinePageTitle: string = "Offline";
-  static offlineAccountsCollectionName: any = "accounts";
-  static offlinePageVisible: boolean = false;
+  static offlinePageTitle: string = "Shipments";
+  static offlineAccountsCollectionName: any = "shipments";
+  static offlinePageVisible: boolean = true;
 
   //MAP
   static mapPageTitle: string = "Map";
-  static mapPageVisible: boolean = false;
+  static mapPageVisible: boolean = true;
 
   //CHAT
   static chatPageTitle: string = "Chat";

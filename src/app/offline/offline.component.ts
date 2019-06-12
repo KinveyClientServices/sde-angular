@@ -27,11 +27,12 @@ export class OfflineComponent implements OnInit {
 
   async addMe() {
     var myaccounts = [];
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 1; i++) {
       const thisaccount = {
-        accountname: "Account #" + i,
+        trackingNum: "Tracking #213HH854672",
         autogen: true,
-        accountcompany: "Company #" + i
+        ShippingAddress: "2199 St Jacques St, Montreal, QC H3J 2T6",
+        eta: "Estimated Delivery Date: 20/6/2019"
       };
       myaccounts.push(thisaccount);
     }
@@ -39,7 +40,7 @@ export class OfflineComponent implements OnInit {
     this.service.getSyncAccounts().subscribe(data => {
       this.zone.run(() => {
         this.items = data;
-        alert("all done");
+        alert("Shipments added");
       });
     });
   }

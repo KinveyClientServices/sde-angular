@@ -35,14 +35,14 @@
   ></Label>
   <StackLayout class="hr-light"></StackLayout>
   <Label
-  text="What can we call you while you explore the app?"
+  text="Enter tracking number to track shipment"
   margin="40"
   textWrap="true"
   textAlignment="center"
   ></Label>
   <TextField 
   secure="false"
-  hint="Your Name" 
+  hint="Tracking Number" 
   row="1" col="1" 
   [(ngModel)]="fullName"
   margin="40"
@@ -51,7 +51,7 @@
   <Button 
   class="login btn btn-primary" 
   [isEnabled]="!processing" 
-  text="View Content" 
+  text="Track Shipment" 
   (tap)="viewContent()"
   ></Button>
 

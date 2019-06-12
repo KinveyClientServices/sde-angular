@@ -11,18 +11,33 @@
     -->
     <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
     </ActionItem>
-    <ActionItem (tap)="addButtonTapped()" ios.systemIcon="4" android.systemIcon="ic_menu_add" text="Add" ios.position="right"></ActionItem>
+    <ActionItem (tap)="addButtonTapped()" ios.systemIcon="13" ios.position="right" style="color:white;" android.systemIcon="ic_menu_refresh"></ActionItem>
 
     <Label class="action-bar-title" [text]="title"></Label>
 </ActionBar>
 
-<ListView class="list-group" [items]="items">
-    <ng-template let-item="item">
-        <GridLayout class="list-group-item" rows="auto, *" columns="40, *">
-            <Label (tap)="markDone(item)" row="0" col="0" class="fa" [text]="item.completed ? '&#xf00c;':'&#xf1ce;'"
-                rowSpan="2"></Label>
-            <Label row="0" col="1" [text]="item.action" class="list-group-item-heading"></Label>
-            <Label row="1" col="1" [text]="item.duedate" class="list-group-item-text"></Label>
-        </GridLayout>
-    </ng-template>
-</ListView>
+<!-- <ListView class="list-group" [items]="items">
+    <ng-template let-item="item"> -->
+        <StackLayout class="page page-content" margin="40">
+            <!-- <Label (tap)="markDone(item)" row="0" col="0" class="fa" [text]="item.completed ? '&#xf00c;':'&#xf1ce;'"
+                rowSpan="2"></Label> -->
+            <Label text="Delivery Date" style="font-weight: bold"></Label>
+            <Label [text]="items.eta" 
+            class="list-group-item-heading"
+            marginBottom="20"
+            ></Label>
+            <Label text="Shipping Address" style="font-weight: bold"></Label>
+            <Label [text]="items.ShippingAddress" 
+            class="list-group-item-text"
+            textWrap="true"
+            marginBottom="20"
+            ></Label>
+            <Label text="Tracking Number" style="font-weight: bold"></Label>
+            <Label [text]="items.trackingNum" 
+            class="list-group-item-text"
+            marginBottom="60"
+]            ></Label>
+<Button text="View all Shipments" (tap)="viewContent()" class="btn btn-primary"></Button>
+        </StackLayout>
+    <!-- </ng-template>
+</ListView> -->

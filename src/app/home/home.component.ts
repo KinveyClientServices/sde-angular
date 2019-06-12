@@ -30,21 +30,23 @@ export class HomeComponent implements OnInit {
     DrawerHelper.show();
   }
   viewContent(): void {
-    Promise.resolve(Kinvey.User.getActiveUser())
-    .then((user: Kinvey.User) => {
-      if (user) {
-        return user.update({
-          fullname: this.fullName
-        });
-      }
-      return user;
-    })
-    .then((user: Kinvey.User) => {
-      this.router.navigate(["files"]);
+    this.router.navigate(["map"]);
 
-    })
-    .catch(() => {
-      // ...
-    });
+    // Promise.resolve(Kinvey.User.getActiveUser())
+    // .then((user: Kinvey.User) => {
+    //   if (user) {
+    //     return user.update({
+    //       fullname: this.fullName
+    //     });
+    //   }
+    //   return user;
+    // })
+    // .then((user: Kinvey.User) => {
+    //   this.router.navigate(["maps"]);
+
+    // })
+    // .catch(() => {
+    //   // ...
+    // });
   }
 }
