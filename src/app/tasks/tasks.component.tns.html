@@ -18,11 +18,15 @@
 
 <ListView class="list-group" [items]="items">
     <ng-template let-item="item">
-        <GridLayout class="list-group-item" rows="auto, *" columns="40, *">
+        <GridLayout class="list-group-item" rows="auto, *,*,*" columns="40, *">
             <Label (tap)="markDone(item)" row="0" col="0" class="fa" [text]="item.completed ? '&#xf00c;':'&#xf1ce;'"
                 rowSpan="2"></Label>
-            <Label row="0" col="1" [text]="item.action" class="list-group-item-heading"></Label>
-            <Label row="1" col="1" [text]="item.duedate" class="list-group-item-text"></Label>
+            <Label row="0" col="1" text="Date range available: {{startDate}} - {{endDate}}" class="list-group-item-heading"></Label>
+            <!-- <Label row="1" col="1" text="{{item.endDate}}" class="list-group-item-text"></Label> -->
+            <Label row="1" col="1" text="Parking Spot #: {{item.parkingSpot}}" class="list-group-item-text"></Label>
+            <Label row="2" col="1" text="Owner: {{item.owner}}" class="list-group-item-text"></Label>
+
+
         </GridLayout>
     </ng-template>
 </ListView>

@@ -14,11 +14,40 @@
     <Label class="action-bar-title" [text]="title"></Label>
 </ActionBar>
 
-<ListView class="list-group" [items]="items">
+<!-- <ListView class="list-group" [items]="items">
     <ng-template let-item="item">
         <GridLayout class="list-group-item" rows="auto, *" columns="*" (tap)="goToDetails(item)">
             <Label row="0" [text]="item.accountname" class="list-group-item-heading"></Label>
             <Label row="1" [text]="item.accountcompany" class="list-group-item-text"></Label>
         </GridLayout>
     </ng-template>
-</ListView>
+</ListView> -->
+
+<GridLayout class="page page-content" rows="*,auto">
+        <StackLayout class="form">
+                <!-- <Image [src]="logo" id="logo" width="75%" margin="20 0 0 0"></Image> -->
+            <Label
+            text="Enter dates your Space is available"
+            margin="40"
+            textWrap="true"
+            textAlignment="center"
+            ></Label>
+            <Label
+            text="Start Date"
+            textAlignment="center"
+            fontWeight="bold"
+            ></Label>
+            <DatePicker (loaded)="onPickerLoaded($event)" (dateChange)="onStartDateChanged($event)" 
+            (dayChange)="onStartDayChanged($event)" (monthChange)="onStartMonthChanged($event)" (yearChange)="onStartYearChanged($event)" verticalAlignment="center"></DatePicker>
+            <Label
+            text="End Date"
+            textAlignment="center"
+            fontWeight="bold"
+            ></Label>
+            <DatePicker (loaded)="onPickerLoaded($event)" (dateChange)="onDateChanged($event)" 
+            (dayChange)="onDayChanged($event)" (monthChange)="onMonthChanged($event)" (yearChange)="onYearChanged($event)" verticalAlignment="center"></DatePicker>
+            <TextField [(ngModel)]='email' hint="Email Address" class="input input-border m-10"></TextField>
+        </StackLayout>
+        <Button row="1" class="btn btn-primary" text="Submit" (tap)="submitDates()"></Button>
+    
+    </GridLayout>

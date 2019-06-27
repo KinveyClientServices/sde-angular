@@ -11,6 +11,8 @@ import { Config } from "../config";
 export class TasksComponent implements OnInit {
   items;
   title: string;
+  startDate;
+  endDate;
   constructor(
     private service: DataService,
     private router: Router,
@@ -21,11 +23,29 @@ export class TasksComponent implements OnInit {
     console.log("ON INIT TASKS");
     this.title = Config.tasksPageTitle;
     this.service.getTasks().subscribe(data => {
+      //var resultSoFar, i
+      var i = data.length
+      for (data; i < i; i++) {
+        data[i].startDate = this.formatDate(data[i].startDate)
+        console.log("data: ", data[i].startDate)
+
+      }
+      // data.startDate = this.formatDate(data.startDate)
+      // data.endDate = this.formatDate(data.endDate)
       this.zone.run(() => {
         this.items = data;
+        // this.startDate = this.formatDate(this.items.startDate)
+        // this.endDate = this.formatDate(this.items.endDate)
+
       });
     });
   }
+
+  formatDate(date){
+    console.log("DATE: ", date)
+    return date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear()
+  }
+
   onDrawerButtonTap(): void {
     DrawerHelper.show();
   }

@@ -5,13 +5,27 @@
 
 <GridLayout class="page page-content" rows="*,auto">
     <StackLayout class="form">
-            <Image [src]="logo" id="logo" width="75%" margin="20 0 0 0"></Image>
+            <!-- <Image [src]="logo" id="logo" width="75%" margin="20 0 0 0"></Image> -->
         <Label
-        text="Was that interesting? Enter Email below to recieve a copy to share or save for later"
+        text="Enter dates for when you need space"
         margin="40"
         textWrap="true"
         textAlignment="center"
         ></Label>
+        <Label
+        text="Start Date"
+        textAlignment="center"
+        fontWeight="bold"
+        ></Label>
+        <DatePicker (loaded)="onPickerLoaded($event)" (dateChange)="onDateChanged($event)" 
+        (dayChange)="onDayChanged($event)" (monthChange)="onMonthChanged($event)" (yearChange)="onYearChanged($event)" verticalAlignment="center"></DatePicker>
+        <Label
+        text="End Date"
+        textAlignment="center"
+        fontWeight="bold"
+        ></Label>
+        <DatePicker (loaded)="onPickerLoaded($event)" (dateChange)="onDateChanged($event)" 
+        (dayChange)="onDayChanged($event)" (monthChange)="onMonthChanged($event)" (yearChange)="onYearChanged($event)" verticalAlignment="center"></DatePicker>
         <TextField [(ngModel)]='email' hint="Email Address" class="input input-border m-10"></TextField>
     </StackLayout>
     <Button row="1" class="btn btn-primary" text="Submit" (tap)="save()"></Button>

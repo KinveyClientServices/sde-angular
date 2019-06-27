@@ -1,38 +1,38 @@
 export class Config {
   //KINVEY
-  static appKey: string = "kid_ByNOXbm0V";
-  static appSecret: string = "dd07d8d220604072963ffe43344e4e06";
+  static appKey: string = "kid_SJ-AQ3-er";
+  static appSecret: string = "23428150cb364c0585b07e0555ec1d47";
 
   //LOGIN
-  static appLogo: string = "images/SW-logo-h.png";
-  static appTitle: string = "Sierra Wireless";
+  static appLogo: string = "images/logo.png";
+  static appTitle: string = "Coast Capital";
 
   //HOME
-  static homePageTitle: string = "Sierra Wireless";
-  static logo: string = "~/app/images/SW-logo-h.png";
+  static homePageTitle: string = "Coast Capital";
+  static logo: string = "~/app/images/logo.png";
   static homePageVisible: boolean = true;
-  static homePageHeading: string = "IoT, Internet of Things, M2M Communication & Wireless Solutions";
+  static homePageHeading: string = "";
 
   //ACCOUNTS
-  static accountsPageTitle: string = "Accounts";
+  static accountsPageTitle: string = "Make Parking Spot Available";
   static accountsCollectionName: string = "accounts";
   static accountsPageVisible: boolean = false;
 
   //PRODUCTS
   static productsPageTitle: string = "Products";
-  static productsCollectionName = "products";
+  static productsCollectionName = "parkingSpotsCheck";
   static productsPageVisible: boolean = false;
   //FILES
   static filesPageTitle: string = "Learning Materials";
   static filesPageVisible: boolean = true;
 
   //TASKS
-  static tasksPageTitle: string = "Tasks";
-  static taskCollectionName: string = "tasks";
-  static tasksPageVisible: boolean = false;
+  static tasksPageTitle: string = "Available Spots";
+  static taskCollectionName: string = "availableSpots";
+  static tasksPageVisible: boolean = true;
 
   //ADD TASKS
-  static addTaskPageTitle: string = "Get Stuff";
+  static addTaskPageTitle: string = "Request Parking Spot";
 
   //OFFLINE
   static offlinePageTitle: string = "Offline";

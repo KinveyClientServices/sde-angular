@@ -12,8 +12,8 @@ import * as Kinvey from "kinvey-nativescript-sdk";
   styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit {
-  username = "ignacio";
-  password = "ignacio";
+  username = "garon";
+  password = "1234";
   processing: boolean;
   logo: string;
   title: string;
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
   async login() {
     try {
       this.processing = true;
-      await this.dataService.loginAnon();
+      await this.dataService.login(this.username, this.password);
       console.log("LOG IN SUCCESSFUL");
       this.router.navigate(["home"], { clearHistory: true });
     } catch(err) {

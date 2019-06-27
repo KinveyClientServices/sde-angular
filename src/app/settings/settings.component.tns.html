@@ -3,5 +3,7 @@
 </ActionBar>
 
 <StackLayout class="page page-content">
+    <TextField [(ngModel)]='parkingSpot' hint="Registered Parking Spot" class="input input-border m-10"></TextField>
+    <Button row="1" class="btn btn-primary" text="Submit" (tap)="save()"></Button>
     <Button (tap)="logout()" class="btn btn-primary" text="Log out"></Button>
 </StackLayout>

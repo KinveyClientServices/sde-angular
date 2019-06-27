@@ -25,7 +25,7 @@
 
 <StackLayout class="page page-content">
   <Image [src]="logo" id="logo" width="75%" margin="20 0 0 0"></Image>
-  <Label
+  <!-- <Label
     margin="40"
     horizontalAlignment="center"
     textAlignment="center"
@@ -47,12 +47,19 @@
   [(ngModel)]="fullName"
   margin="40"
   class="input input-border"
-  ></TextField>
+  ></TextField> -->
   <Button 
   class="login btn btn-primary" 
   [isEnabled]="!processing" 
-  text="View Content" 
-  (tap)="viewContent()"
+  text="Request a Spot" 
+  (tap)="requestSpot()"
+  ></Button>
+
+  <Button 
+  class="login btn btn-primary" 
+  [isEnabled]="!processing" 
+  text="Make Parking Spot Available" 
+  (tap)="lendSpot()"
   ></Button>
 
 </StackLayout>

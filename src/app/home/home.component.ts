@@ -29,22 +29,26 @@ export class HomeComponent implements OnInit {
   onDrawerButtonTap(): void {
     DrawerHelper.show();
   }
-  viewContent(): void {
-    Promise.resolve(Kinvey.User.getActiveUser())
-    .then((user: Kinvey.User) => {
-      if (user) {
-        return user.update({
-          fullname: this.fullName
-        });
-      }
-      return user;
-    })
-    .then((user: Kinvey.User) => {
-      this.router.navigate(["files"]);
+  requestSpot(): void {
+    // Promise.resolve(Kinvey.User.getActiveUser())
+    // .then((user: Kinvey.User) => {
+    //   if (user) {
+    //     return user.update({
+    //       fullname: this.fullName
+    //     });
+    //   }
+    //   return user;
+    // })
+    // .then((user: Kinvey.User) => {
+      this.router.navigate(["tasks/add-task"]);
+    }
+    lendSpot(){
+      this.router.navigate(["accounts"]);
 
-    })
-    .catch(() => {
-      // ...
-    });
-  }
+    }
+  //   })
+  //   .catch(() => {
+  //     // ...
+  //   });
+  // }
 }
