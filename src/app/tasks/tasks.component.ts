@@ -3,6 +3,10 @@ import { DataService } from "../data.service";
 import { DrawerHelper } from "../utils/drawer-helper";
 import { Router } from "../utils";
 import { Config } from "../config";
+import * as Kinvey from "kinvey-nativescript-sdk";
+import { async } from "@angular/core/testing";
+
+
 @Component({
   selector: "app-tasks",
   templateUrl: "./tasks.component.html",
@@ -23,17 +27,21 @@ export class TasksComponent implements OnInit {
     console.log("ON INIT TASKS");
     this.title = Config.tasksPageTitle;
     this.service.getTasks().subscribe(data => {
+      data.map(
+        x => {
+          console.log("x.startDate", x.startDate)
+          x.startDate = this.formatDate(x.startDate)
+          x.endDate = this.formatDate(x.endDate)
+
+        })
       //var resultSoFar, i
       var i = data.length
-      for (data; i < i; i++) {
-        data[i].startDate = this.formatDate(data[i].startDate)
-        console.log("data: ", data[i].startDate)
 
-      }
       // data.startDate = this.formatDate(data.startDate)
       // data.endDate = this.formatDate(data.endDate)
       this.zone.run(() => {
         this.items = data;
+        // console.log("this.items.startDate: ", this.items.startDate)
         // this.startDate = this.formatDate(this.items.startDate)
         // this.endDate = this.formatDate(this.items.endDate)
 
@@ -41,10 +49,21 @@ export class TasksComponent implements OnInit {
     });
   }
 
-  formatDate(date){
-    console.log("DATE: ", date)
-    return date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear()
+  formatDate(dates){
+    console.log("DATE: ", dates)
+    let date = new Date(dates)
+    // let promise = new Promise((resolve, reject) => {
+      return date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear()
+    // })
+    // let result = await promise;
   }
+
+
+  
+  // formatDate(date){
+  //   console.log("DATE: ", date)
+  //   return date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear()
+  // }
 
   onDrawerButtonTap(): void {
     DrawerHelper.show();
@@ -54,5 +73,17 @@ export class TasksComponent implements OnInit {
   }
   async markDone(item) {
     await this.service.toggleTaskStatus(item);
+  }
+  refresh(): void {
+    const dataStore = Kinvey.DataStore.collection('availableSpots');
+
+    const subscription = dataStore.find()
+    .subscribe((entities: {}[]) => {
+      this.zone.run(() => {
+        this.items = entities;
+      });
+    }, (e) => {
+      console.log(e)
+    });
   }
 }

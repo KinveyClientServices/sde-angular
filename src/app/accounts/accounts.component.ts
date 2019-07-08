@@ -49,51 +49,51 @@ export class AccountsComponent implements OnInit {
 }
 
   onDateChanged(args) {
-      console.log("Date New value: " + args.value);
-      console.log("Date value: " + args.oldValue);
+      // console.log("Date New value: " + args.value);
+      // console.log("Date value: " + args.oldValue);
       this.endDate = args.value;
   }
 
   onDayChanged(args) {
-      console.log("Day New value: " + args.value);
-      console.log("Day Old value: " + args.oldValue);
+      // console.log("Day New value: " + args.value);
+      // console.log("Day Old value: " + args.oldValue);
       this.endDate = args.value;
   }
 
   onMonthChanged(args) {
-      console.log("Month New value: " + args.value);
-      console.log("Month Old value: " + args.oldValue);
+      // console.log("Month New value: " + args.value);
+      // console.log("Month Old value: " + args.oldValue);
       this.endDate = args.value;
   }
 
   onYearChanged(args) {
-      console.log("Year New value: " + args.value);
-      console.log("Year Old value: " + args.oldValue);
+      // console.log("Year New value: " + args.value);
+      // console.log("Year Old value: " + args.oldValue);
       this.endDate = args.value;
 
   }
 
   onStartDateChanged(args) {
-    console.log("Date New value: " + args.value);
-    console.log("Date value: " + args.oldValue);
+    // console.log("Date New value: " + args.value);
+    // console.log("Date value: " + args.oldValue);
     this.startDate = args.value;
 }
 
 onStartDayChanged(args) {
-    console.log("Day New value: " + args.value);
-    console.log("Day Old value: " + args.oldValue);
+    // console.log("Day New value: " + args.value);
+    // console.log("Day Old value: " + args.oldValue);
     this.startDate = args.value;
 }
 
 onStartMonthChanged(args) {
-    console.log("Month New value: " + args.value);
-    console.log("Month Old value: " + args.oldValue);
+    // console.log("Month New value: " + args.value);
+    // console.log("Month Old value: " + args.oldValue);
     this.startDate = args.value;
 }
 
 onStartYearChanged(args) {
-    console.log("Year New value: " + args.value);
-    console.log("Year Old value: " + args.oldValue);
+    // console.log("Year New value: " + args.value);
+    // console.log("Year Old value: " + args.oldValue);
     this.startDate = args.value;
 }
 
@@ -113,13 +113,12 @@ onStartYearChanged(args) {
 
   submitDates(){
     const dataStore = Kinvey.DataStore.collection('availableSpots');
+    console.log("USER: ", this.user)
     const uploadData = {
       startDate: new Date(this.startDate),
-
-      // startDate: this.formatDate(this.startDate),
-      // endDate: this.formatDate(this.endDate),
+      spotOwnerId: this.user.data._id,
+      spotOwnerUsername: this.user.data.username,
       endDate: this.endDate,
-
       parkingSpot: this.user.data.parkingSpot
     }
     const promise = dataStore.save(uploadData)
@@ -128,7 +127,7 @@ onStartYearChanged(args) {
       .catch(function(e) {
         console.log(e)
       });
-    //this.router.navigate(["home"]);
+    this.router.navigate(["tasks"]);
 
   }
 }
