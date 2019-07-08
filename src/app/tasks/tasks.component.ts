@@ -4,7 +4,9 @@ import { DrawerHelper } from "../utils/drawer-helper";
 import { Router } from "../utils";
 import { Config } from "../config";
 import * as Kinvey from "kinvey-nativescript-sdk";
-import { async } from "@angular/core/testing";
+import { CalendarEvent, CalendarEventsViewMode } from 'nativescript-ui-calendar';
+import { Color } from "tns-core-modules/color/color";
+import { Page } from "tns-core-modules/ui/page/page";
 
 
 @Component({
@@ -17,10 +19,26 @@ export class TasksComponent implements OnInit {
   title: string;
   startDate;
   endDate;
+  onNavigatingTo;
+  private _events: Array<CalendarEvent>;
+  private _optionsParamName: string;
+  private _eventsViewMode: CalendarEventsViewMode;
+  
   constructor(
     private service: DataService,
     private router: Router,
-    private zone: NgZone
+    private zone: NgZone,
+    private _page: Page
+    ) {
+    super();
+        this._page.on("navigatingTo", this.onNavigatingTo, this);
+        this._optionsParamName = "eventsViewMode";
+        this._optionsService.paramName = this._optionsParamName;
+        this.router = _router;
+        this.navigationParameters = { selectedIndex: 0, paramName: this._optionsParamName, items: ["None", "Inline", "Popover (iPad only)"] };
+    
+    this._eventsViewMode = CalendarEventsViewMode.None;
+    }
   ) {}
 
   ngOnInit() {
@@ -48,6 +66,55 @@ export class TasksComponent implements OnInit {
       });
     });
   }
+
+
+  onNavigatingTo(args) {
+    if (args.isBackNavigation) {
+        if (this._optionsService.paramName === this._optionsParamName) {
+            switch (this._optionsService.paramValue) {
+                case 0:
+                    this.onNoneTap();
+                    this.navigationParameters.selectedIndex = 0;
+                    break;
+                case 1:
+                    this.onInlineTap();
+                    this.navigationParameters.selectedIndex = 1;
+                    break;
+                case 2:
+                    if (applicationModule.ios && platform.device.deviceType === "Tablet") {
+                        this.onPopoverTap();
+                        this.navigationParameters.selectedIndex = 2;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+}
+//   getCalendarEvents(): Array<CalendarEvent> {
+//     let now = new Date();
+//     let startDate: Date,
+//         endDate: Date,
+//         items: CalendarEvent;
+//     let colors: Array<Color> = [new Color(200, 188, 26, 214), new Color(220, 255, 109, 130), new Color(255, 55, 45, 255), new Color(199, 17, 227, 10), new Color(255, 255, 54, 3)];
+//     let events: Array<CalendarEvent> = new Array<CalendarEvent>();
+//     for (let i = 1; i < 10; i++) {
+//         startDate = new Date(now.getFullYear(), now.getMonth(), i * 2, 1);
+//         endDate = new Date(now.getFullYear(), now.getMonth(), (i * 2), 3);
+//         items = new CalendarEvent("event " + i, startDate, endDate, false, colors[i * 10 % (colors.length - 1)]);
+//         events.push(items);
+//         if (i % 3 === 0) {
+//           items = new CalendarEvent("second " + i, startDate, endDate, true, colors[i * 5 % (colors.length - 1)]);
+//             events.push(items);
+//         }
+//     }
+//     return events;
+// }
+
+get eventSource() {
+  return this.items;
+}
 
   formatDate(dates){
     console.log("DATE: ", dates)

@@ -24,7 +24,7 @@ export class Config {
   static productsPageVisible: boolean = false;
   //FILES
   static filesPageTitle: string = "Learning Materials";
-  static filesPageVisible: boolean = true;
+  static filesPageVisible: boolean = false;
 
   //TASKS
   static tasksPageTitle: string = "Available Spots";

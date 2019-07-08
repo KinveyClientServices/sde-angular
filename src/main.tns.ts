@@ -11,8 +11,12 @@ import { MapView } from "nativescript-google-maps-sdk";
 
 import { PDFView } from "nativescript-pdf-view";
 import { registerElement } from "nativescript-angular";
+import { RadCalendar } from "nativescript-ui-calendar"
+
 registerElement("PDFView", () => PDFView);
 registerElement("AR", () => require("nativescript-ar").AR);
 registerElement("MapView", () => MapView);
+registerElement("RadCalendar", () => RadCalendar);
+
 
 platformNativeScriptDynamic().bootstrapModule(AppModule);
