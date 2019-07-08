@@ -72,7 +72,7 @@ export class TasksComponent implements OnInit {
     this.router.navigate(["tasks/add-task"]);
   }
   async markDone(item) {
-    await this.service.toggleTaskStatus(item);
+    //await this.service.toggleTaskStatus(item);
   }
   refresh(): void {
     const dataStore = Kinvey.DataStore.collection('availableSpots');
