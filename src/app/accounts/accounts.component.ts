@@ -35,4 +35,14 @@ export class AccountsComponent implements OnInit {
     //console.log(item);
     this.router.navigate(["account-details", item._id]);
   }
+
+  async syncMe() {
+    console.log("syncng");
+    await this.service.pullAccountData();
+    this.service.getAccounts().subscribe(data => {
+      this.zone.run(() => {
+        this.items = data;
+      });
+    });
+  }
 }
