@@ -17,8 +17,8 @@
         textAlignment="center"
         fontWeight="bold"
         ></Label>
-        <DatePicker (loaded)="onPickerLoaded($event)" (dateChange)="onDateChanged($event)" 
-        (dayChange)="onDayChanged($event)" (monthChange)="onMonthChanged($event)" (yearChange)="onYearChanged($event)" verticalAlignment="center"></DatePicker>
+        <DatePicker (loaded)="onPickerLoaded($event)" (dateChange)="onStartDateChanged($event)" 
+        (dayChange)="onStartDayChanged($event)" (monthChange)="onStartMonthChanged($event)" (yearChange)="onStartYearChanged($event)" verticalAlignment="center"></DatePicker>
         <Label
         text="End Date"
         textAlignment="center"

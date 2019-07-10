@@ -4,7 +4,6 @@ import { DatePicker } from "tns-core-modules/ui/date-picker";
 
 import { Router } from "../../utils";
 import { Config } from "../../config";
-import * as Kinvey from "kinvey-nativescript-sdk";
 
 @Component({
   selector: "app-add-task",
@@ -16,6 +15,8 @@ export class AddTaskComponent implements OnInit {
   prettyname;
   email;
   _downloadURL;
+  startDate;
+  endDate
   title: string;
   logo: string;
 
@@ -38,48 +39,82 @@ export class AddTaskComponent implements OnInit {
     datePicker.maxDate = new Date(2020, 7, 12);
 }
 
+onStartDateChanged(args) {
+  // console.log("Date New value: " + args.value);
+  // console.log("Date value: " + args.oldValue);
+  this.startDate = args.value;
+}
+
+onStartDayChanged(args) {
+    // console.log("Day New value: " + args.value);
+    // console.log("Day Old value: " + args.oldValue);
+    this.startDate = args.value;
+}
+
+onStartMonthChanged(args) {
+    // console.log("Month New value: " + args.value);
+    // console.log("Month Old value: " + args.oldValue);
+    this.startDate = args.value;
+}
+
+onStartYearChanged(args) {
+    // console.log("Year New value: " + args.value);
+    // console.log("Year Old value: " + args.oldValue);
+    this.startDate = args.value;
+}
+
   onDateChanged(args) {
-      console.log("Date New value: " + args.value);
-      console.log("Date value: " + args.oldValue);
+      // console.log("Date New value: " + args.value);
+      // console.log("Date value: " + args.oldValue);
+      this.endDate = args.value;
   }
 
   onDayChanged(args) {
-      console.log("Day New value: " + args.value);
-      console.log("Day Old value: " + args.oldValue);
+      // console.log("Day New value: " + args.value);
+      // console.log("Day Old value: " + args.oldValue);
+      this.endDate = args.value;
   }
 
   onMonthChanged(args) {
-      console.log("Month New value: " + args.value);
-      console.log("Month Old value: " + args.oldValue);
+      // console.log("Month New value: " + args.value);
+      // console.log("Month Old value: " + args.oldValue);
+      this.endDate = args.value;
   }
 
   onYearChanged(args) {
-      console.log("Year New value: " + args.value);
-      console.log("Year Old value: " + args.oldValue);
+      // console.log("Year New value: " + args.value);
+      // console.log("Year Old value: " + args.oldValue);
+      this.endDate = args.value;
   }
 
   async save() {
-    const that = this;
+    // const dataStore = Kinvey.DataStore.collection('availableSpots');
     console.log("here");
+  
+    this.service.dates = {"startDate": this.startDate, "endDate": this.endDate};
+
     // Promise.resolve(Kinvey.User.getActiveUser())
     // .then((user: Kinvey.User) => {
-    //   if (user) {
-    //     console.log("prettyname: ", this.item.prettyname)
-    //     return user.update({
-    //       email: this.email,
-    //       prettyname: this.item.prettyname,
-    //       _downloadURL: this.item._downloadURL
-    //     });
-    //   }
+    //   // if (user) {
+    //   //   console.log("prettyname: ", this.item.prettyname)
+    //   //   return user.update({
+    //   //     startDate: this.email,
+    //   //     endDate: this.item.prettyname,
+    //   //     user: this.item._downloadURL
+    //   //   });
+    //   // }
+    //   console.log("USER: ", user.data.username)
     //   return user;
     // })
     // .then((user: Kinvey.User) => {
-    //   this.router.navigate(["files"]);
+    //   //this.router.navigate(["products"]);
+    //   console.log("Service Dates: ", this.service.dates)
 
     // })
-    // .catch(() => {
-    //   // ...
+    // .catch((e) => {
+    //   console.log(e)
     // });
+
     this.router.navigate(["products"]);
   }
   back() {

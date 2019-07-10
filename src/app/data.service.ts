@@ -30,7 +30,7 @@ export class DataService {
           if ((<any>kinveyUser.data)._socialIdentity) {
             return (<any>kinveyUser.data)._socialIdentity.kinveyAuth.id;
           } else {
-            return kinveyUser.username;
+            return kinveyUser;
           }
         } else {
           return "";
@@ -51,6 +51,8 @@ export class DataService {
   getCount() {
     return this.accountsStore.count();
   }
+
+  public dates = {};
 
   private myDataStore = this.datastoreService.collection(
     Config.productsCollectionName

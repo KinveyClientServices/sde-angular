@@ -16,7 +16,8 @@
 
 <!-- <ListView class="list-group" [items]="items">
     <ng-template let-item="item"> -->
-    <StackLayout class="page">
+    <StackLayout class="page" *ngIf="!loaded"></StackLayout>
+    <StackLayout class="page" *ngIf="loaded">
             <Image row="0" col="0" [src]="logo" class="logo"></Image>
 
         <GridLayout class="list-group-item" rows="auto,*,*" columns="auto, *" margin="20">
@@ -24,9 +25,9 @@
             <!-- <Label textWrap="true" row="1" col="1" margin="20" [text]="isVisible"></Label>  -->
 
             <GridLayout row="1" rows="*,*,*" columns="*" col="1" *ngIf="isVisible" class="" borderRadius="2" height="300">
-                <Label fontSize="25em" textAlignment="center" fontWeight="bold"  textWrap="true" row="0" col="1" text="Space Available Space# {{items[0].parkingSpot}}"></Label>
-                <Label textWrap="true" row="1" col="1" text="Space Owner: {{items[0].owner}}"></Label>
-                <Button row="1" col="2" class="login btn btn-primary" text="Confirm" (tap)="goHome()"></Button>
+                <Label fontSize="25em" textAlignment="center" fontWeight="bold"  textWrap="true" row="0" col="1" text="Space Available Space# {{items[0][0].parkingSpot}}"></Label>
+                <Label textWrap="true" row="1" col="1" text="Space Owner: {{items[0][0].spotOwnerUsername}}" class="capitalize"></Label>
+                <Button row="2" col="2" class="login btn btn-primary" text="Confirm" (tap)="goHome()"></Button>
 
             </GridLayout>
 
@@ -36,7 +37,7 @@
                 <StackLayout row="2" class="hr-light"></StackLayout>
                 <GridLayout row="3" col="0" rows="*, *" columns="50, *" class="form-container">
                     <Label row="0" col="0" class="upper-label" text="Email:"></Label>
-                    <TextField style="border: 1px lightgrey" secure="true" hint="Email Address" row="0" col="1" [(ngModel)]="password"></TextField>
+                    <TextField style="border: 1px lightgrey" secure="true" hint="Email Address" row="1" col="1" [(ngModel)]="password"></TextField>
                 </GridLayout>
                 <Button row="4" col="0" class="login btn btn-primary" text="Get Notified" (tap)="getNotify()"></Button>
             </GridLayout>

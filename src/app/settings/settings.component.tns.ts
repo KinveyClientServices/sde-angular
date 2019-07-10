@@ -14,6 +14,7 @@ export class SettingsComponent implements OnInit {
   title: string;
   user;
   parkingSpot;
+
   constructor(private dataService: DataService, private router: RouterExtensions) { }
 
   ngOnInit(): void {

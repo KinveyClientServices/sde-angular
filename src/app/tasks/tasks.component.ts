@@ -53,7 +53,7 @@ export class TasksComponent implements OnInit {
     console.log("DATE: ", dates)
     let date = new Date(dates)
     // let promise = new Promise((resolve, reject) => {
-      return date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear()
+      return date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear()
     // })
     // let result = await promise;
   }

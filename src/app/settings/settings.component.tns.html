@@ -3,10 +3,13 @@
 </ActionBar>
 
 <StackLayout class="page page-content">
-    <GridLayout row="0" rows="80" columns="*,200">
+        <Label row="0" col="0" text='{{user.data.name}}' class="input input-border m-10 capitalize"></Label>
+        <Label row="0" col="0" text='{{user.data.Department}}' class="input input-border m-10"></Label>
+    <GridLayout row="0" rows="auto" columns="*,200">
         <Label row="0" col="0" text='Parking Spot: ' class="input input-border m-10"></Label>
         <TextField row="0" col="1" [(ngModel)]='parkingSpot' hint="Registered Parking Spot" class="input input-border m-10"></TextField>
     </GridLayout>
+    <StackLayout row="2" class="hr-light"></StackLayout>
     <Button row="1" class="btn btn-primary" text="Request New Spot" (tap)="save()"></Button>
     <Button (tap)="logout()" class="btn btn-primary" text="Log out"></Button>
 </StackLayout>

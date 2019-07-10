@@ -35,6 +35,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.service.username;
+    console.log("USER: ", this.user.destination._value.data)
     this.gesturesEnabled = this.service.isLoggedIn;
 
     this.homePageTitle = Config.homePageTitle;
