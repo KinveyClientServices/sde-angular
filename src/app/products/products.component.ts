@@ -17,6 +17,7 @@ export class ProductsComponent implements OnInit {
   logo;
   title: string;
   loaded = false;
+  spotAvailable;
   public isVisible: boolean;
   constructor(private service: DataService, private cd: ChangeDetectorRef, private router: RouterExtensions) {}
 
@@ -29,20 +30,13 @@ export class ProductsComponent implements OnInit {
       .subscribe(data => {
         this.items = data;
         this.isVisible = this.items[1].haveSpot;
-        console.log("DATA: ", this.items)
+        this.spotAvailable = this.items[0][0];
+        console.log("DATA: ", this.items[0][0])
       }, (error) => {
         console.log("Error: ", error)
       }, () => {
         this.loaded = true; 
       });
-
-    // this.service.getItems().subscribe(data => {
-    //   this.items = data;
-    //   
-    //   console.log("Product Items", this.items[0].haveSpot)
-
-    //   this.cd.detectChanges();
-    // });
     this.title = Config.productsPageTitle;
     this.logo = Config.logo
   }
@@ -54,6 +48,15 @@ export class ProductsComponent implements OnInit {
 
   }
   goHome() {
+    // const dataStore = Kinvey.DataStore.collection('availableSpots', Kinvey.DataStoreType.Network);
+    // console.log("ID: ", this.spotAvailable._id)
+    // const promise = dataStore.removeById(this.spotAvailable._id)
+    // .then((result: {}) => {
+    //   this.router.navigate(["home"]);
+    // })
+    // .catch((error) => {
+    //   console.log(error)
+    // });
     this.router.navigate(["home"]);
 
   }

@@ -75,7 +75,7 @@ export class TasksComponent implements OnInit {
     //await this.service.toggleTaskStatus(item);
   }
   refresh(): void {
-    const dataStore = Kinvey.DataStore.collection('availableSpots');
+    const dataStore = Kinvey.DataStore.collection('availableSpots', Kinvey.DataStoreType.Network);
 
     const subscription = dataStore.find()
     .subscribe((entities: {}[]) => {
