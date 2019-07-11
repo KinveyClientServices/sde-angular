@@ -1,16 +1,15 @@
 export class Config {
   //KINVEY
-  static appKey: string = "kid_ZJk02vOUFg";
-  static appSecret: string = "c1a32d5b3c474d0fa20a6f33fef396d5";
+  static appKey: string = "kid_rkX0BPMZS";
+  static appSecret: string = "242ff4f20f8c45fc8b727ad300fba57d";
 
   //LOGIN
-  static appLogo: string = "images/logo-1.png";
-  static appTitle: string = "SDE Kinvey";
+  static appLogo: string = "images/faaLogo.png";
+  static appTitle: string = "FAA CIS System";
 
   //HOME
   static homePageTitle: string = "Home";
-  static logo: string =
-    "https://devcenter.kinvey.com/images/Progress_Kinvey_Primary.png";
+  static logo: string = "assets/images/faaLogo.png"
   static homePageVisible: boolean = true;
   static homePageHeading: string = "We got your backend...";
 
