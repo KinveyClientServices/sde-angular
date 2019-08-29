@@ -12,6 +12,24 @@ import { BehaviorSubject, Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { Config } from "./config";
 
+export class DataStore {
+  public homeComponent: HomeComponentDataStore;
+  public employeeRecord: EmpRec;
+}
+
+export class HomeComponentDataStore {
+  public isRegistered: boolean = false;
+  public isVerified: boolean = false;
+}
+
+export class EmpRec {
+  public _id: string;
+  public jobType: string;
+  public email: string;
+  public empID: number;
+}
+
+
 @Injectable({
   providedIn: "root"
 })
@@ -23,6 +41,18 @@ export class DataService {
   ) {
     this.isLoggedIn = new BehaviorSubject<boolean>(this.activeUser != null);
     this.user = new BehaviorSubject<User>(this.activeUser);
+    this.dataStore = {
+      homeComponent: {
+        isRegistered: false,
+        isVerified: false
+      },
+      employeeRecord: {
+        _id: "",
+        jobType: "",
+        email: "",
+        empID: 0
+      }
+    };
     this.username = this.user.pipe(
       map(kinveyUser => {
         if (kinveyUser) {
@@ -41,6 +71,8 @@ export class DataService {
   get activeUser() {
     return this.userService.getActiveUser();
   }
+
+
 
   deleteItem(): any {
     return this.tasksStore.remove();
@@ -69,6 +101,7 @@ export class DataService {
   public isLoggedIn: BehaviorSubject<boolean>;
   private user: BehaviorSubject<User>;
   public username: Observable<string>;
+  public dataStore: DataStore;
 
   getTasks() {
     return this.tasksStore.find();
@@ -108,10 +141,44 @@ export class DataService {
     return this.tasksStore.save(task);
   }
 
-  getFiles(): Promise<any> {
+  saveAccount(record) {
+    this.accountsStore.save(record)
+  }
+
+  getFiles() {
     var q = new Query();
-    q.equalTo("mimeType", "application/pdf");
+    q.equalTo("employee", this.userService.getActiveUser()._id);
     return this.filesService.find(q);
+  }
+
+  async saveFiles(data) {
+    try {
+      const fileContent = data;
+      const metadata ={
+        filename: data.name,
+        mimeType: data.type,
+        size: data.size,
+        employee: data.employee,
+        empName: data.empName,
+        img: data.img,
+        approved: false,
+        _public: true
+      };
+      const file = await this.filesService.upload(fileContent, metadata)
+      .then((res) => {
+        console.log("Files Response: ", res)
+        res.certImg = {
+          _type: "KinveyFile",
+          _id: res._id
+        }
+        this.tasksStore.save(
+          res
+        )
+      });
+      console.log(file);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   getItems(): any {

@@ -1,6 +1,53 @@
 <div class="row">
-    <div class="col-sm-12 mt-4">
+    <div class="col-sm-12 mt-4 homeLogoConatain">
         <img [src]="logo" id="logo" class="img-responsive" />
         <h1 margin="20">{{heading}}</h1>
+    </div>
+    <div class="isLoading col-sm-12" *ngIf="loading">
+        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    <div class="isLoaded col-sm-12" *ngIf="!loading">
+            <div class="registerFormContain col-sm-6 mt-4" *ngIf="!homeComponent.isRegistered">
+                    <label for="empName" class="sr-only">Full Name</label>
+                    <input name="empName" [(ngModel)]="empName" type="string" id="empName" class="inputField form-control" placeholder="Full Name"
+                        required autofocus>
+                    <label for="inputEmail" class="sr-only">Email address</label>
+                    <input name="email" [(ngModel)]="registerUserEmail" type="string" id="inputEmail" class="inputField form-control" placeholder="Email Address"
+                        required autofocus>
+                    <label for="inputEmployeeID" class="sr-only">Employee ID</label>
+                    <input name="inputEmployeeID" [(ngModel)]="empID" type="string" id="inputEmployeeID" class="inputField form-control"
+                        placeholder="Empoyee ID" required>
+                    <select name="jobType" id="jobType" [(ngModel)]="jobType" class="inputField form-control">
+                            <option value="default" selected>Select Job Type</option>
+                        <option value="technicalStaff" selected>Technical Staff</option>
+                        <option value="manager">Manager</option>
+                    </select>
+                    <button class="myBtn center-block col-sm-6 btn btn-lg btn-block btn-primary" (click)="registerUser()">Register</button>
+        </div>
+        <div class="registerFormContain col-sm-6 mt-4 userIsRegistered" *ngIf="!userCollection.data.isVerified && homeComponent.isRegistered">
+                <form (ngSubmit)="verifyUser($event)">
+                        <label for="verificationCode" class="sr-only">Enter Verification Code</label>
+                        <input name="verificationCode" type="string" class="inputField form-control" placeholder="Enter Verification Code"
+                            required autofocus>
+                        <button class="myBtn center-block col-sm-6 btn btn-lg btn-block btn-primary">Register</button>
+                     </form>
+    
+        </div>
+        <div class="registerFormContain col-sm-6 mt-4 userIsRegistered" *ngIf="userCollection.data.isVerified && homeComponent.isRegistered">
+            <h1 class="h1 center-block" style="text-align: center">You are registered and verified! Please upload your certifications for manager approval.</h1>
+            <div class="form-group">
+                    <label for="file" class="btn-primary sr-only">Choose File</label>
+                    <input type="file"
+                        id="file"
+                        (change)="handleFileInput($event.target.files)"
+                        class="btn center-block fileChoose"
+                    >
+                    <button class="btn-primary btn" style="display: block; margin: auto;" (click)="uploadFiles()">Upload Files</button>
+                </div>
+                <!-- <label for="verificationCode" class="sr-only">Enter Verification Code</label>
+                <input name="verificationCode" [(ngModel)]="verificationCode" type="string" class="inputField form-control" placeholder="Enter Verification Code"
+                    required autofocus>
+                <button class="myBtn center-block col-sm-6 btn btn-lg btn-block btn-primary" (click)="verifyUser()">Register</button> -->
+        </div>
     </div>
 </div>

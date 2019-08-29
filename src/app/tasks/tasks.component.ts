@@ -3,6 +3,7 @@ import { DataService } from "../data.service";
 import { DrawerHelper } from "../utils/drawer-helper";
 import { Router } from "../utils";
 import { Config } from "../config";
+
 @Component({
   selector: "app-tasks",
   templateUrl: "./tasks.component.html",
@@ -11,6 +12,8 @@ import { Config } from "../config";
 export class TasksComponent implements OnInit {
   items;
   title: string;
+  loading: boolean = true;
+
   constructor(
     private service: DataService,
     private router: Router,
@@ -20,9 +23,11 @@ export class TasksComponent implements OnInit {
   ngOnInit() {
     console.log("ON INIT TASKS");
     this.title = Config.tasksPageTitle;
-    this.service.getTasks().subscribe(data => {
+    this.service.getFiles().then(data => {
       this.zone.run(() => {
         this.items = data;
+        console.log(data)
+        this.loading = false;
       });
     });
   }

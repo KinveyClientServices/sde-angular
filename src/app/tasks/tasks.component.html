@@ -1,17 +1,28 @@
 <div class="row">
   <div class="col-sm-12 mt-4">
-    <h1>Tasks</h1>
-    <div class="list-group">
+
+    <div class="certHeader">
+        <h1>Certifications</h1>
+        <h3>Garon Davis</h3>
+        <h4>Technical Staff</h4>
+        <p>Employee ID: 5555</p>
+    </div>
+    <div class="isLoading col-sm-12" *ngIf="loading">
+        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    <div class="list-group" *ngIf="!loading">
       <div *ngFor="let p of items" class="list-group-item list-group-item-action">
-        <div class="d-flex flex-row w-100">
+        <div class="d-flex flex-row w-100" style="align-items: center;">
           <div class="mr-4 mt-2" (click)="markDone(p)">
-            <i class="icon" [class.ion-md-checkmark]="p.completed" [class.ion-md-remove-circle-outline]="!p.completed"></i>
+            <i class="icon" [class.ion-md-checkmark]="p.approved" [class.ion-md-remove-circle-outline]="!p.approved"></i>
           </div>
+          <div class="imgConta" style="width: 150px">
+            <img [src]="p.img" alt="" style="height: 75px; margin: auto; display: block">
+          </div>
+
           <div class="">
-            <h5 class="mb-1">{{p.action}}</h5>
-            <small>{{p.duedate}}</small>
+            <h5 class="mb-1">{{p._filename}}</h5>
           </div>
-          <small class="ml-auto">{{p.duedate}}</small>
         </div>
       </div>
     </div>

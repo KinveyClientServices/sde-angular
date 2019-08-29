@@ -4,11 +4,11 @@ export class ChatHelper {
   public static show() {
     var settings = {
       bot: {
-        id: "5a6f258d7eef5c4ecfb128fc"
+        id: "5d2898d17e910233ed70e030"
       },
       channel: {
-        id: "2d280b2e-a0d6-4231-9602-0dbb38d2fa46",
-        token: "46d2e012-32d4-4e32-95c1-c7e2d889579a"
+        id: "a4a62bc5-35b5-47e6-8d04-77f855a9a907",
+        token: "c1d0b883-254d-414e-bdad-3edb6b7fe707"
       }
     };
     console.log("show");
