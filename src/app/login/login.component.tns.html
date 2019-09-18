@@ -2,7 +2,7 @@
     <Image class="logo" [src]="'~/app/'+logo"></Image>
     <Label class="h1" text="Start with Sierra"></Label>
     <GridLayout rows="auto, auto, auto">
-        <!-- <GridLayout row="0" rows="*, *" columns="50, *" class="form-container">
+        <GridLayout row="0" rows="*, *" columns="50, *" class="form-container">
             <Label row="0" rowSpan="2" col="0" class="ion" text="&#xf47d;"></Label>
             <Label row="0" col="1" class="upper-label" text="USER"></Label>
             <TextField autocapitalizationType="none" row="1" col="1" [(ngModel)]="username"></TextField>
@@ -14,7 +14,7 @@
             <Label row="0" rowSpan="2" col="0" class="ion" text="&#xf4c8;"></Label>
             <Label row="0" col="1" class="upper-label" text="PASSWORD"></Label>
             <TextField secure="true" hint="password" row="1" col="1" [(ngModel)]="password"></TextField>
-        </GridLayout> -->
+        </GridLayout>
 
         <ActivityIndicator rowSpan="3" [busy]="processing"></ActivityIndicator>
     </GridLayout>

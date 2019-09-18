@@ -20,7 +20,9 @@ export class FileDetailsComponent implements OnInit {
     (<any>this.router).back();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log("SELECTED FILE: ", this.service.selectedFile._downloadURL)
+  }
 
   finished(){
     this.router.navigate(["tasks/add-task"]);
