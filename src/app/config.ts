@@ -1,18 +1,18 @@
 export class Config {
   //KINVEY
-  static appKey: string = "kid_ZJk02vOUFg";
-  static appSecret: string = "c1a32d5b3c474d0fa20a6f33fef396d5";
+  static appKey: string = "kid_HkUqYnCIH";
+  static appSecret: string = "d52768c4a13c4e668ca9d4962b1b0ebd";
 
   //LOGIN
   static appLogo: string = "images/logo-1.png";
-  static appTitle: string = "SDE Kinvey";
+  static appTitle: string = "Vulcan";
 
   //HOME
   static homePageTitle: string = "Home";
   static logo: string =
-    "https://devcenter.kinvey.com/images/Progress_Kinvey_Primary.png";
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Clarivate_Analytics.svg/1200px-Clarivate_Analytics.svg.png";
   static homePageVisible: boolean = true;
-  static homePageHeading: string = "We got your backend...";
+  static homePageHeading: string = "Bring innovations to market faster";
 
   //ACCOUNTS
   static accountsPageTitle: string = "Accounts";
