@@ -27,7 +27,7 @@ export const routes: Routes = [
       { path: "home", component: HomeComponent },
       { path: "products", component: ProductsComponent },
       { path: "accounts", component: AccountsComponent },
-      { path: "account-details/:id", component: AccountDetailsComponent },
+      { path: "account-details", component: AccountDetailsComponent },
       { path: "files", component: FilesComponent },
       { path: "files/details", component: FileDetailsComponent },
       { path: "settings", component: SettingsComponent },

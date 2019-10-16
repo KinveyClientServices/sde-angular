@@ -1,14 +1,6 @@
 <ActionBar class="action-bar">
     <NavigationButton text="Back" android.systemIcon="ic_menu_back" (tap)="back()"></NavigationButton>
 
-    <Label class="action-bar-title" [text]="account.accountname"></Label>
+    <Label class="action-bar-title" [text]="item.prettyname"></Label>
 </ActionBar>
-
-<ListView class="list-group" [items]="account.invoice">
-    <ng-template let-item="item">
-        <GridLayout class="list-group-item" rows="auto, *" columns="*">
-            <Label row="0" [text]="item.Amount" class="list-group-item-heading"></Label>
-            <Label row="1" [text]="item.InvoiceNumber" class="list-group-item-text"></Label>
-        </GridLayout>
-    </ng-template>
-</ListView>
+<PDFView [src]="item._downloadURL"></PDFView>

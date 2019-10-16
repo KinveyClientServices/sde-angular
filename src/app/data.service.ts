@@ -63,7 +63,8 @@ export class DataService {
     DataStoreType.Sync
   );
   private accountsStore = this.datastoreService.collection(
-    Config.accountsCollectionName
+    Config.accountsCollectionName,
+    DataStoreType.Network
   );
   public selectedFile: any;
   public isLoggedIn: BehaviorSubject<boolean>;

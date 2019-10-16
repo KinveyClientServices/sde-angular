@@ -15,8 +15,8 @@ export class Config {
   static homePageHeading: string = "Bring innovations to market faster";
 
   //ACCOUNTS
-  static accountsPageTitle: string = "Accounts";
-  static accountsCollectionName: string = "accounts";
+  static accountsPageTitle: string = "Compliant PDF";
+  static accountsCollectionName: string = "compliant-pdf";
   static accountsPageVisible: boolean = true;
 
   //PRODUCTS
@@ -25,12 +25,12 @@ export class Config {
   static productsPageVisible: boolean = true;
   //FILES
   static filesPageTitle: string = "Files";
-  static filesPageVisible: boolean = true;
+  static filesPageVisible: boolean = false;
 
   //TASKS
   static tasksPageTitle: string = "Tasks";
   static taskCollectionName: string = "tasks";
-  static tasksPageVisible: boolean = true;
+  static tasksPageVisible: boolean = false;
 
   //ADD TASKS
   static addTaskPageTitle: string = "Add Task";
@@ -49,11 +49,11 @@ export class Config {
   static botId: string = "5aec90c92f0cb34333a804a7";
   static channelId: string = "7a530423-7e17-4b37-8c46-03a910241065";
   static channelToken: string = "0597259e-ad2c-4563-a92d-1c4d9a6cd33c";
-  static chatPageVisible: boolean = true;
+  static chatPageVisible: boolean = false;
 
   //AR
   static arPageTitle: string = "Augment Reality";
-  static arPageVisible: boolean = true;
+  static arPageVisible: boolean = false;
 
   //SETTINGS
   static settingsPageTitle: string = "Settings";
