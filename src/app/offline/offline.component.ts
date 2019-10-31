@@ -32,7 +32,7 @@ export class OfflineComponent implements OnInit {
         trackingNum: "Tracking #213HH854672",
         autogen: true,
         ShippingAddress: "2199 St Jacques St, Montreal, QC H3J 2T6",
-        eta: "Estimated Delivery Date: 20/6/2019"
+        eta: "Estimated Delivery Date: 20/11/2019"
       };
       myaccounts.push(thisaccount);
     }
